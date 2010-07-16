@@ -1,0 +1,1196 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+
+		<h1>SproutCore Reference Index</h1>
+		
+		<p id="warning">WARNING: This is draft reference documentation generated automatically from the <a href="http://github.com/sproutit/sproutcore">SproutCore source</a>.  It has not been fully vetted for accuracy or completeness.  Expect to find bugs here and there.  If you want to help make the docs better, please grab the source and make the docs better!</p>
+				
+		<div id="index">
+
+			
+			<div>
+				<h2><a href="symbols/_global_.html#constructor">_global_</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/Function.html#constructor">Function</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.html#constructor">SC</a></h2>
+				The SproutCore namespace.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.AlertPane.html#constructor">SC.AlertPane</a></h2>
+				Displays a preformatted modal alert pane.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Application.html#constructor">SC.Application</a></h2>
+				The root object for a SproutCore application.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Array.html#constructor">SC.Array</a></h2>
+				This module implements Observer-friendly Array-like behavior.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ArrayController.html#constructor">SC.ArrayController</a></h2>
+				An ArrayController provides a way for you to publish an array of objects
+  for CollectionView or other controllers to work with.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Benchmark.html#constructor">SC.Benchmark</a></h2>
+				This bit of meta-programming magic can install a benchmark handler on any
+  object method.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Binding.html#constructor">SC.Binding</a></h2>
+				A binding simply connects the properties of two objects so that whenever the
+  value of one property changes, the other property will be changed also.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Border.html#constructor">SC.Border</a></h2>
+				The Border mixin can be applied to any view to give it a visual border.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Builder.html#constructor">SC.Builder</a></h2>
+				The Builder class makes it easy to create new chained-builder API's such as
+  those provided by CoreQuery or jQuery.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Button.html#constructor">SC.Button</a></h2>
+				This mixin implements many of the basic state-handling attributes for 
+  button-like views, including an auto-updated title, and mapping the current
+  value to an isSelected state.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ButtonView.html#constructor">SC.ButtonView</a></h2>
+				Implements a push-button-style button.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CascadeDataSource.html#constructor">SC.CascadeDataSource</a></h2>
+				A cascading data source will actually forward requests onto an array of 
+  additional data sources, stopping when one of the data sources returns YES,
+  indicating that it handled the request.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CheckboxView.html#constructor">SC.CheckboxView</a></h2>
+				Renders a checkbox button view specifically.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ChildArray.html#constructor">SC.ChildArray</a></h2>
+				A ChildArray is used to map an array of ChildRecord
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ChildAttribute.html#constructor">SC.ChildAttribute</a></h2>
+				ChildAttribute is a subclass of RecordAttribute and handles to-one 
+  relationship for child record
+  
+  When setting ( .set() ) the value of a toMany attribute, make sure
+  to pass in an array of SC.Record objects.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ChildrenAttribute.html#constructor">SC.ChildrenAttribute</a></h2>
+				ChildrenAttribute is a subclass of ChildAttribute and handles to-many 
+  relationships for child records
+  
+  When setting ( .set() ) the value of a toMany attribute, make sure
+  to pass in an array of SC.Record objects.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CollectionContent.html#constructor">SC.CollectionContent</a></h2>
+				This mixin provides standard methods used by a CollectionView to provide
+  additional meta-data about content in a collection view such as selection
+  or enabled state.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CollectionGroup.html#constructor">SC.CollectionGroup</a></h2>
+				TODO: Add full description of SC.CollectionGroup
+  
+  Any view you want to use as a group view in a collection must include this
+  mixin.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CollectionRowDelegate.html#constructor">SC.CollectionRowDelegate</a></h2>
+				CollectionRowDelegates are consulted by SC.ListView and SC.TableView to 
+  control the height of rows, including specifying custom heights for 
+  specific rows.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CollectionView.html#constructor">SC.CollectionView</a></h2>
+				TODO: Document SC.CollectionView
+  
+  Renders a collection of views from a source array of model objects.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CollectionViewDelegate.html#constructor">SC.CollectionViewDelegate</a></h2>
+				A Collection View Delegate is consulted by a SC.CollectionView's to make
+  policy decisions about certain behaviors such as selection control and
+  drag and drop.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Comparable.html#constructor">SC.Comparable</a></h2>
+				Implements some standard methods for comparing objects.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ContainerView.html#constructor">SC.ContainerView</a></h2>
+				A container view will display its "content" view as its only child.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ContentDisplay.html#constructor">SC.ContentDisplay</a></h2>
+				The SC.ContentDisplay mixin makes it easy to automatically update your view
+  display whenever relevant properties on a content object change.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Control.html#constructor">SC.Control</a></h2>
+				A Control is a view that also implements some basic state functionality.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Controller.html#constructor">SC.Controller</a></h2>
+				The controller base class provides some common functions you will need
+  for controllers in your applications, especially related to maintaining
+  an editing context.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Cookie.html#constructor">SC.Cookie</a></h2>
+				Allows for easier handling of the document.cookie object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Copyable.html#constructor">SC.Copyable</a></h2>
+				Impelements some standard methods for copying an object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CoreQuery.html#constructor">SC.CoreQuery</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.CoreSet.html#constructor">SC.CoreSet</a></h2>
+				CoreSet is just like set but not observable.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Cursor.html#constructor">SC.Cursor</a></h2>
+				SC.Cursor
+
+  A Cursor object is used to sychronize the cursor used by multiple views at 
+  the same time.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.DataSource.html#constructor">SC.DataSource</a></h2>
+				TODO: Describe
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.DateFieldView.html#constructor">SC.DateFieldView</a></h2>
+				A Date field add behaviour to the Text Field to support date management, 
+  for example, disabling deletion, and special behaviour to tabs commands.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.DateTime.html#constructor">SC.DateTime</a></h2>
+				A class representation of a date and time.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.DelegateSupport.html#constructor">SC.DelegateSupport</a></h2>
+				Support methods for the Delegate design pattern.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.DisclosureView.html#constructor">SC.DisclosureView</a></h2>
+				Disclosure triangle button.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Drag.html#constructor">SC.Drag</a></h2>
+				An instance of this object is created whenever a drag occurs.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Editable.html#constructor">SC.Editable</a></h2>
+				The Editable mixin is a standard protocol used to activate keyboard editing 
+  on views that are editable such as text fields, label views and item views.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Enumerable.html#constructor">SC.Enumerable</a></h2>
+				This mixin defines the common interface implemented by enumerable objects 
+  in SproutCore.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Enumerator.html#constructor">SC.Enumerator</a></h2>
+				An object that iterates over all of the values in an object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Error.html#constructor">SC.Error</a></h2>
+				An error, used to represent an error state.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Event.html#constructor">SC.Event</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.FetchedAttribute.html#constructor">SC.FetchedAttribute</a></h2>
+				Describes a single attribute that is fetched dynamically from the server
+  when you request it.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.FieldView.html#constructor">SC.FieldView</a></h2>
+				Base view for managing a view backed by an input element.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.FixturesDataSource.html#constructor">SC.FixturesDataSource</a></h2>
+				TODO: Describe Class
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Freezable.html#constructor">SC.Freezable</a></h2>
+				The SC.Freezable mixin implements some basic methods for marking an object
+  as frozen.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.GridView.html#constructor">SC.GridView</a></h2>
+				A grid view renders a collection of items in a grid of rows and columns.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.imageCache.html#constructor">SC.imageCache</a></h2>
+				The image cache can be used to control the order of loading images into the
+   browser cache.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ImageView.html#constructor">SC.ImageView</a></h2>
+				Displays an image in the browser.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.IndexSet.html#constructor">SC.IndexSet</a></h2>
+				A collection of ranges.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.InlineTextFieldView.html#constructor">SC.InlineTextFieldView</a></h2>
+				The inline text editor is used to display an editable area for controls 
+  that are not always editable such as label views and source list views.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.LabelView.html#constructor">SC.LabelView</a></h2>
+				Displays a static string of text.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ListItemView.html#constructor">SC.ListItemView</a></h2>
+				Many times list items need to display a lot more than just a label of text.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ListView.html#constructor">SC.ListView</a></h2>
+				A list view renders vertical lists of items.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Logger.html#constructor">SC.Logger</a></h2>
+				Object to allow for safe logging actions, such as using the browser console.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.MainPane.html#constructor">SC.MainPane</a></h2>
+				Most SproutCore applications have a main pane, which dominates the 
+  application page.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ManyArray.html#constructor">SC.ManyArray</a></h2>
+				A ManyArray is used to map an array of record ids back to their 
+  record objects which will be materialized from the owner store on demand.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ManyAttribute.html#constructor">SC.ManyAttribute</a></h2>
+				ManyAttribute is a subclass of RecordAttribute and handles to-many 
+  relationships.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Math.html#constructor">SC.Math</a></h2>
+				Implements some enhancements to the built-in Number object that makes it
+  easier to handle rounding and display of numbers.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.MenuItemView.html#constructor">SC.MenuItemView</a></h2>
+				An SC.MenuItemView is created for every item in a menu.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.MenuPane.html#constructor">SC.MenuPane</a></h2>
+				SC.MenuPane allows you to display a standard menu.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.MenuScrollerView.html#constructor">SC.MenuScrollerView</a></h2>
+				Implements a complete scroller view for menus.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.MenuScrollView.html#constructor">SC.MenuScrollView</a></h2>
+				Implements a scroll view for menus.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ModalPane.html#constructor">SC.ModalPane</a></h2>
+				A modal pane is used to capture mouse events inside a pane that is modal.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.NestedStore.html#constructor">SC.NestedStore</a></h2>
+				A nested store can buffer changes to a parent store and then commit them
+  all at once.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Object.html#constructor">SC.Object</a></h2>
+				Root object for the SproutCore framework.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ObjectController.html#constructor">SC.ObjectController</a></h2>
+				An ObjectController gives you a simple way to manage the editing state of
+  an object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Observable.html#constructor">SC.Observable</a></h2>
+				Key-Value-Observing (KVO) simply allows one object to observe changes to a 
+  property on another object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Observers.html#constructor">SC.Observers</a></h2>
+				The private ObserverQueue is used to maintain a set of pending observers.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ObserverSet.html#constructor">SC.ObserverSet</a></h2>
+				This private class is used to store information about obversers on a 
+  particular key.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Page.html#constructor">SC.Page</a></h2>
+				SC.Page
+
+  A Page object is used to store a set of views that can be lazily configured
+  as needed.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Pane.html#constructor">SC.Pane</a></h2>
+				A Pane is like a regular view except that it does not need to live within a 
+  parent view.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.PanelPane.html#constructor">SC.PanelPane</a></h2>
+				Most SproutCore applications need modal panels.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.PickerPane.html#constructor">SC.PickerPane</a></h2>
+				Displays a non-modal, self anchor positioned picker pane.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.PopupButtonView.html#constructor">SC.PopupButtonView</a></h2>
+				SC.PopupButtonView displays a pop-up menu when clicked, from which the user
+  can select an item.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ProgressView.html#constructor">SC.ProgressView</a></h2>
+				Displays a progress bar.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Query.html#constructor">SC.Query</a></h2>
+				This permits you to perform queries on your data store,
+  written in a SQL-like language.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RadioView.html#constructor">SC.RadioView</a></h2>
+				A RadioView is used to create a group of radio buttons.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RangeObserver.html#constructor">SC.RangeObserver</a></h2>
+				A RangeObserver is used by Arrays to automatically observe all of the
+  objects in a particular range on the array.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Record.html#constructor">SC.Record</a></h2>
+				A Record is the core model class in SproutCore.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RecordArray.html#constructor">SC.RecordArray</a></h2>
+				A RecordArray wraps an array of storeKeys and, optionally, a Query object.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RecordAttribute.html#constructor">SC.RecordAttribute</a></h2>
+				A RecordAttribute describes a single attribute on a record.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RenderContext.html#constructor">SC.RenderContext</a></h2>
+				A RenderContext is a builder that can be used to generate HTML for views or
+  to update an existing element.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Request.html#constructor">SC.Request</a></h2>
+				Implements support for Ajax requests using XHR, JSON-P and other prototcols.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Responder.html#constructor">SC.Responder</a></h2>
+				Provides common methods for sending events down a responder chain.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ResponderContext.html#constructor">SC.ResponderContext</a></h2>
+				The root object for a responder chain.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RootResponder.html#constructor">SC.RootResponder</a></h2>
+				The RootResponder captures events coming from a web browser and routes them
+  to the correct view in the view hierarchy.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.RunLoop.html#constructor">SC.RunLoop</a></h2>
+				The run loop provides a universal system for coordinating events within
+  your application.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Scanner.html#constructor">SC.Scanner</a></h2>
+				A Scanner reads a string and interprets the characters into numbers.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SceneView.html#constructor">SC.SceneView</a></h2>
+				Displays several views as scenes that can slide on and off the screen.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Scrollable.html#constructor">SC.Scrollable</a></h2>
+				Any views you implement that are scrollable should include this mixin to
+  provide basic support for scrolling actions.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ScrollerView.html#constructor">SC.ScrollerView</a></h2>
+				Displays a horizontal or vertical scroller.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ScrollView.html#constructor">SC.ScrollView</a></h2>
+				Implements a complete scroll view.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SegmentedView.html#constructor">SC.SegmentedView</a></h2>
+				SegmentedView is a special type of button that can display multiple
+  segments.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SelectFieldView.html#constructor">SC.SelectFieldView</a></h2>
+				SelectFieldView displays browser-native popup menu.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SelectionSet.html#constructor">SC.SelectionSet</a></h2>
+				A SelectionSet contains a set of objects that represent the current 
+  selection.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SelectionSupport.html#constructor">SC.SelectionSupport</a></h2>
+				Implements common selection management properties for controllers.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SeparatorView.html#constructor">SC.SeparatorView</a></h2>
+				Displays a horizontal or vertical separator line.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Set.html#constructor">SC.Set</a></h2>
+				An unordered collection of objects.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SingleAttribute.html#constructor">SC.SingleAttribute</a></h2>
+				SingleAttribute is a subclass of RecordAttribute and handles to-one
+  relationships.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SliderView.html#constructor">SC.SliderView</a></h2>
+				A SliderView shows a horizontal slider control that you can use to set 
+  variable values.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SourceListGroupView.html#constructor">SC.SourceListGroupView</a></h2>
+				Displays a group view in a source list.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SourceListView.html#constructor">SC.SourceListView</a></h2>
+				Displays a source list like the source list in iTunes.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SparseArray.html#constructor">SC.SparseArray</a></h2>
+				A dynamically filled array.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.SplitDividerView.html#constructor">SC.SplitDividerView</a></h2>
+				A SplitDividerView displays a divider between two views within a SplitView.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.StackedView.html#constructor">SC.StackedView</a></h2>
+				A StackedView is a CollectionView that expects its content to use static 
+  layout to stack vertically.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.StaticContentView.html#constructor">SC.StaticContentView</a></h2>
+				StaticContentView allows you to display arbitrary HTML content inside your
+  view hierarchy.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.StaticLayout.html#constructor">SC.StaticLayout</a></h2>
+				__NOTE:__ SC.StaticLayout is now built in to SC.View.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Store.html#constructor">SC.Store</a></h2>
+				The Store is where you can find all of your dataHashes.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.String.html#constructor">SC.String</a></h2>
+				SproutCore implements a variety of enhancements to the built-in String 
+  object that make it easy to perform common substitutions and conversions.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.TabView.html#constructor">SC.TabView</a></h2>
+				Incorporates a segmented view and a container view to display the selected
+  tab.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.TextFieldView.html#constructor">SC.TextFieldView</a></h2>
+				A text field is an input element with type "text".
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.TextSelection.html#constructor">SC.TextSelection</a></h2>
+				A simple object representing the selection inside a text field.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ThumbView.html#constructor">SC.ThumbView</a></h2>
+				A ThumbView works in concert with SC.SplitView to adjust the divider 
+  position from an arbitrary subview of the SplitView.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Timer.html#constructor">SC.Timer</a></h2>
+				A Timer executes a method after a defined period of time.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.ToolbarView.html#constructor">SC.ToolbarView</a></h2>
+				A toolbar view can be anchored at the top or bottom of the window to contain
+  your main toolbar buttons.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Touch.html#constructor">SC.Touch</a></h2>
+				SC.Touch
+  Represents a touch.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.TreeController.html#constructor">SC.TreeController</a></h2>
+				A TreeController manages a tree of model objects that you might want to 
+  display in the UI using a collection view.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.TreeItemContent.html#constructor">SC.TreeItemContent</a></h2>
+				A tree item is a model object that acts as a node in a tree-like data 
+  structure such as a hierarchy of folders or outline of items.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.UndoManager.html#constructor">SC.UndoManager</a></h2>
+				This is a simple undo manager.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.UserDefaults.html#constructor">SC.UserDefaults</a></h2>
+				The UserDefaults object provides an easy way to store user preferences in
+  your application on the local machine.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validatable.html#constructor">SC.Validatable</a></h2>
+				Views that include the Validatable mixin can be used with validators to 
+  ensure their values are valid.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.html#constructor">SC.Validator</a></h2>
+				Validators provide a way for you to implement simple form field validation
+  and transformation.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.CreditCard.html#constructor">SC.Validator.CreditCard</a></h2>
+				Validate a field value as a credit card number.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.Date.html#constructor">SC.Validator.Date</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.DateTime.html#constructor">SC.Validator.DateTime</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.Email.html#constructor">SC.Validator.Email</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.EmailOrEmpty.html#constructor">SC.Validator.EmailOrEmpty</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.NotEmpty.html#constructor">SC.Validator.NotEmpty</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.Number.html#constructor">SC.Validator.Number</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.Password.html#constructor">SC.Validator.Password</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.Validator.PositiveInteger.html#constructor">SC.Validator.PositiveInteger</a></h2>
+				
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.View.html#constructor">SC.View</a></h2>
+				Base class for managing a view.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.WebView.html#constructor">SC.WebView</a></h2>
+				Used to display an iframe.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/SC.WellView.html#constructor">SC.WellView</a></h2>
+				A WellView is a ContainerView with a border.
+			</div>
+			<hr />
+			
+			<div>
+				<h2><a href="symbols/String.html#constructor">String</a></h2>
+				
+			</div>
+			<hr />
+			
+
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:05:00 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

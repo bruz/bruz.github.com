@@ -1,0 +1,6190 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - _global_</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Built-In Namespace _global_
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#acceptsFirstResponder"><code>-&nbsp;(Object) acceptsFirstResponder [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#branchIndexes"><code>-&nbsp;(SC.IndexSet) branchIndexes [R/W]</code></a>
+					              
+					                <div class="description">IndexSet of children with branches.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#children"><code>-&nbsp;(Object) children [R/W]</code></a>
+					              
+					                <div class="description">Array of child tree items.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#currentWindowSize"><code>-&nbsp;(Rect) currentWindowSize [R/O]</code></a>
+					              
+					                <div class="description">The last known window size.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#debugEnabled"><code>-&nbsp;(Object) debugEnabled [R/W]</code></a>
+					              
+					                <div class="description">Whether or not to enable debug logging.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#defaultResponder"><code>-&nbsp;(SC.Object) defaultResponder [R/W]</code></a>
+					              
+					                <div class="description">Set this to a delegate object that can respond to actions as they are sent
+    down the responder chain.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#delegate"><code>-&nbsp;(Object) delegate [R/W]</code></a>
+					              
+					                <div class="description">The controller delegate.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#disclosureState"><code>-&nbsp;(Number) disclosureState [R/W]</code></a>
+					              
+					                <div class="description">Disclosure state of this item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#domain"><code>-&nbsp;(String) domain [R/W]</code></a>
+					              
+					                <div class="description">The value of the domain attribute of the cookie (default: domain of page that created the cookie).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#exists"><code>-&nbsp;(Boolean) exists [R/W]</code></a>
+					              
+					                <div class="description">Computed property that checks for the existence of the reporter object.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#expires"><code>-&nbsp;(Integer|SC.DateTime|Date) expires [R/W]</code></a>
+					              
+					                <div class="description">Amount of time until the cookie expires.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#fallBackOnAlert"><code>-&nbsp;(Boolean) fallBackOnAlert [R/W]</code></a>
+					              
+					                <div class="description">If console.log does not exist, SC.Logger will use window.alert instead.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#fallBackOnLog"><code>-&nbsp;(Boolean) fallBackOnLog [R/W]</code></a>
+					              
+					                <div class="description">If some function, such as console.dir, does not exist,
+    SC.Logger will try console.log if this is true.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#format"><code>-&nbsp;(Boolean) format [R/W]</code></a>
+					              
+					                <div class="description">Whether or not to format multiple arguments together
+    or let the browser deal with that.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#hasFirstResponder"><code>-&nbsp;(Object) hasFirstResponder [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#hasFocus"><code>-&nbsp;(Object) hasFocus [R/W]</code></a>
+					              
+					                <div class="description">Indicates whether or not the window currently has focus.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#index"><code>-&nbsp;(Object) index [R/W]</code></a>
+					              
+					                <div class="description">Index location in parent's children array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#isCookie"><code>-&nbsp;(Boolean) isCookie [R/O]</code></a>
+					              
+					                <div class="description">Walk like a duck</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#isFirstResponder"><code>-&nbsp;(Object) isFirstResponder [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#isResponder"><code>-&nbsp;(Object) isResponder [R/W]</code></a>
+					              
+					                <div class="description">SC.Responder.prototype</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#item"><code>-&nbsp;(Object) item [R/W]</code></a>
+					              
+					                <div class="description">The node in the tree this observer will manage.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#keyPane"><code>-&nbsp;(SC.Pane) keyPane [R/W]</code></a>
+					              
+					                <div class="description">The current key pane.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#length"><code>-&nbsp;(Object) length [R/W]</code></a>
+					              
+					                <div class="description">Get the current length of the tree item including any of its children.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#mainPane"><code>-&nbsp;(Object) mainPane [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#menuPane"><code>-&nbsp;(SC.MenuPane) menuPane [R/W]</code></a>
+					              
+					                <div class="description">The current menu pane.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#name"><code>-&nbsp;(String) name [R/W]</code></a>
+					              
+					                <div class="description">The name of the cookie</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#nextResponder"><code>-&nbsp;(Object) nextResponder [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#pane"><code>-&nbsp;(Object) pane [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#panes"><code>-&nbsp;(Object) panes [R/W]</code></a>
+					              
+					                <div class="description">Contains a list of all panes currently visible on screen.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#parentObserver"><code>-&nbsp;(Object) parentObserver [R/W]</code></a>
+					              
+					                <div class="description">The parent TreeItemObserver for this observer.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#path"><code>-&nbsp;(String) path [R/W]</code></a>
+					              
+					                <div class="description">The value of the path atribute of the cookie (default: path of page that created the cookie).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#previousKeyPanes"><code>-&nbsp;(Object) previousKeyPanes [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#reporter"><code>-&nbsp;(Object) reporter [R/W]</code></a>
+					              
+					                <div class="description">The reporter is the object which implements the actual logging functions.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#responderContext"><code>-&nbsp;(Object) responderContext [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#secure"><code>-&nbsp;(Boolean) secure [R/W]</code></a>
+					              
+					                <div class="description">If true, the secure attribute of the cookie will be set and the cookie transmission will
+    require a secure protocol (like HTTPS).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/_global_.html#value"><code>-&nbsp;(String) value [R/W]</code></a>
+					              
+					                <div class="description">The value of the cookie</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#_childrenDidChange">
+		<code class="type">-&nbsp;(void)  _childrenDidChange()</code>
+				              </a>
+				              
+				                <div class="description">Called whenever the children or disclosure state changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_childrenRangeDidChange">
+		<code class="type">-&nbsp;(void)  _childrenRangeDidChange(array, objects, key, indexes)</code>
+				              </a>
+				              
+				                <div class="description">Called anytime the actual content of the children has changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_collapse">
+		<code class="type">-&nbsp;(void)  _collapse(item, pitem, index)</code>
+				              </a>
+				              
+				                <div class="description">Collapse the item at the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_computeChildren">
+		<code class="type">-&nbsp;(void)  _computeChildren(item)</code>
+				              </a>
+				              
+				                <div class="description">Computes the children for the passed item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_computeDisclosureState">
+		<code class="type">-&nbsp;(void)  _computeDisclosureState(item, pitem, index)</code>
+				              </a>
+				              
+				                <div class="description">Computes the current disclosure state of the item by asking the item or 
+    the delegate.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_computeLength">
+		<code class="type">-&nbsp;(void)  _computeLength()</code>
+				              </a>
+				              
+				                <div class="description">Computes the length of the array by looking at children.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_expand">
+		<code class="type">-&nbsp;(void)  _expand(item, pitem, index)</code>
+				              </a>
+				              
+				                <div class="description">Expand the item at the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#_itemPropertyDidChange">
+		<code class="type">-&nbsp;(void)  _itemPropertyDidChange(target, key)</code>
+				              </a>
+				              
+				                <div class="description">Called whenever a property changes on the item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#attemptKeyEquivalent">
+		<code class="type">-&nbsp;(Object)  attemptKeyEquivalent(evt)</code>
+				              </a>
+				              
+				                <div class="description">Invoked on a keyDown event that is not handled by any actual value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#averagedTouchesForView">
+		<code class="type">-&nbsp;(void)  averagedTouchesForView(view, added)</code>
+				              </a>
+				              
+				                <div class="description">Computes a hash with x, y, and d (distance) properties, containing the average position
+    of all touches, and the average distance of all touches from that average.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#becomeFirstResponder">
+		<code class="type">-&nbsp;(SC.Responder)  becomeFirstResponder()</code>
+				              </a>
+				              
+				                <div class="description">Call this method on your view or responder to make it become first 
+    responder.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#beforedeactivate">
+		<code class="type">-&nbsp;(void)  beforedeactivate(evt)</code>
+				              </a>
+				              
+				                <div class="description">IE's default behavior to blur textfields and other controls can only be
+    blocked by returning NO to this event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#blur">
+		<code class="type">-&nbsp;(void)  blur()</code>
+				              </a>
+				              
+				                <div class="description">Handle window focus.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#branchObserverAt">
+		<code class="type">-&nbsp;(void)  branchObserverAt(index)</code>
+				              </a>
+				              
+				                <div class="description">Returns the branch item for the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#captureTouch">
+		<code class="type">-&nbsp;(void)  captureTouch(touch, startingPoint, shouldStack)</code>
+				              </a>
+				              
+				                <div class="description">captureTouch is used to find the view to handle a touch.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#computeWindowSize">
+		<code class="type">-&nbsp;()  computeWindowSize()</code>
+				              </a>
+				              
+				                <div class="description">Computes the window size from the DOM.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#contentGroupIndexes">
+		<code class="type">-&nbsp;(void)  contentGroupIndexes(view, content)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view to return any group indexes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#contentIndexCollapse">
+		<code class="type">-&nbsp;(void)  contentIndexCollapse(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Called to collapse a content index item if it is currently in an open 
+    disclosure state.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#contentIndexDisclosureState">
+		<code class="type">-&nbsp;(void)  contentIndexDisclosureState(view, content, index)</code>
+				              </a>
+				              
+				                <div class="description">Returns the disclosure state for the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#contentIndexExpand">
+		<code class="type">-&nbsp;(void)  contentIndexExpand(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Expands the specified content index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#contentIndexOutlineLevel">
+		<code class="type">-&nbsp;(void)  contentIndexOutlineLevel(view, content, index)</code>
+				              </a>
+				              
+				                <div class="description">Returns the outline level for the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#debug">
+		<code class="type">-&nbsp;(Boolean)  debug()</code>
+				              </a>
+				              
+				                <div class="description">Log a debug message to the console.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#destroy">
+		<code class="type">-&nbsp;(void)  destroy()</code>
+				              </a>
+				              
+				                <div class="description">Called just before a branch observer is removed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#didBecomeFirstResponder">
+		<code class="type">-&nbsp;(void)  didBecomeFirstResponder(responder)</code>
+				              </a>
+				              
+				                <div class="description">Called just after the responder or any of its subresponder's becomes a 
+    first responder.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#dir">
+		<code class="type">-&nbsp;(Boolean)  dir()</code>
+				              </a>
+				              
+				                <div class="description">Prints the properties of an object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#dirxml">
+		<code class="type">-&nbsp;(Boolean)  dirxml()</code>
+				              </a>
+				              
+				                <div class="description">Prints an XML outline for any HTML or XML object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#error">
+		<code class="type">-&nbsp;(Boolean)  error()</code>
+				              </a>
+				              
+				                <div class="description">Log an error to the console
+
+    Logs the error using SC.Logger.log if reporter.error does not exist and
+    SC.Logger.fallBackOnLog is true.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#expandChildIndex">
+		<code class="type">-&nbsp;(void)  expandChildIndex(index)</code>
+				              </a>
+				              
+				                <div class="description">Accepts a child index and expands it to reflect any nested groups.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#focus">
+		<code class="type">-&nbsp;(void)  focus()</code>
+				              </a>
+				              
+				                <div class="description">Handle window focus.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#focusin">
+		<code class="type">-&nbsp;(void)  focusin()</code>
+				              </a>
+				              
+				                <div class="description">Handle window focus event for IE.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#focusout">
+		<code class="type">-&nbsp;(void)  focusout()</code>
+				              </a>
+				              
+				                <div class="description">Handle window blur event for IE.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#group">
+		<code class="type">-&nbsp;(Boolean)  group(title)</code>
+				              </a>
+				              
+				                <div class="description">Every log after this call until SC.Logger.groupEnd is called
+    will be indented for readability.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#groupEnd">
+		<code class="type">-&nbsp;(Boolean)  groupEnd()</code>
+				              </a>
+				              
+				                <div class="description">Ends a group declared with SC.Logger.group.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#info">
+		<code class="type">-&nbsp;(Boolean)  info()</code>
+				              </a>
+				              
+				                <div class="description">Log an information response to the reporter.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#invalidateBranchObserversAt">
+		<code class="type">-&nbsp;(void)  invalidateBranchObserversAt(index)</code>
+				              </a>
+				              
+				                <div class="description">Invalidates any branch observers on or after the specified index range.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#isHeaderVisible">
+		<code class="type">-&nbsp;(void)  isHeaderVisible()</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the item itself should be shown, NO if only its children
+    should be shown.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#listenFor">
+		<code class="type">-&nbsp;(SC.RootResponder)  listenFor(keyNames, target, receiver)</code>
+				              </a>
+				              
+				                <div class="description">Default method to add an event listener for the named event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#log">
+		<code class="type">-&nbsp;(Boolean)  log()</code>
+				              </a>
+				              
+				                <div class="description">Log output to the console, but only if it exists.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#makeKeyPane">
+		<code class="type">-&nbsp;(SC.RootResponder)  makeKeyPane(pane)</code>
+				              </a>
+				              
+				                <div class="description">Makes the passed pane the new key pane.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#makeMainPane">
+		<code class="type">-&nbsp;(SC.RootResponder)  makeMainPane(pane)</code>
+				              </a>
+				              
+				                <div class="description">Swaps the main pane.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#makeMenuPane">
+		<code class="type">-&nbsp;(SC.RootResponder)  makeMenuPane(pane)</code>
+				              </a>
+				              
+				                <div class="description">Sets a pane as the menu pane.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#makeTouchResponder">
+		<code class="type">-&nbsp;(void)  makeTouchResponder(touch, responder, shouldStack)</code>
+				              </a>
+				              
+				                <div class="description">The touch responder for any given touch is the view which will receive touch events
+    for that touch.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#mousemove">
+		<code class="type">-&nbsp;(void)  mousemove(evt)</code>
+				              </a>
+				              
+				                <div class="description">This will send mouseEntered, mouseExited, mousedDragged and mouseMoved
+   to the views you hover over.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#mouseup">
+		<code class="type">-&nbsp;(void)  mouseup(evt)</code>
+				              </a>
+				              
+				                <div class="description">mouseUp only gets delivered to the view that handled the mouseDown evt.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#objectAt">
+		<code class="type">-&nbsp;(void)  objectAt(index)</code>
+				              </a>
+				              
+				                <div class="description">Get the object at the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#observerContentDidChange">
+		<code class="type">-&nbsp;(void)  observerContentDidChange(start, amt, delta)</code>
+				              </a>
+				              
+				                <div class="description">Called whenever the content for the passed observer has changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#parentItem">
+		<code class="type">-&nbsp;(void)  parentItem()</code>
+				              </a>
+				              
+				                <div class="description">The parent item for the observer item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#profile">
+		<code class="type">-&nbsp;(Boolean)  profile()</code>
+				              </a>
+				              
+				                <div class="description">Begins the JavaScript profiler, if it exists.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#profileEnd">
+		<code class="type">-&nbsp;(Boolean)  profileEnd()</code>
+				              </a>
+				              
+				                <div class="description">Ends the JavaScript profiler, if it exists.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#replace">
+		<code class="type">-&nbsp;(SC.TreeItemObserver)  replace(start, amt, objects, operation)</code>
+				              </a>
+				              
+				                <div class="description">Implements SC.Array.replace() primitive.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#resignFirstResponder">
+		<code class="type">-&nbsp;(SC.Responder)  resignFirstResponder(the)</code>
+				              </a>
+				              
+				                <div class="description">Call this method on your view or responder to resign your first responder 
+    status.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#resize">
+		<code class="type">-&nbsp;(Boolean)  resize()</code>
+				              </a>
+				              
+				                <div class="description">On window resize, notifies panes of the change.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#sendAction">
+		<code class="type">-&nbsp;(Boolean)  sendAction(action, target, sender, pane, context)</code>
+				              </a>
+				              
+				                <div class="description">Route an action message to the appropriate responder.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#sendEvent">
+		<code class="type">-&nbsp;(Object)  sendEvent(action, evt, target)</code>
+				              </a>
+				              
+				                <div class="description">Attempts to send an event down the responder chain.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#setup">
+		<code class="type">-&nbsp;(void)  setup()</code>
+				              </a>
+				              
+				                <div class="description">Called when the document is ready to begin handling events.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#targetForAction">
+		<code class="type">-&nbsp;(Object)  targetForAction(target, method, sender, optional)</code>
+				              </a>
+				              
+				                <div class="description">Attempts to determine the initial target for a given action/target/sender
+    tuple.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#targetViewForEvent">
+		<code class="type">-&nbsp;(SC.View)  targetViewForEvent(evt)</code>
+				              </a>
+				              
+				                <div class="description">Finds the view that appears to be targeted by the passed event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#time">
+		<code class="type">-&nbsp;(Boolean)  time(name)</code>
+				              </a>
+				              
+				                <div class="description">Measure the time between when this function is called and
+    SC.Logger.timeEnd is called.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#timeEnd">
+		<code class="type">-&nbsp;(Boolean)  timeEnd(name)</code>
+				              </a>
+				              
+				                <div class="description">Ends the profile specified.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#touchesForView">
+		<code class="type">-&nbsp;(void)  touchesForView(view)</code>
+				              </a>
+				              
+				                <div class="description">Returns the touches that are registered to the specified view; undefined if none.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#trace">
+		<code class="type">-&nbsp;(Boolean)  trace()</code>
+				              </a>
+				              
+				                <div class="description">Prints a stack-trace.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#warn">
+		<code class="type">-&nbsp;(Boolean)  warn()</code>
+				              </a>
+				              
+				                <div class="description">Log a warning to the console.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#willLoseFirstResponder">
+		<code class="type">-&nbsp;(void)  willLoseFirstResponder(responder)</code>
+				              </a>
+				              
+				                <div class="description">Called just before the responder or any of its subresponder's are about to
+    lose their first responder status.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#write">
+		<code class="type">-&nbsp;(void)  write()</code>
+				              </a>
+				              
+				                <div class="description">Writes this SC.Cookie to document.cookie and adds it to SC.Cookie collection.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="acceptsFirstResponder"></a> 
+			          <div class="field">
+			            <a name="acceptsFirstResponder"></a> 
+			            <h3>acceptsFirstResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">acceptsFirstResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="branchIndexes"></a> 
+			          <div class="field">
+			            <a name="branchIndexes"></a> 
+			            <h3>branchIndexes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">IndexSet of children with branches.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.IndexSet
+		              </span>
+		              <span class="name">branchIndexes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will ask the delegate to name these indexes.  The default implementation will iterate over the children of the item but a more optimized version could avoid touching each item.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="children"></a> 
+			          <div class="field">
+			            <a name="children"></a> 
+			            <h3>children
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Array of child tree items.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">children</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Extracted from the item automatically on init.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="currentWindowSize"></a> 
+			          <div class="field">
+			            <a name="currentWindowSize"></a> 
+			            <h3>currentWindowSize
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">The last known window size.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Rect
+		              </span>
+		              <span class="name">currentWindowSize</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="debugEnabled"></a> 
+			          <div class="field">
+			            <a name="debugEnabled"></a> 
+			            <h3>debugEnabled
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether or not to enable debug logging.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">debugEnabled</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="defaultResponder"></a> 
+			          <div class="field">
+			            <a name="defaultResponder"></a> 
+			            <h3>defaultResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set this to a delegate object that can respond to actions as they are sent
+    down the responder chain.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Object
+		              </span>
+		              <span class="name">defaultResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="delegate"></a> 
+			          <div class="field">
+			            <a name="delegate"></a> 
+			            <h3>delegate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The controller delegate.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">delegate</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If the item does not implement the TreeItemContent method, delegate properties will be used to determine how to access the content.  Set automatically when a tree item is created.</p>
+
+<p>If you are creating an observer manually, you must set this to a non-null value.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="disclosureState"></a> 
+			          <div class="field">
+			            <a name="disclosureState"></a> 
+			            <h3>disclosureState
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Disclosure state of this item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">disclosureState</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Must be SC.BRANCH_OPEN or SC.BRANCH_CLOSED If this is the root of a item tree, the observer will have children but no parent or parent item.  IN this case the disclosure state is always SC.BRANCH_OPEN.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="domain"></a> 
+			          <div class="field">
+			            <a name="domain"></a> 
+			            <h3>domain
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The value of the domain attribute of the cookie (default: domain of page that created the cookie).</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">domain</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="exists"></a> 
+			          <div class="field">
+			            <a name="exists"></a> 
+			            <h3>exists
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed property that checks for the existence of the reporter object.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">exists</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="expires"></a> 
+			          <div class="field">
+			            <a name="expires"></a> 
+			            <h3>expires
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Amount of time until the cookie expires.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Integer|SC.DateTime|Date
+		              </span>
+		              <span class="name">expires</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Set to -1 in order to delete the cookie.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="fallBackOnAlert"></a> 
+			          <div class="field">
+			            <a name="fallBackOnAlert"></a> 
+			            <h3>fallBackOnAlert
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If console.log does not exist, SC.Logger will use window.alert instead.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">fallBackOnAlert</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This property is only used inside {@link SC.Logger.log}. If fallBackOnLog is false and you call a different function, an alert will not be opened.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="fallBackOnLog"></a> 
+			          <div class="field">
+			            <a name="fallBackOnLog"></a> 
+			            <h3>fallBackOnLog
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If some function, such as console.dir, does not exist,
+    SC.Logger will try console.log if this is true.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">fallBackOnLog</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="format"></a> 
+			          <div class="field">
+			            <a name="format"></a> 
+			            <h3>format
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether or not to format multiple arguments together
+    or let the browser deal with that.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">format</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasFirstResponder"></a> 
+			          <div class="field">
+			            <a name="hasFirstResponder"></a> 
+			            <h3>hasFirstResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">hasFirstResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasFocus"></a> 
+			          <div class="field">
+			            <a name="hasFocus"></a> 
+			            <h3>hasFocus
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Indicates whether or not the window currently has focus.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">hasFocus</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you need to do something based on whether or not the window is in focus, you can setup a binding or observer to this property.  Note that the SproutCore automatically adds an sc-focus or sc-blur CSS class to the body tag as appropriate.  If you only care about changing the appearance of your controls, you should use those classes in your CSS rules instead.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="index"></a> 
+			          <div class="field">
+			            <a name="index"></a> 
+			            <h3>index
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Index location in parent's children array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">index</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is the root item in the tree, should be null.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isCookie"></a> 
+			          <div class="field">
+			            <a name="isCookie"></a> 
+			            <h3>isCookie
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isCookie</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isFirstResponder"></a> 
+			          <div class="field">
+			            <a name="isFirstResponder"></a> 
+			            <h3>isFirstResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isFirstResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isResponder"></a> 
+			          <div class="field">
+			            <a name="isResponder"></a> 
+			            <h3>isResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">SC.Responder.prototype</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="item"></a> 
+			          <div class="field">
+			            <a name="item"></a> 
+			            <h3>item
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The node in the tree this observer will manage.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">item</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Set when creating the object.  If you are creating an observer manually, you must set this to a non-null value.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="keyPane"></a> 
+			          <div class="field">
+			            <a name="keyPane"></a> 
+			            <h3>keyPane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current key pane.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Pane
+		              </span>
+		              <span class="name">keyPane</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This pane receives keyboard events, shortcuts, and actions first, unless a menu is open. This pane is usually the highest ordered pane or the mainPane.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="length"></a> 
+			          <div class="field">
+			            <a name="length"></a> 
+			            <h3>length
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Get the current length of the tree item including any of its children.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">length</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="mainPane"></a> 
+			          <div class="field">
+			            <a name="mainPane"></a> 
+			            <h3>mainPane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">mainPane</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="menuPane"></a> 
+			          <div class="field">
+			            <a name="menuPane"></a> 
+			            <h3>menuPane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current menu pane.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.MenuPane
+		              </span>
+		              <span class="name">menuPane</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This pane receives keyboard events before all other panes, but tends to be transient, as it is only set when a pane is open.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="name"></a> 
+			          <div class="field">
+			            <a name="name"></a> 
+			            <h3>name
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the cookie</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">name</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="nextResponder"></a> 
+			          <div class="field">
+			            <a name="nextResponder"></a> 
+			            <h3>nextResponder
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">nextResponder</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="pane"></a> 
+			          <div class="field">
+			            <a name="pane"></a> 
+			            <h3>pane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">pane</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="panes"></a> 
+			          <div class="field">
+			            <a name="panes"></a> 
+			            <h3>panes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Contains a list of all panes currently visible on screen.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">panes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Everytime a pane attaches or detaches, it will update itself in this array.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="parentObserver"></a> 
+			          <div class="field">
+			            <a name="parentObserver"></a> 
+			            <h3>parentObserver
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The parent TreeItemObserver for this observer.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">parentObserver</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Must be set on create.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="path"></a> 
+			          <div class="field">
+			            <a name="path"></a> 
+			            <h3>path
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The value of the path atribute of the cookie (default: path of page that created the cookie).</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">path</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="previousKeyPanes"></a> 
+			          <div class="field">
+			            <a name="previousKeyPanes"></a> 
+			            <h3>previousKeyPanes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">previousKeyPanes</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="reporter"></a> 
+			          <div class="field">
+			            <a name="reporter"></a> 
+			            <h3>reporter
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The reporter is the object which implements the actual logging functions.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">reporter</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">The browser's console</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="responderContext"></a> 
+			          <div class="field">
+			            <a name="responderContext"></a> 
+			            <h3>responderContext
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">responderContext</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="secure"></a> 
+			          <div class="field">
+			            <a name="secure"></a> 
+			            <h3>secure
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If true, the secure attribute of the cookie will be set and the cookie transmission will
+    require a secure protocol (like HTTPS).</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">secure</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="value"></a> 
+			          <div class="field">
+			            <a name="value"></a> 
+			            <h3>value
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The value of the cookie</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">value</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="_childrenDidChange"></a> 
+			          <h3>_childrenDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called whenever the children or disclosure state changes.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_childrenDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Begins or ends observing on the children array so that changes can propogate outward.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_childrenRangeDidChange"></a> 
+			          <h3>_childrenRangeDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called anytime the actual content of the children has changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_childrenRangeDidChange</span> <span class="params">(array, objects, key, indexes)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If this changes the length property, then notifies the parent that the content might have changed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_collapse"></a> 
+			          <h3>_collapse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Collapse the item at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_collapse</span> <span class="params">(item, pitem, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will either directly modify the property on the item or call the treeItemCollapse() method.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_computeChildren"></a> 
+			          <h3>_computeChildren()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Computes the children for the passed item.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_computeChildren</span> <span class="params">(item)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_computeDisclosureState"></a> 
+			          <h3>_computeDisclosureState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Computes the current disclosure state of the item by asking the item or 
+    the delegate.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_computeDisclosureState</span> <span class="params">(item, pitem, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If no pitem or index is passed, the parentItem and idex will be used.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_computeLength"></a> 
+			          <h3>_computeLength()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Computes the length of the array by looking at children.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_computeLength</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_expand"></a> 
+			          <h3>_expand()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Expand the item at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_expand</span> <span class="params">(item, pitem, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will either directly modify the property on the item or call the treeItemExpand() method.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="_itemPropertyDidChange"></a> 
+			          <h3>_itemPropertyDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called whenever a property changes on the item.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_itemPropertyDidChange</span> <span class="params">(target, key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Determines if either the children array or the disclosure state has changed and then notifies as necessary..</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="attemptKeyEquivalent"></a> 
+			          <h3>attemptKeyEquivalent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked on a keyDown event that is not handled by any actual value.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">attemptKeyEquivalent</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">Object that handled evet or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will get the key equivalent string and then walk down the keyPane, then the focusedPane, then the mainPane, looking for someone to handle it. Note that this will walk DOWN the view hierarchy, not up it like most.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="averagedTouchesForView"></a> 
+			          <h3>averagedTouchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Computes a hash with x, y, and d (distance) properties, containing the average position
+    of all touches, and the average distance of all touches from that average.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">averagedTouchesForView</span> <span class="params">(view, added)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is useful for implementing scaling.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="becomeFirstResponder"></a> 
+			          <h3>becomeFirstResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method on your view or responder to make it become first 
+    responder.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Responder)
+			              </span>
+			              <span class="name">becomeFirstResponder</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Responder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="beforedeactivate"></a> 
+			          <h3>beforedeactivate()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">IE's default behavior to blur textfields and other controls can only be
+    blocked by returning NO to this event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">beforedeactivate</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>However we don't want to block its default behavior otherwise textfields won't loose focus by clicking on an empty area as it's expected. If you want to block IE from bluring another control set blockIEDeactivate to true on the especific view in which you want to avoid this. Think of an autocomplete menu, you want to click on the menu but don't loose focus.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="blur"></a> 
+			          <h3>blur()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Handle window focus.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">blur</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Change hasFocus and add sc-focus CSS class (removing sc-blur).  Also notify panes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="branchObserverAt"></a> 
+			          <h3>branchObserverAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the branch item for the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">branchObserverAt</span> <span class="params">(index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If none exists yet, it will be created.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="captureTouch"></a> 
+			          <h3>captureTouch()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">captureTouch is used to find the view to handle a touch.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">captureTouch</span> <span class="params">(touch, startingPoint, shouldStack)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It starts at the starting point and works down to the touch's target, looking for a view which captures the touch. If no view is found, it uses the target view.</p>
+
+<p>Then, it triggers a touchStart event starting at whatever the found view was; this propagates up the view chain until a view responds YES. This view becomes the touch's owner.</p>
+
+<p>You usually do not call captureTouch, and if you do call it, you'd call it on the touch itself: touch.captureTouch(startingPoint, shouldStack)</p>
+
+<p>If shouldStack is YES, the previous responder will be kept so that it may be returned to later.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="computeWindowSize"></a> 
+			          <h3>computeWindowSize()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Computes the window size from the DOM.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">computeWindowSize</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                
+			                <span class="desc">Rect</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="contentGroupIndexes"></a> 
+			          <h3>contentGroupIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view to return any group indexes.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentGroupIndexes</span> <span class="params">(view, content)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="contentIndexCollapse"></a> 
+			          <h3>contentIndexCollapse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called to collapse a content index item if it is currently in an open 
+    disclosure state.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexCollapse</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation does nothing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="contentIndexDisclosureState"></a> 
+			          <h3>contentIndexDisclosureState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the disclosure state for the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexDisclosureState</span> <span class="params">(view, content, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="contentIndexExpand"></a> 
+			          <h3>contentIndexExpand()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Expands the specified content index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexExpand</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will search down until it finds the branchObserver responsible for this item and then calls _collapse on it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="contentIndexOutlineLevel"></a> 
+			          <h3>contentIndexOutlineLevel()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the outline level for the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexOutlineLevel</span> <span class="params">(view, content, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="debug"></a> 
+			          <h3>debug()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Log a debug message to the console.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">debug</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array|Function|Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to reporter, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Logs the response using {@link SC.Logger.log} if reporter.debug does not exist and {@link SC.Logger.fallBackOnLog} is true.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="destroy"></a> 
+			          <h3>destroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called just before a branch observer is removed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">destroy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Should stop any observering and invalidate any child observers.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="didBecomeFirstResponder"></a> 
+			          <h3>didBecomeFirstResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called just after the responder or any of its subresponder's becomes a 
+    first responder.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">didBecomeFirstResponder</span> <span class="params">(responder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Responder)</span><span class="name">responder</span>
+			              
+			              <span class="desc">the responder that changed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Override this method to provide any standard setup when the first responder changes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="dir"></a> 
+			          <h3>dir()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Prints the properties of an object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">dir</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to console, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Logs the object using {@link SC.Logger.log} if the reporter.dir function does not exist and {@link SC.Logger.fallBackOnLog} is true.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="dirxml"></a> 
+			          <h3>dirxml()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Prints an XML outline for any HTML or XML object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">dirxml</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to reporter, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Logs the object using {@link SC.Logger.log} if reporter.dirxml function does not exist and {@lnk SC.Logger.fallBackOnLog} is true.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="error"></a> 
+			          <h3>error()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Log an error to the console
+
+    Logs the error using {@link SC.Logger.log} if reporter.error does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">error</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array|Function|Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to reporter, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="expandChildIndex"></a> 
+			          <h3>expandChildIndex()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Accepts a child index and expands it to reflect any nested groups.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">expandChildIndex</span> <span class="params">(index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="focus"></a> 
+			          <h3>focus()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Handle window focus.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">focus</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Change hasFocus and add sc-focus CSS class (removing sc-blur).  Also notify panes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="focusin"></a> 
+			          <h3>focusin()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Handle window focus event for IE.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">focusin</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="focusout"></a> 
+			          <h3>focusout()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Handle window blur event for IE.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">focusout</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="group"></a> 
+			          <h3>group()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Every log after this call until {@link SC.Logger.groupEnd} is called
+    will be indented for readability.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">group</span> <span class="params">(title)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">title</span>
+			              
+			              <span class="desc">An optional title to display above the group</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.group exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can create as many levels as you want.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="groupEnd"></a> 
+			          <h3>groupEnd()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Ends a group declared with {@link SC.Logger.group}.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">groupEnd</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if the reporter.groupEnd exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="info"></a> 
+			          <h3>info()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Log an information response to the reporter.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">info</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array|Function|Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to reporter, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Logs the response using {@link SC.Logger.log} if reporter.info does not exist and {@link SC.Logger.fallBackOnLog} is true.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="invalidateBranchObserversAt"></a> 
+			          <h3>invalidateBranchObserversAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invalidates any branch observers on or after the specified index range.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">invalidateBranchObserversAt</span> <span class="params">(index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="isHeaderVisible"></a> 
+			          <h3>isHeaderVisible()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the item itself should be shown, NO if only its children
+    should be shown.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">isHeaderVisible</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Normally returns YES unless the parentObject is null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="listenFor"></a> 
+			          <h3>listenFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Default method to add an event listener for the named event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RootResponder)
+			              </span>
+			              <span class="name">listenFor</span> <span class="params">(keyNames, target, receiver)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">keyNames</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Element)</span><span class="name">target</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">receiver</span>
+			              
+			              <span class="desc">- optional if you don't want 'this'</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RootResponder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you simply need to add listeners for a type of event, you can use this method as shorthand.  Pass an array of event types to listen for and the element to listen in.  A listener will only be added if a handler is actually installed on the RootResponder (or receiver) of the same name.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="log"></a> 
+			          <h3>log()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Log output to the console, but only if it exists.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">log</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array|Function|Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.log exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="makeKeyPane"></a> 
+			          <h3>makeKeyPane()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Makes the passed pane the new key pane.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RootResponder)
+			              </span>
+			              <span class="name">makeKeyPane</span> <span class="params">(pane)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RootResponder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you pass null or if the pane does not accept key focus, then key focus will transfer to the previous key pane (if it is still attached), and so on down the stack.  This will notify both the old pane and the new root View that key focus has changed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="makeMainPane"></a> 
+			          <h3>makeMainPane()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Swaps the main pane.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RootResponder)
+			              </span>
+			              <span class="name">makeMainPane</span> <span class="params">(pane)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RootResponder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the current main pane is also the key pane, then the new main pane will also be made key view automatically.  In addition to simply updating the mainPane property, this method will also notify the panes themselves that they will lose/gain their mainView status.</p>
+
+<p>Note that this method does not actually change the Pane's place in the document body.  That will be handled by the Pane itself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="makeMenuPane"></a> 
+			          <h3>makeMenuPane()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Sets a pane as the menu pane.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RootResponder)
+			              </span>
+			              <span class="name">makeMenuPane</span> <span class="params">(pane)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.MenuPane)</span><span class="name">pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RootResponder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>All key events will be directed to this pane, but the current key pane will not lose focus.</p>
+
+<p>Usually you would not call this method directly, but allow instances of SC.MenuPane to manage the menu pane for you. If your pane does need to become menu pane, you should relinquish control by calling this method with a null parameter. Otherwise, key events will always be delivered to that pane.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="makeTouchResponder"></a> 
+			          <h3>makeTouchResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The touch responder for any given touch is the view which will receive touch events
+    for that touch.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">makeTouchResponder</span> <span class="params">(touch, responder, shouldStack)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Quite simple.</p>
+
+<p>makeTouchResponder takes a potential responder as an argument, and, by calling touchStart on each nextResponder, finds the actual responder. As a side-effect of how it does this, touchStart is called on the new responder before touchCancelled is called on the old one (touchStart has to accept the touch before it can be considered cancelled).</p>
+
+<p>You usually don't have to think about this at all. However, if you don't want your view to, for instance, prevent scrolling in a ScrollView, you need to make sure to transfer control back to the previous responder:</p>
+
+<p>if (Math.abs(touch.pageY - touch.startY) > this.MAX_SWIPE) touch.restoreLastTouchResponder();</p>
+
+<p>You don't call makeTouchResponder on RootResponder directly. Instead, it gets called for you when you return YES to captureTouch or touchStart.</p>
+
+<p>You do, however, use a form of makeTouchResponder to return to a previous touch responder. Consider a button view inside a ScrollView: if the touch moves too much, the button should give control back to the scroll view.</p>
+
+<p>if (Math.abs(touch.pageX - touch.startX) > 4) { if (touch.nextTouchResponder) touch.makeTouchResponder(touch.nextTouchResponder); }</p>
+
+<p>This will give control back to the containing view. Maybe you only want to do it if it is a ScrollView?</p>
+
+<p>if (Math.abs(touch.pageX - touch.startX) > 4 && touch.nextTouchResponder && touch.nextTouchResponder.isScrollable) touch.makeTouchResponder(touch.nextTouchResponder);</p>
+
+<p>Possible gotcha: while you can do touch.nextTouchResponder, the responders are not chained in a linked list like normal responders, because each touch has its own responder stack. To navigate through the stack (or, though it is not recommended, change it), use touch.touchResponders (the raw stack array).</p>
+
+<p>makeTouchResponder is called with an event object. However, it usually triggers custom touchStart/touchCancelled events on the views. The event object is passed so that functions such as stopPropagation may be called.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="mousemove"></a> 
+			          <h3>mousemove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will send mouseEntered, mouseExited, mousedDragged and mouseMoved
+   to the views you hover over.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">mousemove</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>To receive these events, you must implement the method. If any subviews implement them and return true, then you won't receive any notices.</p>
+
+<p>If there is a target mouseDown view, then mouse moved events will also trigger calls to mouseDragged.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="mouseup"></a> 
+			          <h3>mouseup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">mouseUp only gets delivered to the view that handled the mouseDown evt.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">mouseup</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>we also handle click and double click notifications through here to ensure consistant delivery.  Note that if mouseDownView is not implemented, then no mouseUp event will be sent, but a click will be sent.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="objectAt"></a> 
+			          <h3>objectAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Get the object at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">objectAt</span> <span class="params">(index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will talk the tree info to determine the proper place.  The offset should be relative to the start of this tree item.  Calls recursively down the tree.</p>
+
+<p>This should only be called with an index you know is in the range of item or its children based on looking at the length.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="observerContentDidChange"></a> 
+			          <h3>observerContentDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called whenever the content for the passed observer has changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">observerContentDidChange</span> <span class="params">(start, amt, delta)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Default version notifies the parent if it exists and updates the length.</p>
+
+<p>The start, amt and delta params should reflect changes to the children array, not to the expanded range for the wrapper.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="parentItem"></a> 
+			          <h3>parentItem()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The parent item for the observer item.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">parentItem</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Computed automatically from the parent.  If the value of this is null, then this is the root of the tree.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="profile"></a> 
+			          <h3>profile()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Begins the JavaScript profiler, if it exists.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">profile</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.profile exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Call {@link SC.Logger.profileEnd} to end the profiling process and receive a report.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="profileEnd"></a> 
+			          <h3>profileEnd()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Ends the JavaScript profiler, if it exists.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">profileEnd</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.profileEnd exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="replace"></a> 
+			          <h3>replace()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Implements SC.Array.replace() primitive.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.TreeItemObserver)
+			              </span>
+			              <span class="name">replace</span> <span class="params">(start, amt, objects, operation)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">start</span>
+			              
+			              <span class="desc">the starting index</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">amt</span>
+			              
+			              <span class="desc">the number of items to replace</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">objects</span>
+			              
+			              <span class="desc">array of objects to insert</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">operation</span>
+			              
+			              <span class="desc">either SC.DROP_BEFORE or SC.DROP_AFTER</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.TreeItemObserver)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For this method to succeed, the range you replace must lie entirely within the same parent item, otherwise this will raise an exception.</p>
+
+<h3> The Operation Parameter</h3>
+
+<p>Note that this replace method accepts an additional parameter "operation" which is used when you try to insert an item on a boundary between branches whether it should be inserted at the end of the previous group after the group.  If you don't pass operation, the default is SC.DROP_BEFORE, which is the expected behavior.</p>
+
+<p>Even if the operation is SC.DROP_AFTER, you should still pass the actual index where you expect the item to be inserted.  For example, if you want to insert AFTER the last index of an 3-item array, you would still call:</p>
+
+
+<p class="code"><code>observer.replace(3, 0, [object1 .. objectN], SC.DROP_AFTER)</code></p>
+
+<p>The operation is simply used to disambiguate whether the insertion is intended to be AFTER the previous item or BEFORE the items you are replacing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="resignFirstResponder"></a> 
+			          <h3>resignFirstResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method on your view or responder to resign your first responder 
+    status.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Responder)
+			              </span>
+			              <span class="name">resignFirstResponder</span> <span class="params">(the)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Event)</span><span class="name">the</span>
+			              
+			              <span class="desc">original event that caused this method to be called</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Responder)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Normally this is not necessary since you will lose first responder status automatically when another view becomes first responder.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="resize"></a> 
+			          <h3>resize()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">On window resize, notifies panes of the change.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">resize</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="sendAction"></a> 
+			          <h3>sendAction()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Route an action message to the appropriate responder.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">sendAction</span> <span class="params">(action, target, sender, pane, context)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">action</span>
+			              
+			              <span class="desc">The action to perform - this is a method name.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Responder)</span><span class="name">target</span>
+			              
+			              <span class="desc">object to set method to (can be null)</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">sender</span>
+			              
+			              <span class="desc">The sender of the action</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">pane</span>
+			              
+			              <span class="desc">optional pane to start search with</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">context</span>
+			              
+			              <span class="desc">optional. only passed to ResponderContexts</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if action was performed, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will walk the responder chain, attempting to find a responder that implements the action name you pass to this method.  Set 'target' to null to search the responder chain.</p>
+
+<p>IMPORTANT: This method's API and implementation will likely change significantly after SproutCore 1.0 to match the version found in SC.ResponderContext.</p>
+
+<p>You generally should not call or override this method in your own applications.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="sendEvent"></a> 
+			          <h3>sendEvent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Attempts to send an event down the responder chain.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">sendEvent</span> <span class="params">(action, evt, target)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">action</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Event)</span><span class="name">evt</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">object that handled the event or null if not handled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will invoke the sendEvent() method on either the keyPane or on the pane owning the target view you pass in.  It will also automatically begin and end a new run loop.</p>
+
+<p>If you want to trap additional events, you should use this method to send the event down the responder chain.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="setup"></a> 
+			          <h3>setup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called when the document is ready to begin handling events.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">setup</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Setup event listeners in this method that you are interested in observing for your particular platform.  Be sure to call sc_super().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="targetForAction"></a> 
+			          <h3>targetForAction()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Attempts to determine the initial target for a given action/target/sender
+    tuple.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">targetForAction</span> <span class="params">(target, method, sender, optional)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object|String)</span><span class="name">target</span>
+			              
+			              <span class="desc">or null if no target is specified</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">method</span>
+			              
+			              <span class="desc">name for target</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">sender</span>
+			              
+			              <span class="desc">optional sender</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">optional</span>
+			              
+			              <span class="desc">pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">target object or null if none found</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is the method used by sendAction() to try to determine the correct target starting point for an action before trickling up the responder chain.</p>
+
+<p>You send actions for user interface events and for menu actions.</p>
+
+<p>This method returns an object if a starting target was found or null if no object could be found that responds to the target action.</p>
+
+<p>Passing an explicit target or pane constrains the target lookup to just them; the defaultResponder and other panes are <strong>not</strong> searched.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="targetViewForEvent"></a> 
+			          <h3>targetViewForEvent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Finds the view that appears to be targeted by the passed event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.View)
+			              </span>
+			              <span class="name">targetViewForEvent</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Event)</span><span class="name">evt</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.View)</span>
+			                <span class="desc">view instance or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This only works on events with a valid target property.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="time"></a> 
+			          <h3>time()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Measure the time between when this function is called and
+    {@link SC.Logger.timeEnd} is called.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">time</span> <span class="params">(name)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">name</span>
+			              
+			              <span class="desc">The name of the profile to begin</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.time exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="timeEnd"></a> 
+			          <h3>timeEnd()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Ends the profile specified.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">timeEnd</span> <span class="params">(name)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">name</span>
+			              
+			              <span class="desc">The name of the profile to end</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.timeEnd exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="touchesForView"></a> 
+			          <h3>touchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the touches that are registered to the specified view; undefined if none.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">touchesForView</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>When views receive a touch event, they have the option to subscribe to it. They are then mapped to touch events and vice-versa. This returns touches mapped to the view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="trace"></a> 
+			          <h3>trace()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Prints a stack-trace.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">trace</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if reporter.trace exists, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="warn"></a> 
+			          <h3>warn()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Log a warning to the console.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">warn</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array|Function|Object)</span><span class="name"></span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if logged to reporter, false if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Logs the warning using {@link SC.Logger.log} if reporter.warning does not exist and {@link SC.Logger.fallBackOnLog} is true.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="willLoseFirstResponder"></a> 
+			          <h3>willLoseFirstResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called just before the responder or any of its subresponder's are about to
+    lose their first responder status.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">willLoseFirstResponder</span> <span class="params">(responder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Responder)</span><span class="name">responder</span>
+			              
+			              <span class="desc">the responder that is about to change</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The passed responder is the responder that is about to lose its status.</p>
+
+<p>Override this method to provide any standard teardown when the first responder changes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="write"></a> 
+			          <h3>write()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Writes this SC.Cookie to document.cookie and adds it to SC.Cookie collection.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">write</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>To find this cookie later, or on reload, use SC.Cookie.find.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:47 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

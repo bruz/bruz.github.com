@@ -1,0 +1,939 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.TreeItemContent</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.TreeItemContent
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_mixins_tree_item_content.js.html">frameworks/sproutcore/frameworks/foundation/mixins/tree_item_content.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A tree item is a model object that acts as a node in a tree-like data structure such as a hierarchy of folders or outline of items.  This mixin can be applied to tree item model objects to customize the way the tree information is extracted from the object.</p>
+
+<h2> Basic Implementation</h2>
+
+<p>If you add this mixin, you must implement the treeItemChildren property so that it returns the current array of child tree items for the receiver.  If you do not implement this property the tree item will not function.</p>
+
+<h2> Optimizing Branches</h2>
+
+<p>The most common use of this mixin is to override the treeItemBranchIndexes property to return an index set of child items that are themselves branches in the tree.  Normally the TreeController will need to walk every item in your list to determine these branch items.  However by implementing this method yourself, you can provide a result faster.</p>
+
+<p>If none of your child items are branches, override this property to return null or an empty index set.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.TreeItemContent.html#.isTreeItemContent"><code>+&nbsp;(Boolean) isTreeItemContent [R/W]</code></a>
+					              
+					                <div class="description">Walk like a duck.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.TreeItemContent.html#.treeItemChildren"><code>+&nbsp;(SC.Array) treeItemChildren [R/W]</code></a>
+					              
+					                <div class="description">Property returns the children for this tree item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.TreeItemContent.html#.treeItemIsExpanded"><code>+&nbsp;(Boolean) treeItemIsExpanded [R/W]</code></a>
+					              
+					                <div class="description">The default property used to determine if the tree item is expanded.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.TreeItemContent.html#.treeItemIsGrouped"><code>+&nbsp;(Boolean) treeItemIsGrouped [R/W]</code></a>
+					              
+					                <div class="description">Indicates whether the tree item should be rendered as a group or not.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.TreeItemContent.treeItemBranchIndexes">
+		<code class="type">+&nbsp;(SC.IndexSet)  treeItemBranchIndexes(parent, index)</code>
+				              </a>
+				              
+				                <div class="description">Returns an index set containing the child indexes of the item that are 
+    themselves branches.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.TreeItemContent.treeItemCollapse">
+		<code class="type">+&nbsp;(void)  treeItemCollapse(parent, idx)</code>
+				              </a>
+				              
+				                <div class="description">Collapse the tree item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.TreeItemContent.treeItemDisclosureState">
+		<code class="type">+&nbsp;(Number)  treeItemDisclosureState(parent, idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns the disclosure state for the tree item, which appears at the 
+    index of the parent's treeItemChildren array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.TreeItemContent.treeItemExpand">
+		<code class="type">+&nbsp;(void)  treeItemExpand(parent, idx)</code>
+				              </a>
+				              
+				                <div class="description">Expand the tree item.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".isTreeItemContent"></a> 
+			          <div class="field">
+			            <a name=".isTreeItemContent"></a> 
+			            <h3>isTreeItemContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isTreeItemContent</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".treeItemChildren"></a> 
+			          <div class="field">
+			            <a name=".treeItemChildren"></a> 
+			            <h3>treeItemChildren
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Property returns the children for this tree item.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">treeItemChildren</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>The default simply returns null.  If you implement this mixin, you MUST implement this property to return the actual tree item children for the item.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".treeItemIsExpanded"></a> 
+			          <div class="field">
+			            <a name=".treeItemIsExpanded"></a> 
+			            <h3>treeItemIsExpanded
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The default property used to determine if the tree item is expanded.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">treeItemIsExpanded</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can implement you model object to update this property or you can override treeItemDisclosureState() to compute the disclosure state however you want.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".treeItemIsGrouped"></a> 
+			          <div class="field">
+			            <a name=".treeItemIsGrouped"></a> 
+			            <h3>treeItemIsGrouped
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Indicates whether the tree item should be rendered as a group or not.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">treeItemIsGrouped</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>This property is only useful on the root item in your tree.  Setting it to YES on any other item will be ignored.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.TreeItemContent.treeItemBranchIndexes"></a> 
+			          <h3>treeItemBranchIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns an index set containing the child indexes of the item that are 
+    themselves branches.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">treeItemBranchIndexes</span> <span class="params">(parent, index)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">parent</span>
+			              
+			              <span class="desc">the parent item containing this item</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">index</span>
+			              
+			              <span class="desc">the index of the item in the parent</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">branch indexes</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will only be called on tree items with a branch disclosure state.</p>
+
+<p>If the passed parent and index are both null, then the receiver is the root node in the tree.</p>
+
+<p>The default implementation iterates over the item's children to get the disclosure state of each one.  Child items with a branch disclosure state will have their index added to the return index set.</p>
+
+<p>You may want to override this method to provide a more efficient implementation if you are working with large data sets and can infer which children are branches without iterating over each one.</p>
+
+<p>If you know for sure that all of the child items for this item are leaf nodes and not branches, simply override this method to return null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.TreeItemContent.treeItemCollapse"></a> 
+			          <h3>treeItemCollapse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Collapse the tree item.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">treeItemCollapse</span> <span class="params">(parent, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">parent</span>
+			              
+			              <span class="desc">the parent item containing this item</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the index of the item in the parent</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation will change the treeItemIsExpanded property, but you can override this method to handle collapsing anyway you like.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.TreeItemContent.treeItemDisclosureState"></a> 
+			          <h3>treeItemDisclosureState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the disclosure state for the tree item, which appears at the 
+    index of the parent's treeItemChildren array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">treeItemDisclosureState</span> <span class="params">(parent, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">parent</span>
+			              
+			              <span class="desc">the parent item containing this item</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the index of the item in the parent</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">branch state</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The response must be one of SC.BRANCH_OPEN, SC.BRANCH_CLOSED or SC.LEAF_NODE.</p>
+
+<p>If the parent parameter is null, then this item is part of the root children array.</p>
+
+<p>This method will only be called for tree items that have children.  Tree items with no children are assumed to be leaf nodes.</p>
+
+<p>The default implementation uses the treeItemIsExpanded property to determine if the item should be open or closed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.TreeItemContent.treeItemExpand"></a> 
+			          <h3>treeItemExpand()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Expand the tree item.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">treeItemExpand</span> <span class="params">(parent, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">parent</span>
+			              
+			              <span class="desc">the parent item containing this item</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the index of the item in the parent</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation will change the treeItemIsExpanded property, but you can override this method to handle collapsing anyway you like.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:58 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

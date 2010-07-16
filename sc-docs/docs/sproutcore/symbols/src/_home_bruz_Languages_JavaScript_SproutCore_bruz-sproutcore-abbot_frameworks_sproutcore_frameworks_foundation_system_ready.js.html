@@ -1,0 +1,206 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/*global main */</span><span class="WHIT">
+<span class='line'>  9</span> 
+<span class='line'> 10</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'system/event'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 11</span> 
+<span class='line'> 12</span> </span><span class="NAME">SC.mixin</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 13</span>   </span><span class="NAME">_isReadyBound</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 14</span>   
+<span class='line'> 15</span>   </span><span class="COMM">/** @private configures the ready event handler if needed */</span><span class="WHIT">
+<span class='line'> 16</span>   </span><span class="NAME">_bindReady</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 17</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._isReadyBound</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 18</span>     </span><span class="NAME">this._isReadyBound</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 19</span> 
+<span class='line'> 20</span>     </span><span class="COMM">// Mozilla, Opera (see further below for it) and webkit nightlies </span><span class="WHIT">
+<span class='line'> 21</span>     </span><span class="COMM">// currently support this event.  Use the handy event callback</span><span class="WHIT">
+<span class='line'> 22</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">document.addEventListener</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">SC.browser.opera</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 23</span>       </span><span class="NAME">document.addEventListener</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"DOMContentLoaded"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC._didBecomeReady</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 25</span> 
+<span class='line'> 26</span>     </span><span class="COMM">// If IE is used and is not in a frame</span><span class="WHIT">
+<span class='line'> 27</span>     </span><span class="COMM">// Continually check to see if the document is ready</span><span class="WHIT">
+<span class='line'> 28</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.browser.msie</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">window</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">top</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 29</span>       </span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 30</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.isReady</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 31</span>         </span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 32</span>           </span><span class="COMM">// If IE is used, use the trick by Diego Perini</span><span class="WHIT">
+<span class='line'> 33</span>           </span><span class="COMM">// http://javascript.nwbox.com/IEContentLoaded/</span><span class="WHIT">
+<span class='line'> 34</span>           </span><span class="NAME">document.documentElement.doScroll</span><span class="PUNC">(</span><span class="STRN">"left"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 35</span>         </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">error</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 36</span>           </span><span class="NAME">setTimeout</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">arguments.callee</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 37</span>           </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 39</span>         </span><span class="COMM">// and execute any waiting functions</span><span class="WHIT">
+<span class='line'> 40</span>         </span><span class="NAME">SC._didBecomeReady</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 41</span>       </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 42</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 43</span> 
+<span class='line'> 44</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">SC.browser.opera</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 45</span>       </span><span class="NAME">document.addEventListener</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"DOMContentLoaded"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 46</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.isReady</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 47</span>         </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">document.styleSheets.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 48</span>           </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">document.styleSheets</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">disabled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 49</span>             </span><span class="NAME">setTimeout</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">arguments.callee</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 50</span>             </span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 51</span>           </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 52</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 53</span>         </span><span class="COMM">// and execute any waiting functions</span><span class="WHIT">
+<span class='line'> 54</span>         </span><span class="NAME">SC._didBecomeReady</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 55</span>       </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 56</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 57</span> 
+<span class='line'> 58</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.browser.safari</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">SC.browser.safari</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">530.0</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 59</span>       </span><span class="NAME">console.error</span><span class="PUNC">(</span><span class="STRN">"ready() is not yet supported on Safari 3.1 and earlier"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 60</span>       </span><span class="COMM">// TODO: implement ready() in &lt; Safari 4 </span><span class="WHIT">
+<span class='line'> 61</span>       </span><span class="COMM">// var numStyles;</span><span class="WHIT">
+<span class='line'> 62</span>       </span><span class="COMM">// (function(){</span><span class="WHIT">
+<span class='line'> 63</span>       </span><span class="COMM">//   if (SC.isReady) return;</span><span class="WHIT">
+<span class='line'> 64</span>       </span><span class="COMM">//   if ( document.readyState != "loaded" && document.readyState != "complete" ) {</span><span class="WHIT">
+<span class='line'> 65</span>       </span><span class="COMM">//     setTimeout( arguments.callee, 0 );</span><span class="WHIT">
+<span class='line'> 66</span>       </span><span class="COMM">//     return;</span><span class="WHIT">
+<span class='line'> 67</span>       </span><span class="COMM">//   }</span><span class="WHIT">
+<span class='line'> 68</span>       </span><span class="COMM">//   if ( numStyles === undefined ) numStyles = 0 ;</span><span class="WHIT">
+<span class='line'> 69</span>       </span><span class="COMM">//     //numStyles = SC.$("style, link[rel=stylesheet]").length;</span><span class="WHIT">
+<span class='line'> 70</span>       </span><span class="COMM">//   if ( document.styleSheets.length != numStyles ) {</span><span class="WHIT">
+<span class='line'> 71</span>       </span><span class="COMM">//     setTimeout( arguments.callee, 0 );</span><span class="WHIT">
+<span class='line'> 72</span>       </span><span class="COMM">//     return;</span><span class="WHIT">
+<span class='line'> 73</span>       </span><span class="COMM">//   }</span><span class="WHIT">
+<span class='line'> 74</span>       </span><span class="COMM">//   // and execute any waiting functions</span><span class="WHIT">
+<span class='line'> 75</span>       </span><span class="COMM">//   SC._didBecomeReady();</span><span class="WHIT">
+<span class='line'> 76</span>       </span><span class="COMM">// })();</span><span class="WHIT">
+<span class='line'> 77</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 78</span> 
+<span class='line'> 79</span>     </span><span class="COMM">// A fallback to window.onload, that will always work</span><span class="WHIT">
+<span class='line'> 80</span>     </span><span class="NAME">SC.Event.add</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"load"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC._didBecomeReady</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 81</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 82</span> 
+<span class='line'> 83</span>   </span><span class="COMM">/** @private handlers scheduled to execute on ready. */</span><span class="WHIT">
+<span class='line'> 84</span>   </span><span class="NAME">_readyQueue</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 85</span>   
+<span class='line'> 86</span>   </span><span class="NAME">_afterReadyQueue</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 87</span> 
+<span class='line'> 88</span>   </span><span class="NAME">isReady</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 89</span>   
+<span class='line'> 90</span>   </span><span class="COMM">/** @private invoked when the document becomes ready. */</span><span class="WHIT">
+<span class='line'> 91</span>   </span><span class="NAME">_didBecomeReady</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 92</span>     </span><span class="COMM">// Only call once</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.isReady</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 94</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">SC.mapDisplayNames</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_FUNCTION</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.mapDisplayNames</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 95</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">SC.addInvokeOnceLastDebuggingInfo</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_FUNCTION</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.addInvokeOnceLastDebuggingInfo</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 96</span>      
+<span class='line'> 97</span>     </span><span class="COMM">// setup locale</span><span class="WHIT">
+<span class='line'> 98</span>     </span><span class="NAME">SC.Locale.createCurrentLocale</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span>     
+<span class='line'>100</span>     </span><span class="COMM">// if there is a body tag on the document, set the language</span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">document</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">document.getElementsByTagName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>102</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">body</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.getElementsByTagName</span><span class="PUNC">(</span><span class="STRN">'body'</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>103</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">body</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>104</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">className</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">body.className</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>105</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">language</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.currentLanguage.toLowerCase</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>106</span>         </span><span class="NAME">body.className</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">className</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">className.length</span><span class="PUNC">></span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="NAME">className</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">language</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">' '</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">language</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>107</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>108</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>109</span> 
+<span class='line'>110</span>     </span><span class="NAME">SC.Benchmark.start</span><span class="PUNC">(</span><span class="STRN">'ready'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>111</span>     
+<span class='line'>112</span>     </span><span class="COMM">// Begin runloop</span><span class="WHIT">
+<span class='line'>113</span>     </span><span class="NAME">SC.RunLoop.begin</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>114</span>     
+<span class='line'>115</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ary</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>116</span> 
+<span class='line'>117</span>     </span><span class="COMM">// correctly handle queueing new SC.ready() calls</span><span class="WHIT">
+<span class='line'>118</span>     </span><span class="KEYW">do</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>119</span>       </span><span class="NAME">ary</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC._readyQueue</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>120</span>       </span><span class="NAME">SC._readyQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// reset</span><span class="WHIT">
+<span class='line'>121</span>       </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">=</span><span class="NAME">ary.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>122</span>         </span><span class="NAME">handler</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ary</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>123</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">target</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">document</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>124</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">[</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">method</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">method.call</span><span class="PUNC">(</span><span class="NAME">target</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>127</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">while</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC._readyQueue.length</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>128</span> 
+<span class='line'>129</span>     </span><span class="COMM">// okay, now we're ready (any SC.ready() calls will now be called immediately)</span><span class="WHIT">
+<span class='line'>130</span>     </span><span class="NAME">SC.isReady</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span>     
+<span class='line'>132</span>     </span><span class="COMM">// clear the queue</span><span class="WHIT">
+<span class='line'>133</span>     </span><span class="NAME">SC._readyQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>134</span>     
+<span class='line'>135</span>     </span><span class="COMM">// trigger any bound ready events</span><span class="WHIT">
+<span class='line'>136</span>     </span><span class="NAME">SC.Event.trigger</span><span class="PUNC">(</span><span class="NAME">document</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"ready"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>137</span>     
+<span class='line'>138</span>     </span><span class="COMM">// Remove any loading div</span><span class="WHIT">
+<span class='line'>139</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.removeLoading</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.$</span><span class="PUNC">(</span><span class="STRN">'#loading'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">remove</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>140</span>     
+<span class='line'>141</span>     </span><span class="COMM">// Now execute main, if defined and SC.UserDefaults is ready</span><span class="WHIT">
+<span class='line'>142</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">SC.userDefaults.get</span><span class="PUNC">(</span><span class="STRN">'ready'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>143</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">SC.mode</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.APP_MODE</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">main</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="STRN">"undefined"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">main</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">SC.suppressMain</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">main</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>144</span>     </span><span class="PUNC">}</span><span class="WHIT"> 
+<span class='line'>145</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>146</span>       </span><span class="NAME">SC.userDefaults.readyCallback</span><span class="PUNC">(</span><span class="NAME">window</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">main</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>147</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>148</span>     
+<span class='line'>149</span>     </span><span class="COMM">// end run loop.  This is probably where a lot of bindings will trigger</span><span class="WHIT">
+<span class='line'>150</span>     </span><span class="NAME">SC.RunLoop.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'>151</span>     
+<span class='line'>152</span>     </span><span class="NAME">SC.Benchmark.end</span><span class="PUNC">(</span><span class="STRN">'ready'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>153</span>     </span><span class="NAME">SC.Benchmark.log</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>154</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>155</span>   
+<span class='line'>156</span>   </span><span class="COMM">/** 
+<span class='line'>157</span>     Add the passed target and method to the queue of methods to invoke when
+<span class='line'>158</span>     the document is ready.  These methods will be called after the document
+<span class='line'>159</span>     has loaded and parsed, but before the main() function is called.
+<span class='line'>160</span>     
+<span class='line'>161</span>     Methods are called in the order they are added.
+<span class='line'>162</span>   
+<span class='line'>163</span>     If you add a ready handler when the main document is already ready, then
+<span class='line'>164</span>     your handler will be called immediately.
+<span class='line'>165</span>     
+<span class='line'>166</span>     @param target {Object} optional target object
+<span class='line'>167</span>     @param method {Function} method name or function to execute
+<span class='line'>168</span>     @returns {SC}
+<span class='line'>169</span>   */</span><span class="WHIT">
+<span class='line'>170</span>   </span><span class="NAME">ready</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">method</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>171</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">queue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._readyQueue</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>172</span>     
+<span class='line'>173</span>     </span><span class="COMM">// normalize</span><span class="WHIT">
+<span class='line'>174</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>175</span>       </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">target</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">target</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>176</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">method</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>177</span>       </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">target</span><span class="PUNC">[</span><span class="NAME">method</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>178</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>179</span>     
+<span class='line'>180</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">method</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do.</span><span class="WHIT">
+<span class='line'>181</span>     
+<span class='line'>182</span>     </span><span class="COMM">// if isReady, execute now.</span><span class="WHIT">
+<span class='line'>183</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.isReady</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">method.call</span><span class="PUNC">(</span><span class="NAME">target</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">document</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>184</span>     
+<span class='line'>185</span>     </span><span class="COMM">// otherwise, add to queue.</span><span class="WHIT">
+<span class='line'>186</span>     </span><span class="NAME">queue.push</span><span class="PUNC">(</span><span class="PUNC">[</span><span class="NAME">target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">method</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>187</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'>188</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>189</span>   
+<span class='line'>190</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>191</span> 
+<span class='line'>192</span> </span><span class="NAME">SC._bindReady</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>193</span> </span><span class="NAME">SC.removeLoading</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>194</span> 
+<span class='line'>195</span> </span><span class="COMM">// default to app mode.  When loading unit tests, this will run in test mode</span><span class="WHIT">
+<span class='line'>196</span> </span><span class="NAME">SC.APP_MODE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"APP_MODE"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>197</span> </span><span class="NAME">SC.TEST_MODE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"TEST_MODE"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>198</span> </span><span class="NAME">SC.mode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.APP_MODE</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>199</span> </span></pre></body></html>

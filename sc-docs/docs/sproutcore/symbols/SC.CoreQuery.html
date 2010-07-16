@@ -1,0 +1,1249 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.CoreQuery</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.CoreQuery
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Builder.html#.fn">SC.Builder.fn</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_core_query.js.html">frameworks/sproutcore/frameworks/foundation/system/core_query.js</a></td>
+		    </tr>
+		  
+
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Builder.html#.fn">SC.Builder.fn</a>: </dt><dd><a href="../symbols/SC.Builder.fn.html#.mixin">mixin</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.attr">
+		<code class="type">+&nbsp;(void)  attr(elem, name, value)</code>
+				              </a>
+				              
+				                <div class="description">Primitive helper can read or update an attribute on an element.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.css">
+		<code class="type">+&nbsp;(void)  css(elem, name, force)</code>
+				              </a>
+				              
+				                <div class="description">returns a normalized value for the specified style name.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.each">
+		<code class="type">+&nbsp;(Object)  each(object, callback, args)</code>
+				              </a>
+				              
+				                <div class="description">Executes the passed callback on each item in the iterable object
+      passed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.filter">
+		<code class="type">+&nbsp;(Array)  filter(t, r, not)</code>
+				              </a>
+				              
+				                <div class="description">Filters a set of elements according to those matching the passed
+      selector.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.find">
+		<code class="type">+&nbsp;(Array)  find(t, context)</code>
+				              </a>
+				              
+				                <div class="description">Core element finder function in SC.CoreQuery.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#first">
+		<code class="type">-&nbsp;(void)  first()</code>
+				              </a>
+				              
+				                <div class="description">Returns a new CQ object with only the first item in the object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#isVisible">
+		<code class="type">-&nbsp;(void)  isVisible()</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if all member elements are visible.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#last">
+		<code class="type">-&nbsp;(void)  last()</code>
+				              </a>
+				              
+				                <div class="description">Returns a new CQ object with only the last item in the set.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.map">
+		<code class="type">+&nbsp;(Array)  map(elems, callback)</code>
+				              </a>
+				              
+				                <div class="description">Execute the passed callback on the elems array, returning an array with
+      the mapped values.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery.merge">
+		<code class="type">+&nbsp;(void)  merge(first, second)</code>
+				              </a>
+				              
+				                <div class="description">Merge two result sets together.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#setClass">
+		<code class="type">-&nbsp;(SC.CoreQuery)  setClass(className, shouldAdd)</code>
+				              </a>
+				              
+				                <div class="description">You can either pass a single class name and a boolean indicating whether
+    the value should be added or removed, or you can pass a hash with all
+    the class names you want to add or remove with a boolean indicating 
+    whether they should be there or not.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#view">
+		<code class="type">-&nbsp;(Array)  view()</code>
+				              </a>
+				              
+				                <div class="description">Attempts to find the views managing the passed DOM elements and returns
+    them.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CoreQuery#within">
+		<code class="type">-&nbsp;(void)  within(el)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if any of the matched elements have the passed element or CQ object as a child element.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Builder.html#.fn">SC.Builder.fn</a>: </dt><dd><a href="../symbols/SC.Builder.fn.html#.end">end</a>, <a href="../symbols/SC.Builder.fn.html#.init">init</a>, <a href="../symbols/SC.Builder.fn.html#.pushStack">pushStack</a>, <a href="../symbols/SC.Builder.fn.html#.size">size</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.attr"></a> 
+			          <h3>attr()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Primitive helper can read or update an attribute on an element.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">attr</span> <span class="params">(elem, name, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.css"></a> 
+			          <h3>css()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">returns a normalized value for the specified style name.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">css</span> <span class="params">(elem, name, force)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.each"></a> 
+			          <h3>each()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Executes the passed callback on each item in the iterable object
+      passed.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">each</span> <span class="params">(object, callback, args)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">callback</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">args</span>
+			              
+			              <span class="desc">internal use only</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">object</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This deviates from the standard getEach() method defined in SC.Enumerable and in the JavaScript standards.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.filter"></a> 
+			          <h3>filter()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Filters a set of elements according to those matching the passed
+      selector.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">filter</span> <span class="params">(t, r, not)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">t</span>
+			              
+			              <span class="desc">the selector to filter by</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">r</span>
+			              
+			              <span class="desc">the element to filter</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">not</span>
+			              
+			              <span class="desc">invert filter</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">filtered array</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The selector can contain only tag, class, and id options.</p>
+
+<p>The CoreQuery filter function is only capable of handling simple querys such as a tag, class or ID.  You cannot combine them.  Instead call filter several times.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.find"></a> 
+			          <h3>find()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Core element finder function in SC.CoreQuery.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">find</span> <span class="params">(t, context)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">t</span>
+			              
+			              <span class="desc">selector</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Element)</span><span class="name">context</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">matched elements</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>CoreQuery supports only a very simple set of finders.  Namely, you can specify the following simple types of selectors:</p>
+
+<ul>	<li>.class-name: this will find all elements with the matching class name</li>
+	<li>#id: this will find all elements matching the ID</li>
+	<li>tagname: this will find all elements with the matching tags.</li>
+</ul>
+
+<p>You can also do some basic joined expressions like:</p>
+
+
+<p class="code"><code>tagname.class-name and tagname#id</code></p>
+
+<p>Finally, you can do simple compound searches like</p>
+
+
+<p class="code"><code>tagname .class-name tagname#id</code></p>
+
+<p>You can also pass multiple selectors separated by commas.  The return set will be the OR of all the result set.</p>
+
+
+<p class="code"><code>#item1,#item2,#item3</code></p>
+
+<p>You cannot do any child searches, psuedo-selectors or other complex searches.  These are only the kinds of selectors that can be parsed quickly and use built-in methods on the browser.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#first"></a> 
+			          <h3>first()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new CQ object with only the first item in the object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">first</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#isVisible"></a> 
+			          <h3>isVisible()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if all member elements are visible.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">isVisible</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is provided as a common test since CoreQuery does not support filtering by psuedo-selector.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#last"></a> 
+			          <h3>last()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new CQ object with only the last item in the set.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">last</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.map"></a> 
+			          <h3>map()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Execute the passed callback on the elems array, returning an array with
+      the mapped values.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">map</span> <span class="params">(elems, callback)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">elems</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">callback</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">mapped elements</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that null return values are left out of the resulting mapping array.  This differs from the standard map() function defined by SC.Enumerable and the JavaScript standard.</p>
+
+<p>The callback must have the signature:</p>
+
+
+<p class="code"><code>function(currentElement, currentIndex) { return mappedValue; }</code></p>
+
+<p>Note that "this" on the function will also be the currentElement.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery.merge"></a> 
+			          <h3>merge()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Merge two result sets together.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">merge</span> <span class="params">(first, second)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method knows how to handle the special iterables returned by IE as well.  Used internally.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#setClass"></a> 
+			          <h3>setClass()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">You can either pass a single class name and a boolean indicating whether
+    the value should be added or removed, or you can pass a hash with all
+    the class names you want to add or remove with a boolean indicating 
+    whether they should be there or not.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.CoreQuery)
+			              </span>
+			              <span class="name">setClass</span> <span class="params">(className, shouldAdd)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Hash)</span><span class="name">className</span>
+			              
+			              <span class="desc">class name or hash of classNames + bools</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">shouldAdd</span>
+			              
+			              <span class="desc">for class name if a string was passed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.CoreQuery)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is far more efficient than using addClass/removeClass.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#view"></a> 
+			          <h3>view()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Attempts to find the views managing the passed DOM elements and returns
+    them.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">view</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">array of views or null.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will start with the matched element and walk up the DOM until it finds an element managed by a view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CoreQuery#within"></a> 
+			          <h3>within()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if any of the matched elements have the passed element or CQ object as a child element.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">within</span> <span class="params">(el)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:52 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

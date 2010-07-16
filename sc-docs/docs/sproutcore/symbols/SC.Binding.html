@@ -1,0 +1,2170 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Binding</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.Binding
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_runtime_system_binding.js.html">frameworks/sproutcore/frameworks/runtime/system/binding.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A binding simply connects the properties of two objects so that whenever the value of one property changes, the other property will be changed also.  You do not usually work with Binding objects directly but instead describe bindings in your class definition using something like:</p>
+
+
+<p class="code"><code>valueBinding: "MyApp.someController.title"</code></p>
+
+<p>This will create a binding from "MyApp.someController.title" to the "value" property of your object instance automatically.  Now the two values will be kept in sync.</p>
+
+<h2> Customizing Your Bindings</h2>
+
+<p>In addition to synchronizing values, bindings can also perform some basic transforms on values.  These transforms can help to make sure the data fed into one object always meets the expectations of that object regardless of what the other object outputs.</p>
+
+<p>To customize a binding, you can use one of the many helper methods defined on SC.Binding like so:</p>
+
+
+<p class="code"><code>valueBinding: SC.Binding.single("MyApp.someController.title")</code></p>
+
+<p>This will create a binding just like the example above, except that now the binding will convert the value of MyApp.someController.title to a single object (removing any arrays) before applying it to the "value" property of your object.</p>
+
+<p>You can also chain helper methods to build custom bindings like so:</p>
+
+
+<p class="code"><code>valueBinding: SC.Binding.single("MyApp.someController.title").notEmpty("(EMPTY)")</code></p>
+
+<p>This will force the value of MyApp.someController.title to be a single value and then check to see if the value is "empty" (null, undefined, empty array, or an empty string).  If it is empty, the value will be set to the string "(EMPTY)".</p>
+
+<h2> One Way Bindings</h2>
+
+<p>One especially useful binding customization you can use is the oneWay() helper.  This helper tells SproutCore that you are only interested in receiving changes on the object you are binding from.  For example, if you are binding to a preference and you want to be notified if the preference has changed, but your object will not be changing the preference itself, you could do:</p>
+
+
+<p class="code"><code>bigTitlesBinding: SC.Binding.oneWay("MyApp.preferencesController.bigTitles")</code></p>
+
+<p>This way if the value of MyApp.preferencesController.bigTitles changes the "bigTitles" property of your object will change also.  However, if you change the value of your "bigTitles" property, it will not update the preferencesController.</p>
+
+<p>One way bindings are almost twice as fast to setup and twice as fast to execute because the binding only has to worry about changes to one side.</p>
+
+<p>You should consider using one way bindings anytime you have an object that may be created frequently and you do not intend to change a property; only to monitor it for changes. (such as in the example above).</p>
+
+<h2> Adding Custom Transforms</h2>
+
+<p>In addition to using the standard helpers provided by SproutCore, you can also defined your own custom transform functions which will be used to convert the value.  To do this, just define your transform function and add it to the binding with the transform() helper.  The following example will not allow Integers less than ten.  Note that it checks the value of the bindings and allows all other values to pass:</p>
+
+
+<p class="code"><code>valueBinding: SC.Binding.transform(function(value, binding) {<br />return ((SC.typeOf(value) === SC.T_NUMBER) &amp;&amp; (value &lt; 10)) ? 10 : value;<br />}).from("MyApp.someController.value")</code></p>
+
+<p>If you would like to instead use this transform on a number of bindings, you can also optionally add your own helper method to SC.Binding.  This method should simply return the value of this.transform(). The example below adds a new helper called notLessThan() which will limit the value to be not less than the passed minimum:</p>
+
+
+<p class="code"><code>SC.Binding.notLessThan = function(minValue) {<br />return this.transform(function(value, binding) {<br />return ((SC.typeOf(value) === SC.T_NUMBER) &amp;&amp; (value &lt; minValue)) ? minValue : value ;<br />}) ;<br />} ;</code></p>
+
+<p>You could specify this in your core.js file, for example.  Then anywhere in your application you can use it to define bindings like so:</p>
+
+
+<p class="code"><code>valueBinding: SC.Binding.from("MyApp.someController.value").notLessThan(10)</code></p>
+
+<p>Also, remember that helpers are chained so you can use your helper along with any other helpers.  The example below will create a one way binding that does not allow empty values or values less than 10:</p>
+
+
+<p class="code"><code>valueBinding: SC.Binding.oneWay("MyApp.someController.value").notEmpty().notLessThan(10)</code></p>
+
+<p>Note that the built in helper methods all allow you to pass a "from" property path so you don't have to use the from() helper to set the path. You can do the same thing with your own helper methods if you like, but it is not required.</p>
+
+<h2> Creating Custom Binding Templates</h2>
+
+<p>Another way you can customize bindings is to create a binding template.  A template is simply a binding that is already partially or completely configured.  You can specify this template anywhere in your app and then use it instead of designating your own custom bindings.  This is a bit faster on app startup but it is mostly useful in making your code less verbose.</p>
+
+<p>For example, let's say you will be frequently creating one way, not empty bindings that allow values greater than 10 throughout your app.  You could create a binding template in your core.js like this:</p>
+
+
+<p class="code"><code>MyApp.LimitBinding = SC.Binding.oneWay().notEmpty().notLessThan(10);</code></p>
+
+<p>Then anywhere you want to use this binding, just refer to the template like so:</p>
+
+
+<p class="code"><code>valueBinding: MyApp.LimitBinding.beget("MyApp.someController.value")</code></p>
+
+<p>Note that when you use binding templates, it is very important that you always start by using beget() to extend the template.  If you do not do this, you will end up using the same binding instance throughout your app which will lead to erratic behavior.</p>
+
+<h2> How to Manually Activate a Binding</h2>
+
+<p>All of the examples above show you how to configure a custom binding, but the result of these customizations will be a binding template, not a fully active binding.  The binding will actually become active only when you instantiate the object the binding belongs to.  It is useful however, to understand what actually happens when the binding is activated.</p>
+
+<p>For a binding to function it must have at least a "from" property and a "to" property.  The from property path points to the object/key that you want to bind from while the to path points to the object/key you want to bind to.</p>
+
+<p>When you define a custom binding, you are usually describing the property you want to bind from (such as "MyApp.someController.value" in the examples above).  When your object is created, it will automatically assign the value you want to bind "to" based on the name of your binding key.  In the examples above, during init, SproutCore objects will effectively call something like this on your binding:</p>
+
+
+<p class="code"><code>binding = this.valueBinding.beget().to("value", this) ;</code></p>
+
+<p>This creates a new binding instance based on the template you provide, and sets the to path to the "value" property of the new object.  Now that the binding is fully configured with a "from" and a "to", it simply needs to be connected to become active.  This is done through the connect() method:</p>
+
+
+<p class="code"><code>binding.connect() ;</code></p>
+
+<p>Now that the binding is connected, it will observe both the from and to side and relay changes.</p>
+
+<p>If you ever needed to do so (you almost never will, but it is useful to understand this anyway), you could manually create an active binding by doing the following:</p>
+
+
+<p class="code"><code>SC.Binding.from("MyApp.someController.value")<br />.to("MyApp.anotherObject.value")<br />.connect();</code></p>
+
+<p>You could also use the bind() helper method provided by SC.Object. (This is the same method used by SC.Object.init() to setup your bindings):</p>
+
+
+<p class="code"><code>MyApp.anotherObject.bind("value", "MyApp.someController.value") ;</code></p>
+
+<p>Both of these code fragments have the same effect as doing the most friendly form of binding creation like so:</p>
+
+
+<p class="code"><code>MyApp.anotherObject = SC.Object.create({<br />valueBinding: "MyApp.someController.value",<br /><br />// OTHER CODE FOR THIS OBJECT...<br /><br />}) ;</code></p>
+
+<p>SproutCore's built in binding creation method make it easy to automatically create bindings for you.  You should always use the highest-level APIs available, even if you understand how to it works underneath.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Binding.and">
+		<code class="type">+&nbsp;(void)  and(pathA, pathB)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that forwards the logical 'AND' of values at 'pathA' and
+    'pathB' whenever either source changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.applyBindingValue">
+		<code class="type">+&nbsp;(void)  applyBindingValue()</code>
+				              </a>
+				              
+				                <div class="description">This method is called at the end of the Run Loop to relay the changed 
+    binding value from one side to the other.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.beget">
+		<code class="type">+&nbsp;(SC.Binding)  beget(fromPath)</code>
+				              </a>
+				              
+				                <div class="description">This is the core method you use to create a new binding instance.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.bool">
+		<code class="type">+&nbsp;(SC.Binding)  bool(fromPath)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform to convert the value to a bool value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.builder">
+		<code class="type">+&nbsp;(void)  builder()</code>
+				              </a>
+				              
+				                <div class="description">Returns a builder function for compatibility.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.connect">
+		<code class="type">+&nbsp;(SC.Binding)  connect()</code>
+				              </a>
+				              
+				                <div class="description">Attempts to connect this binding instance so that it can receive and relay
+    changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.dateTime">
+		<code class="type">+&nbsp;(SC.Binding)  dateTime(format)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform to format the DateTime value to a String value according
+  to the passed format string.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.disconnect">
+		<code class="type">+&nbsp;(SC.Binding)  disconnect()</code>
+				              </a>
+				              
+				                <div class="description">Disconnects the binding instance.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.flushPendingChanges">
+		<code class="type">+&nbsp;(Boolean)  flushPendingChanges()</code>
+				              </a>
+				              
+				                <div class="description">Call this method on SC.Binding to flush all bindings with changed pending.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.from">
+		<code class="type">+&nbsp;(SC.Binding)  from(propertyPath, root)</code>
+				              </a>
+				              
+				                <div class="description">This will set "from" property path to the specified value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.fromPropertyDidChange">
+		<code class="type">+&nbsp;(void)  fromPropertyDidChange(target, key)</code>
+				              </a>
+				              
+				                <div class="description">Invoked whenever the value of the "from" property changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.isNull">
+		<code class="type">+&nbsp;(SC.Binding)  isNull(fromPath)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that will return YES if the value is null, NO otherwise.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.multiple">
+		<code class="type">+&nbsp;(SC.Binding)  multiple(fromPath)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that will convert the passed value to an array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.noError">
+		<code class="type">+&nbsp;(SC.Binding)  noError(fromPath, aFlag)</code>
+				              </a>
+				              
+				                <div class="description">Specifies that the binding should not return error objects.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.not">
+		<code class="type">+&nbsp;(SC.Binding)  not(fromPath)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform to convert the value to the inverse of a bool value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.notEmpty">
+		<code class="type">+&nbsp;(SC.Binding)  notEmpty(fromPath, placeholder)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that will return the placeholder value if the value is 
+    null, undefined, an empty array or an empty string.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.notNull">
+		<code class="type">+&nbsp;(SC.Binding)  notNull(fromPath, placeholder)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that will return the placeholder value if the value is
+    null.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.oneWay">
+		<code class="type">+&nbsp;(SC.Binding)  oneWay(fromPath, aFlag)</code>
+				              </a>
+				              
+				                <div class="description">Configures the binding as one way.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.or">
+		<code class="type">+&nbsp;(void)  or(pathA, pathB)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform that forwards the 'OR' of values at 'pathA' and
+    'pathB' whenever either source changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.resetTransforms">
+		<code class="type">+&nbsp;(SC.Binding)  resetTransforms()</code>
+				              </a>
+				              
+				                <div class="description">Resets the transforms for the binding.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.single">
+		<code class="type">+&nbsp;(SC.Binding)  single(fromPath, placeholder)</code>
+				              </a>
+				              
+				                <div class="description">Adds a transform to the chain that will allow only single values to pass.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.sync">
+		<code class="type">+&nbsp;(void)  sync()</code>
+				              </a>
+				              
+				                <div class="description">Calling this method on a binding will cause it to check the value of the 
+    from side of the binding matches the current expected value of the 
+    binding.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.to">
+		<code class="type">+&nbsp;(SC.Binding)  to(propertyPath, root)</code>
+				              </a>
+				              
+				                <div class="description">This will set the "to" property path to the specified value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.toPropertyDidChange">
+		<code class="type">+&nbsp;(void)  toPropertyDidChange(target, key)</code>
+				              </a>
+				              
+				                <div class="description">Invoked whenever the value of the "to" property changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Binding.transform">
+		<code class="type">+&nbsp;(SC.Binding)  transform(transformFunc)</code>
+				              </a>
+				              
+				                <div class="description">Adds the specified transform function to the array of transform functions.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.and"></a> 
+			          <h3>and()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that forwards the logical 'AND' of values at 'pathA' and
+    'pathB' whenever either source changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">and</span> <span class="params">(pathA, pathB)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that the transform acts strictly as a one-way binding, working only in the direction</p>
+
+<p>'pathA' AND 'pathB' --> value  (value returned is the result of ('pathA' && 'pathB'))</p>
+
+<p>Usage example where a delete button's 'isEnabled' value is determined by whether something is selected in a list and whether the current user is allowed to delete:</p>
+
+<p>deleteButton: SC.ButtonView.design({ isEnabledBinding: SC.Binding.and('MyApp.itemsController.hasSelection', 'MyApp.userController.canDelete') })</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.applyBindingValue"></a> 
+			          <h3>applyBindingValue()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This method is called at the end of the Run Loop to relay the changed 
+    binding value from one side to the other.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">applyBindingValue</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.beget"></a> 
+			          <h3>beget()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This is the core method you use to create a new binding instance.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">beget</span> <span class="params">(fromPath)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">new binding instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The binding instance will have the receiver instance as its parent which means any configuration you have there will be inherited.</p>
+
+<p>The returned instance will also have its parentBinding property set to the receiver.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.bool"></a> 
+			          <h3>bool()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform to convert the value to a bool value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">bool</span> <span class="params">(fromPath)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the value is an array it will return YES if array is not empty.  If the value is a string it will return YES if the string is not empty.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.builder"></a> 
+			          <h3>builder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a builder function for compatibility.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">builder</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.connect"></a> 
+			          <h3>connect()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Attempts to connect this binding instance so that it can receive and relay
+    changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">connect</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will raise an exception if you have not set the from/to properties yet.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.dateTime"></a> 
+			          <h3>dateTime()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform to format the DateTime value to a String value according
+  to the passed format string.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">dateTime</span> <span class="params">(format)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">format</span>
+			              
+			              <span class="desc">format string</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>{{ valueBinding: SC.Binding.dateTime('%Y-%m-%d %H:%M:%S') .from('MyApp.myController.myDateTime'); }}</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.disconnect"></a> 
+			          <h3>disconnect()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Disconnects the binding instance.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">disconnect</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Changes will no longer be relayed.  You will not usually need to call this method.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.flushPendingChanges"></a> 
+			          <h3>flushPendingChanges()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method on SC.Binding to flush all bindings with changed pending.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">flushPendingChanges</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if changes were flushed.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.from"></a> 
+			          <h3>from()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will set "from" property path to the specified value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">from</span> <span class="params">(propertyPath, root)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">propertyPath</span>
+			              
+			              <span class="desc">{String|Tuple} A property path or tuple</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">root</span>
+			              
+			              <span class="desc">{Object} optional root object to use when resolving the path.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It will not attempt to resolve this property path to an actual object/property tuple until you connect the binding.</p>
+
+<p>The binding will search for the property path starting at the root level unless you specify an alternate root object as the second paramter to this method.  Alternatively, you can begin your property path with either "." or "*", which will use the root object of the to side be default.  This special behavior is used to support the high-level API provided by SC.Object.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.fromPropertyDidChange"></a> 
+			          <h3>fromPropertyDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked whenever the value of the "from" property changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">fromPropertyDidChange</span> <span class="params">(target, key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will mark the binding as dirty if the value has changed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.isNull"></a> 
+			          <h3>isNull()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that will return YES if the value is null, NO otherwise.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">isNull</span> <span class="params">(fromPath)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.multiple"></a> 
+			          <h3>multiple()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that will convert the passed value to an array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">multiple</span> <span class="params">(fromPath)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the value is null or undefined, it will be converted to an empty array.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.noError"></a> 
+			          <h3>noError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Specifies that the binding should not return error objects.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">noError</span> <span class="params">(fromPath, aFlag)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path to connect.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">aFlag</span>
+			              
+			              <span class="desc">{Boolean} optionally pass NO to allow error objects again.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the value of a binding is an Error object, it will be transformed to a null value instead.</p>
+
+<p>Note that this is not a transform function since it will be called at the end of the transform chain.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.not"></a> 
+			          <h3>not()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform to convert the value to the inverse of a bool value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">not</span> <span class="params">(fromPath)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This uses the same transform as bool() but inverts it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.notEmpty"></a> 
+			          <h3>notEmpty()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that will return the placeholder value if the value is 
+    null, undefined, an empty array or an empty string.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">notEmpty</span> <span class="params">(fromPath, placeholder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} from path or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">placeholder</span>
+			              
+			              <span class="desc">{Object} optional placeholder.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>See also notNull().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.notNull"></a> 
+			          <h3>notNull()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that will return the placeholder value if the value is
+    null.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">notNull</span> <span class="params">(fromPath, placeholder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} from path or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">placeholder</span>
+			              
+			              <span class="desc">{Object} optional placeholder;</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Otherwise it will passthrough untouched.  See also notEmpty().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.oneWay"></a> 
+			          <h3>oneWay()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Configures the binding as one way.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">oneWay</span> <span class="params">(fromPath, aFlag)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} optional from path to connect.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">aFlag</span>
+			              
+			              <span class="desc">{Boolean} Optionally pass NO to set the binding back to two-way</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>A one-way binding will relay changes on the "from" side to the "to" side, but not the other way around.  This means that if you change the "to" side directly, the "from" side may have a different value.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.or"></a> 
+			          <h3>or()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform that forwards the 'OR' of values at 'pathA' and
+    'pathB' whenever either source changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">or</span> <span class="params">(pathA, pathB)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.resetTransforms"></a> 
+			          <h3>resetTransforms()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Resets the transforms for the binding.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">resetTransforms</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>After calling this method the binding will no longer transform values.  You can then add new transforms as needed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.single"></a> 
+			          <h3>single()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a transform to the chain that will allow only single values to pass.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">single</span> <span class="params">(fromPath, placeholder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">fromPath</span>
+			              
+			              <span class="desc">{String} from path or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">placeholder</span>
+			              
+			              <span class="desc">{Object} optional placeholder value.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This will allow single values, nulls, and error values to pass through.  If you pass an array, it will be mapped as so:</p>
+
+
+<p class="code"><code>[] =&gt; null<br />[a] =&gt; a<br />[a,b,c] =&gt; Multiple Placeholder</code></p>
+
+<p>You can pass in an optional multiple placeholder or it will use the default.</p>
+
+<p>Note that this transform will only happen on forwarded valued.  Reverse values are send unchanged.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.sync"></a> 
+			          <h3>sync()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Calling this method on a binding will cause it to check the value of the 
+    from side of the binding matches the current expected value of the 
+    binding.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">sync</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If not, it will relay the change as if the from side's value has just changed.</p>
+
+<p>This method is useful when you are dynamically connecting bindings to a network of objects that may have already been initialized.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.to"></a> 
+			          <h3>to()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will set the "to" property path to the specified value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">to</span> <span class="params">(propertyPath, root)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">propertyPath</span>
+			              
+			              <span class="desc">{String|Tuple} A property path or tuple</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">root</span>
+			              
+			              <span class="desc">{Object} optional root object to use when resolving the path.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It will not attempt to reoslve this property path to an actual object/property tuple until you connect the binding.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.toPropertyDidChange"></a> 
+			          <h3>toPropertyDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked whenever the value of the "to" property changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">toPropertyDidChange</span> <span class="params">(target, key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will mark the binding as dirty only if:</p>
+
+<ul>	<li>the binding is not one way</li>
+	<li>the value does not match the stored transformedBindingValue</li>
+</ul>
+
+<p>if the value does not match the transformedBindingValue, then it will become the new bindingValue.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Binding.transform"></a> 
+			          <h3>transform()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds the specified transform function to the array of transform functions.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Binding)
+			              </span>
+			              <span class="name">transform</span> <span class="params">(transformFunc)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">transformFunc</span>
+			              
+			              <span class="desc">{Function} the transform function.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Binding)</span>
+			                <span class="desc">this</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The function you pass must have the following signature:</p>
+
+
+<p class="code"><code>function(value) {} ;</code></p>
+
+<p>It must return either the transformed value or an error object.</p>
+
+<p>Transform functions are chained, so they are called in order.  If you are extending a binding and want to reset the transforms, you can call resetTransform() first.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:50 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

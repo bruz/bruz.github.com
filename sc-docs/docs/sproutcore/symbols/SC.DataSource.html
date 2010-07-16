@@ -1,0 +1,1416 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.DataSource</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.DataSource
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_data_sources_data_source.js.html">frameworks/sproutcore/frameworks/datastore/data_sources/data_source.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>TODO: Describe</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.DataSource#cancel">
+		<code class="type">-&nbsp;(Boolean)  cancel(store, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Invoked by the store whenever it needs to cancel one or more records that
+    are currently in-flight.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#commitRecords">
+		<code class="type">-&nbsp;(Boolean)  commitRecords(store, createStoreKeys, updateStoreKeys, destroyStoreKeys, params)</code>
+				              </a>
+				              
+				                <div class="description">Invoked by the store whenever it has one or more records with pending 
+    changes that need to be sent back to the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#createRecord">
+		<code class="type">-&nbsp;(Boolean)  createRecord(store, storeKey, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from createdRecords() to created a single record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#createRecords">
+		<code class="type">-&nbsp;(Boolean)  createRecords(store, storeKeys, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from commitRecords() to commit newly created records to the 
+    store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#destroyRecord">
+		<code class="type">-&nbsp;(Boolean)  destroyRecord(store, storeKey, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from destroyRecords() to destroy a single record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#destroyRecords">
+		<code class="type">-&nbsp;(Boolean)  destroyRecords(store, storeKeys, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from commitRecords() to commit destroted records to the 
+    store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#fetch">
+		<code class="type">-&nbsp;(Boolean)  fetch(store, query)</code>
+				              </a>
+				              
+				                <div class="description">Invoked by the store whenever it needs to retrieve data matching a 
+    specific query, triggered by find().</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#retrieveRecord">
+		<code class="type">-&nbsp;(Boolean)  retrieveRecord(store, storeKey, id)</code>
+				              </a>
+				              
+				                <div class="description">Called from retrieveRecords() to retrieve a single record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#retrieveRecords">
+		<code class="type">-&nbsp;(Boolean)  retrieveRecords(store, storeKeys, ids)</code>
+				              </a>
+				              
+				                <div class="description">Called by the store whenever it needs to load a specific set of store 
+    keys.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#updateRecord">
+		<code class="type">-&nbsp;(Boolean)  updateRecord(store, storeKey, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from updatesRecords() to update a single record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DataSource#updateRecords">
+		<code class="type">-&nbsp;(Boolean)  updateRecords(store, storeKeys, params)</code>
+				              </a>
+				              
+				                <div class="description">Called from commitRecords() to commit modified existing records to the 
+    store.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#cancel"></a> 
+			          <h3>cancel()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked by the store whenever it needs to cancel one or more records that
+    are currently in-flight.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">cancel</span> <span class="params">(store, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">array of storeKeys to retrieve</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if data source can handle keys</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If any of the storeKeys match records you are currently acting upon, you should cancel the in-progress operation and return YES.</p>
+
+<p>If you implement an in-memory data source that immediately services the other requests, then this method will never be called on your data source.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot retrieve any of the keys, YES if you can retrieve all of the, or SC.MIXED_STATE if you can retrieve some of the.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#commitRecords"></a> 
+			          <h3>commitRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked by the store whenever it has one or more records with pending 
+    changes that need to be sent back to the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">commitRecords</span> <span class="params">(store, createStoreKeys, updateStoreKeys, destroyStoreKeys, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">createStoreKeys</span>
+			              
+			              <span class="desc">keys to create</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">updateStoreKeys</span>
+			              
+			              <span class="desc">keys to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">destroyStoreKeys</span>
+			              
+			              <span class="desc">keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated
+      from the commitRecords() call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if data source can handle keys</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The store keys will be separated into three categories:</p>
+
+<ul>	<li>createStoreKeys: records that need to be created on server</li>
+	<li>updateStoreKeys: existing records that have been modified</li>
+	<li>destroyStoreKeys: records need to be destroyed on the server</li>
+</ul>
+
+<p>If you do not override this method yourself, this method will actually invoke createRecords(), updateRecords(), and destroyRecords() on the dataSource, passing each array of storeKeys.  You can usually implement those methods instead of overriding this method.</p>
+
+<p>However, if your server API can sync multiple changes at once, you may prefer to override this method instead.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle any of the keys, YES if you can handle all of the keys, or SC.MIXED_STATE if you can handle some of them.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#createRecord"></a> 
+			          <h3>createRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from createdRecords() to created a single record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">createRecord</span> <span class="params">(store, storeKey, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">key to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated
+      from the commitRecords() call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is the most basic primitive to can implement to support creating a record.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle the passed storeKey or YES if you can.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#createRecords"></a> 
+			          <h3>createRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from commitRecords() to commit newly created records to the 
+    store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">createRecords</span> <span class="params">(store, storeKeys, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">keys to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated from the commitRecords() 
+      call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can override this method to actually send the created records to your store.  The default version will simply call createRecord() for each storeKey.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle any of the keys, YES if you can handle all of the keys, or SC.MIXED_STATE if you can handle some of them.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#destroyRecord"></a> 
+			          <h3>destroyRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from destroyRecords() to destroy a single record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">destroyRecord</span> <span class="params">(store, storeKey, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">key to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated
+      from the commitRecords() call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is the most basic primitive to can implement to support destroying a record.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle the passed storeKey or YES if you can.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#destroyRecords"></a> 
+			          <h3>destroyRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from commitRecords() to commit destroted records to the 
+    store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">destroyRecords</span> <span class="params">(store, storeKeys, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">keys to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated
+      from the commitRecords() call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can override this method to actually send the destroyed records to your store.  The default version will simply call destroyRecord() for each storeKey.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle any of the keys, YES if you can handle all of the keys, or SC.MIXED_STATE if you can handle some of them.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#fetch"></a> 
+			          <h3>fetch()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked by the store whenever it needs to retrieve data matching a 
+    specific query, triggered by find().</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">fetch</span> <span class="params">(store, query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">query describing the request</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if you can handle fetching the query, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called anytime you invoke SC.Store#find() with a query or SC.RecordArray#refresh().  You should override this method to actually retrieve data from the server needed to fulfill the query.  If the query is a remote query, then you will also need to provide the contents of the query as well.</p>
+
+<h3> Handling Local Queries</h3>
+
+<p>Most queries you create in your application will be local queries.  Local queries are populated automatically from whatever data you have in memory. When your fetch() method is called on a local queries, all you need to do is load any records that might be matched by the query into memory.</p>
+
+<p>The way you choose which queries to fetch is up to you, though usually it can be something fairly straightforward such as loading all records of a specified type.</p>
+
+<p>When you finish loading any data that might be required for your query, you should always call SC.Store#dataSourceDidFetchQuery() to put the query back into the READY state.  You should call this method even if you choose not to load any new data into the store in order to notify that the store that you think it is ready to return results for the query.</p>
+
+<h3> Handling Remote Queries</h3>
+
+<p>Remote queries are special queries whose results will be populated by the server instead of from memory.  Usually you will only need to use this type of query when loading large amounts of data from the server.</p>
+
+<p>Like Local queries, to fetch a remote query you will need to load any data you need to fetch from the server and add the records to the store.  Once you are finished loading this data, however, you must also call SC.Store#loadQueryResults() to actually set an array of storeKeys that represent the latest results from the server.  This will implicitly also call datasSourceDidFetchQuery() so you don't need to call this method yourself.</p>
+
+<p>If you want to support incremental loading from the server for remote queries, you can do so by passing a SC.SparseArray instance instead of a regular array of storeKeys and then populate the sparse array on demand.</p>
+
+<h3> Handling Errors and Cancelations</h3>
+
+<p>If you encounter an error while trying to fetch the results for a query you can call SC.Store#dataSourceDidErrorQuery() instead.  This will put the query results into an error state.</p>
+
+<p>If you had to cancel fetching a query before the results were returned, you can instead call SC.Store#dataSourceDidCancelQuery().  This will set the query back into the state it was in previously before it started loading the query.</p>
+
+<h3> Return Values</h3>
+
+<p>When you return from this method, be sure to return a Boolean.  YES means you handled the query, NO means you can't handle the query.  When using a cascading data source, returning NO will mean the next data source will be asked to fetch the same results as well.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#retrieveRecord"></a> 
+			          <h3>retrieveRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from retrieveRecords() to retrieve a single record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">retrieveRecord</span> <span class="params">(store, storeKey, id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">key to retrieve</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the id to retrieve</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#retrieveRecords"></a> 
+			          <h3>retrieveRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the store whenever it needs to load a specific set of store 
+    keys.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">retrieveRecords</span> <span class="params">(store, storeKeys, ids)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">- optional</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation will call retrieveRecord() for each storeKey.</p>
+
+<p>You should implement either retrieveRecord() or retrieveRecords() to actually fetch the records referenced by the storeKeys .</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#updateRecord"></a> 
+			          <h3>updateRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from updatesRecords() to update a single record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">updateRecord</span> <span class="params">(store, storeKey, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">key to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated
+      from the commitRecords() call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is the most basic primitive to can implement to support updating a record.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle the passed storeKey or YES if you can.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DataSource#updateRecords"></a> 
+			          <h3>updateRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called from commitRecords() to commit modified existing records to the 
+    store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">updateRecords</span> <span class="params">(store, storeKeys, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the requesting store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">keys to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">to be passed down to data source. originated from the commitRecords() 
+      call on the store</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can override this method to actually send the updated records to your store.  The default version will simply call updateRecord() for each storeKey.</p>
+
+<p>To support cascading data stores, be sure to return NO if you cannot handle any of the keys, YES if you can handle all of the keys, or SC.MIXED_STATE if you can handle some of them.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:52 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

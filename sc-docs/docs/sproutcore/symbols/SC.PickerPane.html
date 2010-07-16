@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.PickerPane</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.PickerPane
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.html#.PalettePane">SC.PalettePane</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_desktop_panes_picker.js.html">frameworks/sproutcore/frameworks/desktop/panes/picker.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>Displays a non-modal, self anchor positioned picker pane.</p>
+
+<p>The default way to use the picker pane is to simply add it to your page like this:</p>
+
+
+<p class="code"><code>SC.PickerPane.create({<br />layout: { width: 400, height: 200 },<br />contentView: SC.View.extend({<br />})<br />}).popup(anchor);</code></p>
+
+<p>This will cause your picker pane to display.</p>
+
+<p>Picker pane is a simple way to provide non-modal messaging that won't blocks the user's interaction with your application.  Picker panes are useful for showing important detail informations with optimized position around anchor. They provide a better user experience than modal panel.</p>
+
+<p>Examples for applying popular customized picker position rules:</p>
+
+<p>1. default:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor);</code></p>
+
+<p>2. menu below the anchor with default offset matrix [1,4,3]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_MENU);</code></p>
+
+<p>3. menu on the right side of anchor with custom offset matrix [2,6,0]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_MENU, [2,6,0]);</code></p>
+
+<p>4. fixed below the anchor with default offset matrix [1,4,3]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_FIXED);</code></p>
+
+<p>5. fixed on the right side of anchor with custom offset matrix [-22,-17,0]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_FIXED, [-22,-17,0]);</code></p>
+
+<p>6. pointer with default position pref matrix [0,1,2,3,2]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_POINTER);</code></p>
+<p>perfect right (0) > perfect left (1) > perfect top (2) > perfect bottom (3) fallback to perfect top (2)</p>
+
+<p>7. pointer with custom position pref matrix [3,0,1,2,2]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_POINTER, [3,0,1,2,2]);</code></p>
+
+<p>perfect bottom (3) > perfect right (0) > perfect left (1) > perfect top (2) fallback to perfect top (2)</p>
+
+<p>8. menu-pointer with default position pref matrix [3,0,1,2,3]:</p>
+
+<p class="code"><code>SC.PickerPane.create({layout: { width: 400, height: 200 },contentView: SC.View.extend({})<br />}).popup(anchor, SC.PICKER_MENU_POINTER);</code></p>
+<p>perfect bottom (3) > perfect right (0) > perfect left (1) > perfect top (2) fallback to perfect bottom (3)</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.PickerPane.html#.PICKER_POINTER_OFFSET"><code>+&nbsp;(Object) PICKER_POINTER_OFFSET [R/W]</code></a>
+					              
+					                <div class="description">Default metrics for the different control sizes.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    
+			    </dl>
+			  
+
+			
+
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".PICKER_POINTER_OFFSET"></a> 
+			          <div class="field">
+			            <a name=".PICKER_POINTER_OFFSET"></a> 
+			            <h3>PICKER_POINTER_OFFSET
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Default metrics for the different control sizes.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">PICKER_POINTER_OFFSET</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:55 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

@@ -1,0 +1,2215 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Array</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.Array
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_runtime_mixins_array.js.html">frameworks/sproutcore/frameworks/runtime/mixins/array.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 0.9.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>This module implements Observer-friendly Array-like behavior.  This mixin is picked up by the Array class as well as other controllers, etc. that want to appear to be arrays.</p>
+
+<p>Unlike SC.Enumerable, this mixin defines methods specifically for collections that provide index-ordered access to their contents.  When you are designing code that needs to accept any kind of Array-like object, you should use these methods instead of Array primitives because these will properly notify observers of changes to the array.</p>
+
+<p>Although these methods are efficient, they do add a layer of indirection to your application so it is a good idea to use them only when you need the flexibility of using both true JavaScript arrays and "virtual" arrays such as controllers and collections.</p>
+
+<p>You can use the methods defined in this module to access and modify array contents in a KVO-friendly way.  You can also be notified whenever the membership if an array changes by changing the syntax of the property to .observes('*myProperty.[]') .</p>
+
+<p>To support SC.Array in your own class, you must override two primitives to use it: replace() and objectAt().</p>
+
+<p>Note that the SC.Array mixin also incorporates the SC.Enumerable mixin.  All SC.Array-like objects are also enumerable.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Array.html#.isSCArray"><code>+&nbsp;(Object) isSCArray [R/W]</code></a>
+					              
+					                <div class="description">Walk like a duck - use isSCArray to avoid conflicts</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.isEnumerable">isEnumerable</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Array.addRangeObserver">
+		<code class="type">+&nbsp;(SC.RangeObserver)  addRangeObserver(indexes, target, method, context)</code>
+				              </a>
+				              
+				                <div class="description">Creates a new range observer on the receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.compact">
+		<code class="type">+&nbsp;(Array)  compact()</code>
+				              </a>
+				              
+				                <div class="description">Generates a new array with the contents of the old array, sans any null
+    values.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.enumerableContentDidChange">
+		<code class="type">+&nbsp;(SC.Array)  enumerableContentDidChange(start, amt, delta)</code>
+				              </a>
+				              
+				                <div class="description">Updates observers with content change.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.indexOf">
+		<code class="type">+&nbsp;(Number)  indexOf(object, startAt)</code>
+				              </a>
+				              
+				                <div class="description">Returns the index for a particular object in the index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.insertAt">
+		<code class="type">+&nbsp;(void)  insertAt(idx, object)</code>
+				              </a>
+				              
+				                <div class="description">This will use the primitive replace() method to insert an object at the 
+    specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.isEqual">
+		<code class="type">+&nbsp;(void)  isEqual(ary)</code>
+				              </a>
+				              
+				                <div class="description">Compares each item in the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.lastIndexOf">
+		<code class="type">+&nbsp;(Number)  lastIndexOf(object, startAt)</code>
+				              </a>
+				              
+				                <div class="description">Returns the last index for a particular object in the index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.max">
+		<code class="type">+&nbsp;(Number)  max()</code>
+				              </a>
+				              
+				                <div class="description">Returns the largest Number in an array of Numbers.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.min">
+		<code class="type">+&nbsp;(Number)  min()</code>
+				              </a>
+				              
+				                <div class="description">Returns the smallest Number in an array of Numbers.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.objectAt">
+		<code class="type">+&nbsp;(void)  objectAt(idx)</code>
+				              </a>
+				              
+				                <div class="description">This is one of the primitives you must implement to support SC.Array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.popObject">
+		<code class="type">+&nbsp;(void)  popObject()</code>
+				              </a>
+				              
+				                <div class="description">Pop object from array or nil if none are left.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.pushObject">
+		<code class="type">+&nbsp;(void)  pushObject(obj)</code>
+				              </a>
+				              
+				                <div class="description">Push the object onto the end of the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.pushObjects">
+		<code class="type">+&nbsp;(SC.Array)  pushObjects(objects)</code>
+				              </a>
+				              
+				                <div class="description">Add the objects in the passed numerable to the end of the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.removeAt">
+		<code class="type">+&nbsp;(Object)  removeAt(start, length)</code>
+				              </a>
+				              
+				                <div class="description">Remove an object at the specified index using the replace() primitive 
+    method.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.removeObject">
+		<code class="type">+&nbsp;(void)  removeObject(obj)</code>
+				              </a>
+				              
+				                <div class="description">Search the array of this object, removing any occurrences of it.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.removeObjects">
+		<code class="type">+&nbsp;(SC.Array)  removeObjects(objects)</code>
+				              </a>
+				              
+				                <div class="description">Search the array for the passed set of objects and remove any occurrences
+    of the.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.removeRangeObserver">
+		<code class="type">+&nbsp;(SC.RangeObserver)  removeRangeObserver(rangeObserver)</code>
+				              </a>
+				              
+				                <div class="description">Removes a range observer from the receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.replace">
+		<code class="type">+&nbsp;(void)  replace(idx, amt, objects)</code>
+				              </a>
+				              
+				                <div class="description">This is one of the primitves you must implement to support SC.Array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.shiftObject">
+		<code class="type">+&nbsp;(void)  shiftObject()</code>
+				              </a>
+				              
+				                <div class="description">Shift an object from start of array or nil if none are left.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.slice">
+		<code class="type">+&nbsp;(Array)  slice(beginIndex, endIndex)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new array that is a slice of the receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.uniq">
+		<code class="type">+&nbsp;(Array)  uniq()</code>
+				              </a>
+				              
+				                <div class="description">Generates a new array with only unique values from the contents of the
+    old array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.unshiftObject">
+		<code class="type">+&nbsp;(void)  unshiftObject(obj)</code>
+				              </a>
+				              
+				                <div class="description">Unshift an object to start of array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.unshiftObjects">
+		<code class="type">+&nbsp;(SC.Array)  unshiftObjects(objects)</code>
+				              </a>
+				              
+				                <div class="description">Adds the named objects to the beginning of the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.updateRangeObserver">
+		<code class="type">+&nbsp;(SC.RangeObserver)  updateRangeObserver(rangeObserver, indexes)</code>
+				              </a>
+				              
+				                <div class="description">Moves a range observer so that it observes a new range of objects on the 
+    array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Array.without">
+		<code class="type">+&nbsp;(Array)  without(value)</code>
+				              </a>
+				              
+				                <div class="description">Generates a new array with the contents of the old array, sans the passed
+    value.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.enumerator">enumerator</a>, <a href="../symbols/SC.Enumerable.html#.every">every</a>, <a href="../symbols/SC.Enumerable.html#.everyProperty">everyProperty</a>, <a href="../symbols/SC.Enumerable.html#.filter">filter</a>, <a href="../symbols/SC.Enumerable.html#.filterProperty">filterProperty</a>, <a href="../symbols/SC.Enumerable.html#.find">find</a>, <a href="../symbols/SC.Enumerable.html#.findProperty">findProperty</a>, <a href="../symbols/SC.Enumerable.html#.firstObject">firstObject</a>, <a href="../symbols/SC.Enumerable.html#.forEach">forEach</a>, <a href="../symbols/SC.Enumerable.html#.getEach">getEach</a>, <a href="../symbols/SC.Enumerable.html#.groupBy">groupBy</a>, <a href="../symbols/SC.Enumerable.html#.invoke">invoke</a>, <a href="../symbols/SC.Enumerable.html#.invokeWhile">invokeWhile</a>, <a href="../symbols/SC.Enumerable.html#.lastObject">lastObject</a>, <a href="../symbols/SC.Enumerable.html#.map">map</a>, <a href="../symbols/SC.Enumerable.html#.mapProperty">mapProperty</a>, <a href="../symbols/SC.Enumerable.html#.nextObject">nextObject</a>, <a href="../symbols/SC.Enumerable.html#.reduce">reduce</a>, <a href="../symbols/SC.Enumerable.html#.reduceAverage">reduceAverage</a>, <a href="../symbols/SC.Enumerable.html#.reducedProperty">reducedProperty</a>, <a href="../symbols/SC.Enumerable.html#.reduceMax">reduceMax</a>, <a href="../symbols/SC.Enumerable.html#.reduceMaxObject">reduceMaxObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceMin">reduceMin</a>, <a href="../symbols/SC.Enumerable.html#.reduceMinObject">reduceMinObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceSum">reduceSum</a>, <a href="../symbols/SC.Enumerable.html#.setEach">setEach</a>, <a href="../symbols/SC.Enumerable.html#.some">some</a>, <a href="../symbols/SC.Enumerable.html#.someProperty">someProperty</a>, <a href="../symbols/SC.Enumerable.html#.sortProperty">sortProperty</a>, <a href="../symbols/SC.Enumerable.html#.toArray">toArray</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".isSCArray"></a> 
+			          <div class="field">
+			            <a name=".isSCArray"></a> 
+			            <h3>isSCArray
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck - use isSCArray to avoid conflicts</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isSCArray</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.addRangeObserver"></a> 
+			          <h3>addRangeObserver()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates a new range observer on the receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RangeObserver)
+			              </span>
+			              <span class="name">addRangeObserver</span> <span class="params">(indexes, target, method, context)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">indexes to observe</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+			              <span class="desc">object to invoke on change</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Function)</span><span class="name">method</span>
+			              
+			              <span class="desc">the method to invoke</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">context</span>
+			              
+			              <span class="desc">optional context</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RangeObserver)</span>
+			                <span class="desc">range observer</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The target/method callback you provide will be invoked anytime any property on the objects in the specified range changes.  It will also be invoked if the objects in the range itself changes also.</p>
+
+<p>The callback for a range observer should have the signature:</p>
+
+
+<p class="code"><code>function rangePropertyDidChange(array, objects, key, indexes, conext)</code></p>
+
+<p>If the passed key is '[]' it means that the object itself changed.</p>
+
+<p>The return value from this method is an opaque reference to the range observer object.  You can use this reference to destroy the range observer when you are done with it or to update its range.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.compact"></a> 
+			          <h3>compact()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generates a new array with the contents of the old array, sans any null
+    values.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">compact</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.enumerableContentDidChange"></a> 
+			          <h3>enumerableContentDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Updates observers with content change.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Array)
+			              </span>
+			              <span class="name">enumerableContentDidChange</span> <span class="params">(start, amt, delta)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">start</span>
+			              
+			              <span class="desc">the starting index of the change</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">amt</span>
+			              
+			              <span class="desc">the final range of objects changed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">delta</span>
+			              
+			              <span class="desc">if you added or removed objects, the delta change</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Array)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>To support range observers, you must pass three change parameters to this method.  Otherwise this method will assume the entire range has changed.</p>
+
+<p>This also assumes you have already updated the length property.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.indexOf"></a> 
+			          <h3>indexOf()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the index for a particular object in the index.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">indexOf</span> <span class="params">(object, startAt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">object</span>
+			              
+			              <span class="desc">the item to search for</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(NUmber)</span><span class="name">startAt</span>
+			              
+			              <span class="desc">optional starting location to search, default 0</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">index of -1 if not found</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.insertAt"></a> 
+			          <h3>insertAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will use the primitive replace() method to insert an object at the 
+    specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">insertAt</span> <span class="params">(idx, object)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">index of insert the object at.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">object</span>
+			              
+			              <span class="desc">object to insert</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.isEqual"></a> 
+			          <h3>isEqual()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Compares each item in the array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">isEqual</span> <span class="params">(ary)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Returns true if they are equal.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.lastIndexOf"></a> 
+			          <h3>lastIndexOf()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the last index for a particular object in the index.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">lastIndexOf</span> <span class="params">(object, startAt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">object</span>
+			              
+			              <span class="desc">the item to search for</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(NUmber)</span><span class="name">startAt</span>
+			              
+			              <span class="desc">optional starting location to search, default 0</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">index of -1 if not found</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.max"></a> 
+			          <h3>max()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the largest Number in an array of Numbers.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">max</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Make sure the array only contains values of type Number to get expected result.</p>
+
+<p>Note: This only works for dense arrays.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.min"></a> 
+			          <h3>min()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the smallest Number in an array of Numbers.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">min</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Make sure the array only contains values of type Number to get expected result.</p>
+
+<p>Note: This only works for dense arrays.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.objectAt"></a> 
+			          <h3>objectAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This is one of the primitives you must implement to support SC.Array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">objectAt</span> <span class="params">(idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">The index of the item to return.  If idx exceeds the current length, 
+      return null.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Returns the object at the named index.  If your object supports retrieving the value of an array item using get() (i.e. myArray.get(0)), then you do not need to implement this method yourself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.popObject"></a> 
+			          <h3>popObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Pop object from array or nil if none are left.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">popObject</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Works just like pop() but it is KVO-compliant.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.pushObject"></a> 
+			          <h3>pushObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Push the object onto the end of the array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">pushObject</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Works just like push() but it is KVO-compliant.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.pushObjects"></a> 
+			          <h3>pushObjects()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Add the objects in the passed numerable to the end of the array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Array)
+			              </span>
+			              <span class="name">pushObjects</span> <span class="params">(objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Enumerable)</span><span class="name">objects</span>
+			              
+			              <span class="desc">the objects to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Array)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Defers notifying observers of the change until all objects are added.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.removeAt"></a> 
+			          <h3>removeAt()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Remove an object at the specified index using the replace() primitive 
+    method.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">removeAt</span> <span class="params">(start, length)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number|SC.IndexSet)</span><span class="name">start</span>
+			              
+			              <span class="desc">index, start of range, or index set</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">length</span>
+			              
+			              <span class="desc">length of passing range</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can pass either a single index, a start and a length or an index set.</p>
+
+<p>If you pass a single index or a start and length that is beyond the length this method will throw an SC.OUT_OF_RANGE_EXCEPTION</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.removeObject"></a> 
+			          <h3>removeObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Search the array of this object, removing any occurrences of it.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">removeObject</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(object)</span><span class="name">obj</span>
+			              
+			              <span class="desc">object to remove</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.removeObjects"></a> 
+			          <h3>removeObjects()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Search the array for the passed set of objects and remove any occurrences
+    of the.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Array)
+			              </span>
+			              <span class="name">removeObjects</span> <span class="params">(objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Enumerable)</span><span class="name">objects</span>
+			              
+			              <span class="desc">the objects to remove</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Array)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.removeRangeObserver"></a> 
+			          <h3>removeRangeObserver()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes a range observer from the receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RangeObserver)
+			              </span>
+			              <span class="name">removeRangeObserver</span> <span class="params">(rangeObserver)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RangeObserver)</span><span class="name">rangeObserver</span>
+			              
+			              <span class="desc">the range observer</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RangeObserver)</span>
+			                <span class="desc">updated range observer or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The range observer must already be active on the array.</p>
+
+<p>The return value should replace the old range observer object.  It will usually be null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.replace"></a> 
+			          <h3>replace()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This is one of the primitves you must implement to support SC.Array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">replace</span> <span class="params">(idx, amt, objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">Starting index in the array to replace.  If idx >= length, then append to 
+      the end of the array.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">amt</span>
+			              
+			              <span class="desc">Number of elements that should be removed from the array, starting at 
+idx*.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">objects</span>
+			              
+			              <span class="desc">An array of zero or more objects that should be inserted into the array at 
+idx*</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You should replace amt objects started at idx with the objects in the passed array.  You should also call this.enumerableContentDidChange() ;</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.shiftObject"></a> 
+			          <h3>shiftObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Shift an object from start of array or nil if none are left.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">shiftObject</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Works just like shift() but it is KVO-compliant.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.slice"></a> 
+			          <h3>slice()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new array that is a slice of the receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">slice</span> <span class="params">(beginIndex, endIndex)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">beginIndex</span>
+			              
+			              <span class="desc">{Integer} (Optional) index to begin slicing from.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">endIndex</span>
+			              
+			              <span class="desc">{Integer} (Optional) index to end the slice at.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">New array with specified slice</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This implementation uses the observable array methods to retrieve the objects for the new slice.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.uniq"></a> 
+			          <h3>uniq()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generates a new array with only unique values from the contents of the
+    old array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">uniq</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.unshiftObject"></a> 
+			          <h3>unshiftObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Unshift an object to start of array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">unshiftObject</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Works just like unshift() but it is KVO-compliant.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.unshiftObjects"></a> 
+			          <h3>unshiftObjects()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds the named objects to the beginning of the array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Array)
+			              </span>
+			              <span class="name">unshiftObjects</span> <span class="params">(objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Enumerable)</span><span class="name">objects</span>
+			              
+			              <span class="desc">the objects to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Array)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Defers notifying observers until all objects have been added.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.updateRangeObserver"></a> 
+			          <h3>updateRangeObserver()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Moves a range observer so that it observes a new range of objects on the 
+    array.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RangeObserver)
+			              </span>
+			              <span class="name">updateRangeObserver</span> <span class="params">(rangeObserver, indexes)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RangeObserver)</span><span class="name">rangeObserver</span>
+			              
+			              <span class="desc">the range observer</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">new indexes to observe</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RangeObserver)</span>
+			                <span class="desc">the range observer (or a new one)</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You must have an existing range observer object from a call to addRangeObserver().</p>
+
+<p>The return value should replace the old range observer object that you pass in.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Array.without"></a> 
+			          <h3>without()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generates a new array with the contents of the old array, sans the passed
+    value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">without</span> <span class="params">(value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:50 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

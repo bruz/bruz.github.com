@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.FetchedAttribute</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.FetchedAttribute
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.RecordAttribute.html#constructor">SC.RecordAttribute</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_models_fetched_attribute.js.html">frameworks/sproutcore/frameworks/datastore/models/fetched_attribute.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>Describes a single attribute that is fetched dynamically from the server when you request it.  Normally getting a property value with this attribute applied will cause call the find() method on the record store passing the attribute record type as the query key along with the property value, owner record, and property key name as parameters.</p>
+
+<p>The DataSource you hook up to your store must know how to load this kind of relationship for this fetched property to work properly.</p>
+
+<p>The return value is usually an SC.RecordArray that will populate with the record data so that you can display it.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.FetchedAttribute.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">Fetched attributes are not editable</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.FetchedAttribute.html#paramOwnerKey"><code>-&nbsp;(String) paramOwnerKey [R/W]</code></a>
+					              
+					                <div class="description">Define the param key used to send the parent record.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.FetchedAttribute.html#paramRelKey"><code>-&nbsp;(String) paramRelKey [R/W]</code></a>
+					              
+					                <div class="description">Define the param key used to send the key name used to reference this 
+    attribute.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.FetchedAttribute.html#paramValueKey"><code>-&nbsp;(String) paramValueKey [R/W]</code></a>
+					              
+					                <div class="description">Define the param key that will be passed to the findAll method on the
+    store.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.FetchedAttribute.html#queryKey"><code>-&nbsp;(String) queryKey [R/W]</code></a>
+					              
+					                <div class="description">Optional query key to pass to findAll.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.RecordAttribute.html#constructor">SC.RecordAttribute</a>: </dt><dd><a href="../symbols/SC.RecordAttribute.html#aggregate">aggregate</a>, <a href="../symbols/SC.RecordAttribute.html#defaultValue">defaultValue</a>, <a href="../symbols/SC.RecordAttribute.html#isRequired">isRequired</a>, <a href="../symbols/SC.RecordAttribute.html#key">key</a>, <a href="../symbols/SC.RecordAttribute.html#transform">transform</a>, <a href="../symbols/SC.RecordAttribute.html#type">type</a>, <a href="../symbols/SC.RecordAttribute.html#typeClass">typeClass</a>, <a href="../symbols/SC.RecordAttribute.html#useIsoDate">useIsoDate</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.RecordAttribute.html#constructor">SC.RecordAttribute</a>: </dt><dd><a href="../symbols/SC.RecordAttribute.html#.attr">attr</a>, <a href="../symbols/SC.RecordAttribute.html#call">call</a>, <a href="../symbols/SC.RecordAttribute.html#fromType">fromType</a>, <a href="../symbols/SC.RecordAttribute.html#.registerTransform">registerTransform</a>, <a href="../symbols/SC.RecordAttribute.html#toType">toType</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Fetched attributes are not editable</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="paramOwnerKey"></a> 
+			          <div class="field">
+			            <a name="paramOwnerKey"></a> 
+			            <h3>paramOwnerKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Define the param key used to send the parent record.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">paramOwnerKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If null the param will not be sent.  Defaults to 'owner'.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="paramRelKey"></a> 
+			          <div class="field">
+			            <a name="paramRelKey"></a> 
+			            <h3>paramRelKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Define the param key used to send the key name used to reference this 
+    attribute.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">paramRelKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If null, the param will not be sent.  Defaults to "rel"</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="paramValueKey"></a> 
+			          <div class="field">
+			            <a name="paramValueKey"></a> 
+			            <h3>paramValueKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Define the param key that will be passed to the findAll method on the
+    store.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">paramValueKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If null, the param will not be send.  Defaults to 'link'</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="queryKey"></a> 
+			          <div class="field">
+			            <a name="queryKey"></a> 
+			            <h3>queryKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optional query key to pass to findAll.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">queryKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Otherwise type class will be passed.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:53 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

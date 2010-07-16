@@ -1,0 +1,1869 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.DateTime</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.DateTime
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>, <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>, <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_datetime.js.html">frameworks/sproutcore/frameworks/foundation/system/datetime.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+		    <tr class="odd">
+		      <td class="label">Author:</td>
+		      <td class="value">Martin Ottenwaelter, Jonathan Lewis, Josh Holt</td>
+		    </tr>
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A class representation of a date and time. It's basically a wrapper around the Date javascript object, KVO friendly and with common date/time manipulation methods.</p>
+
+<p>This object differs from the standard JS Date object, however, in that it supports time zones other than UTC and that local to the machine on which it is running.  Any time zone can be specified when creating an SC.DateTime object, e.g</p>
+
+<p>// Creates a DateTime representing 5am in Washington, DC and 10am in London var d = SC.DateTime.create({ hour: 5, timezone: 300 }); // -5 hours from UTC var e = SC.DateTime.create({ hour: 10, timezone: 0 }); // same time, specified in UTC</p>
+
+<p>and it is true that d.isEqual(e).</p>
+
+<p>The time zone specified upon creation is permanent, and any calls to get() on that instance will return values expressed in that time zone.  So,</p>
+
+<p>d.get('hour') returns 5. e.get('hour') returns 10.</p>
+
+<p>but</p>
+
+<p>d.get('milliseconds') === e.get('milliseconds') is true, since they are technically the same position in time.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.abbreviatedDayNames"><code>+&nbsp;(Object) abbreviatedDayNames [R/W]</code></a>
+					              
+					                <div class="description">The localized abbreviated day names.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.abbreviatedMonthNames"><code>+&nbsp;(Object) abbreviatedMonthNames [R/W]</code></a>
+					              
+					                <div class="description">The localized abbreviated month names.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.dayNames"><code>+&nbsp;(Object) dayNames [R/W]</code></a>
+					              
+					                <div class="description">The localized day names.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#isFrozen"><code>-&nbsp;(Object) isFrozen [R/W]</code></a>
+					              
+					                <div class="description">A DateTime instance is frozen by default for better performance.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.monthNames"><code>+&nbsp;(Object) monthNames [R/W]</code></a>
+					              
+					                <div class="description">The localized month names.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.recordFormat"><code>+&nbsp;(Object) recordFormat [R/W]</code></a>
+					              
+					                <div class="description">The default format (ISO 8601) in which DateTimes are stored in a record.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#timezone"><code>-&nbsp;(Object) timezone [R/W]</code></a>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.DateTime.html#.timezone"><code>+&nbsp;(Object) timezone [R/W]</code></a>
+					              
+					                <div class="description">The offset, in minutes, between UTC and the local system time.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.isFreezable">isFreezable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.isCopyable">isCopyable</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.DateTime._adjust">
+		<code class="type">+&nbsp;(void)  _adjust(options, start, timezone, resetCascadingly)</code>
+				              </a>
+				              
+				                <div class="description">Sets the internal calculation state to something specified.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime._setCalcStateFromHash">
+		<code class="type">+&nbsp;(void)  _setCalcStateFromHash(hash, timezone)</code>
+				              </a>
+				              
+				                <div class="description">By this time, any time zone setting on 'hash' will be ignored.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#adjust">
+		<code class="type">-&nbsp;(DateTime)  adjust(options, resetCascadingly)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new DateTime object where one or more of the elements have been
+    changed according to the options parameter.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#advance">
+		<code class="type">-&nbsp;(DateTime)  advance(options)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new DateTime object advanced according the the given parameters.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime.compare">
+		<code class="type">+&nbsp;(Integer)  compare(a, b)</code>
+				              </a>
+				              
+				                <div class="description">This will tell you which of the two passed DateTime is greater than the
+    other, by comparing if their number of milliseconds since
+    January, 1st 1970 00:00:00.0 UTC.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime.compareDate">
+		<code class="type">+&nbsp;(Integer)  compareDate(a, b)</code>
+				              </a>
+				              
+				                <div class="description">This will tell you which of the two passed DateTime is greater than the
+    other, by only comparing the date parts of the passed objects.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#copy">
+		<code class="type">-&nbsp;(DateTime)  copy()</code>
+				              </a>
+				              
+				                <div class="description">Returns a copy of the receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime.create">
+		<code class="type">+&nbsp;(DateTime)  create(options)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new DateTime object advanced according the the given parameters.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#isEqual">
+		<code class="type">-&nbsp;(Boolean)  isEqual(aDateTime)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the passed DateTime is equal to the receiver, ie: if their
+    number of milliseconds since January, 1st 1970 00:00:00.0 UTC are equal.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime.parse">
+		<code class="type">+&nbsp;(DateTime)  parse(str, fmt)</code>
+				              </a>
+				              
+				                <div class="description">Returns a DateTime object created from a given string parsed with a given
+    format.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#toFormattedString">
+		<code class="type">-&nbsp;(String)  toFormattedString(format)</code>
+				              </a>
+				              
+				                <div class="description">Formats the receiver according to the given format string.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#toISO8601">
+		<code class="type">-&nbsp;(String)  toISO8601()</code>
+				              </a>
+				              
+				                <div class="description">Formats the receiver according ISO 8601 standard.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#toTimezone">
+		<code class="type">-&nbsp;(DateTime)  toTimezone(timezone)</code>
+				              </a>
+				              
+				                <div class="description">Returns a copy of the receiver with the timezone set to the passed
+    timezone.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.DateTime#unknownProperty">
+		<code class="type">-&nbsp;()  unknownProperty(key)</code>
+				              </a>
+				              
+				                <div class="description">Generic getter.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.freeze">freeze</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.frozenCopy">frozenCopy</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".abbreviatedDayNames"></a> 
+			          <div class="field">
+			            <a name=".abbreviatedDayNames"></a> 
+			            <h3>abbreviatedDayNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The localized abbreviated day names.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">abbreviatedDayNames</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Add the key '_SC.DateTime.abbreviatedDayNames' and its value to your strings.js file to add support for another language than English.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".abbreviatedMonthNames"></a> 
+			          <div class="field">
+			            <a name=".abbreviatedMonthNames"></a> 
+			            <h3>abbreviatedMonthNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The localized abbreviated month names.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">abbreviatedMonthNames</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Add the key '_SC.DateTime.abbreviatedMonthNames' and its value to your strings.js file to add support for another language than English.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".dayNames"></a> 
+			          <div class="field">
+			            <a name=".dayNames"></a> 
+			            <h3>dayNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The localized day names.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">dayNames</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Add the key '_SC.DateTime.dayNames' and its value to your strings.js file to add support for another language than English.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isFrozen"></a> 
+			          <div class="field">
+			            <a name="isFrozen"></a> 
+			            <h3>isFrozen
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A DateTime instance is frozen by default for better performance.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isFrozen</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".monthNames"></a> 
+			          <div class="field">
+			            <a name=".monthNames"></a> 
+			            <h3>monthNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The localized month names.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">monthNames</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Add the key '_SC.DateTime.monthNames' and its value to your strings.js file to add support for another language than English.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".recordFormat"></a> 
+			          <div class="field">
+			            <a name=".recordFormat"></a> 
+			            <h3>recordFormat
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The default format (ISO 8601) in which DateTimes are stored in a record.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">recordFormat</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Change this value if your backend sends and receives dates in another format.</p>
+
+<p>This value can also be customized on a per-attribute basis with the format property. For example: SC.Record.attr(SC.DateTime, { format: '%d/%m/%Y %H:%M:%S' })</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="timezone"></a> 
+			          <div class="field">
+			            <a name="timezone"></a> 
+			            <h3>timezone
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary"></p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">timezone</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".timezone"></a> 
+			          <div class="field">
+			            <a name=".timezone"></a> 
+			            <h3>timezone
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The offset, in minutes, between UTC and the local system time.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">timezone</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This property is computed at loading time and should never be changed.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime._adjust"></a> 
+			          <h3>_adjust()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Sets the internal calculation state to something specified.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_adjust</span> <span class="params">(options, start, timezone, resetCascadingly)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime._setCalcStateFromHash"></a> 
+			          <h3>_setCalcStateFromHash()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">By this time, any time zone setting on 'hash' will be ignored.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_setCalcStateFromHash</span> <span class="params">(hash, timezone)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>'timezone' will be used, or the last this._tz.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#adjust"></a> 
+			          <h3>adjust()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new DateTime object where one or more of the elements have been
+    changed according to the options parameter.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">adjust</span> <span class="params">(options, resetCascadingly)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc">copy of receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The time options (hour, minute, sec, usec) reset cascadingly, so if only the hour is passed, then minute, sec, and usec is set to 0. If the hour and minute is passed, then sec and usec is set to 0.</p>
+
+<p>(Parts copied from the Ruby On Rails documentation)</p>
+
+<p>If a time zone is passed in the options hash, all dates and times are assumed to be local to it, and the returned DateTime instance has that time zone.  If none is passed, it defaults to SC.DateTime.timezone.</p>
+
+<p>Note that passing only a time zone does not affect the actual milliseconds since Jan 1, 1970, only the time zone in which it is expressed when displayed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#advance"></a> 
+			          <h3>advance()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new DateTime object advanced according the the given parameters.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">advance</span> <span class="params">(options)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">options</span>
+			              
+			              <span class="desc">the amount of date/time to advance the receiver</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc">copy of the receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Don't use floating point values, it might give unpredicatble results.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime.compare"></a> 
+			          <h3>compare()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will tell you which of the two passed DateTime is greater than the
+    other, by comparing if their number of milliseconds since
+    January, 1st 1970 00:00:00.0 UTC.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Integer)
+			              </span>
+			              <span class="name">compare</span> <span class="params">(a, b)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DateTime)</span><span class="name">a</span>
+			              
+			              <span class="desc">the first DateTime instance</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DateTime)</span><span class="name">b</span>
+			              
+			              <span class="desc">the second DateTime instance</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Integer)</span>
+			                <span class="desc">-1 if a < b, 
+                       +1 if a > b,
+                       0 if a == b</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime.compareDate"></a> 
+			          <h3>compareDate()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will tell you which of the two passed DateTime is greater than the
+    other, by only comparing the date parts of the passed objects.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Integer)
+			              </span>
+			              <span class="name">compareDate</span> <span class="params">(a, b)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DateTime)</span><span class="name">a</span>
+			              
+			              <span class="desc">the first DateTime instance</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DateTime)</span><span class="name">b</span>
+			              
+			              <span class="desc">the second DateTime instance</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Integer)</span>
+			                <span class="desc">-1 if a < b,
+                       +1 if a > b,
+                       0 if a == b</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <h5>Throws Exceptions</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.DATETIME_COMPAREDATE_TIMEZONE_ERROR)</span> 
+			                <span class="desc">if the passed arguments
+      don't have the same timezone</span>
+			              </p>
+			            
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Only dates with the same timezone can be compared.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#copy"></a> 
+			          <h3>copy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a copy of the receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">copy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Because of the way DateTime is designed, it just returns the receiver.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime.create"></a> 
+			          <h3>create()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new DateTime object advanced according the the given parameters.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">create</span> <span class="params">(options)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">options</span>
+			              
+			              <span class="desc">one of the three kind of parameters descibed above</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc">the DateTime instance that corresponds to the
+      passed parameters, possibly fetched from cache</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>The parameters can be:</p>
+<ul>	<li>none, to create a DateTime instance initialized to the current</li>
+</ul>
+<p>date and time in the local timezone,</p>
+<ul>	<li>a integer, the number of milliseconds since</li>
+</ul>
+<p>January, 1st 1970 00:00:00.0 UTC</p>
+<ul>	<li>a options hash that can contain any of the following properties: year,</li>
+</ul>
+<p>month, day, hour, minute, second, millisecond, timezone</p>
+
+<p>Note that if you attempt to create a SC.DateTime instance that has already been created, then, for performance reasons, a cached value may be returned.</p>
+
+<p>The timezone option is the offset, in minutes, between UTC and local time. If you don't pass a timezone option, the date object is created in the local timezone. If you want to create a UTC+2 (CEST) date, for example, then you should pass a timezone of -120.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#isEqual"></a> 
+			          <h3>isEqual()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the passed DateTime is equal to the receiver, ie: if their
+    number of milliseconds since January, 1st 1970 00:00:00.0 UTC are equal.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">isEqual</span> <span class="params">(aDateTime)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DateTime)</span><span class="name">aDateTime</span>
+			              
+			              <span class="desc">the DateTime to compare to</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This is the preferred method for testing equality.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime.parse"></a> 
+			          <h3>parse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a DateTime object created from a given string parsed with a given
+    format.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">parse</span> <span class="params">(str, fmt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">str</span>
+			              
+			              <span class="desc">the string to parse</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">fmt</span>
+			              
+			              <span class="desc">the format to parse the string with</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc">the DateTime corresponding to the string parameter</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Returns null if the parsing fails.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#toFormattedString"></a> 
+			          <h3>toFormattedString()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Formats the receiver according to the given format string.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">toFormattedString</span> <span class="params">(format)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">format</span>
+			              
+			              <span class="desc">the format string</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc">the formatted string</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Should behave like the C strftime function.</p>
+
+<p>The format parameter can contain the following characters:</p>
+<ul>	<li>%a - The abbreviated weekday name (``Sun'')</li>
+	<li>%A - The full weekday name (``Sunday'')</li>
+	<li>%b - The abbreviated month name (``Jan'')</li>
+	<li>%B - The full month name (``January'')</li>
+	<li>%c - The preferred local date and time representation</li>
+	<li>%d - Day of the month (01..31)</li>
+	<li>%h - Hour of the day, 24-hour clock (0..23)</li>
+	<li>%H - Hour of the day, 24-hour clock (00..23)</li>
+	<li>%i - Hour of the day, 12-hour clock (1..12)</li>
+	<li>%I - Hour of the day, 12-hour clock (01..12)</li>
+	<li>%j - Day of the year (001..366)</li>
+	<li>%m - Month of the year (01..12)</li>
+	<li>%M - Minute of the hour (00..59)</li>
+	<li>%p - Meridian indicator (``AM'' or ``PM'')</li>
+	<li>%S - Second of the minute (00..60)</li>
+	<li>%U - Week number of the current year,</li>
+</ul>
+<p>starting with the first Sunday as the first day of the first week (00..53)</p>
+<ul>	<li>%W - Week number of the current year,</li>
+</ul>
+<p>starting with the first Monday as the first day of the first week (00..53)</p>
+<ul>	<li>%w - Day of the week (Sunday is 0, 0..6)</li>
+	<li>%x - Preferred representation for the date alone, no time</li>
+	<li>%X - Preferred representation for the time alone, no date</li>
+	<li>%y - Year without a century (00..99)</li>
+	<li>%Y - Year with century</li>
+	<li>%Z - Time zone (ISO 8601 formatted)</li>
+	<li>%% - Literal ``%'' character</li></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#toISO8601"></a> 
+			          <h3>toISO8601()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Formats the receiver according ISO 8601 standard.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">toISO8601</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc">the formatted string</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It is equivalent to calling toFormattedString with the '%Y-%m-%dT%H:%M:%S%Z' format string.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#toTimezone"></a> 
+			          <h3>toTimezone()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a copy of the receiver with the timezone set to the passed
+    timezone.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DateTime)
+			              </span>
+			              <span class="name">toTimezone</span> <span class="params">(timezone)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DateTime)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The returned value is equal to the receiver (ie SC.Compare returns 0), it is just the timezone representation that changes.</p>
+
+<p>If you don't pass any argument, the target timezone is assumed to be 0, ie UTC.</p>
+
+<p>Note that this method does not change the underlying position in time, but only the time zone in which it is displayed.  In other words, the underlying number of milliseconds since Jan 1, 1970 does not change.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.DateTime#unknownProperty"></a> 
+			          <h3>unknownProperty()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generic getter.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">unknownProperty</span> <span class="params">(key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the property name to get</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                
+			                <span class="desc">the value asked for</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The properties you can get are:</p>
+<ul>	<li>'year'</li>
+	<li>'month' (January is 1, contrary to JavaScript Dates for which January is 0)</li>
+	<li>'day'</li>
+	<li>'dayOfWeek' (Sunday is 0)</li>
+	<li>'hour'</li>
+	<li>'minute'</li>
+	<li>'second'</li>
+	<li>'millisecond'</li>
+	<li>'milliseconds', the number of milliseconds since</li>
+</ul>
+<p>January, 1st 1970 00:00:00.0 UTC</p>
+<ul>	<li>'isLeapYear', a boolean value indicating whether the receiver's year</li>
+</ul>
+<p>is a leap year</p>
+<ul>	<li>'daysInMonth', the number of days of the receiver's current month</li>
+	<li>'dayOfYear', January 1st is 1, December 31th is 365 for a common year</li>
+	<li>'week' or 'week1', the week number of the current year, starting with</li>
+</ul>
+<p>the first Sunday as the first day of the first week (00..53)</p>
+<ul>	<li>'week0', the week number of the current year, starting with</li>
+</ul>
+<p>the first Monday as the first day of the first week (00..53)</p>
+<ul>	<li>'lastMonday', 'lastTuesday', etc., 'nextMonday', 'nextTuesday', etc.,</li>
+</ul>
+<p>the date of the last or next weekday in comparison to the receiver.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:52 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

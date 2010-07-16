@@ -1,0 +1,1306 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.RecordAttribute</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.RecordAttribute
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_models_record_attribute.js.html">frameworks/sproutcore/frameworks/datastore/models/record_attribute.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A RecordAttribute describes a single attribute on a record.  It is used to generate computed properties on records that can automatically convert data types and verify data.</p>
+
+<p>When defining an attribute on an SC.Record, you can configure it this way:</p>
+
+
+<p class="code"><code>title: SC.Record.attr(String, {<br />defaultValue: 'Untitled',<br />isRequired: YES|NO<br />})</code></p>
+
+<p>In addition to having predefined transform types, there is also a way to set a computed relationship on an attribute. A typical example of this would be if you have record with a parentGuid attribute, but are not able to determine which record type to map to before looking at the guid (or any other attributes). To set up such a computed property, you can attach a function in the attribute definition of the SC.Record subclass:</p>
+
+
+<p class="code"><code>relatedToComputed: SC.Record.toOne(function() {<br />return (this.readAttribute('relatedToComputed').indexOf("foo")==0) ? MyApp.Foo : MyApp.Bar;<br />})</code></p>
+
+<p>Notice that we are not using .get() to avoid another transform which would trigger an infinite loop.</p>
+
+<p>You usually will not work with RecordAttribute objects directly, though you may extend the class in any way that you like to create a custom attribute.</p>
+
+<p>A number of default RecordAttribute types are defined on the SC.Record.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#aggregate"><code>-&nbsp;(Boolean) aggregate [R/W]</code></a>
+					              
+					                <div class="description">Can only be used for toOne or toMany relationship attributes.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#defaultValue"><code>-&nbsp;(Object|function) defaultValue [R/W]</code></a>
+					              
+					                <div class="description">The default value.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">If NO then attempts to edit the attribute will be ignored.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#isRequired"><code>-&nbsp;(Boolean) isRequired [R/W]</code></a>
+					              
+					                <div class="description">If YES, then the attribute is required and will fail validation unless
+    the property is set to a non-null or undefined value.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#key"><code>-&nbsp;(String) key [R/W]</code></a>
+					              
+					                <div class="description">The underlying attribute key name this attribute should manage.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#transform"><code>-&nbsp;(Function) transform [R/W]</code></a>
+					              
+					                <div class="description">Finds the transform handler.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#type"><code>-&nbsp;(Object|String) type [R/W]</code></a>
+					              
+					                <div class="description">The attribute type.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#typeClass"><code>-&nbsp;(Object) typeClass [R/W]</code></a>
+					              
+					                <div class="description">Returns the type, resolved to a class.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordAttribute.html#useIsoDate"><code>-&nbsp;(Boolean) useIsoDate [R/W]</code></a>
+					              
+					                <div class="description">If set when using the Date format, expect the ISO8601 date format.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.RecordAttribute.attr">
+		<code class="type">+&nbsp;(SC.RecordAttribute)  attr(attributeType, opts)</code>
+				              </a>
+				              
+				                <div class="description">The default method used to create a record attribute instance.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordAttribute#call">
+		<code class="type">-&nbsp;(Object)  call(record, key, value)</code>
+				              </a>
+				              
+				                <div class="description">The core handler.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordAttribute#fromType">
+		<code class="type">-&nbsp;(Object)  fromType(record, key, value)</code>
+				              </a>
+				              
+				                <div class="description">Converts the passed value from the core attribute value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordAttribute.registerTransform">
+		<code class="type">+&nbsp;(SC.RecordAttribute)  registerTransform(klass, transform)</code>
+				              </a>
+				              
+				                <div class="description">Call to register a transform handler for a specific type of object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordAttribute#toType">
+		<code class="type">-&nbsp;(Object)  toType(record, key, value)</code>
+				              </a>
+				              
+				                <div class="description">Converts the passed value into the core attribute value.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="aggregate"></a> 
+			          <div class="field">
+			            <a name="aggregate"></a> 
+			            <h3>aggregate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Can only be used for toOne or toMany relationship attributes.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">aggregate</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If YES, this flag will ensure that any related objects will also be marked dirty when this record dirtied.</p>
+
+<p>Useful when you might have multiple related objects that you want to consider in an 'aggregated' state. For instance, by changing a child object (image) you might also want to automatically mark the parent (album) dirty as well.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="defaultValue"></a> 
+			          <div class="field">
+			            <a name="defaultValue"></a> 
+			            <h3>defaultValue
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The default value.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object|function
+		              </span>
+		              <span class="name">defaultValue</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If attribute is null or undefined, this default value will be substituted instead.  Note that defaultValues are not converted so the value should be in the output type expected by the attribute.</p>
+
+<p>If you use a defaultValue function, the arguments given to it is the record instance and the key.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If NO then attempts to edit the attribute will be ignored.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRequired"></a> 
+			          <div class="field">
+			            <a name="isRequired"></a> 
+			            <h3>isRequired
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, then the attribute is required and will fail validation unless
+    the property is set to a non-null or undefined value.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isRequired</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="key"></a> 
+			          <div class="field">
+			            <a name="key"></a> 
+			            <h3>key
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The underlying attribute key name this attribute should manage.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">key</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this property is left empty, then the key will be whatever property name this attribute assigned to on the record.  If you need to provide some kind of alternate mapping, this provides you a way to override it.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="transform"></a> 
+			          <div class="field">
+			            <a name="transform"></a> 
+			            <h3>transform
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Finds the transform handler.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Function
+		              </span>
+		              <span class="name">transform</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="type"></a> 
+			          <div class="field">
+			            <a name="type"></a> 
+			            <h3>type
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The attribute type.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object|String
+		              </span>
+		              <span class="name">type</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Must be either an object class or a property path naming a class.  The built in handler allows all native types to pass through, converts records to ids and dates to UTF strings.</p>
+
+<p>If you use the attr() helper method to create a RecordAttribute instance, it will set this property to the first parameter you pass.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="typeClass"></a> 
+			          <div class="field">
+			            <a name="typeClass"></a> 
+			            <h3>typeClass
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the type, resolved to a class.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">typeClass</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If the type property is a regular class, returns the type unchanged.  Otherwise attempts to lookup the type as a property path.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="useIsoDate"></a> 
+			          <div class="field">
+			            <a name="useIsoDate"></a> 
+			            <h3>useIsoDate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If set when using the Date format, expect the ISO8601 date format.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">useIsoDate</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>This is the default.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordAttribute.attr"></a> 
+			          <h3>attr()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The default method used to create a record attribute instance.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordAttribute)
+			              </span>
+			              <span class="name">attr</span> <span class="params">(attributeType, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object|String)</span><span class="name">attributeType</span>
+			              
+			              <span class="desc">the assumed attribute type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">optional additional config options</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordAttribute)</span>
+			                <span class="desc">new instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Unlike create(), takes an attributeType as the first parameter which will be set on the attribute itself.  You can pass a string naming a class or a class itself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordAttribute#call"></a> 
+			          <h3>call()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The core handler.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">call</span> <span class="params">(record, key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record instance</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the key used to access this attribute on the record</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+			              <span class="desc">the property value if called as a setter</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">property value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Called from the property.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordAttribute#fromType"></a> 
+			          <h3>fromType()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Converts the passed value from the core attribute value.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">fromType</span> <span class="params">(record, key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record instance</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the key used to access this attribute on the record</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+			              <span class="desc">the property value</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">attribute value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will apply any format transforms.  You can install standard transforms by adding to the SC.RecordAttribute.transforms hash.  See SC.RecordAttribute.registerTransform() for more.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordAttribute.registerTransform"></a> 
+			          <h3>registerTransform()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call to register a transform handler for a specific type of object.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordAttribute)
+			              </span>
+			              <span class="name">registerTransform</span> <span class="params">(klass, transform)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">klass</span>
+			              
+			              <span class="desc">the type of object you convert</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">transform</span>
+			              
+			              <span class="desc">the transform object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordAttribute)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordAttribute#toType"></a> 
+			          <h3>toType()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Converts the passed value into the core attribute value.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">toType</span> <span class="params">(record, key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record instance</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the key used to access this attribute on the record</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+			              <span class="desc">the property value</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">attribute value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will apply any format transforms.  You can install standard transforms by adding to the SC.RecordAttribute.transforms hash.  See SC.RecordAttribute.registerTransform() for more.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

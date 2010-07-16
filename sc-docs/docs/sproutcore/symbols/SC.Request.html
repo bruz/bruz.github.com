@@ -1,0 +1,2268 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Request</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Request
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>, <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>, <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_request.js.html">frameworks/sproutcore/frameworks/foundation/system/request.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>Implements support for Ajax requests using XHR, JSON-P and other prototcols.</p>
+
+<p>SC.Request is much like an inverted version of the request/response objects you receive when implementing HTTP servers.</p>
+
+<p>To send a request, you just need to create your request object, configure your options, and call send() to initiate the request.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#address"><code>-&nbsp;(Object) address [R/W]</code></a>
+					              
+					                <div class="description">The URL this request to go to.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#async"><code>-&nbsp;(SC.Request) async [R/W]</code></a>
+					              
+					                <div class="description">Converts the current request to be asynchronous.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#body"><code>-&nbsp;(Object) body [R/W]</code></a>
+					              
+					                <div class="description">The body of the request.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#isAsynchronous"><code>-&nbsp;(Boolean) isAsynchronous [R/W]</code></a>
+					              
+					                <div class="description">Sends the request asynchronously instead of blocking the browser.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#isJSON"><code>-&nbsp;(Boolean) isJSON [R/W]</code></a>
+					              
+					                <div class="description">Processes the request and response as JSON if possible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#isXML"><code>-&nbsp;(Boolean) isXML [R/W]</code></a>
+					              
+					                <div class="description">Process the request and response as XML if possible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#json"><code>-&nbsp;(SC.Request) json [R/W]</code></a>
+					              
+					                <div class="description">Converts the current request to use JSON.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#.manager"><code>+&nbsp;(Object) manager [R/W]</code></a>
+					              
+					                <div class="description">The request manager coordinates all of the active XHR requests.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#responseClass"><code>-&nbsp;(SC.Response) responseClass [R/W]</code></a>
+					              
+					                <div class="description">Underlying response class to actually handle this request.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#source"><code>-&nbsp;(SC.Request) source [R/W]</code></a>
+					              
+					                <div class="description">The original request for copied requests.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#timeout"><code>-&nbsp;(Number) timeout [R/W]</code></a>
+					              
+					                <div class="description">An optional timeout value of the request, in milliseconds.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#type"><code>-&nbsp;(Object) type [R/W]</code></a>
+					              
+					                <div class="description">The HTTP method to use.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Request.html#xml"><code>-&nbsp;(SC.Request) xml [R/W]</code></a>
+					              
+					                <div class="description">Converts the current request to use XML.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.isObservable">isObservable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.isCopyable">isCopyable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.isFreezable">isFreezable</a>, <a href="../symbols/SC.Freezable.html#.isFrozen">isFrozen</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Request#_prep">
+		<code class="type">-&nbsp;(void)  _prep()</code>
+				              </a>
+				              
+				                <div class="description">Called just before a request is enqueued.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#copy">
+		<code class="type">-&nbsp;(SC.Request)  copy()</code>
+				              </a>
+				              
+				                <div class="description">Returns a copy of the current request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request.deleteUrl">
+		<code class="type">+&nbsp;(SC.Request)  deleteUrl(address)</code>
+				              </a>
+				              
+				                <div class="description">Helper method for quickly setting up a DELETE request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#didReceive">
+		<code class="type">-&nbsp;(void)  didReceive(response, response)</code>
+				              </a>
+				              
+				                <div class="description">Invoked after a response has been processed but before any listeners are
+    notified.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#didSend">
+		<code class="type">-&nbsp;(void)  didSend(request, response)</code>
+				              </a>
+				              
+				                <div class="description">Invoked on the original request object just after the request is sent to
+    the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#didTimeout">
+		<code class="type">-&nbsp;(void)  didTimeout(response, response)</code>
+				              </a>
+				              
+				                <div class="description">Invoked when a request times out before a response has been received, as
+    determined by the 'timeout' property.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#encodedBody">
+		<code class="type">-&nbsp;(void)  encodedBody()</code>
+				              </a>
+				              
+				                <div class="description">The body, encoded as JSON or XML if needed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request.getUrl">
+		<code class="type">+&nbsp;(SC.Request)  getUrl(address)</code>
+				              </a>
+				              
+				                <div class="description">Helper method for quickly setting up a GET request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#header">
+		<code class="type">-&nbsp;(SC.Request|Object)  header(key, value)</code>
+				              </a>
+				              
+				                <div class="description">To set headers on the request object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#headers">
+		<code class="type">-&nbsp;(void)  headers()</code>
+				              </a>
+				              
+				                <div class="description">Current set of headers for the request</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#notify">
+		<code class="type">-&nbsp;(SC.Request)  notify(status, target, action, params)</code>
+				              </a>
+				              
+				                <div class="description">Configures a callback to execute when a request completes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request.postUrl">
+		<code class="type">+&nbsp;(SC.Request)  postUrl(address, body)</code>
+				              </a>
+				              
+				                <div class="description">Helper method for quickly setting up a POST request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request.putUrl">
+		<code class="type">+&nbsp;(SC.Request)  putUrl(address, body)</code>
+				              </a>
+				              
+				                <div class="description">Helper method for quickly setting up a PUT request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#resend">
+		<code class="type">-&nbsp;(SC.Response)  resend()</code>
+				              </a>
+				              
+				                <div class="description">Resends the current request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#send">
+		<code class="type">-&nbsp;(SC.Response)  send(body)</code>
+				              </a>
+				              
+				                <div class="description">Will fire the actual request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#willReceive">
+		<code class="type">-&nbsp;(void)  willReceive(response, response)</code>
+				              </a>
+				              
+				                <div class="description">Invoked when a response has been received but not yet processed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Request#willSend">
+		<code class="type">-&nbsp;(void)  willSend(request, response)</code>
+				              </a>
+				              
+				                <div class="description">Invoked on the original request object just before a copied request is 
+    frozen and then sent to the server.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.addObserver">addObserver</a>, <a href="../symbols/SC.Observable.html#.allPropertiesDidChange">allPropertiesDidChange</a>, <a href="../symbols/SC.Observable.html#.automaticallyNotifiesObserversFor">automaticallyNotifiesObserversFor</a>, <a href="../symbols/SC.Observable.html#.beginPropertyChanges">beginPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.bind">bind</a>, <a href="../symbols/SC.Observable.html#.decrementProperty">decrementProperty</a>, <a href="../symbols/SC.Observable.html#.didChangeFor">didChangeFor</a>, <a href="../symbols/SC.Observable.html#.endPropertyChanges">endPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.get">get</a>, <a href="../symbols/SC.Observable.html#.getEach">getEach</a>, <a href="../symbols/SC.Observable.html#.getPath">getPath</a>, <a href="../symbols/SC.Observable.html#.hasObserverFor">hasObserverFor</a>, <a href="../symbols/SC.Observable.html#.incrementProperty">incrementProperty</a>, <a href="../symbols/SC.Observable.html#.initObservable">initObservable</a>, <a href="../symbols/SC.Observable.html#.logProperty">logProperty</a>, <a href="../symbols/SC.Observable.html#.notifyPropertyChange">notifyPropertyChange</a>, <a href="../symbols/SC.Observable.html#.observersForKey">observersForKey</a>, <a href="../symbols/SC.Observable.html#.propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.Observable.html#.propertyWillChange">propertyWillChange</a>, <a href="../symbols/SC.Observable.html#.registerDependentKey">registerDependentKey</a>, <a href="../symbols/SC.Observable.html#.removeObserver">removeObserver</a>, <a href="../symbols/SC.Observable.html#.set">set</a>, <a href="../symbols/SC.Observable.html#.setIfChanged">setIfChanged</a>, <a href="../symbols/SC.Observable.html#.setPath">setPath</a>, <a href="../symbols/SC.Observable.html#.setPathIfChanged">setPathIfChanged</a>, <a href="../symbols/SC.Observable.html#.toggleProperty">toggleProperty</a>, <a href="../symbols/SC.Observable.html#.unknownProperty">unknownProperty</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.frozenCopy">frozenCopy</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.freeze">freeze</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="address"></a> 
+			          <div class="field">
+			            <a name="address"></a> 
+			            <h3>address
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The URL this request to go to.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">address</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="async"></a> 
+			          <div class="field">
+			            <a name="async"></a> 
+			            <h3>async
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Converts the current request to be asynchronous.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Request
+		              </span>
+		              <span class="name">async</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="body"></a> 
+			          <div class="field">
+			            <a name="body"></a> 
+			            <h3>body
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The body of the request.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">body</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>May be an object is isJSON or isXML is set, otherwise should be a string.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isAsynchronous"></a> 
+			          <div class="field">
+			            <a name="isAsynchronous"></a> 
+			            <h3>isAsynchronous
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Sends the request asynchronously instead of blocking the browser.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isAsynchronous</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You should almost always make requests asynchronous.  You can change this options with the async() helper option (or simply set it directly).</p>
+
+<p>Defaults to YES.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isJSON"></a> 
+			          <div class="field">
+			            <a name="isJSON"></a> 
+			            <h3>isJSON
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Processes the request and response as JSON if possible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isJSON</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can change this option with the json() helper method.</p>
+
+<p>Defaults to NO</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isXML"></a> 
+			          <div class="field">
+			            <a name="isXML"></a> 
+			            <h3>isXML
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Process the request and response as XML if possible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isXML</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can change this option with the xml() helper method.</p>
+
+<p>Defaults to NO</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="json"></a> 
+			          <div class="field">
+			            <a name="json"></a> 
+			            <h3>json
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Converts the current request to use JSON.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Request
+		              </span>
+		              <span class="name">json</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".manager"></a> 
+			          <div class="field">
+			            <a name=".manager"></a> 
+			            <h3>manager
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The request manager coordinates all of the active XHR requests.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">manager</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>It will only allow a certain number of requests to be active at a time; queuing any others.  This allows you more precise control over which requests load in which order.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="responseClass"></a> 
+			          <div class="field">
+			            <a name="responseClass"></a> 
+			            <h3>responseClass
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Underlying response class to actually handle this request.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Response
+		              </span>
+		              <span class="name">responseClass</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Currently the only supported option is SC.XHRResponse which uses a traditional XHR transport.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="source"></a> 
+			          <div class="field">
+			            <a name="source"></a> 
+			            <h3>source
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The original request for copied requests.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Request
+		              </span>
+		              <span class="name">source</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="timeout"></a> 
+			          <div class="field">
+			            <a name="timeout"></a> 
+			            <h3>timeout
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An optional timeout value of the request, in milliseconds.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">timeout</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>The timer begins when SC.Response#fire is actually invoked by the request manager and not necessarily when SC.Request#send is invoked.  If this timeout is reached before a response is received, the equivalent of SC.Request.manager#cancel() will be invoked on the SC.Response instance and the didTimeout() callback will be called.</p>
+
+<p>An exception will be thrown if you try to invoke send() on a request that has both a timeout and isAsyncronous set to NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="type"></a> 
+			          <div class="field">
+			            <a name="type"></a> 
+			            <h3>type
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The HTTP method to use.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">type</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="xml"></a> 
+			          <div class="field">
+			            <a name="xml"></a> 
+			            <h3>xml
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Converts the current request to use XML.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Request
+		              </span>
+		              <span class="name">xml</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#_prep"></a> 
+			          <h3>_prep()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called just before a request is enqueued.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_prep</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will encode the body into JSON if it is not already encoded.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#copy"></a> 
+			          <h3>copy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a copy of the current request.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">copy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">new request</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will only copy certain properties so if you want to add additional properties to the copy you will need to override copy() in a subclass.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request.deleteUrl"></a> 
+			          <h3>deleteUrl()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Helper method for quickly setting up a DELETE request.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">deleteUrl</span> <span class="params">(address)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">address</span>
+			              
+			              <span class="desc">url of request</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#didReceive"></a> 
+			          <h3>didReceive()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked after a response has been processed but before any listeners are
+    notified.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">didReceive</span> <span class="params">(response, response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Response)</span><span class="name">response</span>
+			              
+			              <span class="desc">reponse</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can do any standard processing on the request at this point.  If you don't want to allow notifications to continue, call response.cancel()</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#didSend"></a> 
+			          <h3>didSend()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked on the original request object just after the request is sent to
+    the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">didSend</span> <span class="params">(request, response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Request)</span><span class="name">request</span>
+			              
+			              <span class="desc">a copy of the request, frozen</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Response)</span><span class="name">response</span>
+			              
+			              <span class="desc">the object that will carry the response</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You might use this callback to update some state in your application.</p>
+
+<p>The passed request is a frozen copy of the request, indicating the options set at the time of the request.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#didTimeout"></a> 
+			          <h3>didTimeout()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked when a request times out before a response has been received, as
+    determined by the 'timeout' property.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">didTimeout</span> <span class="params">(response, response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Response)</span><span class="name">response</span>
+			              
+			              <span class="desc">the response</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that if a request times out, neither willReceive() nor didReceive() will be called.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#encodedBody"></a> 
+			          <h3>encodedBody()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The body, encoded as JSON or XML if needed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">encodedBody</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request.getUrl"></a> 
+			          <h3>getUrl()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Helper method for quickly setting up a GET request.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">getUrl</span> <span class="params">(address)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">address</span>
+			              
+			              <span class="desc">url of request</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#header"></a> 
+			          <h3>header()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">To set headers on the request object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request|Object)
+			              </span>
+			              <span class="name">header</span> <span class="params">(key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Hash)</span><span class="name">key</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">value</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request|Object)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Pass either a single key/value pair or a hash of key/value pairs.  If you pass only a header name, this will return the current value of the header.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#headers"></a> 
+			          <h3>headers()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Current set of headers for the request</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">headers</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#notify"></a> 
+			          <h3>notify()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Configures a callback to execute when a request completes.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">notify</span> <span class="params">(status, target, action, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">status</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|function)</span><span class="name">action</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You must pass at least a target and action/method to this and optionally a status code. You may also pass additional parameters which will be passed along to your callback.</p>
+
+<h2> Scoping With Status Codes</h2>
+
+<p>If you pass a status code as the first option to this method, then your notification callback will only be called if the response status matches the code.  For example, if you pass 201 (or SC.Request.CREATED) then your method will only be called if the response status from the server is 201.</p>
+
+<p>You can also pass "generic" status codes such as 200, 300, or 400, which will be invoked anytime the status code is the range if a more specific notifier was not registered first and returned YES.</p>
+
+<p>Finally, passing a status code of 0 or no status at all will cause your method to be executed no matter what the resulting status is unless a more specific notifier was registered and returned YES.</p>
+
+<h2> Callback Format</h2>
+
+<p>Your notification callback should expect to receive the Response object as the first parameter plus any additional parameters that you pass.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request.postUrl"></a> 
+			          <h3>postUrl()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Helper method for quickly setting up a POST request.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">postUrl</span> <span class="params">(address, body)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">address</span>
+			              
+			              <span class="desc">url of request</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">body</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request.putUrl"></a> 
+			          <h3>putUrl()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Helper method for quickly setting up a PUT request.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Request)
+			              </span>
+			              <span class="name">putUrl</span> <span class="params">(address, body)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">address</span>
+			              
+			              <span class="desc">url of request</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">body</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Request)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#resend"></a> 
+			          <h3>resend()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Resends the current request.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Response)
+			              </span>
+			              <span class="name">resend</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Response)</span>
+			                <span class="desc">new response object</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is more efficient than calling send() for requests that have already been used in a send.  Otherwise acts just like send().  Does not take a body argument.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#send"></a> 
+			          <h3>send()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Will fire the actual request.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Response)
+			              </span>
+			              <span class="name">send</span> <span class="params">(body)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Object)</span><span class="name">body</span>
+			              
+			              <span class="desc">(optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Response)</span>
+			                <span class="desc">new response object</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you have set the request to use JSON mode then you can pass any object that can be converted to JSON as the body.  Otherwise you should pass a string body.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#willReceive"></a> 
+			          <h3>willReceive()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked when a response has been received but not yet processed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">willReceive</span> <span class="params">(response, response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Response)</span><span class="name">response</span>
+			              
+			              <span class="desc">the response</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is your chance to fix up the response based on the results.  If you don't want to continue processing the response call response.cancel().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Request#willSend"></a> 
+			          <h3>willSend()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked on the original request object just before a copied request is 
+    frozen and then sent to the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">willSend</span> <span class="params">(request, response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Request)</span><span class="name">request</span>
+			              
+			              <span class="desc">a copy of the request, not frozen</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This gives you one last change to fixup the request; possibly adding headers and other options.</p>
+
+<p>If you do not want the request to actually send, call cancel().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

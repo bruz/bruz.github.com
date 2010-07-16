@@ -1,0 +1,132 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// SproutCore -- JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright ©2006-2008, Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">// Portions copyright ©2008 Apple Inc.  All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  6</span> 
+<span class='line'>  7</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'controllers/object'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'mixins/selection_support'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'private/tree_item_observer'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 10</span> 
+<span class='line'> 11</span> </span><span class="COMM">/**
+<span class='line'> 12</span>   @class
+<span class='line'> 13</span> 
+<span class='line'> 14</span>   A TreeController manages a tree of model objects that you might want to 
+<span class='line'> 15</span>   display in the UI using a collection view.  For the most part, you should
+<span class='line'> 16</span>   work with a TreeController much like you would an ObjectController, except
+<span class='line'> 17</span>   that the TreeController will also provide an arrangedObjects property that 
+<span class='line'> 18</span>   can be used as the content of a CollectionView.
+<span class='line'> 19</span>   
+<span class='line'> 20</span>   TODO: Document More
+<span class='line'> 21</span> 
+<span class='line'> 22</span>   @extends SC.ObjectController
+<span class='line'> 23</span>   @extends SC.SelectionSupport
+<span class='line'> 24</span>   @since SproutCore 1.0
+<span class='line'> 25</span> */</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="NAME">SC.TreeController</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ObjectController.extend</span><span class="PUNC">(</span><span class="NAME">SC.SelectionSupport</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="COMM">/** @scope SC.TreeController.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 28</span> 
+<span class='line'> 29</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'> 30</span>   </span><span class="COMM">// PROPERTIES</span><span class="WHIT">
+<span class='line'> 31</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'> 32</span>   
+<span class='line'> 33</span>   </span><span class="COMM">/**
+<span class='line'> 34</span>     Set to YES if you want the top-level items in the tree to be displayed as
+<span class='line'> 35</span>     group items in the collection view.
+<span class='line'> 36</span>     
+<span class='line'> 37</span>     @property {Boolean}
+<span class='line'> 38</span>   */</span><span class="WHIT">
+<span class='line'> 39</span>   </span><span class="NAME">treeItemIsGrouped</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 40</span>   
+<span class='line'> 41</span>   </span><span class="COMM">/**
+<span class='line'> 42</span>     If your content support expanding and collapsing of content, then set this
+<span class='line'> 43</span>     property to the name of the key on your model that should be used to 
+<span class='line'> 44</span>     determine the expansion state of the item.  The default is 
+<span class='line'> 45</span>     "treeItemIsExpanded"
+<span class='line'> 46</span>     
+<span class='line'> 47</span>     @property {String}
+<span class='line'> 48</span>   */</span><span class="WHIT">
+<span class='line'> 49</span>   </span><span class="NAME">treeItemIsExpandedKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"treeItemIsExpanded"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 50</span>   
+<span class='line'> 51</span>   </span><span class="COMM">/**
+<span class='line'> 52</span>     Set to the name of the property on your content object that holds the 
+<span class='line'> 53</span>     children array for each tree node.  The default is "treeItemChildren".
+<span class='line'> 54</span>     
+<span class='line'> 55</span>     @property {String}
+<span class='line'> 56</span>   */</span><span class="WHIT">
+<span class='line'> 57</span>   </span><span class="NAME">treeItemChildrenKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"treeItemChildren"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 58</span>   
+<span class='line'> 59</span>   </span><span class="COMM">/**
+<span class='line'> 60</span>     Returns an SC.Array object that actually will represent the tree as a 
+<span class='line'> 61</span>     flat array suitable for use by a CollectionView.  Other than binding this
+<span class='line'> 62</span>     property as the content of a CollectionView, you generally should not 
+<span class='line'> 63</span>     use this property directly.  Instead, work on the tree content using the
+<span class='line'> 64</span>     TreeController like you would any other ObjectController.
+<span class='line'> 65</span>   
+<span class='line'> 66</span>     @property {SC.Array}
+<span class='line'> 67</span>   */</span><span class="WHIT">
+<span class='line'> 68</span>   </span><span class="NAME">arrangedObjects</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 69</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">content</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'content'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 70</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">content</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 71</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.TreeItemObserver.create</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">item</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">content</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 72</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// empty!</span><span class="WHIT">
+<span class='line'> 73</span>     </span><span class="NAME">this._sctc_arrangedObjects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 74</span>     
+<span class='line'> 75</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 76</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 77</span> 
+<span class='line'> 78</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'> 79</span>   </span><span class="COMM">// PRIVATE</span><span class="WHIT">
+<span class='line'> 80</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'> 81</span>   
+<span class='line'> 82</span>   </span><span class="COMM">/**
+<span class='line'> 83</span>     @private
+<span class='line'> 84</span>     
+<span class='line'> 85</span>     Manually invalidate the arrangedObjects cache so that we can teardown
+<span class='line'> 86</span>     any existing value.  We do it via an observer so that this will fire 
+<span class='line'> 87</span>     immediately instead of waiting on some other component to get 
+<span class='line'> 88</span>     arrangedObjects again.
+<span class='line'> 89</span>   */</span><span class="WHIT">
+<span class='line'> 90</span>   </span><span class="NAME">_sctc_invalidateArrangedObjects</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 91</span>     </span><span class="NAME">this.propertyWillChange</span><span class="PUNC">(</span><span class="STRN">'arrangedObjects'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 92</span>     
+<span class='line'> 93</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._sctc_arrangedObjects</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 94</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret.destroy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 95</span>     </span><span class="NAME">this._sctc_arrangedObjects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 96</span>     
+<span class='line'> 97</span>     </span><span class="NAME">this.propertyDidChange</span><span class="PUNC">(</span><span class="STRN">'arrangedObjects'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 98</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'content'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'treeItemIsExpandedKey'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'treeItemChildrenKey'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'treeItemIsGrouped'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 99</span>   
+<span class='line'>100</span>   </span><span class="NAME">_sctc_arrangedObjectsContentDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="NAME">this.updateSelectionAfterContentChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>102</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'*arrangedObjects.[]'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>103</span>   
+<span class='line'>104</span>   </span><span class="COMM">/**
+<span class='line'>105</span>     @private
+<span class='line'>106</span>     
+<span class='line'>107</span>     Returns the first item in arrangeObjects that is not a group.  This uses
+<span class='line'>108</span>     a brute force approach right now; we assume you probably don't have a lot
+<span class='line'>109</span>     of groups up front.
+<span class='line'>110</span>   */</span><span class="WHIT">
+<span class='line'>111</span>   </span><span class="NAME">firstSelectableObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>112</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">objects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'arrangedObjects'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>113</span>         </span><span class="NAME">indexes</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT">     </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>114</span>         
+<span class='line'>115</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">objects</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// fast track</span><span class="WHIT">
+<span class='line'>116</span>     
+<span class='line'>117</span>     </span><span class="NAME">indexes</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">objects.contentGroupIndexes</span><span class="PUNC">(</span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">objects</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>118</span>     </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">objects.get</span><span class="PUNC">(</span><span class="STRN">'length'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>119</span>     </span><span class="KEYW">while</span><span class="PUNC">(</span><span class="NAME">indexes.contains</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>120</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">>=</span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">objects.objectAt</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>121</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>122</span>   
+<span class='line'>123</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>124</span> 
+<span class='line'>125</span> </span></pre></body></html>

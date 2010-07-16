@@ -1,0 +1,1144 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.NestedStore</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.NestedStore
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Store.html#constructor">SC.Store</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_system_nested_store.js.html">frameworks/sproutcore/frameworks/datastore/system/nested_store.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A nested store can buffer changes to a parent store and then commit them all at once.  You usually will use a NestedStore as part of store chaining to stage changes to your object graph before sharing them with the rest of the application.</p>
+
+<p>Normally you will not create a nested store directly.  Instead, you can retrieve a nested store by using the chain() method.  When you are finished working with the nested store, destroy() will dispose of it.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.NestedStore.html#hasChanges"><code>-&nbsp;(Boolean) hasChanges [R/W]</code></a>
+					              
+					                <div class="description">This is set to YES when there are changes that have not been committed 
+    yet.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.NestedStore.html#isNested"><code>-&nbsp;(Boolean) isNested [R/W]</code></a>
+					              
+					                <div class="description">YES if the view is nested.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.NestedStore.html#lockOnRead"><code>-&nbsp;(Boolean) lockOnRead [R/W]</code></a>
+					              
+					                <div class="description">If YES, then the attribute hash state will be locked when you first 
+    read the data hash or status.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.NestedStore.html#parentStore"><code>-&nbsp;(SC.Store) parentStore [R/W]</code></a>
+					              
+					                <div class="description">The parent store this nested store is chained to.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Store.html#constructor">SC.Store</a>: </dt><dd><a href="../symbols/SC.Store.html#changelog">changelog</a>, <a href="../symbols/SC.Store.html#commitRecordsAutomatically">commitRecordsAutomatically</a>, <a href="../symbols/SC.Store.html#dataSource">dataSource</a>, <a href="../symbols/SC.Store.html#editables">editables</a>, <a href="../symbols/SC.Store.html#name">name</a>, <a href="../symbols/SC.Store.html#nestedStores">nestedStores</a>, <a href="../symbols/SC.Store.html#queryErrors">queryErrors</a>, <a href="../symbols/SC.Store.html#recordArraysWithQuery">recordArraysWithQuery</a>, <a href="../symbols/SC.Store.html#recordErrors">recordErrors</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#commitChanges">
+		<code class="type">-&nbsp;(SC.Store)  commitChanges(force)</code>
+				              </a>
+				              
+				                <div class="description">Propagate this store's changes to its parent.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#destroy">
+		<code class="type">-&nbsp;(SC.Store)  destroy()</code>
+				              </a>
+				              
+				                <div class="description">When you are finished working with a chained store, call this method to 
+    tear it down.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#discardChanges">
+		<code class="type">-&nbsp;(SC.Store)  discardChanges()</code>
+				              </a>
+				              
+				                <div class="description">Discard the changes made to this store and reset the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#find">
+		<code class="type">-&nbsp;(SC.Record|SC.RecordArray)  find(query)</code>
+				              </a>
+				              
+				                <div class="description">find() cannot accept REMOTE queries in a nested store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#readError">
+		<code class="type">-&nbsp;(SC.Error)  readError(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the SC.Error object associated with a specific record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#readQueryError">
+		<code class="type">-&nbsp;(SC.Error)  readQueryError(query)</code>
+				              </a>
+				              
+				                <div class="description">Returns the SC.Error object associated with a specific query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#reset">
+		<code class="type">-&nbsp;(SC.Store)  reset()</code>
+				              </a>
+				              
+				                <div class="description">Resets a store's data hash contents to match its parent.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.NestedStore#storeKeyEditState">
+		<code class="type">-&nbsp;(Number)  storeKeyEditState(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the current edit status of a storekey.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Store.html#constructor">SC.Store</a>: </dt><dd><a href="../symbols/SC.Store.html#cancelRecord">cancelRecord</a>, <a href="../symbols/SC.Store.html#cancelRecords">cancelRecords</a>, <a href="../symbols/SC.Store.html#cascade">cascade</a>, <a href="../symbols/SC.Store.html#chain">chain</a>, <a href="../symbols/SC.Store.html#commitRecord">commitRecord</a>, <a href="../symbols/SC.Store.html#commitRecords">commitRecords</a>, <a href="../symbols/SC.Store.html#createRecord">createRecord</a>, <a href="../symbols/SC.Store.html#createRecords">createRecords</a>, <a href="../symbols/SC.Store.html#dataHashDidChange">dataHashDidChange</a>, <a href="../symbols/SC.Store.html#dataSourceDidCancel">dataSourceDidCancel</a>, <a href="../symbols/SC.Store.html#dataSourceDidCancelQuery">dataSourceDidCancelQuery</a>, <a href="../symbols/SC.Store.html#dataSourceDidComplete">dataSourceDidComplete</a>, <a href="../symbols/SC.Store.html#dataSourceDidDestroy">dataSourceDidDestroy</a>, <a href="../symbols/SC.Store.html#dataSourceDidError">dataSourceDidError</a>, <a href="../symbols/SC.Store.html#dataSourceDidErrorQuery">dataSourceDidErrorQuery</a>, <a href="../symbols/SC.Store.html#dataSourceDidFetchQuery">dataSourceDidFetchQuery</a>, <a href="../symbols/SC.Store.html#destroyRecord">destroyRecord</a>, <a href="../symbols/SC.Store.html#destroyRecords">destroyRecords</a>, <a href="../symbols/SC.Store.html#flush">flush</a>, <a href="../symbols/SC.Store.html#from">from</a>, <a href="../symbols/SC.Store.html#hasNestedStore">hasNestedStore</a>, <a href="../symbols/SC.Store.html#idFor">idFor</a>, <a href="../symbols/SC.Store.html#loadQueryResults">loadQueryResults</a>, <a href="../symbols/SC.Store.html#loadRecord">loadRecord</a>, <a href="../symbols/SC.Store.html#loadRecords">loadRecords</a>, <a href="../symbols/SC.Store.html#materializeRecord">materializeRecord</a>, <a href="../symbols/SC.Store.html#peekStatus">peekStatus</a>, <a href="../symbols/SC.Store.html#pushDestroy">pushDestroy</a>, <a href="../symbols/SC.Store.html#pushError">pushError</a>, <a href="../symbols/SC.Store.html#pushRetrieve">pushRetrieve</a>, <a href="../symbols/SC.Store.html#readDataHash">readDataHash</a>, <a href="../symbols/SC.Store.html#readEditableDataHash">readEditableDataHash</a>, <a href="../symbols/SC.Store.html#readEditableProperty">readEditableProperty</a>, <a href="../symbols/SC.Store.html#readStatus">readStatus</a>, <a href="../symbols/SC.Store.html#recordArrayWillDestroy">recordArrayWillDestroy</a>, <a href="../symbols/SC.Store.html#recordDidChange">recordDidChange</a>, <a href="../symbols/SC.Store.html#recordsDidChange">recordsDidChange</a>, <a href="../symbols/SC.Store.html#recordsFor">recordsFor</a>, <a href="../symbols/SC.Store.html#recordTypeFor">recordTypeFor</a>, <a href="../symbols/SC.Store.html#refreshQuery">refreshQuery</a>, <a href="../symbols/SC.Store.html#refreshRecord">refreshRecord</a>, <a href="../symbols/SC.Store.html#refreshRecords">refreshRecords</a>, <a href="../symbols/SC.Store.html#removeDataHash">removeDataHash</a>, <a href="../symbols/SC.Store.html#retrieveRecord">retrieveRecord</a>, <a href="../symbols/SC.Store.html#retrieveRecords">retrieveRecords</a>, <a href="../symbols/SC.Store.html#statusString">statusString</a>, <a href="../symbols/SC.Store.html#storeKeyExists">storeKeyExists</a>, <a href="../symbols/SC.Store.html#storeKeyFor">storeKeyFor</a>, <a href="../symbols/SC.Store.html#storeKeys">storeKeys</a>, <a href="../symbols/SC.Store.html#storeKeysFor">storeKeysFor</a>, <a href="../symbols/SC.Store.html#unloadRecord">unloadRecord</a>, <a href="../symbols/SC.Store.html#unloadRecords">unloadRecords</a>, <a href="../symbols/SC.Store.html#writeDataHash">writeDataHash</a>, <a href="../symbols/SC.Store.html#writeStatus">writeStatus</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasChanges"></a> 
+			          <div class="field">
+			            <a name="hasChanges"></a> 
+			            <h3>hasChanges
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This is set to YES when there are changes that have not been committed 
+    yet.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">hasChanges</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">NO</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isNested"></a> 
+			          <div class="field">
+			            <a name="isNested"></a> 
+			            <h3>isNested
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the view is nested.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isNested</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="lockOnRead"></a> 
+			          <div class="field">
+			            <a name="lockOnRead"></a> 
+			            <h3>lockOnRead
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, then the attribute hash state will be locked when you first 
+    read the data hash or status.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">lockOnRead</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This means that if you retrieve a record then change the record in the parent store, the changes will not be visible to your nested store until you commit or discard changes.</p>
+
+<p>If NO, then the attribute hash will lock only when you write data.</p>
+
+<p>Normally you want to lock your attribute hash the first time you read it. This will make your nested store behave most consistently.  However, if you are using multiple sibling nested stores at one time, you may want to turn off this property so that changes from one store will be reflected in the other one immediately.  In this case you will be responsible for ensuring that the sibling stores do not edit the same part of the object graph at the same time.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="parentStore"></a> 
+			          <div class="field">
+			            <a name="parentStore"></a> 
+			            <h3>parentStore
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The parent store this nested store is chained to.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Store
+		              </span>
+		              <span class="name">parentStore</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Nested stores must have a parent store in order to function properly.  Normally, you create a nested store using the SC.Store#chain() method and this property will be set for you.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#commitChanges"></a> 
+			          <h3>commitChanges()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Propagate this store's changes to its parent.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">commitChanges</span> <span class="params">(force)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">force</span>
+			              
+			              <span class="desc">if YES, does not check for conflicts first</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the store does not have a parent, this has no effect other than to clear the change set.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#destroy"></a> 
+			          <h3>destroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">When you are finished working with a chained store, call this method to 
+    tear it down.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">destroy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will also discard any pending changes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#discardChanges"></a> 
+			          <h3>discardChanges()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Discard the changes made to this store and reset the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">discardChanges</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#find"></a> 
+			          <h3>find()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">find() cannot accept REMOTE queries in a nested store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record|SC.RecordArray)
+			              </span>
+			              <span class="name">find</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record|SC.RecordArray)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This override will verify that condition for you.  See SC.Store#find() for info on using this method.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#readError"></a> 
+			          <h3>readError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the SC.Error object associated with a specific record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Error)
+			              </span>
+			              <span class="name">readError</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">The store key of the record.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Error)</span>
+			                <span class="desc">SC.Error or null if no error associated with the record.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Delegates the call to the parent store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#readQueryError"></a> 
+			          <h3>readQueryError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the SC.Error object associated with a specific query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Error)
+			              </span>
+			              <span class="name">readQueryError</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">The SC.Query with which the error is associated.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Error)</span>
+			                <span class="desc">SC.Error or null if no error associated with the query.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Delegates the call to the parent store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#reset"></a> 
+			          <h3>reset()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Resets a store's data hash contents to match its parent.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">reset</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.NestedStore#storeKeyEditState"></a> 
+			          <h3>storeKeyEditState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the current edit status of a storekey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyEditState</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">edit status</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>May be one of INHERITED, EDITABLE, and LOCKED.  Used mostly for unit testing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:55 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

@@ -1,0 +1,2685 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Query</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Query
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>, <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>, <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_system_query.js.html">frameworks/sproutcore/frameworks/datastore/system/query.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>This permits you to perform queries on your data store, written in a SQL-like language. Here is a simple example:</p>
+
+
+<p class="code"><code>q = SC.Query.create({<br />conditions: "firstName = 'Jonny' AND lastName = 'Cash'"<br />})</code></p>
+
+<p>You can check if a certain record matches the query by calling:</p>
+
+
+<p class="code"><code>q.contains(record)</code></p>
+
+<p>To find all records of your store, that match query q, use findAll with query q as argument:</p>
+
+
+<p class="code"><code>r = MyApp.store.findAll(q)</code></p>
+
+<p>r will be a record array containing all matching records. To limit the query to a record type of MyApp.MyModel, you can specify the type as a property of the query like this:</p>
+
+
+<p class="code"><code>q = SC.Query.create({<br />conditions: "firstName = 'Jonny' AND lastName = 'Cash'",<br />recordType: MyApp.MyModel<br />})</code></p>
+
+<p>Calling find() like above will now return only records of type t. It is recommended to limit your query to a record type, since the query will have to look for matching records in the whole store, if no record type is given.</p>
+
+<p>You can give an order, which the resulting records should follow, like this:</p>
+
+
+<p class="code"><code>q = SC.Query.create({<br />conditions: "firstName = 'Jonny' AND lastName = 'Cash'",<br />recordType: MyApp.MyModel,<br />orderBy: "lastName, year DESC"<br />});</code></p>
+
+<p>The default order direction is ascending. You can change it to descending by writing DESC behind the property name like in the example above. If no order is given, or records are equal in respect to a given order, records will be ordered by guid.</p>
+
+<h2> SproutCore Query Language</h2>
+
+<p>Features of the query language:</p>
+
+<h4> Primitives:</h4>
+
+<ul>	<li>record properties</li>
+	<li>null, undefined</li>
+	<li>true, false</li>
+	<li>numbers (integers and floats)</li>
+	<li>strings (double or single quoted)</li>
+</ul>
+
+<h4> Parameters:</h4>
+
+<ul>	<li>%@ (wild card)</li>
+	<li>{parameterName} (named parameter)</li>
+</ul>
+
+<p>Wild cards are used to identify parameters by the order in which they appear in the query string. Named parameters can be used when tracking the order becomes difficult. Both types of parameters can be used by giving the parameters as a property to your query object:</p>
+
+
+<p class="code"><code>yourQuery.parameters = yourParameters</code></p>
+
+<p>where yourParameters should have one of the following formats:</p>
+
+<p>for wild cards: [firstParam, secondParam, thirdParam] for named params: {name1: param1, mane2: parma2}</p>
+
+<p>You cannot use both types of parameters in a single query!</p>
+
+<h4> Operators:</h4>
+
+<ul>	<li>=</li>
+	<li>!=</li>
+	<li><</li>
+	<li><=</li>
+	<li>></li>
+	<li>>=</li>
+	<li>BEGINS_WITH (checks if a string starts with another one)</li>
+	<li>ENDS_WITH   (checks if a string ends with another one)</li>
+	<li>CONTAINS    (checks if a string contains another one, or if an object is in an array)</li>
+	<li>MATCHES     (checks if a string is matched by a regexp,</li>
+</ul>
+<p>you will have to use a parameter to insert the regexp)</p>
+<ul>	<li>ANY         (checks if the thing on its left is contained in the array</li>
+</ul>
+<p>on its right, you will have to use a parameter to insert the array)</p>
+<ul>	<li>TYPE_IS     (unary operator expecting a string containing the name</li>
+</ul>
+<p>of a Model class on its right side, only records of this type will match)</p>
+
+<h4> Boolean Operators:</h4>
+
+<ul>	<li>AND</li>
+	<li>OR</li>
+	<li>NOT</li>
+</ul>
+
+<h4> Parenthesis for grouping:</h4>
+
+<ul>	<li>( and )</li>
+</ul>
+
+
+<h2> Adding Your Own Query Handlers</h2>
+
+<p>You can extend the query language with your own operators by calling:</p>
+
+
+<p class="code"><code>SC.Query.registerQueryExtension('your_operator', your_operator_definition);</code></p>
+
+<p>See details below. As well you can provide your own comparison functions to control ordering of specific record properties like this:</p>
+
+
+<p class="code"><code>SC.Query.registerComparison(property_name, comparison_for_this_property);</code></p>
+
+<h2> Examples</h2>
+
+<p>Some example queries:</p>
+
+<p>TODO add examples</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#conditions"><code>-&nbsp;(String) conditions [R/W]</code></a>
+					              
+					                <div class="description">Unparsed query conditions.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#expandedRecordTypes"><code>-&nbsp;(SC.Enumerable) expandedRecordTypes [R/W]</code></a>
+					              
+					                <div class="description">Returns the complete set of recordTypes matched by this query.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#isEditable"><code>-&nbsp;(Object) isEditable [R/W]</code></a>
+					              
+					                <div class="description">Indicates whether a record is editable or not.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#isLocal"><code>-&nbsp;(Boolean) isLocal [R/W]</code></a>
+					              
+					                <div class="description">Returns YES if query location is Local.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#isQuery"><code>-&nbsp;(Boolean) isQuery [R/W]</code></a>
+					              
+					                <div class="description">Walk like a duck.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#isRemote"><code>-&nbsp;(Boolean) isRemote [R/W]</code></a>
+					              
+					                <div class="description">Returns YES if query location is Remote.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#.LOCAL"><code>+&nbsp;(String) LOCAL [R/W]</code></a>
+					              
+					                <div class="description">Constant used for SC.Query#location</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#location"><code>-&nbsp;(String) location [R/W]</code></a>
+					              
+					                <div class="description">Indicates the location where the result set for this query is stored.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#orderBy"><code>-&nbsp;(String | Function) orderBy [R/W]</code></a>
+					              
+					                <div class="description">Optional orderBy parameters.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#parameters"><code>-&nbsp;(Hash) parameters [R/W]</code></a>
+					              
+					                <div class="description">Optional hash of parameters.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#queryLanguage"><code>-&nbsp;(Object) queryLanguage [R/W]</code></a>
+					              
+					                <div class="description">This is the definition of the query language.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#recordType"><code>-&nbsp;(SC.Record) recordType [R/W]</code></a>
+					              
+					                <div class="description">The base record type or types for the query.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#recordTypes"><code>-&nbsp;(SC.Enumerable) recordTypes [R/W]</code></a>
+					              
+					                <div class="description">Optional array of multiple record types.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#.REMOTE"><code>+&nbsp;(String) REMOTE [R/W]</code></a>
+					              
+					                <div class="description">Constant used for SC.Query#location</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Query.html#scope"><code>-&nbsp;(SC.Query) scope [R/W]</code></a>
+					              
+					                <div class="description">Another query that will optionally limit the search of records.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.isCopyable">isCopyable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.isFreezable">isFreezable</a>, <a href="../symbols/SC.Freezable.html#.isFrozen">isFrozen</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Query.build">
+		<code class="type">+&nbsp;(SC.Query)  build(location, recordType, conditions, params)</code>
+				              </a>
+				              
+				                <div class="description">Returns a SC.Query instance reflecting the passed properties.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#buildOrder">
+		<code class="type">-&nbsp;(Array | Function)  buildOrder(orderOp)</code>
+				              </a>
+				              
+				                <div class="description">Takes a string containing an order statement and returns an array
+    describing this order for easier processing.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#buildTokenTree">
+		<code class="type">-&nbsp;(Object)  buildTokenTree(tokenList, treeLogic)</code>
+				              </a>
+				              
+				                <div class="description">Takes an array of tokens and returns a tree, depending on the
+    specified tree logic.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#compare">
+		<code class="type">-&nbsp;(Number)  compare(record1, record2)</code>
+				              </a>
+				              
+				                <div class="description">Returns the sort order of the two passed records, taking into account the
+    orderBy property set on this query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.compareStoreKeys">
+		<code class="type">+&nbsp;(Number)  compareStoreKeys(storeKey1, storeKey2)</code>
+				              </a>
+				              
+				                <div class="description">Default sort method that is used when calling containsStoreKeys()
+    or containsRecords() on this query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#contains">
+		<code class="type">-&nbsp;(Boolean)  contains(record, parameters)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if record is matched by the query, NO otherwise.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.containsRecords">
+		<code class="type">+&nbsp;(Array)  containsRecords(query, records, store)</code>
+				              </a>
+				              
+				                <div class="description">Will find which records match a give SC.Query and return an array of 
+    store keys.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#containsRecordTypes">
+		<code class="type">-&nbsp;(Boolean)  containsRecordTypes(types)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the query matches one or more of the record types in the
+    passed set.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.local">
+		<code class="type">+&nbsp;(SC.Query)  local(recordType, conditions, params)</code>
+				              </a>
+				              
+				                <div class="description">Returns a LOCAL query with the passed options.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.orderStoreKeys">
+		<code class="type">+&nbsp;(Array)  orderStoreKeys(storeKeys, query, store)</code>
+				              </a>
+				              
+				                <div class="description">Sorts a set of store keys according to the orderBy property
+    of the SC.Query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#parse">
+		<code class="type">-&nbsp;(Boolean)  parse()</code>
+				              </a>
+				              
+				                <div class="description">This method has to be called before the query object can be used.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#queryWithScope">
+		<code class="type">-&nbsp;(SC.Query)  queryWithScope(recordArray)</code>
+				              </a>
+				              
+				                <div class="description">Returns the same query but with the scope set to the passed record array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.registerComparison">
+		<code class="type">+&nbsp;(SC.Query)  registerComparison(name, custom)</code>
+				              </a>
+				              
+				                <div class="description">Call to register a comparison for a specific property name.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.registerQueryExtension">
+		<code class="type">+&nbsp;(SC.Query)  registerQueryExtension(tokenName, token)</code>
+				              </a>
+				              
+				                <div class="description">Call to register an extension for the query language.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.remote">
+		<code class="type">+&nbsp;(SC.Query)  remote(recordType, conditions, params)</code>
+				              </a>
+				              
+				                <div class="description">Returns a REMOTE query with the passed options.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query.storeKeyFor">
+		<code class="type">+&nbsp;(Number)  storeKeyFor(query)</code>
+				              </a>
+				              
+				                <div class="description">Given a query, returns the associated storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Query#tokenizeString">
+		<code class="type">-&nbsp;(Array)  tokenizeString(inputString, grammar)</code>
+				              </a>
+				              
+				                <div class="description">Takes a string and tokenizes it based on the grammar definition
+    provided.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.copy">copy</a>, <a href="../symbols/SC.Copyable.html#.frozenCopy">frozenCopy</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.freeze">freeze</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="conditions"></a> 
+			          <div class="field">
+			            <a name="conditions"></a> 
+			            <h3>conditions
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Unparsed query conditions.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">conditions</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you are handling a query yourself, then you will find the base query string here.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="expandedRecordTypes"></a> 
+			          <div class="field">
+			            <a name="expandedRecordTypes"></a> 
+			            <h3>expandedRecordTypes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the complete set of recordTypes matched by this query.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Enumerable
+		              </span>
+		              <span class="name">expandedRecordTypes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Includes any named recordTypes plus their subclasses.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Indicates whether a record is editable or not.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Defaults to NO.  Local queries should never be made editable.  Remote queries may be editable or not depending on the data source.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isLocal"></a> 
+			          <div class="field">
+			            <a name="isLocal"></a> 
+			            <h3>isLocal
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES if query location is Local.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isLocal</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is sometimes more convenient than checking the location.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isQuery"></a> 
+			          <div class="field">
+			            <a name="isQuery"></a> 
+			            <h3>isQuery
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isQuery</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRemote"></a> 
+			          <div class="field">
+			            <a name="isRemote"></a> 
+			            <h3>isRemote
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES if query location is Remote.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isRemote</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is sometimes more convenient than checking the location.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".LOCAL"></a> 
+			          <div class="field">
+			            <a name=".LOCAL"></a> 
+			            <h3>LOCAL
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Constant used for SC.Query#location</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">LOCAL</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="location"></a> 
+			          <div class="field">
+			            <a name="location"></a> 
+			            <h3>location
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Indicates the location where the result set for this query is stored.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">location</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Currently the available options are:</p>
+
+<ul>	<li>SC.Query.LOCAL: indicates that the query results will be automatically computed from the in-memory store.</li>
+	<li>SC.Query.REMOTE: indicates that the query results are kept on a remote server and hence must be loaded from the DataSource.</li>
+</ul>
+
+<p>The default setting for this property is SC.Query.LOCAL.</p>
+
+<p>Note that even if a query location is LOCAL, your DataSource will still have its fetch() method called for the query.  For LOCAL queries, you won't need to explicitly provide the query result set; you can just load records into the in-memory store as needed and let the query recompute automatically.</p>
+
+<p>If your query location is REMOTE, then your DataSource will need to provide the actual set of query results manually.  Usually you will only need to use a REMOTE query if you are retrieving a large data set and you don't want to pay the cost of computing the result set client side.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="orderBy"></a> 
+			          <div class="field">
+			            <a name="orderBy"></a> 
+			            <h3>orderBy
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optional orderBy parameters.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String | Function
+		              </span>
+		              <span class="name">orderBy</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This can be a string of keys, optionally beginning with the strings "DESC " or "ASC " to select descending or ascending order.</p>
+
+<p>Alternatively, you can specify a comparison function, in which case the two records will be sent to it.  Your comparison function, as with any other, is expected to return -1, 0, or 1.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="parameters"></a> 
+			          <div class="field">
+			            <a name="parameters"></a> 
+			            <h3>parameters
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optional hash of parameters.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Hash
+		              </span>
+		              <span class="name">parameters</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>These parameters may be interpolated into the query conditions.  If you are handling the query manually, these parameters will not be used.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="queryLanguage"></a> 
+			          <div class="field">
+			            <a name="queryLanguage"></a> 
+			            <h3>queryLanguage
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This is the definition of the query language.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">queryLanguage</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can extend it by using SC.Query.registerQueryExtension().</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="recordType"></a> 
+			          <div class="field">
+			            <a name="recordType"></a> 
+			            <h3>recordType
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The base record type or types for the query.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Record
+		              </span>
+		              <span class="name">recordType</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This must be specified to filter the kinds of records this query will work on.  You may either set this to a single record type or to an array or set of record types.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="recordTypes"></a> 
+			          <div class="field">
+			            <a name="recordTypes"></a> 
+			            <h3>recordTypes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optional array of multiple record types.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Enumerable
+		              </span>
+		              <span class="name">recordTypes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If the query accepts multiple record types, this is how you can check for it.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".REMOTE"></a> 
+			          <div class="field">
+			            <a name=".REMOTE"></a> 
+			            <h3>REMOTE
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Constant used for SC.Query#location</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">REMOTE</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="scope"></a> 
+			          <div class="field">
+			            <a name="scope"></a> 
+			            <h3>scope
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Another query that will optionally limit the search of records.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Query
+		              </span>
+		              <span class="name">scope</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is usually configured for you when you do find() from another record array.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.build"></a> 
+			          <h3>build()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a SC.Query instance reflecting the passed properties.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">build</span> <span class="params">(location, recordType, conditions, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">location</span>
+			              
+			              <span class="desc">the query location.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type or types.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">conditions</span>
+			              
+			              <span class="desc">optional conditions</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional params. or pass multiple args.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Where possible this method will return cached query instances so that multiple calls to this method will return the same instance.  This is not possible however, when you pass custom parameters or set ordering. All returned queries are frozen.</p>
+
+<p>Usually you will not call this method directly.  Instead use the more convenient SC.Query.local() and SC.Query.remote().</p>
+
+<h2> Examples</h2>
+
+<p>There are a number of different ways you can call this method.</p>
+
+<p>The following return local queries selecting all records of a particular type or types, including any subclasses:</p>
+
+
+<p class="code"><code>var people = SC.Query.local(Ab.Person);<br />var peopleAndCompanies = SC.Query.local([Ab.Person, Ab.Company]);<br /><br />var people = SC.Query.local('Ab.Person');<br />var peopleAndCompanies = SC.Query.local('Ab.Person Ab.Company'.w());<br /><br />var allRecords = SC.Query.local(SC.Record);</code></p>
+
+<p>The following will match a particular type of condition:</p>
+
+
+<p class="code"><code>var married = SC.Query.local(Ab.Person, "isMarried=YES");<br />var married = SC.Query.local(Ab.Person, "isMarried=%@", [YES]);<br />var married = SC.Query.local(Ab.Person, "isMarried={married}", {<br />married: YES<br />});</code></p>
+
+<p>You can also pass a hash of options as the second parameter.  This is how you specify an order, for example:</p>
+
+
+<p class="code"><code>var orderedPeople = SC.Query.local(Ab.Person, { orderBy: "firstName" });</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#buildOrder"></a> 
+			          <h3>buildOrder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Takes a string containing an order statement and returns an array
+    describing this order for easier processing.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array | Function)
+			              </span>
+			              <span class="name">buildOrder</span> <span class="params">(orderOp)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String | Function)</span><span class="name">orderOp</span>
+			              
+			              <span class="desc">the string containing the order statement, or a comparison function</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array | Function)</span>
+			                <span class="desc">array of order statement, or a function if a function was specified</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Called by parse().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#buildTokenTree"></a> 
+			          <h3>buildTokenTree()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Takes an array of tokens and returns a tree, depending on the
+    specified tree logic.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">buildTokenTree</span> <span class="params">(tokenList, treeLogic)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">tokenList</span>
+			              
+			              <span class="desc">the list of tokens</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">treeLogic</span>
+			              
+			              <span class="desc">the logic definition (normally queryLanguage)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">token tree</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The returned object will have an error property if building of the tree failed. Check it to get some information about what happend. If everything worked the tree can be evaluated by calling:</p>
+
+<p>tree.evaluate(record, parameters)</p>
+
+<p>If tokenList is empty, a single token will be returned which will evaluate to true for all records.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#compare"></a> 
+			          <h3>compare()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the sort order of the two passed records, taking into account the
+    orderBy property set on this query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">compare</span> <span class="params">(record1, record2)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record1</span>
+			              
+			              <span class="desc">the first record</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record2</span>
+			              
+			              <span class="desc">the second record</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">-1 if record1 < record2, 
+                      +1 if record1 > record2,
+                      0 if equal</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method does not verify that the two records actually belong in the query set or not; this is checked using contains().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.compareStoreKeys"></a> 
+			          <h3>compareStoreKeys()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Default sort method that is used when calling containsStoreKeys()
+    or containsRecords() on this query.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">compareStoreKeys</span> <span class="params">(storeKey1, storeKey2)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey1</span>
+			              
+			              <span class="desc">a store key</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey2</span>
+			              
+			              <span class="desc">a store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">-1 if record1 < record2,  +1 if record1 > record2, 0 if equal</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Simply materializes two records based on storekeys before passing on to compare() .</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#contains"></a> 
+			          <h3>contains()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if record is matched by the query, NO otherwise.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contains</span> <span class="params">(record, parameters)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record to check</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">parameters</span>
+			              
+			              <span class="desc">optional override parameters</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if record belongs, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is used when computing a query locally.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.containsRecords"></a> 
+			          <h3>containsRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Will find which records match a give SC.Query and return an array of 
+    store keys.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">containsRecords</span> <span class="params">(query, records, store)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">to apply</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RecordArray)</span><span class="name">records</span>
+			              
+			              <span class="desc">to search within</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">to materialize record from</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">array instance of store keys matching the SC.Query (sorted)</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will also apply the sorting for the query.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#containsRecordTypes"></a> 
+			          <h3>containsRecordTypes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the query matches one or more of the record types in the
+    passed set.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">containsRecordTypes</span> <span class="params">(types)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Set)</span><span class="name">types</span>
+			              
+			              <span class="desc">set of record types</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if record types match</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.local"></a> 
+			          <h3>local()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a LOCAL query with the passed options.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">local</span> <span class="params">(recordType, conditions, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type or types.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">conditions</span>
+			              
+			              <span class="desc">optional conditions</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional params. or pass multiple args.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For a full description of the parameters you can pass to this method, see SC.Query.build().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.orderStoreKeys"></a> 
+			          <h3>orderStoreKeys()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Sorts a set of store keys according to the orderBy property
+    of the SC.Query.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">orderStoreKeys</span> <span class="params">(storeKeys, query, store)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">to sort</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">to use for sorting</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">to materialize records from</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">sorted store keys.  may be same instance as passed value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#parse"></a> 
+			          <h3>parse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This method has to be called before the query object can be used.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">parse</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">true if parsing succeeded, false otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>You will normaly not have to do this, it will be called automatically if you try to evaluate a query. You can however use this function for testing your queries.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#queryWithScope"></a> 
+			          <h3>queryWithScope()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the same query but with the scope set to the passed record array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">queryWithScope</span> <span class="params">(recordArray)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RecordArray)</span><span class="name">recordArray</span>
+			              
+			              <span class="desc">the scope</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc">new query</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This will copy the receiver.  It also stores these queries in a cache to reuse them if possible.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.registerComparison"></a> 
+			          <h3>registerComparison()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call to register a comparison for a specific property name.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">registerComparison</span> <span class="params">(name, custom)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">name</span>
+			              
+			              <span class="desc">of the record property</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">custom</span>
+			              
+			              <span class="desc">comparison function</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>The function you pass should accept two values of this property and return -1 if the first is smaller than the second, 0 if they are equal and 1 if the first is greater than the second.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.registerQueryExtension"></a> 
+			          <h3>registerQueryExtension()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call to register an extension for the query language.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">registerQueryExtension</span> <span class="params">(tokenName, token)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">tokenName</span>
+			              
+			              <span class="desc">name of the operator</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">token</span>
+			              
+			              <span class="desc">extension definition</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>You shoud provide a name for your extension and a definition specifying how it should be parsed and evaluated.</p>
+
+<p>Have a look at queryLanguage for examples of definitions.</p>
+
+<p>TODO add better documentation here</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.remote"></a> 
+			          <h3>remote()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a REMOTE query with the passed options.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Query)
+			              </span>
+			              <span class="name">remote</span> <span class="params">(recordType, conditions, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type or types.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">conditions</span>
+			              
+			              <span class="desc">optional conditions</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional params. or pass multiple args.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Query)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For a full description of the parameters you can pass to this method, see SC.Query.build().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query.storeKeyFor"></a> 
+			          <h3>storeKeyFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a query, returns the associated storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyFor</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the query</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">a storeKey.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For the inverse of this method see SC.Store.queryFor().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Query#tokenizeString"></a> 
+			          <h3>tokenizeString()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Takes a string and tokenizes it based on the grammar definition
+    provided.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">tokenizeString</span> <span class="params">(inputString, grammar)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">inputString</span>
+			              
+			              <span class="desc">the string to tokenize</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">grammar</span>
+			              
+			              <span class="desc">the grammar definition (normally queryLanguage)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">list of tokens</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Called by parse().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:55 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

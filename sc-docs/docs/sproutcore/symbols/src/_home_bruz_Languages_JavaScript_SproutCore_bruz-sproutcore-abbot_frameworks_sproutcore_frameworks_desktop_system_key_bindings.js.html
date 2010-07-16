@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// SproutCore -- JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright ©2006-2008, Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">// Portions copyright ©2008 Apple Inc.  All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  6</span> 
+<span class='line'>  7</span> </span><span class="COMM">// Key Bindings are used to map a keyboard input to an action message on a</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="COMM">// responder.  These bindings are most useful when implementing sophisticated</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="COMM">// keyboard input mechanisms.  For keyboard shortcuts, instead use menus, etc.</span><span class="WHIT">
+<span class='line'> 10</span> 
+<span class='line'> 11</span> </span><span class="NAME">SC.MODIFIED_KEY_BINDINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 12</span>   </span><span class="STRN">'ctrl_.'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'cancel'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 13</span>   </span><span class="STRN">'shift_tab'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'insertBacktab'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 14</span>   </span><span class="STRN">'shift_left'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveLeftAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 15</span>   </span><span class="STRN">'shift_right'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveRightAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 16</span>   </span><span class="STRN">'shift_up'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveUpAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 17</span>   </span><span class="STRN">'shift_down'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveDownAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 18</span>   </span><span class="STRN">'alt_left'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveLeftAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 19</span>   </span><span class="STRN">'alt_right'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveRightAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 20</span>   </span><span class="STRN">'alt_up'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveUpAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 21</span>   </span><span class="STRN">'alt_down'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveDownAndModifySelection'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 22</span>   </span><span class="STRN">'ctrl_a'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'selectAll'</span><span class="WHIT">
+<span class='line'> 23</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span> 
+<span class='line'> 25</span> </span><span class="NAME">SC.BASE_KEY_BINDINGS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 26</span>   </span><span class="STRN">'escape'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'cancel'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 27</span>   </span><span class="STRN">'backspace'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'deleteBackward'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 28</span>   </span><span class="STRN">'delete'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'deleteForward'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 29</span>   </span><span class="STRN">'return'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'insertNewline'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 30</span>   </span><span class="STRN">'tab'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'insertTab'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 31</span>   </span><span class="STRN">'left'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveLeft'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 32</span>   </span><span class="STRN">'right'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveRight'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 33</span>   </span><span class="STRN">'up'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveUp'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 34</span>   </span><span class="STRN">'down'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveDown'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 35</span>   </span><span class="STRN">'home'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveToBeginningOfDocument'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 36</span>   </span><span class="STRN">'end'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'moveToEndOfDocument'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 37</span>   </span><span class="STRN">'pagedown'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'pageDown'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 38</span>   </span><span class="STRN">'pageup'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'pageUp'</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span> 
+<span class='line'> 41</span> </span></pre></body></html>

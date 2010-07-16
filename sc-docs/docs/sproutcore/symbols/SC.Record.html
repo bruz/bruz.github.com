@@ -1,0 +1,4397 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Record</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Record
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_models_record.js.html">frameworks/sproutcore/frameworks/datastore/models/record.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A Record is the core model class in SproutCore. It is analogous to NSManagedObject in Core Data and EOEnterpriseObject in the Enterprise Objects Framework (aka WebObjects), or ActiveRecord::Base in Rails.</p>
+
+<p>To create a new model class, in your SproutCore workspace, do:</p>
+
+
+<p class="code"><code>$ sc-gen model MyApp.MyModel</code></p>
+
+<p>This will create MyApp.MyModel in clients/my_app/models/my_model.js.</p>
+
+<p>The core attributes hash is used to store the values of a record in a format that can be easily passed to/from the server.  The values should generally be stored in their raw string form.  References to external records should be stored as primary keys.</p>
+
+<p>Normally you do not need to work with the attributes hash directly. Instead you should use get/set on normal record properties.  If the property is not defined on the object, then the record will check the attributes hash instead.</p>
+
+<p>You can bulk update attributes from the server using the updateAttributes() method.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#._nextChildKey"><code>+&nbsp;(Object) _nextChildKey [R/W]</code></a>
+					              
+					                <div class="description">The next child key to allocate.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#attributes"><code>-&nbsp;(Hash) attributes [R/W]</code></a>
+					              
+					                <div class="description">This will return the raw attributes that you can edit directly.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BAD_STATE_ERROR"><code>+&nbsp;(SC.Error) BAD_STATE_ERROR [R/W]</code></a>
+					              
+					                <div class="description">Error for when you try to modify a record while it is in a bad 
+    state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY"><code>+&nbsp;(Number) BUSY [R/W]</code></a>
+					              
+					                <div class="description">Generic state for records that have been submitted to data source
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_COMMITTING"><code>+&nbsp;(Number) BUSY_COMMITTING [R/W]</code></a>
+					              
+					                <div class="description">State for records that have been modified and submitted to server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_CREATING"><code>+&nbsp;(Number) BUSY_CREATING [R/W]</code></a>
+					              
+					                <div class="description">State for new records that were created and submitted to the server; 
+    waiting on response from server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_DESTROYING"><code>+&nbsp;(Number) BUSY_DESTROYING [R/W]</code></a>
+					              
+					                <div class="description">State for records that have been destroyed and submitted to server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_ERROR"><code>+&nbsp;(SC.Error) BUSY_ERROR [R/W]</code></a>
+					              
+					                <div class="description">Error for when you try to modify a record that is currently busy</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_LOADING"><code>+&nbsp;(Number) BUSY_LOADING [R/W]</code></a>
+					              
+					                <div class="description">State for records that are still loading data from the server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_REFRESH"><code>+&nbsp;(Number) BUSY_REFRESH [R/W]</code></a>
+					              
+					                <div class="description">State for records that have requested a refresh from the server.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_REFRESH_CLEAN"><code>+&nbsp;(Number) BUSY_REFRESH_CLEAN [R/W]</code></a>
+					              
+					                <div class="description">State for records that have requested a refresh from the server.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.BUSY_REFRESH_DIRTY"><code>+&nbsp;(Number) BUSY_REFRESH_DIRTY [R/W]</code></a>
+					              
+					                <div class="description">State for records that have requested a refresh from the server.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#childRecordNamespace"><code>-&nbsp;(Object) childRecordNamespace [R/W]</code></a>
+					              
+					                <div class="description">The namespace which to retrieve the childRecord Types from</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#childRecords"><code>-&nbsp;(Object) childRecords [R/W]</code></a>
+					              
+					                <div class="description">The child record cache.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.CLEAN"><code>+&nbsp;(Number) CLEAN [R/W]</code></a>
+					              
+					                <div class="description">Generic state for records with no local changes.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.DESTROYED"><code>+&nbsp;(Number) DESTROYED [R/W]</code></a>
+					              
+					                <div class="description">Generic state for records that have been destroyed
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.DESTROYED_CLEAN"><code>+&nbsp;(Number) DESTROYED_CLEAN [R/W]</code></a>
+					              
+					                <div class="description">State for records that have been destroyed and committed to server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.DESTROYED_DIRTY"><code>+&nbsp;(Number) DESTROYED_DIRTY [R/W]</code></a>
+					              
+					                <div class="description">State for records that have been destroyed but not yet committed to server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.DIRTY"><code>+&nbsp;(Number) DIRTY [R/W]</code></a>
+					              
+					                <div class="description">Generic state for records with local changes.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.EMPTY"><code>+&nbsp;(Number) EMPTY [R/W]</code></a>
+					              
+					                <div class="description">State for records that are still loaded.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.ERROR"><code>+&nbsp;(Number) ERROR [R/W]</code></a>
+					              
+					                <div class="description">State for records in an error state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#errorObject"><code>-&nbsp;(SC.Error) errorObject [R/W]</code></a>
+					              
+					                <div class="description">Returns the current error object only if the record is in an error state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#errorValue"><code>-&nbsp;(SC.Record) errorValue [R/W]</code></a>
+					              
+					                <div class="description">Returns the receiver if the record is in an error state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.fixtures"><code>+&nbsp;(SC.FixturesDataSource) fixtures [R/W]</code></a>
+					              
+					                <div class="description">Default fixtures instance for use in applications.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.GENERIC_ERROR"><code>+&nbsp;(SC.Error) GENERIC_ERROR [R/W]</code></a>
+					              
+					                <div class="description">Generic unknown record error</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#id"><code>-&nbsp;(String) id [R/W]</code></a>
+					              
+					                <div class="description">Returns the id for the record instance.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.ignoreUnknownProperties"><code>+&nbsp;(Boolean) ignoreUnknownProperties [R/W]</code></a>
+					              
+					                <div class="description">Whether to ignore unknown properties when they are being set on the record
+    object.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#isDestroyed"><code>-&nbsp;(Boolean) isDestroyed [R/W]</code></a>
+					              
+					                <div class="description">YES when the record has been destroyed</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">YES when the record is in an editable state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#isError"><code>-&nbsp;(Boolean) isError [R/W]</code></a>
+					              
+					                <div class="description">Returns YES whenever the status is SC.Record.ERROR.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#isLoaded"><code>-&nbsp;(Boolean) isLoaded [R/W]</code></a>
+					              
+					                <div class="description">YES when the record's contents have been loaded for the first time.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#isRecord"><code>-&nbsp;(Boolean) isRecord [R/W]</code></a>
+					              
+					                <div class="description">Walk like a duck</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.NOT_FOUND_ERROR"><code>+&nbsp;(SC.Error) NOT_FOUND_ERROR [R/W]</code></a>
+					              
+					                <div class="description">Error for when you attempt to locate a record that is not found</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#primaryKey"><code>-&nbsp;(String) primaryKey [R/W]</code></a>
+					              
+					                <div class="description">This is the primary key used to distinguish records.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#readOnlyAttributes"><code>-&nbsp;(Hash) readOnlyAttributes [R/W]</code></a>
+					              
+					                <div class="description">This will return the raw attributes that you cannot edit directly.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.READY"><code>+&nbsp;(Number) READY [R/W]</code></a>
+					              
+					                <div class="description">Generic state for records that are loaded and ready for use
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.READY_CLEAN"><code>+&nbsp;(Number) READY_CLEAN [R/W]</code></a>
+					              
+					                <div class="description">State for records that are loaded and ready for use with no local changes
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.READY_DIRTY"><code>+&nbsp;(Number) READY_DIRTY [R/W]</code></a>
+					              
+					                <div class="description">State for records that are loaded and ready for use with local changes
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.READY_NEW"><code>+&nbsp;(Number) READY_NEW [R/W]</code></a>
+					              
+					                <div class="description">State for records that are new - not yet committed to server
+    
+    Use a logical AND (single &) to test record status</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#.RECORD_EXISTS_ERROR"><code>+&nbsp;(SC.Error) RECORD_EXISTS_ERROR [R/W]</code></a>
+					              
+					                <div class="description">Error for when you try to create a new record that already exists.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#relationships"><code>-&nbsp;(Array) relationships [R/W]</code></a>
+					              
+					                <div class="description">If set, this should be an array of active relationship objects that need
+    to be notified whenever the underlying record properties change.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#status"><code>-&nbsp;(Number) status [R/W]</code></a>
+					              
+					                <div class="description">All records generally have a life cycle as they are created or loaded into 
+    memory, modified, committed and finally destroyed.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#store"><code>-&nbsp;(SC.Store) store [R/W]</code></a>
+					              
+					                <div class="description">The store that owns this record.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Record.html#storeKey"><code>-&nbsp;(Number) storeKey [R/W]</code></a>
+					              
+					                <div class="description">This is the store key for the record, it is used to link it back to the 
+    dataHash.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Record.attr">
+		<code class="type">+&nbsp;(SC.RecordAttribute)  attr(type, opts)</code>
+				              </a>
+				              
+				                <div class="description">Helper method returns a new SC.RecordAttribute instance to map a simple
+    value or to-one relationship.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#beginEditing">
+		<code class="type">-&nbsp;(SC.Record)  beginEditing()</code>
+				              </a>
+				              
+				                <div class="description">Defers notification of record changes until you call a matching 
+    endEditing() method.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#commitRecord">
+		<code class="type">-&nbsp;(SC.Record)  commitRecord(params)</code>
+				              </a>
+				              
+				                <div class="description">Lets you commit this specific record to the store which will trigger
+    the appropriate methods in the data source for you.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#createChildRecord">
+		<code class="type">-&nbsp;(void)  createChildRecord(recordType, hash)</code>
+				              </a>
+				              
+				                <div class="description">Creates a new child record instance.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#destroy">
+		<code class="type">-&nbsp;(SC.Record)  destroy()</code>
+				              </a>
+				              
+				                <div class="description">Deletes the record along with any dependent records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#endEditing">
+		<code class="type">-&nbsp;(SC.Record)  endEditing(key)</code>
+				              </a>
+				              
+				                <div class="description">Notifies the store of record changes if this matches a top level call to
+    beginEditing().</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.fetch">
+		<code class="type">+&nbsp;(SC.RecordAttribute)  fetch(recordType, opts)</code>
+				              </a>
+				              
+				                <div class="description">Returns an SC.RecordAttribute that describes a fetched attribute.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.find">
+		<code class="type">+&nbsp;(SC.Record)  find(store, id)</code>
+				              </a>
+				              
+				                <div class="description">Returns a record with the named ID in store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#generateIdForChild">
+		<code class="type">-&nbsp;(void)  generateIdForChild(childRecord)</code>
+				              </a>
+				              
+				                <div class="description">Override this function if you want to have a special way of creating 
+ids for your child records</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#normalize">
+		<code class="type">-&nbsp;(SC.Record)  normalize(includeNull)</code>
+				              </a>
+				              
+				                <div class="description">Normalizing a record will ensure that the underlying hash conforms
+    to the record attributes such as their types (transforms) and default 
+    values.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#propagateToAggregates">
+		<code class="type">-&nbsp;(void)  propagateToAggregates()</code>
+				              </a>
+				              
+				                <div class="description">This will also ensure that any aggregate records are also marked dirty
+    if this record changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#readAttribute">
+		<code class="type">-&nbsp;(Object)  readAttribute(key)</code>
+				              </a>
+				              
+				                <div class="description">Reads the raw attribute from the underlying data hash.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#recordDidChange">
+		<code class="type">-&nbsp;(SC.Record)  recordDidChange(key)</code>
+				              </a>
+				              
+				                <div class="description">You can invoke this method anytime you need to make the record as dirty.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#refresh">
+		<code class="type">-&nbsp;(SC.Record)  refresh()</code>
+				              </a>
+				              
+				                <div class="description">Refresh the record from the persistent store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#registerChildRecord">
+		<code class="type">-&nbsp;(void)  registerChildRecord(recordType, hash)</code>
+				              </a>
+				              
+				                <div class="description">Registers a child record with this parent record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#storeDidChangeProperties">
+		<code class="type">-&nbsp;(SC.Record)  storeDidChangeProperties(statusOnly, key)</code>
+				              </a>
+				              
+				                <div class="description">Called by the store whenever the underlying data hash has changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.storeKeyExists">
+		<code class="type">+&nbsp;(Number)  storeKeyExists(id)</code>
+				              </a>
+				              
+				                <div class="description">Given a primaryKey value for the record, returns the associated
+    storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.storeKeyFor">
+		<code class="type">+&nbsp;(Number)  storeKeyFor(id)</code>
+				              </a>
+				              
+				                <div class="description">Given a primaryKey value for the record, returns the associated
+    storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.storeKeysById">
+		<code class="type">+&nbsp;(Hash)  storeKeysById()</code>
+				              </a>
+				              
+				                <div class="description">Returns all storeKeys mapped by Id for this record type.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.toMany">
+		<code class="type">+&nbsp;(SC.ManyAttribute|SC.ChildrenAttribute)  toMany(recordType, opts)</code>
+				              </a>
+				              
+				                <div class="description">Returns:
+    
+    1: SC.ManyAttribute that describes a record array backed by an 
+    array of guids stored in the underlying JSON.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record.toOne">
+		<code class="type">+&nbsp;(SC.SingleAttribute|SC.ChildAttribute)  toOne(recordType, opts)</code>
+				              </a>
+				              
+				                <div class="description">Returns:
+    1.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#unknownProperty">
+		<code class="type">-&nbsp;(Object)  unknownProperty(key, value)</code>
+				              </a>
+				              
+				                <div class="description">If you try to get/set a property not defined by the record, then this 
+    method will be called.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Record#writeAttribute">
+		<code class="type">-&nbsp;(SC.Record)  writeAttribute(key, value, ignoreDidChange)</code>
+				              </a>
+				              
+				                <div class="description">Updates the passed attribute with the new value.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="._nextChildKey"></a> 
+			          <div class="field">
+			            <a name="._nextChildKey"></a> 
+			            <h3>_nextChildKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The next child key to allocate.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">_nextChildKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>A nextChildKey must always be greater than 0.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="attributes"></a> 
+			          <div class="field">
+			            <a name="attributes"></a> 
+			            <h3>attributes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This will return the raw attributes that you can edit directly.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Hash
+		              </span>
+		              <span class="name">attributes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you make changes to this hash, be sure to call beginEditing() before you get the attributes and endEditing() afterwards.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BAD_STATE_ERROR"></a> 
+			          <div class="field">
+			            <a name=".BAD_STATE_ERROR"></a> 
+			            <h3>BAD_STATE_ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Error for when you try to modify a record while it is in a bad 
+    state.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">BAD_STATE_ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY"></a> 
+			          <div class="field">
+			            <a name=".BUSY"></a> 
+			            <h3>BUSY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic state for records that have been submitted to data source
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_COMMITTING"></a> 
+			          <div class="field">
+			            <a name=".BUSY_COMMITTING"></a> 
+			            <h3>BUSY_COMMITTING
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have been modified and submitted to server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_COMMITTING</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_CREATING"></a> 
+			          <div class="field">
+			            <a name=".BUSY_CREATING"></a> 
+			            <h3>BUSY_CREATING
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for new records that were created and submitted to the server; 
+    waiting on response from server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_CREATING</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_DESTROYING"></a> 
+			          <div class="field">
+			            <a name=".BUSY_DESTROYING"></a> 
+			            <h3>BUSY_DESTROYING
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have been destroyed and submitted to server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_DESTROYING</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_ERROR"></a> 
+			          <div class="field">
+			            <a name=".BUSY_ERROR"></a> 
+			            <h3>BUSY_ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Error for when you try to modify a record that is currently busy</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">BUSY_ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_LOADING"></a> 
+			          <div class="field">
+			            <a name=".BUSY_LOADING"></a> 
+			            <h3>BUSY_LOADING
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that are still loading data from the server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_LOADING</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_REFRESH"></a> 
+			          <div class="field">
+			            <a name=".BUSY_REFRESH"></a> 
+			            <h3>BUSY_REFRESH
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have requested a refresh from the server.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_REFRESH</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Use a logical AND (single &) to test record status.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_REFRESH_CLEAN"></a> 
+			          <div class="field">
+			            <a name=".BUSY_REFRESH_CLEAN"></a> 
+			            <h3>BUSY_REFRESH_CLEAN
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have requested a refresh from the server.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_REFRESH_CLEAN</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".BUSY_REFRESH_DIRTY"></a> 
+			          <div class="field">
+			            <a name=".BUSY_REFRESH_DIRTY"></a> 
+			            <h3>BUSY_REFRESH_DIRTY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have requested a refresh from the server.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">BUSY_REFRESH_DIRTY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="childRecordNamespace"></a> 
+			          <div class="field">
+			            <a name="childRecordNamespace"></a> 
+			            <h3>childRecordNamespace
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The namespace which to retrieve the childRecord Types from</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">childRecordNamespace</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="childRecords"></a> 
+			          <div class="field">
+			            <a name="childRecords"></a> 
+			            <h3>childRecords
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The child record cache.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">childRecords</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".CLEAN"></a> 
+			          <div class="field">
+			            <a name=".CLEAN"></a> 
+			            <h3>CLEAN
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic state for records with no local changes.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">CLEAN</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".DESTROYED"></a> 
+			          <div class="field">
+			            <a name=".DESTROYED"></a> 
+			            <h3>DESTROYED
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic state for records that have been destroyed
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">DESTROYED</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".DESTROYED_CLEAN"></a> 
+			          <div class="field">
+			            <a name=".DESTROYED_CLEAN"></a> 
+			            <h3>DESTROYED_CLEAN
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have been destroyed and committed to server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">DESTROYED_CLEAN</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".DESTROYED_DIRTY"></a> 
+			          <div class="field">
+			            <a name=".DESTROYED_DIRTY"></a> 
+			            <h3>DESTROYED_DIRTY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that have been destroyed but not yet committed to server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">DESTROYED_DIRTY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".DIRTY"></a> 
+			          <div class="field">
+			            <a name=".DIRTY"></a> 
+			            <h3>DIRTY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic state for records with local changes.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">DIRTY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".EMPTY"></a> 
+			          <div class="field">
+			            <a name=".EMPTY"></a> 
+			            <h3>EMPTY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that are still loaded.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">EMPTY</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>A record instance should never be in this state.  You will only run into it when working with the low-level data hash API on SC.Store. Use a logical AND (single &) to test record status</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".ERROR"></a> 
+			          <div class="field">
+			            <a name=".ERROR"></a> 
+			            <h3>ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records in an error state.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="errorObject"></a> 
+			          <div class="field">
+			            <a name="errorObject"></a> 
+			            <h3>errorObject
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the current error object only if the record is in an error state.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">errorObject</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>If no explicit error object has been set, returns SC.Record.GENERIC_ERROR.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="errorValue"></a> 
+			          <div class="field">
+			            <a name="errorValue"></a> 
+			            <h3>errorValue
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the receiver if the record is in an error state.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Record
+		              </span>
+		              <span class="name">errorValue</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Returns null otherwise.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".fixtures"></a> 
+			          <div class="field">
+			            <a name=".fixtures"></a> 
+			            <h3>fixtures
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Default fixtures instance for use in applications.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.FixturesDataSource
+		              </span>
+		              <span class="name">fixtures</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".GENERIC_ERROR"></a> 
+			          <div class="field">
+			            <a name=".GENERIC_ERROR"></a> 
+			            <h3>GENERIC_ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic unknown record error</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">GENERIC_ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="id"></a> 
+			          <div class="field">
+			            <a name="id"></a> 
+			            <h3>id
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the id for the record instance.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">id</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>The id is used to uniquely identify this record instance from all others of the same type.  If you have a primaryKey set on this class, then the id will be the value of the primaryKey property on the underlying JSON hash.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".ignoreUnknownProperties"></a> 
+			          <div class="field">
+			            <a name=".ignoreUnknownProperties"></a> 
+			            <h3>ignoreUnknownProperties
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether to ignore unknown properties when they are being set on the record
+    object.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">ignoreUnknownProperties</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isDestroyed"></a> 
+			          <div class="field">
+			            <a name="isDestroyed"></a> 
+			            <h3>isDestroyed
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES when the record has been destroyed</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isDestroyed</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES when the record is in an editable state.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can use this property to quickly determine whether attempting to modify the record would raise an exception or not.</p>
+
+<p>This property is both readable and writable.  Note however that if you set this property to YES but the status of the record is anything but SC.Record.READY, the return value of this property may remain NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isError"></a> 
+			          <div class="field">
+			            <a name="isError"></a> 
+			            <h3>isError
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES whenever the status is SC.Record.ERROR.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isError</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will allow you to put the UI into an error state.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isLoaded"></a> 
+			          <div class="field">
+			            <a name="isLoaded"></a> 
+			            <h3>isLoaded
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES when the record's contents have been loaded for the first time.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isLoaded</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can use this to quickly determine if the record is ready to display.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRecord"></a> 
+			          <div class="field">
+			            <a name="isRecord"></a> 
+			            <h3>isRecord
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isRecord</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".NOT_FOUND_ERROR"></a> 
+			          <div class="field">
+			            <a name=".NOT_FOUND_ERROR"></a> 
+			            <h3>NOT_FOUND_ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Error for when you attempt to locate a record that is not found</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">NOT_FOUND_ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="primaryKey"></a> 
+			          <div class="field">
+			            <a name="primaryKey"></a> 
+			            <h3>primaryKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This is the primary key used to distinguish records.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">primaryKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If the keys match, the records are assumed to be identical.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="readOnlyAttributes"></a> 
+			          <div class="field">
+			            <a name="readOnlyAttributes"></a> 
+			            <h3>readOnlyAttributes
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This will return the raw attributes that you cannot edit directly.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Hash
+		              </span>
+		              <span class="name">readOnlyAttributes</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>It is useful if you want to efficiently look at multiple attributes in bulk.  If you would like to edit the attributes, see the <code>attributes</code> property instead.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".READY"></a> 
+			          <div class="field">
+			            <a name=".READY"></a> 
+			            <h3>READY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Generic state for records that are loaded and ready for use
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">READY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".READY_CLEAN"></a> 
+			          <div class="field">
+			            <a name=".READY_CLEAN"></a> 
+			            <h3>READY_CLEAN
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that are loaded and ready for use with no local changes
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">READY_CLEAN</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".READY_DIRTY"></a> 
+			          <div class="field">
+			            <a name=".READY_DIRTY"></a> 
+			            <h3>READY_DIRTY
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that are loaded and ready for use with local changes
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">READY_DIRTY</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".READY_NEW"></a> 
+			          <div class="field">
+			            <a name=".READY_NEW"></a> 
+			            <h3>READY_NEW
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">State for records that are new - not yet committed to server
+    
+    Use a logical AND (single &) to test record status</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">READY_NEW</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".RECORD_EXISTS_ERROR"></a> 
+			          <div class="field">
+			            <a name=".RECORD_EXISTS_ERROR"></a> 
+			            <h3>RECORD_EXISTS_ERROR
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Error for when you try to create a new record that already exists.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">RECORD_EXISTS_ERROR</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="relationships"></a> 
+			          <div class="field">
+			            <a name="relationships"></a> 
+			            <h3>relationships
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If set, this should be an array of active relationship objects that need
+    to be notified whenever the underlying record properties change.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">relationships</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Currently this is only used by toMany relationships, but you could possibly patch into this yourself also if you are building your own relationships.</p>
+
+<p>Note this must be a regular Array - NOT any object implmenting SC.Array.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="status"></a> 
+			          <div class="field">
+			            <a name="status"></a> 
+			            <h3>status
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">All records generally have a life cycle as they are created or loaded into 
+    memory, modified, committed and finally destroyed.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">status</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This life cycle is managed by the status property on your record.</p>
+
+<p>The status of a record is modelled as a finite state machine.  Based on the current state of the record, you can determine which operations are currently allowed on the record and which are not.</p>
+
+<p>In general, a record can be in one of five primary states; SC.Record.EMPTY, SC.Record.BUSY, SC.Record.READY, SC.Record.DESTROYED, SC.Record.ERROR. These are all described in more detail in the class mixin (below) where they are defined.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="store"></a> 
+			          <div class="field">
+			            <a name="store"></a> 
+			            <h3>store
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The store that owns this record.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Store
+		              </span>
+		              <span class="name">store</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>All changes will be buffered into this store and committed to the rest of the store chain through here.</p>
+
+<p>This property is set when the record instance is created and should not be changed or else it will break the record behavior.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="storeKey"></a> 
+			          <div class="field">
+			            <a name="storeKey"></a> 
+			            <h3>storeKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This is the store key for the record, it is used to link it back to the 
+    dataHash.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">storeKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If a record is reused, this value will be replaced.</p>
+
+<p>You should not edit this store key but you may sometimes need to refer to this store key when implementing a Server object.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.attr"></a> 
+			          <h3>attr()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Helper method returns a new SC.RecordAttribute instance to map a simple
+    value or to-one relationship.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordAttribute)
+			              </span>
+			              <span class="name">attr</span> <span class="params">(type, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Class)</span><span class="name">type</span>
+			              
+			              <span class="desc">the attribute type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">the options for the attribute</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordAttribute)</span>
+			                <span class="desc">created instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>At the very least, you should pass the type class you expect the attribute to have.  You may pass any additional options as well.</p>
+
+<p>Use this helper when you define SC.Record subclasses.</p>
+
+<h4> Example</h4>
+
+
+<p class="code"><code>MyApp.Contact = SC.Record.extend({<br />firstName: SC.Record.attr(String, { isRequired: YES })<br />});</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#beginEditing"></a> 
+			          <h3>beginEditing()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Defers notification of record changes until you call a matching 
+    endEditing() method.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">beginEditing</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called automatically whenever you set an attribute, but you can call it yourself to group multiple changes.</p>
+
+<p>Calls to beginEditing() and endEditing() can be nested.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#commitRecord"></a> 
+			          <h3>commitRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Lets you commit this specific record to the store which will trigger
+    the appropriate methods in the data source for you.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">commitRecord</span> <span class="params">(params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional additonal params that will passed down
+      to the data source</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#createChildRecord"></a> 
+			          <h3>createChildRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates a new child record instance.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">createChildRecord</span> <span class="params">(recordType, hash)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(CoreOrion.ChildRecord)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">The type of the child record to create.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">hash</span>
+			              
+			              <span class="desc">The hash of attributes to apply to the child record. (may be null)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#destroy"></a> 
+			          <h3>destroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Deletes the record along with any dependent records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">destroy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will mark the records destroyed in the store as well as changing the isDestroyed property on the record to YES.  If this is a new record, this will avoid creating the record in the first place.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#endEditing"></a> 
+			          <h3>endEditing()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Notifies the store of record changes if this matches a top level call to
+    beginEditing().</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">endEditing</span> <span class="params">(key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">that changed (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called automatically whenever you set an attribute, but you can call it yourself to group multiple changes.</p>
+
+<p>Calls to beginEditing() and endEditing() can be nested.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.fetch"></a> 
+			          <h3>fetch()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns an SC.RecordAttribute that describes a fetched attribute.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordAttribute)
+			              </span>
+			              <span class="name">fetch</span> <span class="params">(recordType, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|String)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">The type of records to load</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">the options for the attribute</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordAttribute)</span>
+			                <span class="desc">created instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>When you reference this attribute, it will return an SC.RecordArray that uses the type as the fetch key and passes the attribute value as a param.</p>
+
+<p>Use this helper when you define SC.Record subclasses.</p>
+
+<h4> Example</h4>
+
+
+<p class="code"><code>MyApp.Group = SC.Record.extend({<br />contacts: SC.Record.fetch('MyApp.Contact')<br />});</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.find"></a> 
+			          <h3>find()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a record with the named ID in store.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">find</span> <span class="params">(store, id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">the store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id or a query</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">record instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#generateIdForChild"></a> 
+			          <h3>generateIdForChild()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Override this function if you want to have a special way of creating 
+ids for your child records</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">generateIdForChild</span> <span class="params">(childRecord)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#normalize"></a> 
+			          <h3>normalize()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Normalizing a record will ensure that the underlying hash conforms
+    to the record attributes such as their types (transforms) and default 
+    values.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">normalize</span> <span class="params">(includeNull)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">includeNull</span>
+			              
+			              <span class="desc">will write empty (null) attributes</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">the normalized record</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This method will write the conforming hash to the store and return the materialized record.</p>
+
+<p>By normalizing the record, you can use .attributes() and be assured that it will conform to the defined model. For example, this can be useful in the case where you need to send a JSON representation to some server after you have used .createRecord(), since this method will enforce the 'rules' in the model such as their types and default values. You can also include null values in the hash with the includeNull argument.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#propagateToAggregates"></a> 
+			          <h3>propagateToAggregates()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This will also ensure that any aggregate records are also marked dirty
+    if this record changes.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">propagateToAggregates</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Should not have to be called manually.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#readAttribute"></a> 
+			          <h3>readAttribute()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads the raw attribute from the underlying data hash.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">readAttribute</span> <span class="params">(key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the attribute you want to read</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">the value of the key, or null if it doesn't exist</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method does not transform the underlying attribute at all.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#recordDidChange"></a> 
+			          <h3>recordDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">You can invoke this method anytime you need to make the record as dirty.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">recordDidChange</span> <span class="params">(key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">that changed (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This will cause the record to be commited when you commitChanges() on the underlying store.</p>
+
+<p>If you use the writeAttribute() primitive, this method will be called for you.</p>
+
+<p>If you pass the key that changed it will ensure that observers are fired only once for the changed property instead of allPropertiesDidChange()</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#refresh"></a> 
+			          <h3>refresh()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Refresh the record from the persistent store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">refresh</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the record was loaded from a persistent store, then the store will be asked to reload the record data from the server.  If the record is new and exists only in memory then this call will have no effect.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#registerChildRecord"></a> 
+			          <h3>registerChildRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Registers a child record with this parent record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">registerChildRecord</span> <span class="params">(recordType, hash)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(CoreOrion.ChildRecord)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">The type of the child record to register.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">hash</span>
+			              
+			              <span class="desc">The hash of attributes to apply to the child record.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If the parent already knows about the child record, return the cached instance.  If not, create the child record instance and add it to the child record cache.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#storeDidChangeProperties"></a> 
+			          <h3>storeDidChangeProperties()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the store whenever the underlying data hash has changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">storeDidChangeProperties</span> <span class="params">(statusOnly, key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">statusOnly</span>
+			              
+			              <span class="desc">changed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">that changed (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will notify any observers interested in data hash properties that they have changed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.storeKeyExists"></a> 
+			          <h3>storeKeyExists()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a primaryKey value for the record, returns the associated
+    storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyExists</span> <span class="params">(id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">a record id</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">a storeKey.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>As opposed to storeKeyFor() however, this method will NOT generate a new storeKey but returned undefined.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.storeKeyFor"></a> 
+			          <h3>storeKeyFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a primaryKey value for the record, returns the associated
+    storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyFor</span> <span class="params">(id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">a record id</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">a storeKey.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the primaryKey has not been assigned a storeKey yet, it will be added.</p>
+
+<p>For the inverse of this method see SC.Store.idFor() and SC.Store.recordTypeFor().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.storeKeysById"></a> 
+			          <h3>storeKeysById()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns all storeKeys mapped by Id for this record type.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Hash)
+			              </span>
+			              <span class="name">storeKeysById</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Hash)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is used mostly by the SC.Store and the Record to coordinate.  You will rarely need to call this method yourself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.toMany"></a> 
+			          <h3>toMany()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns:
+    
+    1: SC.ManyAttribute that describes a record array backed by an 
+    array of guids stored in the underlying JSON.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ManyAttribute|SC.ChildrenAttribute)
+			              </span>
+			              <span class="name">toMany</span> <span class="params">(recordType, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|String)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">The type of record to create</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">the options for the attribute</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ManyAttribute|SC.ChildrenAttribute)</span>
+			                <span class="desc">created instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>2: SC.ChildrenAttribute that describes a record array backed by a array of hashes.</p>
+
+<p>You can edit the contents of this relationship.</p>
+
+<p>For SC.ManyAttribute, If you set the inverse and isMaster: NO key, then editing this array will modify the underlying data, but the inverse key on the matching record will also be edited and that record will be marked as needing a change.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record.toOne"></a> 
+			          <h3>toOne()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns:
+    1.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.SingleAttribute|SC.ChildAttribute)
+			              </span>
+			              <span class="name">toOne</span> <span class="params">(recordType, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|String)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the type of the record to create</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">additional options</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.SingleAttribute|SC.ChildAttribute)</span>
+			                <span class="desc">created instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>SC.SingleAttribute that converts the underlying ID to a single record.  If you modify this property, it will rewrite the underyling ID. It will also modify the inverse of the relationship, if you set it.</p>
+
+<p>2. SC.ChildAttribute that you can edit the contents of this relationship.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#unknownProperty"></a> 
+			          <h3>unknownProperty()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If you try to get/set a property not defined by the record, then this 
+    method will be called.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">unknownProperty</span> <span class="params">(key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the attribute being get/set</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+			              <span class="desc">the value to set the key to, if present</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">the value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It will try to get the value from the set of attributes.</p>
+
+<p>This will also check is ignoreUnknownProperties is set on the recordType so that they will not be written to dataHash unless explicitly defined in the model schema.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Record#writeAttribute"></a> 
+			          <h3>writeAttribute()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Updates the passed attribute with the new value.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">writeAttribute</span> <span class="params">(key, value, ignoreDidChange)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the attribute you want to read</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+			              <span class="desc">the value you want to write</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">ignoreDidChange</span>
+			              
+			              <span class="desc">only set if you do NOT want to flag 
+      record as dirty</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method does not transform the value at all.  If instead you want to modify an array or hash already defined on the underlying json, you should instead get an editable version of the attribute using editableAttribute()</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

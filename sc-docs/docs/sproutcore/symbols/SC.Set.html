@@ -1,0 +1,1286 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Set</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Set
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>, <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>, <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>, <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_runtime_system_set.js.html">frameworks/sproutcore/frameworks/runtime/system/set.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>An unordered collection of objects.</p>
+
+<p>A Set works a bit like an array except that its items are not ordered. You can create a set to efficiently test for membership for an object. You can also iterate through a set just like an array, even accessing objects by index, however there is no gaurantee as to their order.</p>
+
+<p>Note that SC.Set is a primitive object, like an array.  It does implement limited key-value observing support but it does not extend from SC.Object so you should not subclass it.</p>
+
+<h1> Creating a Set</h1>
+
+<p>You can create a set like you would most objects using SC.Set.create(). Most new sets you create will be empty, but you can also initialize the set with some content by passing an array or other enumerable of objects to the constructor.</p>
+
+<p>Finally, you can pass in an existing set and the set will be copied.  You can also create a copy of a set by calling SC.Set#clone().</p>
+
+
+<p class="code"><code>// creates a new empty set<br />var foundNames = SC.Set.create();<br /><br />// creates a set with four names in it.<br />var names = SC.Set.create(["Charles", "Peter", "Chris", "Erich"]) ;<br /><br />// creates a copy of the names set.<br />var namesCopy = SC.Set.create(names);<br /><br />// same as above.<br />var anotherNamesCopy = names.clone();</code></p>
+
+<h1> Adding/Removing Objects</h1>
+
+<p>You generally add or removed objects from a set using add() or remove(). You can add any type of object including primitives such as numbers, strings, and booleans.</p>
+
+<p>Note that objects can only exist one time in a set.  If you call add() on a set with the same object multiple times, the object will only be added once.  Likewise, calling remove() with the same object multiple times will remove the object the first time and have no effect on future calls until you add the object to the set again.</p>
+
+<p>Note that you cannot add/remove null or undefined to a set.  Any attempt to do so will be ignored.</p>
+
+<p>In addition to add/remove you can also call push()/pop().  Push behaves just like add() but pop(), unlike remove() will pick an arbitrary object, remove it and return it.  This is a good way to use a set as a job queue when you don't care which order the jobs are executed in.</p>
+
+<h1> Testing for an Object</h1>
+
+<p>To test for an object's presence in a set you simply call SC.Set#contains(). This method tests for the object's hash, which is generally the same as the object's _guid but if you implement the hash() method on the object, it will use the return value from that method instead.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Set.html#firstObject"><code>-&nbsp;(Object) firstObject [R/W]</code></a>
+					              
+					                <div class="description">Returns the first object in the set or null if the set is empty</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Set.html#isSet"><code>-&nbsp;(Boolean) isSet [R/W]</code></a>
+					              
+					                <div class="description">Walk like a duck</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Set.html#length"><code>-&nbsp;(Number) length [R/W]</code></a>
+					              
+					                <div class="description">This property will change as the number of objects in the set changes.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.isEnumerable">isEnumerable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.isObservable">isObservable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.isCopyable">isCopyable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.isFreezable">isFreezable</a>, <a href="../symbols/SC.Freezable.html#.isFrozen">isFrozen</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Set#add">
+		<code class="type">-&nbsp;(SC.Set)  add(obj)</code>
+				              </a>
+				              
+				                <div class="description">Call this method to add an object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#addEach">
+		<code class="type">-&nbsp;(SC.Set)  addEach(objects)</code>
+				              </a>
+				              
+				                <div class="description">Add all the items in the passed array or enumerable</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#clear">
+		<code class="type">-&nbsp;(SC.Set)  clear()</code>
+				              </a>
+				              
+				                <div class="description">Clears the set</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#contains">
+		<code class="type">-&nbsp;(Boolean)  contains(obj)</code>
+				              </a>
+				              
+				                <div class="description">Call this method to test for membership.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#copy">
+		<code class="type">-&nbsp;(SC.Set)  copy()</code>
+				              </a>
+				              
+				                <div class="description">Clones the set into a new set.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#create">
+		<code class="type">-&nbsp;(SC.Set)  create(items)</code>
+				              </a>
+				              
+				                <div class="description">Creates a new set, with the optional array of items included in the 
+    return set.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#destroy">
+		<code class="type">-&nbsp;(SC.Set)  destroy()</code>
+				              </a>
+				              
+				                <div class="description">Return a set to the pool for reallocation.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#isEqual">
+		<code class="type">-&nbsp;(Boolean)  isEqual(obj)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the passed object is also a set that contains the same 
+    objects as the receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#pop">
+		<code class="type">-&nbsp;(Object)  pop()</code>
+				              </a>
+				              
+				                <div class="description">Removes an arbitrary object from the set and returns it.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#remove">
+		<code class="type">-&nbsp;(SC.Set)  remove(obj)</code>
+				              </a>
+				              
+				                <div class="description">Removes the object from the set if it is found.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Set#removeEach">
+		<code class="type">-&nbsp;(SC.Set)  removeEach(objects)</code>
+				              </a>
+				              
+				                <div class="description">Removes all the items in the passed array.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.enumerableContentDidChange">enumerableContentDidChange</a>, <a href="../symbols/SC.Enumerable.html#.enumerator">enumerator</a>, <a href="../symbols/SC.Enumerable.html#.every">every</a>, <a href="../symbols/SC.Enumerable.html#.everyProperty">everyProperty</a>, <a href="../symbols/SC.Enumerable.html#.filter">filter</a>, <a href="../symbols/SC.Enumerable.html#.filterProperty">filterProperty</a>, <a href="../symbols/SC.Enumerable.html#.find">find</a>, <a href="../symbols/SC.Enumerable.html#.findProperty">findProperty</a>, <a href="../symbols/SC.Enumerable.html#.forEach">forEach</a>, <a href="../symbols/SC.Enumerable.html#.getEach">getEach</a>, <a href="../symbols/SC.Enumerable.html#.groupBy">groupBy</a>, <a href="../symbols/SC.Enumerable.html#.invoke">invoke</a>, <a href="../symbols/SC.Enumerable.html#.invokeWhile">invokeWhile</a>, <a href="../symbols/SC.Enumerable.html#.lastObject">lastObject</a>, <a href="../symbols/SC.Enumerable.html#.map">map</a>, <a href="../symbols/SC.Enumerable.html#.mapProperty">mapProperty</a>, <a href="../symbols/SC.Enumerable.html#.nextObject">nextObject</a>, <a href="../symbols/SC.Enumerable.html#.reduce">reduce</a>, <a href="../symbols/SC.Enumerable.html#.reduceAverage">reduceAverage</a>, <a href="../symbols/SC.Enumerable.html#.reducedProperty">reducedProperty</a>, <a href="../symbols/SC.Enumerable.html#.reduceMax">reduceMax</a>, <a href="../symbols/SC.Enumerable.html#.reduceMaxObject">reduceMaxObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceMin">reduceMin</a>, <a href="../symbols/SC.Enumerable.html#.reduceMinObject">reduceMinObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceSum">reduceSum</a>, <a href="../symbols/SC.Enumerable.html#.setEach">setEach</a>, <a href="../symbols/SC.Enumerable.html#.some">some</a>, <a href="../symbols/SC.Enumerable.html#.someProperty">someProperty</a>, <a href="../symbols/SC.Enumerable.html#.sortProperty">sortProperty</a>, <a href="../symbols/SC.Enumerable.html#.toArray">toArray</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.addObserver">addObserver</a>, <a href="../symbols/SC.Observable.html#.allPropertiesDidChange">allPropertiesDidChange</a>, <a href="../symbols/SC.Observable.html#.automaticallyNotifiesObserversFor">automaticallyNotifiesObserversFor</a>, <a href="../symbols/SC.Observable.html#.beginPropertyChanges">beginPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.bind">bind</a>, <a href="../symbols/SC.Observable.html#.decrementProperty">decrementProperty</a>, <a href="../symbols/SC.Observable.html#.didChangeFor">didChangeFor</a>, <a href="../symbols/SC.Observable.html#.endPropertyChanges">endPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.get">get</a>, <a href="../symbols/SC.Observable.html#.getPath">getPath</a>, <a href="../symbols/SC.Observable.html#.hasObserverFor">hasObserverFor</a>, <a href="../symbols/SC.Observable.html#.incrementProperty">incrementProperty</a>, <a href="../symbols/SC.Observable.html#.initObservable">initObservable</a>, <a href="../symbols/SC.Observable.html#.logProperty">logProperty</a>, <a href="../symbols/SC.Observable.html#.notifyPropertyChange">notifyPropertyChange</a>, <a href="../symbols/SC.Observable.html#.observersForKey">observersForKey</a>, <a href="../symbols/SC.Observable.html#.propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.Observable.html#.propertyWillChange">propertyWillChange</a>, <a href="../symbols/SC.Observable.html#.registerDependentKey">registerDependentKey</a>, <a href="../symbols/SC.Observable.html#.removeObserver">removeObserver</a>, <a href="../symbols/SC.Observable.html#.set">set</a>, <a href="../symbols/SC.Observable.html#.setIfChanged">setIfChanged</a>, <a href="../symbols/SC.Observable.html#.setPath">setPath</a>, <a href="../symbols/SC.Observable.html#.setPathIfChanged">setPathIfChanged</a>, <a href="../symbols/SC.Observable.html#.toggleProperty">toggleProperty</a>, <a href="../symbols/SC.Observable.html#.unknownProperty">unknownProperty</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Copyable.html#constructor">SC.Copyable</a>: </dt><dd><a href="../symbols/SC.Copyable.html#.frozenCopy">frozenCopy</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Freezable.html#constructor">SC.Freezable</a>: </dt><dd><a href="../symbols/SC.Freezable.html#.freeze">freeze</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="firstObject"></a> 
+			          <div class="field">
+			            <a name="firstObject"></a> 
+			            <h3>firstObject
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the first object in the set or null if the set is empty</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">firstObject</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isSet"></a> 
+			          <div class="field">
+			            <a name="isSet"></a> 
+			            <h3>isSet
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Walk like a duck</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isSet</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="length"></a> 
+			          <div class="field">
+			            <a name="length"></a> 
+			            <h3>length
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This property will change as the number of objects in the set changes.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">length</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#add"></a> 
+			          <h3>add()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method to add an object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">add</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">obj</span>
+			              
+			              <span class="desc">{Object} the object to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>performs a basic add.</p>
+
+<p>If the object is already in the set it will not be added again.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#addEach"></a> 
+			          <h3>addEach()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Add all the items in the passed array or enumerable</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">addEach</span> <span class="params">(objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#clear"></a> 
+			          <h3>clear()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Clears the set</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">clear</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#contains"></a> 
+			          <h3>contains()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method to test for membership.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contains</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#copy"></a> 
+			          <h3>copy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Clones the set into a new set.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">copy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">new copy</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#create"></a> 
+			          <h3>create()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates a new set, with the optional array of items included in the 
+    return set.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">create</span> <span class="params">(items)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Enumerable)</span><span class="name">items</span>
+			              
+			              <span class="desc">items to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#destroy"></a> 
+			          <h3>destroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Return a set to the pool for reallocation.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">destroy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#isEqual"></a> 
+			          <h3>isEqual()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the passed object is also a set that contains the same 
+    objects as the receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">isEqual</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Set)</span><span class="name">obj</span>
+			              
+			              <span class="desc">the other object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#pop"></a> 
+			          <h3>pop()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes an arbitrary object from the set and returns it.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">pop</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">an object from the set or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the object from the set if it is found.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">remove</span> <span class="params">(obj)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">obj</span>
+			              
+			              <span class="desc">{Object} the object to remove</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If the object is not in the set, nothing will be changed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Set#removeEach"></a> 
+			          <h3>removeEach()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes all the items in the passed array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Set)
+			              </span>
+			              <span class="name">removeEach</span> <span class="params">(objects)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Set)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:57 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

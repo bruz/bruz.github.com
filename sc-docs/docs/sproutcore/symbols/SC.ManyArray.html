@@ -1,0 +1,1385 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.ManyArray</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.ManyArray
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Array.html#constructor">SC.Array</a>, <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_system_many_array.js.html">frameworks/sproutcore/frameworks/datastore/system/many_array.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A ManyArray is used to map an array of record ids back to their record objects which will be materialized from the owner store on demand.</p>
+
+<p>Whenever you create a toMany() relationship, the value returned from the property will be an instance of ManyArray.  You can generally customize the behavior of ManyArray by passing settings to the toMany() helper.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#children"><code>-&nbsp;(Object) children [R/W]</code></a>
+					              
+					                <div class="description">Actual references to the hashes</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#defaultRecordType"><code>-&nbsp;(SC.Record) defaultRecordType [R/W]</code></a>
+					              
+					                <div class="description">If set, it is the default record recordType</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#editableChildren"><code>-&nbsp;(SC.Array) editableChildren [R/W]</code></a>
+					              
+					                <div class="description">Returns an editable array of child hashes.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#editableStoreIds"><code>-&nbsp;(SC.Array) editableStoreIds [R/W]</code></a>
+					              
+					                <div class="description">Returns an editable array of storeIds.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#inverse"><code>-&nbsp;(String) inverse [R/W]</code></a>
+					              
+					                <div class="description">Computed from owner many attribute</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">Computed from owner many attribute</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#isMaster"><code>-&nbsp;(Boolean) isMaster [R/W]</code></a>
+					              
+					                <div class="description">Computed from owner many attribute</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#manyAttribute"><code>-&nbsp;(SC.ManyAttribute) manyAttribute [R/W]</code></a>
+					              
+					                <div class="description">The ManyAttribute that created this array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#orderBy"><code>-&nbsp;(Array) orderBy [R/W]</code></a>
+					              
+					                <div class="description">Computed from owner many attribute</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#propertyName"><code>-&nbsp;(String) propertyName [R/W]</code></a>
+					              
+					                <div class="description">If set will be used by the many array to get an editable version of the
+    storeIds from the owner.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#readOnlyChildren"><code>-&nbsp;(SC.Array) readOnlyChildren [R/W]</code></a>
+					              
+					                <div class="description">Returns the storeIds in read only mode.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#readOnlyStoreIds"><code>-&nbsp;(SC.Array) readOnlyStoreIds [R/W]</code></a>
+					              
+					                <div class="description">Returns the storeIds in read only mode.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#record"><code>-&nbsp;(SC.Record) record [R/W]</code></a>
+					              
+					                <div class="description">If set, the record will be notified whenever the array changes so that 
+    it can change its own state</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#recordType"><code>-&nbsp;(String) recordType [R/W]</code></a>
+					              
+					                <div class="description">recordType will tell what type to transform the record to when
+    materializing the record.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#store"><code>-&nbsp;(SC.Store) store [R/W]</code></a>
+					              
+					                <div class="description">The store that owns this record array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ManyArray.html#storeKey"><code>-&nbsp;(Number) storeKey [R/W]</code></a>
+					              
+					                <div class="description">The storeKey for the parent record of this many array.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.isEnumerable">isEnumerable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.isSCArray">isSCArray</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.ManyArray#addInverseRecord">
+		<code class="type">-&nbsp;(SC.ManyArray)  addInverseRecord(record, key, inverseRecord, inverseKey)</code>
+				              </a>
+				              
+				                <div class="description">Called by the ManyAttribute whenever a record is added on the inverse
+    of the relationship.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ManyArray#removeInverseRecord">
+		<code class="type">-&nbsp;(SC.ManyArray)  removeInverseRecord(inverseRecord)</code>
+				              </a>
+				              
+				                <div class="description">Called by the ManyAttribute whenever a record is removed on the inverse
+    of the relationship.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.enumerableContentDidChange">enumerableContentDidChange</a>, <a href="../symbols/SC.Enumerable.html#.enumerator">enumerator</a>, <a href="../symbols/SC.Enumerable.html#.every">every</a>, <a href="../symbols/SC.Enumerable.html#.everyProperty">everyProperty</a>, <a href="../symbols/SC.Enumerable.html#.filter">filter</a>, <a href="../symbols/SC.Enumerable.html#.filterProperty">filterProperty</a>, <a href="../symbols/SC.Enumerable.html#.find">find</a>, <a href="../symbols/SC.Enumerable.html#.findProperty">findProperty</a>, <a href="../symbols/SC.Enumerable.html#.firstObject">firstObject</a>, <a href="../symbols/SC.Enumerable.html#.forEach">forEach</a>, <a href="../symbols/SC.Enumerable.html#.getEach">getEach</a>, <a href="../symbols/SC.Enumerable.html#.groupBy">groupBy</a>, <a href="../symbols/SC.Enumerable.html#.invoke">invoke</a>, <a href="../symbols/SC.Enumerable.html#.invokeWhile">invokeWhile</a>, <a href="../symbols/SC.Enumerable.html#.lastObject">lastObject</a>, <a href="../symbols/SC.Enumerable.html#.map">map</a>, <a href="../symbols/SC.Enumerable.html#.mapProperty">mapProperty</a>, <a href="../symbols/SC.Enumerable.html#.nextObject">nextObject</a>, <a href="../symbols/SC.Enumerable.html#.reduce">reduce</a>, <a href="../symbols/SC.Enumerable.html#.reduceAverage">reduceAverage</a>, <a href="../symbols/SC.Enumerable.html#.reducedProperty">reducedProperty</a>, <a href="../symbols/SC.Enumerable.html#.reduceMax">reduceMax</a>, <a href="../symbols/SC.Enumerable.html#.reduceMaxObject">reduceMaxObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceMin">reduceMin</a>, <a href="../symbols/SC.Enumerable.html#.reduceMinObject">reduceMinObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceSum">reduceSum</a>, <a href="../symbols/SC.Enumerable.html#.setEach">setEach</a>, <a href="../symbols/SC.Enumerable.html#.some">some</a>, <a href="../symbols/SC.Enumerable.html#.someProperty">someProperty</a>, <a href="../symbols/SC.Enumerable.html#.sortProperty">sortProperty</a>, <a href="../symbols/SC.Enumerable.html#.toArray">toArray</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.addRangeObserver">addRangeObserver</a>, <a href="../symbols/SC.Array.html#.compact">compact</a>, <a href="../symbols/SC.Array.html#.indexOf">indexOf</a>, <a href="../symbols/SC.Array.html#.insertAt">insertAt</a>, <a href="../symbols/SC.Array.html#.isEqual">isEqual</a>, <a href="../symbols/SC.Array.html#.lastIndexOf">lastIndexOf</a>, <a href="../symbols/SC.Array.html#.max">max</a>, <a href="../symbols/SC.Array.html#.min">min</a>, <a href="../symbols/SC.Array.html#.objectAt">objectAt</a>, <a href="../symbols/SC.Array.html#.popObject">popObject</a>, <a href="../symbols/SC.Array.html#.pushObject">pushObject</a>, <a href="../symbols/SC.Array.html#.pushObjects">pushObjects</a>, <a href="../symbols/SC.Array.html#.removeAt">removeAt</a>, <a href="../symbols/SC.Array.html#.removeObject">removeObject</a>, <a href="../symbols/SC.Array.html#.removeObjects">removeObjects</a>, <a href="../symbols/SC.Array.html#.removeRangeObserver">removeRangeObserver</a>, <a href="../symbols/SC.Array.html#.replace">replace</a>, <a href="../symbols/SC.Array.html#.shiftObject">shiftObject</a>, <a href="../symbols/SC.Array.html#.slice">slice</a>, <a href="../symbols/SC.Array.html#.uniq">uniq</a>, <a href="../symbols/SC.Array.html#.unshiftObject">unshiftObject</a>, <a href="../symbols/SC.Array.html#.unshiftObjects">unshiftObjects</a>, <a href="../symbols/SC.Array.html#.updateRangeObserver">updateRangeObserver</a>, <a href="../symbols/SC.Array.html#.without">without</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="children"></a> 
+			          <div class="field">
+			            <a name="children"></a> 
+			            <h3>children
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Actual references to the hashes</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">children</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="defaultRecordType"></a> 
+			          <div class="field">
+			            <a name="defaultRecordType"></a> 
+			            <h3>defaultRecordType
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If set, it is the default record recordType</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Record
+		              </span>
+		              <span class="name">defaultRecordType</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="editableChildren"></a> 
+			          <div class="field">
+			            <a name="editableChildren"></a> 
+			            <h3>editableChildren
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns an editable array of child hashes.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">editableChildren</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Marks the owner records as modified.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="editableStoreIds"></a> 
+			          <div class="field">
+			            <a name="editableStoreIds"></a> 
+			            <h3>editableStoreIds
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns an editable array of storeIds.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">editableStoreIds</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Marks the owner records as modified.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="inverse"></a> 
+			          <div class="field">
+			            <a name="inverse"></a> 
+			            <h3>inverse
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed from owner many attribute</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">inverse</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed from owner many attribute</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isMaster"></a> 
+			          <div class="field">
+			            <a name="isMaster"></a> 
+			            <h3>isMaster
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed from owner many attribute</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isMaster</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="manyAttribute"></a> 
+			          <div class="field">
+			            <a name="manyAttribute"></a> 
+			            <h3>manyAttribute
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The ManyAttribute that created this array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.ManyAttribute
+		              </span>
+		              <span class="name">manyAttribute</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="orderBy"></a> 
+			          <div class="field">
+			            <a name="orderBy"></a> 
+			            <h3>orderBy
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed from owner many attribute</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">orderBy</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="propertyName"></a> 
+			          <div class="field">
+			            <a name="propertyName"></a> 
+			            <h3>propertyName
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If set will be used by the many array to get an editable version of the
+    storeIds from the owner.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">propertyName</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="readOnlyChildren"></a> 
+			          <div class="field">
+			            <a name="readOnlyChildren"></a> 
+			            <h3>readOnlyChildren
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the storeIds in read only mode.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">readOnlyChildren</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Avoids modifying the record unnecessarily.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="readOnlyStoreIds"></a> 
+			          <div class="field">
+			            <a name="readOnlyStoreIds"></a> 
+			            <h3>readOnlyStoreIds
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the storeIds in read only mode.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">readOnlyStoreIds</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Avoids modifying the record unnecessarily.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="record"></a> 
+			          <div class="field">
+			            <a name="record"></a> 
+			            <h3>record
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If set, the record will be notified whenever the array changes so that 
+    it can change its own state</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Record
+		              </span>
+		              <span class="name">record</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="recordType"></a> 
+			          <div class="field">
+			            <a name="recordType"></a> 
+			            <h3>recordType
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">recordType will tell what type to transform the record to when
+    materializing the record.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">recordType</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="store"></a> 
+			          <div class="field">
+			            <a name="store"></a> 
+			            <h3>store
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The store that owns this record array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Store
+		              </span>
+		              <span class="name">store</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>All record arrays must have a store to function properly.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="storeKey"></a> 
+			          <div class="field">
+			            <a name="storeKey"></a> 
+			            <h3>storeKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The storeKey for the parent record of this many array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">storeKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Editing this array will place the parent record into a READY_DIRTY state.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.ManyArray#addInverseRecord"></a> 
+			          <h3>addInverseRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the ManyAttribute whenever a record is added on the inverse
+    of the relationship.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ManyArray)
+			              </span>
+			              <span class="name">addInverseRecord</span> <span class="params">(record, key, inverseRecord, inverseKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record this array is a part of</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">the key this array represents</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">inverseRecord</span>
+			              
+			              <span class="desc">the record that was removed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">inverseKey</span>
+			              
+			              <span class="desc">the name of inverse that was changed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ManyArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ManyArray#removeInverseRecord"></a> 
+			          <h3>removeInverseRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the ManyAttribute whenever a record is removed on the inverse
+    of the relationship.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ManyArray)
+			              </span>
+			              <span class="name">removeInverseRecord</span> <span class="params">(inverseRecord)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">inverseRecord</span>
+			              
+			              <span class="desc">the record that was removed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ManyArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:54 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

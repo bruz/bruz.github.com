@@ -1,0 +1,1357 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.RunLoop</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.RunLoop
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_runtime_system_run_loop.js.html">frameworks/sproutcore/frameworks/runtime/system/run_loop.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>The run loop provides a universal system for coordinating events within your application.  The run loop processes timers as well as pending observer notifications within your application.</p>
+
+<p>To use a RunLoop within your application, you should make sure your event handlers always begin and end with SC.RunLoop.begin() and SC.RunLoop.end()</p>
+
+<p>The RunLoop is important because bindings do not fire until the end of your run loop is reached.  This improves the performance of your application.</p>
+
+<h2> Example</h2>
+
+<p>This is how you could write your mouseup handler in jQuery:</p>
+
+
+<p class="code"><code>$('#okButton').on('click', function() {<br />SC.RunLoop.begin();<br /><br />// handle click event...<br /><br />SC.RunLoop.end(); // allows bindings to trigger...<br />});</code></p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RunLoop.html#.currentRunLoop"><code>+&nbsp;(SC.RunLoop) currentRunLoop [R/W]</code></a>
+					              
+					                <div class="description">The current run loop.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RunLoop.html#isRunLoopInProgress"><code>-&nbsp;(Boolean) isRunLoopInProgress [R/W]</code></a>
+					              
+					                <div class="description">YES when a run loop is in progress</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RunLoop.html#.runLoopClass"><code>+&nbsp;(Class) runLoopClass [R/W]</code></a>
+					              
+					                <div class="description">The default RunLoop class.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RunLoop.html#startTime"><code>-&nbsp;(Number) startTime [R/W]</code></a>
+					              
+					                <div class="description">The time the current run loop began executing.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.isObservable">isObservable</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.RunLoop.begin">
+		<code class="type">+&nbsp;(SC.RunLoop)  begin()</code>
+				              </a>
+				              
+				                <div class="description">Begins a new run loop on the currentRunLoop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#beginRunLoop">
+		<code class="type">-&nbsp;(SC.RunLoop)  beginRunLoop()</code>
+				              </a>
+				              
+				                <div class="description">Call this method whenver you begin executing code.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#cancelTimer">
+		<code class="type">-&nbsp;(SC.RunLoop)  cancelTimer(timer)</code>
+				              </a>
+				              
+				                <div class="description">Removes the named timer from the timeout queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop.end">
+		<code class="type">+&nbsp;(SC.RunLoop)  end()</code>
+				              </a>
+				              
+				                <div class="description">Ends the run loop on the currentRunLoop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#endRunLoop">
+		<code class="type">-&nbsp;(SC.RunLoop)  endRunLoop()</code>
+				              </a>
+				              
+				                <div class="description">Call this method whenever you are done executing code.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#fireExpiredTimers">
+		<code class="type">-&nbsp;(Boolean)  fireExpiredTimers()</code>
+				              </a>
+				              
+				                <div class="description">Invokes any timers that have expired since this method was last called.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#flushApplicationQueues">
+		<code class="type">-&nbsp;(Boolean)  flushApplicationQueues()</code>
+				              </a>
+				              
+				                <div class="description">Executes any pending events at the end of the run loop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#invokeLast">
+		<code class="type">-&nbsp;(SC.RunLoop)  invokeLast(target, method)</code>
+				              </a>
+				              
+				                <div class="description">Invokes the passed target/method pair at the very end of the run loop,
+    once all other delayed invoke queues have been flushed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#invokeOnce">
+		<code class="type">-&nbsp;(SC.RunLoop)  invokeOnce(target, method)</code>
+				              </a>
+				              
+				                <div class="description">Invokes the passed target/method pair once at the end of the runloop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop.isRunLoopInProgress">
+		<code class="type">+&nbsp;(Boolean)  isRunLoopInProgress()</code>
+				              </a>
+				              
+				                <div class="description">Returns YES when a run loop is in progress</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RunLoop#scheduleTimer">
+		<code class="type">-&nbsp;(SC.RunLoop)  scheduleTimer(timer, runTime)</code>
+				              </a>
+				              
+				                <div class="description">Schedules a timer to execute at the specified runTime.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Observable.html#constructor">SC.Observable</a>: </dt><dd><a href="../symbols/SC.Observable.html#.addObserver">addObserver</a>, <a href="../symbols/SC.Observable.html#.allPropertiesDidChange">allPropertiesDidChange</a>, <a href="../symbols/SC.Observable.html#.automaticallyNotifiesObserversFor">automaticallyNotifiesObserversFor</a>, <a href="../symbols/SC.Observable.html#.beginPropertyChanges">beginPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.bind">bind</a>, <a href="../symbols/SC.Observable.html#.decrementProperty">decrementProperty</a>, <a href="../symbols/SC.Observable.html#.didChangeFor">didChangeFor</a>, <a href="../symbols/SC.Observable.html#.endPropertyChanges">endPropertyChanges</a>, <a href="../symbols/SC.Observable.html#.get">get</a>, <a href="../symbols/SC.Observable.html#.getEach">getEach</a>, <a href="../symbols/SC.Observable.html#.getPath">getPath</a>, <a href="../symbols/SC.Observable.html#.hasObserverFor">hasObserverFor</a>, <a href="../symbols/SC.Observable.html#.incrementProperty">incrementProperty</a>, <a href="../symbols/SC.Observable.html#.initObservable">initObservable</a>, <a href="../symbols/SC.Observable.html#.logProperty">logProperty</a>, <a href="../symbols/SC.Observable.html#.notifyPropertyChange">notifyPropertyChange</a>, <a href="../symbols/SC.Observable.html#.observersForKey">observersForKey</a>, <a href="../symbols/SC.Observable.html#.propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.Observable.html#.propertyWillChange">propertyWillChange</a>, <a href="../symbols/SC.Observable.html#.registerDependentKey">registerDependentKey</a>, <a href="../symbols/SC.Observable.html#.removeObserver">removeObserver</a>, <a href="../symbols/SC.Observable.html#.set">set</a>, <a href="../symbols/SC.Observable.html#.setIfChanged">setIfChanged</a>, <a href="../symbols/SC.Observable.html#.setPath">setPath</a>, <a href="../symbols/SC.Observable.html#.setPathIfChanged">setPathIfChanged</a>, <a href="../symbols/SC.Observable.html#.toggleProperty">toggleProperty</a>, <a href="../symbols/SC.Observable.html#.unknownProperty">unknownProperty</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".currentRunLoop"></a> 
+			          <div class="field">
+			            <a name=".currentRunLoop"></a> 
+			            <h3>currentRunLoop
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current run loop.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.RunLoop
+		              </span>
+		              <span class="name">currentRunLoop</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is created automatically the first time you call begin().</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRunLoopInProgress"></a> 
+			          <div class="field">
+			            <a name="isRunLoopInProgress"></a> 
+			            <h3>isRunLoopInProgress
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES when a run loop is in progress</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isRunLoopInProgress</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".runLoopClass"></a> 
+			          <div class="field">
+			            <a name=".runLoopClass"></a> 
+			            <h3>runLoopClass
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The default RunLoop class.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Class
+		              </span>
+		              <span class="name">runLoopClass</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you choose to extend the RunLoop, you can set this property to make sure your class is used instead.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="startTime"></a> 
+			          <div class="field">
+			            <a name="startTime"></a> 
+			            <h3>startTime
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The time the current run loop began executing.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">startTime</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>All timers scheduled during this run loop will begin executing as if they were scheduled at this time.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop.begin"></a> 
+			          <h3>begin()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Begins a new run loop on the currentRunLoop.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">begin</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you are already in a runloop, this method has no effect.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#beginRunLoop"></a> 
+			          <h3>beginRunLoop()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method whenver you begin executing code.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">beginRunLoop</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is typically invoked automatically for you from event handlers and the timeout handler.  If you call setTimeout() or setInterval() yourself, you may need to invoke this yourself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#cancelTimer"></a> 
+			          <h3>cancelTimer()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the named timer from the timeout queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">cancelTimer</span> <span class="params">(timer)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Timer)</span><span class="name">timer</span>
+			              
+			              <span class="desc">the timer to schedule</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the timer is not currently scheduled, this method will have no effect.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop.end"></a> 
+			          <h3>end()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Ends the run loop on the currentRunLoop.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">end</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will deliver any final pending notifications and schedule any additional necessary cleanup.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#endRunLoop"></a> 
+			          <h3>endRunLoop()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method whenever you are done executing code.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">endRunLoop</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is typically invoked automatically for you from event handlers and the timeout handler.  If you call setTimeout() or setInterval() yourself you may need to invoke this yourself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#fireExpiredTimers"></a> 
+			          <h3>fireExpiredTimers()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invokes any timers that have expired since this method was last called.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">fireExpiredTimers</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if timers were fired, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Usually you will not call this method directly, but it will be invoked automatically at the end of the run loop.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#flushApplicationQueues"></a> 
+			          <h3>flushApplicationQueues()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Executes any pending events at the end of the run loop.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">flushApplicationQueues</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if items were found in any queue, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called automatically at the end of a run loop to flush any pending queue changes.</p>
+
+<p>The default method will invoke any one time methods and then sync any bindings that might have changed.  You can override this method in a subclass if you like to handle additional cleanup.</p>
+
+<p>This method must return YES if it found any items pending in its queues to take action on.  endRunLoop will invoke this method repeatedly until the method returns NO.  This way if any if your final executing code causes additional queues to trigger, then can be flushed again.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#invokeLast"></a> 
+			          <h3>invokeLast()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invokes the passed target/method pair at the very end of the run loop,
+    once all other delayed invoke queues have been flushed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">invokeLast</span> <span class="params">(target, method)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">method</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Use this to schedule cleanup methods at the end of the run loop once all other work (including rendering) has finished.</p>
+
+<p>If you call this with the same target/method pair multiple times it will only invoke the pair only once at the end of the runloop.</p>
+
+<p>Usually you will not call this method directly but use invokeLast() defined on SC.Object.</p>
+
+<p>Note that in development mode only, the object and method that call this method will be recorded, for help in debugging scheduled code.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#invokeOnce"></a> 
+			          <h3>invokeOnce()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invokes the passed target/method pair once at the end of the runloop.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">invokeOnce</span> <span class="params">(target, method)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">method</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>You can call this method as many times as you like and the method will only be invoked once.</p>
+
+<p>Usually you will not call this method directly but use invokeOnce() defined on SC.Object.</p>
+
+<p>Note that in development mode only, the object and method that call this method will be recorded, for help in debugging scheduled code.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop.isRunLoopInProgress"></a> 
+			          <h3>isRunLoopInProgress()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES when a run loop is in progress</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">isRunLoopInProgress</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RunLoop#scheduleTimer"></a> 
+			          <h3>scheduleTimer()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Schedules a timer to execute at the specified runTime.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RunLoop)
+			              </span>
+			              <span class="name">scheduleTimer</span> <span class="params">(timer, runTime)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Timer)</span><span class="name">timer</span>
+			              
+			              <span class="desc">the timer to schedule</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Time)</span><span class="name">runTime</span>
+			              
+			              <span class="desc">the time offset when you want this to run</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RunLoop)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You will not usually call this method directly.  Instead you should work with SC.Timer, which will manage both creating the timer and scheduling it.</p>
+
+<p>Calling this method on a timer that is already scheduled will remove it from the existing schedule and reschedule it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

@@ -1,0 +1,2462 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.MenuPane</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.MenuPane
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.PickerPane.html#constructor">SC.PickerPane</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_desktop_panes_menu.js.html">frameworks/sproutcore/frameworks/desktop/panes/menu.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>SC.MenuPane allows you to display a standard menu. Menus appear over other panes, and block input to other views until a selection is made or the pane is dismissed by clicking outside of its bounds.</p>
+
+<p>You can create a menu pane and manage it yourself, or you can use the SC.SelectButtonView and SC.PopupButtonView controls to manage the menu for you.</p>
+
+<h2> Specifying Menu Items</h2>
+
+<p>The menu pane examines the <code>items</code> property to determine what menu items should be presented to the user.</p>
+
+<p>In its most simple form, you can provide an array of strings. Every item will be converted into a menu item whose title is the string.</p>
+
+<p>If you need more control over the menu items, such as specifying a keyboard shortcut, enabled state, custom height, or submenu, you can provide an array of content objects.</p>
+
+<p>Out of the box, the menu pane has some default keys it uses to get information from the objects. For example, to find out the title of the menu item, the menu pane will ask your object for its <code>title</code> property. If you need to change this key, you can set the <code>itemTitleKey</code> property on the pane itself.</p>
+
+
+<p class="code"><code>var menuItems = [<br />{ title: 'Menu Item', keyEquivalent: 'ctrl_shift_n' },<br />{ title: 'Checked Menu Item', isChecked: YES, keyEquivalent: 'ctrl_a' },<br />{ title: 'Selected Menu Item', keyEquivalent: 'backspace' },<br />{ isSeparator: YES },<br />{ title: 'Menu Item with Icon', icon: 'inbox', keyEquivalent: 'ctrl_m' },<br />{ title: 'Menu Item with Icon', icon: 'folder', keyEquivalent: 'ctrl_p' }<br />];<br /><br />var menu = SC.MenuPane.create({<br />items: menuItems<br />});</code></p>
+
+<h2> Observing User Selections</h2>
+
+<p>To determine when a user clicks on a menu item, you can observe the</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+						
+					    
+					      <div class="field-summary summary">
+					        <h2>General Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#acceptsMenuPane"><code>-&nbsp;(Boolean) acceptsMenuPane [R/W]</code></a>
+					              
+					                <div class="description">Whether or not this menu pane should accept the “current menu pane”
+    designation when visible, which is the highest-priority pane when routing
+    events.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#anchor"><code>-&nbsp;(SC.View) anchor [R/O]</code></a>
+					              
+					                <div class="description">The view or element to which the menu will anchor itself.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#controlSize"><code>-&nbsp;(String) controlSize [R/W]</code></a>
+					              
+					                <div class="description">The size of the menu.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#displayItems"><code>-&nbsp;(Array) displayItems [R/O]</code></a>
+					              
+					                <div class="description">Returns an array of normalized display items.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#exampleView"><code>-&nbsp;(SC.View) exampleView [R/W]</code></a>
+					              
+					                <div class="description">The view class to use when creating new menu item views.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#isSubMenu"><code>-&nbsp;(Boolean) isSubMenu [R/O]</code></a>
+					              
+					                <div class="description">YES if this menu pane was generated by a parent SC.MenuPane.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#itemHeight"><code>-&nbsp;(Number) itemHeight [R/W]</code></a>
+					              
+					                <div class="description">The height of each menu item, in pixels.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#items"><code>-&nbsp;(String) items [R/W]</code></a>
+					              
+					                <div class="description">The array of items to display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#itemSeparatorHeight"><code>-&nbsp;(Number) itemSeparatorHeight [R/W]</code></a>
+					              
+					                <div class="description">The height of separator menu items.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#localize"><code>-&nbsp;(Boolean) localize [R/W]</code></a>
+					              
+					                <div class="description">Whether the title of menu items should be localized before display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#menuHeight"><code>-&nbsp;(Number) menuHeight [R/O]</code></a>
+					              
+					                <div class="description">The height of the menu pane.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#menuHeightPadding"><code>-&nbsp;(Number) menuHeightPadding [R/W]</code></a>
+					              
+					                <div class="description">The amount of padding to add to the height of the pane.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#menuItemViews"><code>-&nbsp;(Array) menuItemViews [R/W]</code></a>
+					              
+					                <div class="description">The array of child menu item views that compose the menu.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#rootMenu"><code>-&nbsp;(SC.MenuPane) rootMenu [R/O]</code></a>
+					              
+					                <div class="description">If this is a submenu, this property corresponds to the
+    top-most parent menu.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#selectedItem"><code>-&nbsp;(SC.Object) selectedItem [R/O]</code></a>
+					              
+					                <div class="description">The last menu item to be selected by the user.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#submenuOffsetX"><code>-&nbsp;(Number) submenuOffsetX [R/W]</code></a>
+					              
+					                <div class="description">The amount of offset x while positioning submenu.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.MenuPane.html#.TINY_MENU_ITEM_HEIGHT"><code>+&nbsp;(Object) TINY_MENU_ITEM_HEIGHT [R/W]</code></a>
+					              
+					                <div class="description">Default metrics for the different control sizes.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+						
+
+							
+
+							      <div class="field-summary summary">
+							        <h2>Common Properties For 'Menu Item Properties'</h2>
+							        <ul>
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemActionKey"><code>-&nbsp;(String) itemActionKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the action that is triggered when
+    the user clicks the menu item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemCheckboxKey"><code>-&nbsp;(String) itemCheckboxKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that determines whether the menu item should
+    display a checkbox.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemDisableMenuFlashKey"><code>-&nbsp;(String) itemDisableMenuFlashKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that determines whether menu flash should be
+    disabled.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemHeightKey"><code>-&nbsp;(String) itemHeightKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the height for each item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemIconKey"><code>-&nbsp;(String) itemIconKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the icon for each item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemIsEnabledKey"><code>-&nbsp;(String) itemIsEnabledKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that determines whether the item is enabled.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemKeyEquivalentKey"><code>-&nbsp;(String) itemKeyEquivalentKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the key equivalent of the menu
+    item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemSeparatorKey"><code>-&nbsp;(String) itemSeparatorKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that determines whether the item is a menu
+    separator.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemShortCutKey"><code>-&nbsp;(String) itemShortCutKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the shortcut to be displayed.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemSubMenuKey"><code>-&nbsp;(String) itemSubMenuKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains an optional submenu for each item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemTargetKey"><code>-&nbsp;(String) itemTargetKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the target for the action that is triggered when the user clicks the menu item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemTitleKey"><code>-&nbsp;(String) itemTitleKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the title for each item.</div>
+							              
+							            </li>
+							          
+							        
+							          
+							            <li>
+							              <a href="../symbols/SC.MenuPane.html#itemValueKey"><code>-&nbsp;(String) itemValueKey [R/W]</code></a>
+							              
+							                <div class="description">The name of the property that contains the value for each item.</div>
+							              
+							            </li>
+							          
+							        
+							        </ul>
+							      </div>
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.PickerPane.html#constructor">SC.PickerPane</a>: </dt><dd><a href="../symbols/SC.PickerPane.html#.PICKER_POINTER_OFFSET">PICKER_POINTER_OFFSET</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#becomeMenuPane">
+		<code class="type">-&nbsp;(SC.Pane)  becomeMenuPane()</code>
+				              </a>
+				              
+				                <div class="description">Make the pane the menu pane.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#menuItemViewForContentIndex">
+		<code class="type">-&nbsp;(SC.MenuItemView)  menuItemViewForContentIndex(idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns the menu item view for the content object at the specified index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#paneDidAttach">
+		<code class="type">-&nbsp;(SC.MenuPane)  paneDidAttach()</code>
+				              </a>
+				              
+				                <div class="description">When the pane is attached to a DOM element in the window, set up the
+    view to be visible in the window and register with the RootResponder.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#popup">
+		<code class="type">-&nbsp;(void)  popup(preferMatrix)</code>
+				              </a>
+				              
+				                <div class="description">Makes the menu visible and adds it to the HTML document.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#remove">
+		<code class="type">-&nbsp;(SC.MenuPane)  remove()</code>
+				              </a>
+				              
+				                <div class="description">Removes the menu from the screen.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.MenuPane#resignMenuPane">
+		<code class="type">-&nbsp;(SC.Pane)  resignMenuPane()</code>
+				              </a>
+				              
+				                <div class="description">Remove the menu pane status from the pane.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="acceptsMenuPane"></a> 
+			          <div class="field">
+			            <a name="acceptsMenuPane"></a> 
+			            <h3>acceptsMenuPane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether or not this menu pane should accept the “current menu pane”
+    designation when visible, which is the highest-priority pane when routing
+    events.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">acceptsMenuPane</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">YES</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Generally you want this set to YES so that your menu pane can intercept keyboard events.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="anchor"></a> 
+			          <div class="field">
+			            <a name="anchor"></a> 
+			            <h3>anchor
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">The view or element to which the menu will anchor itself.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">anchor</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>When the menu pane is shown, it will remain anchored to the view you specify, even if the window is resized. You should specify the anchor as a parameter when calling @popup()@, rather than setting it directly.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="controlSize"></a> 
+			          <div class="field">
+			            <a name="controlSize"></a> 
+			            <h3>controlSize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The size of the menu.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">controlSize</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">SC.REGULAR_CONTROL_SIZE</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will set a CSS style on the menu that can be used by the current theme to style the appearance of the control. This value will also determine the default itemHeight, itemSeparatorHeight, menuHeightPadding, and submenuOffsetX if you don't explicitly set these properties.</p>
+
+<p>Your theme can override the default values for each control size. For example, to set the height of menu items for small menus, you could set</p>
+
+<p class="code"><code>SC.MenuPane.SMALL_MENU_ITEM_HEIGHT = 10;</code></p>
+
+<p>Changing the controlSize once the menu is instantiated has no effect.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="displayItems"></a> 
+			          <div class="field">
+			            <a name="displayItems"></a> 
+			            <h3>displayItems
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">Returns an array of normalized display items.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">displayItems</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Because the items property can be provided as either an array of strings, or an object with key-value pairs, or an exotic mish-mash of both, we need to normalize it for our display logic.</p>
+
+<p>If an <code>items</code> member is an object, we can assume it is formatted properly and leave it as-is.</p>
+
+<p>If an <code>items</code> member is a string, we create a hash with the title value set to that string, and some sensible defaults for the other properties.</p>
+
+<p>As a last resort, if an <code>items</code> member is an array, we have a legacy handler that converts the array into a hash. This behavior is deprecated and is not guaranteed to be supported in the future.</p>
+
+<p>A side effect of running this computed property is that the menuHeight property is updated.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="exampleView"></a> 
+			          <div class="field">
+			            <a name="exampleView"></a> 
+			            <h3>exampleView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The view class to use when creating new menu item views.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">exampleView</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">SC.MenuItemView</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The menu pane will automatically create an instance of the view class you set here for each item in the <code>items</code> array. You may provide your own subclass for this property to display the customized content.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isSubMenu"></a> 
+			          <div class="field">
+			            <a name="isSubMenu"></a> 
+			            <h3>isSubMenu
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">YES if this menu pane was generated by a parent SC.MenuPane.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isSubMenu</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemActionKey"></a> 
+			          <div class="field">
+			            <a name="itemActionKey"></a> 
+			            <h3>itemActionKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the action that is triggered when
+    the user clicks the menu item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemActionKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"action"</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Note that this property is ignored if the menu item has a submenu.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemCheckboxKey"></a> 
+			          <div class="field">
+			            <a name="itemCheckboxKey"></a> 
+			            <h3>itemCheckboxKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that determines whether the menu item should
+    display a checkbox.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemCheckboxKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"checkbox"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemDisableMenuFlashKey"></a> 
+			          <div class="field">
+			            <a name="itemDisableMenuFlashKey"></a> 
+			            <h3>itemDisableMenuFlashKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that determines whether menu flash should be
+    disabled.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemDisableMenuFlashKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"disableMenuFlash"</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>When you click on a menu item, it will flash several times to indicate selection to the user. Some browsers block windows from opening outside of a mouse event, so you may wish to disable menu flashing if the action of the menu item should open a new window.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemHeight"></a> 
+			          <div class="field">
+			            <a name="itemHeight"></a> 
+			            <h3>itemHeight
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The height of each menu item, in pixels.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">itemHeight</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">null</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemHeightKey"></a> 
+			          <div class="field">
+			            <a name="itemHeightKey"></a> 
+			            <h3>itemHeightKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the height for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemHeightKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"height"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemIconKey"></a> 
+			          <div class="field">
+			            <a name="itemIconKey"></a> 
+			            <h3>itemIconKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the icon for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemIconKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"icon"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemIsEnabledKey"></a> 
+			          <div class="field">
+			            <a name="itemIsEnabledKey"></a> 
+			            <h3>itemIsEnabledKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that determines whether the item is enabled.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemIsEnabledKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"isEnabled"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemKeyEquivalentKey"></a> 
+			          <div class="field">
+			            <a name="itemKeyEquivalentKey"></a> 
+			            <h3>itemKeyEquivalentKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the key equivalent of the menu
+    item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemKeyEquivalentKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"keyEquivalent"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="items"></a> 
+			          <div class="field">
+			            <a name="items"></a> 
+			            <h3>items
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The array of items to display.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">items</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This can be a simple array of strings, objects or hashes. If you pass objects or hashes, you can also set the various itemKey properties to tell the menu how to extract the information it needs.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemSeparatorHeight"></a> 
+			          <div class="field">
+			            <a name="itemSeparatorHeight"></a> 
+			            <h3>itemSeparatorHeight
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The height of separator menu items.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">itemSeparatorHeight</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">null</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemSeparatorKey"></a> 
+			          <div class="field">
+			            <a name="itemSeparatorKey"></a> 
+			            <h3>itemSeparatorKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that determines whether the item is a menu
+    separator.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemSeparatorKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"separator"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemShortCutKey"></a> 
+			          <div class="field">
+			            <a name="itemShortCutKey"></a> 
+			            <h3>itemShortCutKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the shortcut to be displayed.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemShortCutKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"shortcut"</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The shortcut should communicate the keyboard equivalent to the user.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemSubMenuKey"></a> 
+			          <div class="field">
+			            <a name="itemSubMenuKey"></a> 
+			            <h3>itemSubMenuKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains an optional submenu for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemSubMenuKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"subMenu"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemTargetKey"></a> 
+			          <div class="field">
+			            <a name="itemTargetKey"></a> 
+			            <h3>itemTargetKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the target for the action that is triggered when the user clicks the menu item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemTargetKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"target"</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Note that this property is ignored if the menu item has a submenu.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemTitleKey"></a> 
+			          <div class="field">
+			            <a name="itemTitleKey"></a> 
+			            <h3>itemTitleKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the title for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemTitleKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"title"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemValueKey"></a> 
+			          <div class="field">
+			            <a name="itemValueKey"></a> 
+			            <h3>itemValueKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The name of the property that contains the value for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemValueKey</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">"value"</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="localize"></a> 
+			          <div class="field">
+			            <a name="localize"></a> 
+			            <h3>localize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether the title of menu items should be localized before display.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">localize</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">YES</span>
+			              </p>
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="menuHeight"></a> 
+			          <div class="field">
+			            <a name="menuHeight"></a> 
+			            <h3>menuHeight
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">The height of the menu pane.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">menuHeight</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is updated every time menuItemViews is recalculated.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="menuHeightPadding"></a> 
+			          <div class="field">
+			            <a name="menuHeightPadding"></a> 
+			            <h3>menuHeightPadding
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The amount of padding to add to the height of the pane.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">menuHeightPadding</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">null</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The first menu item is offset by half this amount, and the other half is added to the height of the menu, such that a space between the top and the bottom is created.</p>
+
+<p>If you don't specify a value, the padding will be inferred from the controlSize.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="menuItemViews"></a> 
+			          <div class="field">
+			            <a name="menuItemViews"></a> 
+			            <h3>menuItemViews
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The array of child menu item views that compose the menu.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">menuItemViews</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This computed property parses <code>displayItems</code> and constructs an SC.MenuItemView (or whatever class you have set as the <code>exampleView</code>) for every item.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="rootMenu"></a> 
+			          <div class="field">
+			            <a name="rootMenu"></a> 
+			            <h3>rootMenu
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">If this is a submenu, this property corresponds to the
+    top-most parent menu.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.MenuPane
+		              </span>
+		              <span class="name">rootMenu</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is the root menu, it returns itself.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="selectedItem"></a> 
+			          <div class="field">
+			            <a name="selectedItem"></a> 
+			            <h3>selectedItem
+
+						
+							[R/O]
+							
+							
+
+					</h3>
+		            <p class="summary">The last menu item to be selected by the user.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Object
+		              </span>
+		              <span class="name">selectedItem</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">null</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can place an observer on this property to be notified when the user makes a selection.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="submenuOffsetX"></a> 
+			          <div class="field">
+			            <a name="submenuOffsetX"></a> 
+			            <h3>submenuOffsetX
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The amount of offset x while positioning submenu.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">submenuOffsetX</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">null</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If you don't specify a value, the padding will be inferred from the controlSize.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".TINY_MENU_ITEM_HEIGHT"></a> 
+			          <div class="field">
+			            <a name=".TINY_MENU_ITEM_HEIGHT"></a> 
+			            <h3>TINY_MENU_ITEM_HEIGHT
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Default metrics for the different control sizes.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">TINY_MENU_ITEM_HEIGHT</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#becomeMenuPane"></a> 
+			          <h3>becomeMenuPane()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Make the pane the menu pane.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Pane)
+			              </span>
+			              <span class="name">becomeMenuPane</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Pane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>When you call this, all key events will temporarily be routed to this pane. Make sure that you call resignMenuPane; otherwise all key events will be blocked to other panes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#menuItemViewForContentIndex"></a> 
+			          <h3>menuItemViewForContentIndex()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the menu item view for the content object at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.MenuItemView)
+			              </span>
+			              <span class="name">menuItemViewForContentIndex</span> <span class="params">(idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the item index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.MenuItemView)</span>
+			                <span class="desc">instantiated view</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#paneDidAttach"></a> 
+			          <h3>paneDidAttach()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">When the pane is attached to a DOM element in the window, set up the
+    view to be visible in the window and register with the RootResponder.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.MenuPane)
+			              </span>
+			              <span class="name">paneDidAttach</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.MenuPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>We don't call sc_super() here because PanelPane sets the current pane to be the key pane when attached.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#popup"></a> 
+			          <h3>popup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Makes the menu visible and adds it to the HTML document.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">popup</span> <span class="params">(preferMatrix)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">SC.View</span>
+			              
+			              <span class="desc">anchorViewOrElement the view or element to which the menu
+    should anchor.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">preferMatrix</span>
+			              
+			              <span class="desc">The prefer matrix used to position the pane.
+    (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If you provide a view or element as the first parameter, the menu will anchor itself to the view, and intelligently reposition itself if the contents of the menu exceed the available space.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the menu from the screen.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.MenuPane)
+			              </span>
+			              <span class="name">remove</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.MenuPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.MenuPane#resignMenuPane"></a> 
+			          <h3>resignMenuPane()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Remove the menu pane status from the pane.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Pane)
+			              </span>
+			              <span class="name">resignMenuPane</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Pane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will simply set the menuPane on the rootResponder to null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:55 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

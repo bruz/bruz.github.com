@@ -1,0 +1,1533 @@
+<symbol alias="_global_">
+	<name>_global_</name>
+	<memberOf></memberOf>
+	<isStatic>false</isStatic>
+	<isa>GLOBAL</isa>
+	<desc></desc>
+	<classDesc></classDesc>
+	
+	<methods>
+		<method>
+			<name>write</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Writes this SC.Cookie to document.cookie and adds it to SC.Cookie collection. To find this
+    cookie later, or on reload, use SC.Cookie.find.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>averagedTouchesForView</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computes a hash with x, y, and d (distance) properties, containing the average position
+    of all touches, and the average distance of all touches from that average.
+
+    This is useful for implementing scaling.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>added</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>observerContentDidChange</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called whenever the content for the passed observer has changed.  Default
+    version notifies the parent if it exists and updates the length.
+    
+    The start, amt and delta params should reflect changes to the children
+    array, not to the expanded range for the wrapper.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>start</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>amt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>delta</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>info</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Log an information response to the reporter.
+
+    Logs the response using {@link SC.Logger.log} if reporter.info does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>String|Array|Function|Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>sendAction</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Route an action message to the appropriate responder.  This method will
+    walk the responder chain, attempting to find a responder that implements
+    the action name you pass to this method.  Set 'target' to null to search
+    the responder chain.
+
+    IMPORTANT: This method's API and implementation will likely change
+    significantly after SproutCore 1.0 to match the version found in
+    SC.ResponderContext.
+
+    You generally should not call or override this method in your own
+    applications.</desc>
+			<params>
+				<param>
+					<type>String</type>
+					<name>action</name>
+					<desc>The action to perform - this is a method name.</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Responder</type>
+					<name>target</name>
+					<desc>object to set method to (can be null)</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Object</type>
+					<name>sender</name>
+					<desc>The sender of the action</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Pane</type>
+					<name>pane</name>
+					<desc>optional pane to start search with</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Object</type>
+					<name>context</name>
+					<desc>optional. only passed to ResponderContexts</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>contentGroupIndexes</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called by the collection view to return any group indexes.  The default 
+    implementation will compute the indexes one time based on the delegate 
+    treeItemIsGrouped</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>content</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>contentIndexExpand</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Expands the specified content index.  This will search down until it finds
+    the branchObserver responsible for this item and then calls _collapse on
+    it.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>content</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>idx</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>contentIndexCollapse</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called to collapse a content index item if it is currently in an open 
+    disclosure state.  The default implementation does nothing.</desc>
+			<params>
+				<param>
+					<type>SC.CollectionView</type>
+					<name>view</name>
+					<desc>the collection view</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Array</type>
+					<name>content</name>
+					<desc>the content object</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Number</type>
+					<name>idx</name>
+					<desc>the content index</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>touchesForView</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Returns the touches that are registered to the specified view; undefined if none.
+
+    When views receive a touch event, they have the option to subscribe to it.
+    They are then mapped to touch events and vice-versa. This returns touches mapped to the view.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>contentIndexDisclosureState</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Returns the disclosure state for the specified index.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>content</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>expandChildIndex</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Accepts a child index and expands it to reflect any nested groups.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>trace</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Prints a stack-trace.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>dirxml</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Prints an XML outline for any HTML or XML object.
+
+    Logs the object using {@link SC.Logger.log} if reporter.dirxml function does not exist and
+    {@lnk SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>willLoseFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called just before the responder or any of its subresponder's are about to
+    lose their first responder status.  The passed responder is the responder
+    that is about to lose its status. 
+    
+    Override this method to provide any standard teardown when the first 
+    responder changes.</desc>
+			<params>
+				<param>
+					<type>SC.Responder</type>
+					<name>responder</name>
+					<desc>the responder that is about to change</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>parentItem</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The parent item for the observer item.  Computed automatically from the 
+    parent.  If the value of this is null, then this is the root of the tree.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>_computeDisclosureState</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computes the current disclosure state of the item by asking the item or 
+    the delegate.  If no pitem or index is passed, the parentItem and idex 
+    will be used.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>item</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>pitem</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>timeEnd</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Ends the profile specified.</desc>
+			<params>
+				<param>
+					<type>String</type>
+					<name>name</name>
+					<desc>The name of the profile to end</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>mouseup</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>mouseUp only gets delivered to the view that handled the mouseDown evt.
+    we also handle click and double click notifications through here to
+    ensure consistant delivery.  Note that if mouseDownView is not
+    implemented, then no mouseUp event will be sent, but a click will be
+    sent.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>time</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Measure the time between when this function is called and
+    {@link SC.Logger.timeEnd} is called.</desc>
+			<params>
+				<param>
+					<type>String</type>
+					<name>name</name>
+					<desc>The name of the profile to begin</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>profileEnd</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Ends the JavaScript profiler, if it exists.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>resize</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>On window resize, notifies panes of the change.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>_collapse</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Collapse the item at the specified index.  This will either directly 
+    modify the property on the item or call the treeItemCollapse() method.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>item</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>pitem</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>makeMenuPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Sets a pane as the menu pane. All key events will be directed to this
+    pane, but the current key pane will not lose focus.
+
+    Usually you would not call this method directly, but allow instances of
+    SC.MenuPane to manage the menu pane for you. If your pane does need to
+    become menu pane, you should relinquish control by calling this method
+    with a null parameter. Otherwise, key events will always be delivered to
+    that pane.</desc>
+			<params>
+				<param>
+					<type>SC.MenuPane</type>
+					<name>pane</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>group</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Every log after this call until {@link SC.Logger.groupEnd} is called
+    will be indented for readability. You can create as many levels
+    as you want.</desc>
+			<params>
+				<param>
+					<type>String</type>
+					<name>title</name>
+					<desc>An optional title to display above the group</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>_computeChildren</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computes the children for the passed item.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>item</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>attemptKeyEquivalent</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Invoked on a keyDown event that is not handled by any actual value.  This
+    will get the key equivalent string and then walk down the keyPane, then
+    the focusedPane, then the mainPane, looking for someone to handle it.
+    Note that this will walk DOWN the view hierarchy, not up it like most.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>computeWindowSize</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computes the window size from the DOM.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>dir</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Prints the properties of an object.
+
+    Logs the object using {@link SC.Logger.log} if the reporter.dir function does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>didBecomeFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called just after the responder or any of its subresponder's becomes a 
+    first responder.  
+    
+    Override this method to provide any standard setup when the first 
+    responder changes.</desc>
+			<params>
+				<param>
+					<type>SC.Responder</type>
+					<name>responder</name>
+					<desc>the responder that changed</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>mousemove</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>This will send mouseEntered, mouseExited, mousedDragged and mouseMoved
+   to the views you hover over.  To receive these events, you must implement
+   the method. If any subviews implement them and return true, then you won't
+   receive any notices.
+
+   If there is a target mouseDown view, then mouse moved events will also
+   trigger calls to mouseDragged.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>destroy</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called just before a branch observer is removed.  Should stop any 
+    observering and invalidate any child observers.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>_expand</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Expand the item at the specified index.  This will either directly 
+    modify the property on the item or call the treeItemExpand() method.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>item</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>pitem</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>setup</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called when the document is ready to begin handling events.  Setup event
+    listeners in this method that you are interested in observing for your
+    particular platform.  Be sure to call sc_super().</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>targetForAction</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Attempts to determine the initial target for a given action/target/sender
+    tuple.  This is the method used by sendAction() to try to determine the
+    correct target starting point for an action before trickling up the
+    responder chain.
+
+    You send actions for user interface events and for menu actions.
+
+    This method returns an object if a starting target was found or null if no
+    object could be found that responds to the target action.
+
+    Passing an explicit target or pane constrains the target lookup to just
+    them; the defaultResponder and other panes are *not* searched.</desc>
+			<params>
+				<param>
+					<type>Object|String</type>
+					<name>target</name>
+					<desc>or null if no target is specified</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>String</type>
+					<name>method</name>
+					<desc>name for target</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Object</type>
+					<name>sender</name>
+					<desc>optional sender</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Pane</type>
+					<name>optional</name>
+					<desc>pane</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>isHeaderVisible</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Returns YES if the item itself should be shown, NO if only its children
+    should be shown.  Normally returns YES unless the parentObject is null.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>captureTouch</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>captureTouch is used to find the view to handle a touch. It starts at the starting point and works down
+    to the touch's target, looking for a view which captures the touch. If no view is found, it uses the target
+    view.
+
+    Then, it triggers a touchStart event starting at whatever the found view was; this propagates up the view chain
+    until a view responds YES. This view becomes the touch's owner.
+
+    You usually do not call captureTouch, and if you do call it, you'd call it on the touch itself:
+    touch.captureTouch(startingPoint, shouldStack)
+
+    If shouldStack is YES, the previous responder will be kept so that it may be returned to later.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>touch</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>startingPoint</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>shouldStack</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>invalidateBranchObserversAt</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Invalidates any branch observers on or after the specified index range.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>beforedeactivate</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>IE's default behavior to blur textfields and other controls can only be
+    blocked by returning NO to this event. However we don't want to block
+    its default behavior otherwise textfields won't loose focus by clicking on 
+    an empty area as it's expected. If you want to block IE from bluring another 
+    control set blockIEDeactivate to true on the especific view in which you 
+    want to avoid this. Think of an autocomplete menu, you want to click on 
+    the menu but don't loose focus.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>replace</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Implements SC.Array.replace() primitive.  For this method to succeed, the
+    range you replace must lie entirely within the same parent item, otherwise
+    this will raise an exception.
+    
+    h3. The Operation Parameter
+    
+    Note that this replace method accepts an additional parameter "operation"
+    which is used when you try to insert an item on a boundary between 
+    branches whether it should be inserted at the end of the previous group
+    after the group.  If you don't pass operation, the default is 
+    SC.DROP_BEFORE, which is the expected behavior.
+    
+    Even if the operation is SC.DROP_AFTER, you should still pass the actual
+    index where you expect the item to be inserted.  For example, if you want
+    to insert AFTER the last index of an 3-item array, you would still call:
+    
+    {{{
+      observer.replace(3, 0, [object1 .. objectN], SC.DROP_AFTER)
+    }}}
+    
+    The operation is simply used to disambiguate whether the insertion is
+    intended to be AFTER the previous item or BEFORE the items you are
+    replacing.</desc>
+			<params>
+				<param>
+					<type>Number</type>
+					<name>start</name>
+					<desc>the starting index</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Number</type>
+					<name>amt</name>
+					<desc>the number of items to replace</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Array</type>
+					<name>objects</name>
+					<desc>array of objects to insert</desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Number</type>
+					<name>operation</name>
+					<desc>either SC.DROP_BEFORE or SC.DROP_AFTER</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>objectAt</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Get the object at the specified index.  This will talk the tree info
+    to determine the proper place.  The offset should be relative to the 
+    start of this tree item.  Calls recursively down the tree.
+    
+    This should only be called with an index you know is in the range of item
+    or its children based on looking at the length.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>targetViewForEvent</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Finds the view that appears to be targeted by the passed event.  This only
+    works on events with a valid target property.</desc>
+			<params>
+				<param>
+					<type>SC.Event</type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>sendEvent</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Attempts to send an event down the responder chain.  This method will
+    invoke the sendEvent() method on either the keyPane or on the pane owning
+    the target view you pass in.  It will also automatically begin and end
+    a new run loop.
+
+    If you want to trap additional events, you should use this method to
+    send the event down the responder chain.</desc>
+			<params>
+				<param>
+					<type>String</type>
+					<name>action</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>SC.Event</type>
+					<name>evt</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Object</type>
+					<name>target</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>_childrenDidChange</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called whenever the children or disclosure state changes.  Begins or ends
+    observing on the children array so that changes can propogate outward.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>becomeFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Call this method on your view or responder to make it become first 
+    responder.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>branchObserverAt</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Returns the branch item for the specified index.  If none exists yet, it
+    will be created.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>blur</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Handle window focus.  Change hasFocus and add sc-focus CSS class (removing
+    sc-blur).  Also notify panes.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>makeMainPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Swaps the main pane.  If the current main pane is also the key pane, then
+    the new main pane will also be made key view automatically.  In addition
+    to simply updating the mainPane property, this method will also notify the
+    panes themselves that they will lose/gain their mainView status.
+
+    Note that this method does not actually change the Pane's place in the
+    document body.  That will be handled by the Pane itself.</desc>
+			<params>
+				<param>
+					<type>SC.Pane</type>
+					<name>pane</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>focusin</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Handle window focus event for IE. Listening to the focus event is not
+    reliable as per every focus event you receive you inmediately get a blur 
+    event (Only on IE of course ;)</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>focus</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Handle window focus.  Change hasFocus and add sc-focus CSS class
+    (removing sc-blur).  Also notify panes.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>error</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Log an error to the console
+
+    Logs the error using {@link SC.Logger.log} if reporter.error does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>String|Array|Function|Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>_computeLength</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computes the length of the array by looking at children.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>makeTouchResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The touch responder for any given touch is the view which will receive touch events
+    for that touch. Quite simple.
+
+    makeTouchResponder takes a potential responder as an argument, and, by calling touchStart on each
+    nextResponder, finds the actual responder. As a side-effect of how it does this, touchStart is called
+    on the new responder before touchCancelled is called on the old one (touchStart has to accept the touch
+    before it can be considered cancelled).
+
+    You usually don't have to think about this at all. However, if you don't want your view to,
+    for instance, prevent scrolling in a ScrollView, you need to make sure to transfer control
+    back to the previous responder:
+
+    if (Math.abs(touch.pageY - touch.startY) > this.MAX_SWIPE) touch.restoreLastTouchResponder();
+
+    You don't call makeTouchResponder on RootResponder directly. Instead, it gets called for you
+    when you return YES to captureTouch or touchStart.
+
+    You do, however, use a form of makeTouchResponder to return to a previous touch responder. Consider
+    a button view inside a ScrollView: if the touch moves too much, the button should give control back
+    to the scroll view.
+
+    if (Math.abs(touch.pageX - touch.startX) > 4) {
+      if (touch.nextTouchResponder) touch.makeTouchResponder(touch.nextTouchResponder);
+    }
+
+    This will give control back to the containing view. Maybe you only want to do it if it is a ScrollView?
+
+    if (Math.abs(touch.pageX - touch.startX) > 4 && touch.nextTouchResponder && touch.nextTouchResponder.isScrollable)
+      touch.makeTouchResponder(touch.nextTouchResponder);
+
+    Possible gotcha: while you can do touch.nextTouchResponder, the responders are not chained in a linked list like
+    normal responders, because each touch has its own responder stack. To navigate through the stack (or, though
+    it is not recommended, change it), use touch.touchResponders (the raw stack array).
+
+    makeTouchResponder is called with an event object. However, it usually triggers custom touchStart/touchCancelled
+    events on the views. The event object is passed so that functions such as stopPropagation may be called.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>touch</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>responder</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>shouldStack</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>groupEnd</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Ends a group declared with {@link SC.Logger.group}.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>focusout</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Handle window blur event for IE. Listening to the focus event is not
+    reliable as per every focus event you receive you inmediately get a blur 
+    event (Only on IE of course ;)</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>_childrenRangeDidChange</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called anytime the actual content of the children has changed.  If this 
+    changes the length property, then notifies the parent that the content
+    might have changed.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>array</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>objects</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>key</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>indexes</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>contentIndexOutlineLevel</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Returns the outline level for the specified index.</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>view</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>content</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>index</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>listenFor</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Default method to add an event listener for the named event.  If you simply
+    need to add listeners for a type of event, you can use this method as
+    shorthand.  Pass an array of event types to listen for and the element to
+    listen in.  A listener will only be added if a handler is actually installed
+    on the RootResponder (or receiver) of the same name.</desc>
+			<params>
+				<param>
+					<type>Array</type>
+					<name>keyNames</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Element</type>
+					<name>target</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type>Object</type>
+					<name>receiver</name>
+					<desc>- optional if you don't want 'this'</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>warn</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Log a warning to the console.
+
+    Logs the warning using {@link SC.Logger.log} if reporter.warning does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>String|Array|Function|Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>log</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Log output to the console, but only if it exists.</desc>
+			<params>
+				<param>
+					<type>String|Array|Function|Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>_itemPropertyDidChange</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Called whenever a property changes on the item.  Determines if either the
+    children array or the disclosure state has changed and then notifies as 
+    necessary..</desc>
+			<params>
+				<param>
+					<type></type>
+					<name>target</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+				<param>
+					<type></type>
+					<name>key</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>makeKeyPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Makes the passed pane the new key pane.  If you pass null or if the pane
+    does not accept key focus, then key focus will transfer to the previous
+    key pane (if it is still attached), and so on down the stack.  This will
+    notify both the old pane and the new root View that key focus has changed.</desc>
+			<params>
+				<param>
+					<type>SC.Pane</type>
+					<name>pane</name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>profile</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Begins the JavaScript profiler, if it exists. Call {@link SC.Logger.profileEnd}
+    to end the profiling process and receive a report.</desc>
+			<params>
+			</params>
+		</method>
+		<method>
+			<name>debug</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Log a debug message to the console.
+
+    Logs the response using {@link SC.Logger.log} if reporter.debug does not exist and
+    {@link SC.Logger.fallBackOnLog} is true.</desc>
+			<params>
+				<param>
+					<type>String|Array|Function|Object</type>
+					<name></name>
+					<desc></desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+		<method>
+			<name>resignFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Call this method on your view or responder to resign your first responder 
+    status. Normally this is not necessary since you will lose first responder 
+    status automatically when another view becomes first responder.</desc>
+			<params>
+				<param>
+					<type>Event</type>
+					<name>the</name>
+					<desc>original event that caused this method to be called</desc>
+					<defaultValue></defaultValue>
+				</param>
+			</params>
+		</method>
+	</methods>
+	
+	<properties>
+		<property>
+			<name>path</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The value of the path atribute of the cookie (default: path of page that created the cookie).</desc>
+			<type>String</type>
+		</property>
+		<property>
+			<name>responderContext</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>defaultResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Set this to a delegate object that can respond to actions as they are sent
+    down the responder chain.</desc>
+			<type>SC.Object</type>
+		</property>
+		<property>
+			<name>mainPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>expires</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Amount of time until the cookie expires. Set to -1 in order to delete the cookie.</desc>
+			<type>Integer|SC.DateTime|Date</type>
+		</property>
+		<property>
+			<name>disclosureState</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Disclosure state of this item.  Must be SC.BRANCH_OPEN or SC.BRANCH_CLOSED
+    If this is the root of a item tree, the observer will have children but
+    no parent or parent item.  IN this case the disclosure state is always
+    SC.BRANCH_OPEN.</desc>
+			<type>Number</type>
+		</property>
+		<property>
+			<name>previousKeyPanes</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>secure</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>If true, the secure attribute of the cookie will be set and the cookie transmission will
+    require a secure protocol (like HTTPS).</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>parentObserver</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The parent TreeItemObserver for this observer.  Must be set on create.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>hasFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>delegate</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The controller delegate.  If the item does not implement the 
+    TreeItemContent method, delegate properties will be used to determine how
+    to access the content.  Set automatically when a tree item is created.
+    
+    If you are creating an observer manually, you must set this to a non-null
+    value.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>value</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The value of the cookie</desc>
+			<type>String</type>
+		</property>
+		<property>
+			<name>index</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Index location in parent's children array.  If this is the root item
+    in the tree, should be null.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>keyPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The current key pane. This pane receives keyboard events, shortcuts, and
+    actions first, unless a menu is open. This pane is usually the highest
+    ordered pane or the mainPane.</desc>
+			<type>SC.Pane</type>
+		</property>
+		<property>
+			<name>children</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Array of child tree items.  Extracted from the item automatically on init.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>panes</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Contains a list of all panes currently visible on screen.  Everytime a
+    pane attaches or detaches, it will update itself in this array.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>fallBackOnLog</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>If some function, such as console.dir, does not exist,
+    SC.Logger will try console.log if this is true.</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>isCookie</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Walk like a duck</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>debugEnabled</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Whether or not to enable debug logging.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>name</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The name of the cookie</desc>
+			<type>String</type>
+		</property>
+		<property>
+			<name>length</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Get the current length of the tree item including any of its children.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>exists</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Computed property that checks for the existence of the reporter object.</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>branchIndexes</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>IndexSet of children with branches.  This will ask the delegate to name 
+    these indexes.  The default implementation will iterate over the children
+    of the item but a more optimized version could avoid touching each item.</desc>
+			<type>SC.IndexSet</type>
+		</property>
+		<property>
+			<name>hasFocus</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Indicates whether or not the window currently has focus.  If you need
+    to do something based on whether or not the window is in focus, you can
+    setup a binding or observer to this property.  Note that the SproutCore
+    automatically adds an sc-focus or sc-blur CSS class to the body tag as
+    appropriate.  If you only care about changing the appearance of your
+    controls, you should use those classes in your CSS rules instead.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>isFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>menuPane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The current menu pane. This pane receives keyboard events before all other
+    panes, but tends to be transient, as it is only set when a pane is open.</desc>
+			<type>SC.MenuPane</type>
+		</property>
+		<property>
+			<name>reporter</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The reporter is the object which implements the actual logging functions.</desc>
+			<type>Object</type>
+		</property>
+		<property>
+			<name>domain</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The value of the domain attribute of the cookie (default: domain of page that created the cookie).</desc>
+			<type>String</type>
+		</property>
+		<property>
+			<name>currentWindowSize</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The last known window size.</desc>
+			<type>Rect</type>
+		</property>
+		<property>
+			<name>format</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>Whether or not to format multiple arguments together
+    or let the browser deal with that.</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>acceptsFirstResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>nextResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+		<property>
+			<name>fallBackOnAlert</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>If console.log does not exist, SC.Logger will use window.alert instead.
+
+    This property is only used inside {@link SC.Logger.log}. If fallBackOnLog is
+    false and you call a different function, an alert will not be opened.</desc>
+			<type>Boolean</type>
+		</property>
+		<property>
+			<name>item</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>The node in the tree this observer will manage.  Set when creating the
+    object.  If you are creating an observer manually, you must set this to
+    a non-null value.</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>isResponder</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc>SC.Responder.prototype</desc>
+			<type></type>
+		</property>
+		<property>
+			<name>pane</name>
+			<memberOf>_global_</memberOf>
+			<isStatic>false</isStatic>
+			<desc></desc>
+			<type></type>
+		</property>
+	</properties>
+</symbol>

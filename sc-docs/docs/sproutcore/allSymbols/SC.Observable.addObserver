@@ -1,0 +1,1 @@
+SC.Observable.addObserver, SC.Object, FUNCTION, SC.Observable, Static

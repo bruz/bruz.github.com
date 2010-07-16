@@ -1,0 +1,550 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="COMM">/*global ActiveXObject */</span><span class="WHIT">
+<span class='line'>  8</span> 
+<span class='line'>  9</span> </span><span class="COMM">/**
+<span class='line'> 10</span>   A response represents a single response from a server request.  An instance
+<span class='line'> 11</span>   of this class is returned whenever you call SC.Request.send().
+<span class='line'> 12</span>   
+<span class='line'> 13</span>   TODO: Add more info
+<span class='line'> 14</span>   
+<span class='line'> 15</span>   @extend SC.Object
+<span class='line'> 16</span>   @since SproutCore 1.0
+<span class='line'> 17</span> */</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">SC.Response</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="COMM">/** @scope SC.Response.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 20</span>   
+<span class='line'> 21</span>   </span><span class="COMM">/**
+<span class='line'> 22</span>     Becomes true if there was a failure.  Makes this into an error object.
+<span class='line'> 23</span>     
+<span class='line'> 24</span>     @property {Boolean}
+<span class='line'> 25</span>   */</span><span class="WHIT">
+<span class='line'> 26</span>   </span><span class="NAME">isError</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 27</span>   
+<span class='line'> 28</span>   </span><span class="COMM">/**
+<span class='line'> 29</span>     Always the current response
+<span class='line'> 30</span>     
+<span class='line'> 31</span>     @property {SC.Response}
+<span class='line'> 32</span>   */</span><span class="WHIT">
+<span class='line'> 33</span>   </span><span class="NAME">errorValue</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 34</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 35</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 36</span>   
+<span class='line'> 37</span>   </span><span class="COMM">/**
+<span class='line'> 38</span>     The error object generated when this becomes an error
+<span class='line'> 39</span>     
+<span class='line'> 40</span>     @property {SC.Error}
+<span class='line'> 41</span>   */</span><span class="WHIT">
+<span class='line'> 42</span>   </span><span class="NAME">errorObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 43</span>   
+<span class='line'> 44</span>   </span><span class="COMM">/** 
+<span class='line'> 45</span>     Request used to generate this response.  This is a copy of the original
+<span class='line'> 46</span>     request object as you may have modified the original request object since
+<span class='line'> 47</span>     then.
+<span class='line'> 48</span>    
+<span class='line'> 49</span>     To retrieve the original request object use originalRequest.
+<span class='line'> 50</span>     
+<span class='line'> 51</span>     @property {SC.Request}
+<span class='line'> 52</span>   */</span><span class="WHIT">
+<span class='line'> 53</span>   </span><span class="NAME">request</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 54</span>   
+<span class='line'> 55</span>   </span><span class="COMM">/**
+<span class='line'> 56</span>     The request object that originated this request series.  Mostly this is
+<span class='line'> 57</span>     useful if you are looking for a reference to the original request.  To
+<span class='line'> 58</span>     inspect actual properties you should use request instead.
+<span class='line'> 59</span>     
+<span class='line'> 60</span>     @property {SC.Request}
+<span class='line'> 61</span>   */</span><span class="WHIT">
+<span class='line'> 62</span>   </span><span class="NAME">originalRequest</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 63</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span>     </span><span class="KEYW">while</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret.get</span><span class="PUNC">(</span><span class="STRN">'source'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret.get</span><span class="PUNC">(</span><span class="STRN">'source'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 65</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 66</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 67</span> 
+<span class='line'> 68</span>   </span><span class="COMM">/** 
+<span class='line'> 69</span>     Type of request.  Must be an HTTP method.  Based on the request
+<span class='line'> 70</span>   
+<span class='line'> 71</span>     @property {String}
+<span class='line'> 72</span>   */</span><span class="WHIT">
+<span class='line'> 73</span>   </span><span class="NAME">type</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 74</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.type'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 75</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 76</span>   
+<span class='line'> 77</span>   </span><span class="COMM">/**
+<span class='line'> 78</span>     URL of request. 
+<span class='line'> 79</span>     
+<span class='line'> 80</span>     @property {String}
+<span class='line'> 81</span>   */</span><span class="WHIT">
+<span class='line'> 82</span>   </span><span class="NAME">address</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 83</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.address'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 84</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 85</span>   
+<span class='line'> 86</span>   </span><span class="COMM">/**
+<span class='line'> 87</span>     If set then will attempt to automatically parse response as JSON 
+<span class='line'> 88</span>     regardless of headers.
+<span class='line'> 89</span>     
+<span class='line'> 90</span>     @property {Boolean}
+<span class='line'> 91</span>   */</span><span class="WHIT">
+<span class='line'> 92</span>   </span><span class="NAME">isJSON</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.isJSON'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 94</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 95</span> 
+<span class='line'> 96</span>   </span><span class="COMM">/**
+<span class='line'> 97</span>     If set, then will attempt to automatically parse response as XML
+<span class='line'> 98</span>     regarldess of headers.
+<span class='line'> 99</span>     
+<span class='line'>100</span>     @property {Boolean}
+<span class='line'>101</span>   */</span><span class="WHIT">
+<span class='line'>102</span>   </span><span class="NAME">isXML</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>103</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.isXML'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>105</span>   
+<span class='line'>106</span>   </span><span class="COMM">/** 
+<span class='line'>107</span>     Returns the hash of listeners set on the request.
+<span class='line'>108</span>     
+<span class='line'>109</span>     @property {Hash}
+<span class='line'>110</span>   */</span><span class="WHIT">
+<span class='line'>111</span>   </span><span class="NAME">listeners</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>112</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.listeners'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>113</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>114</span>   
+<span class='line'>115</span>   </span><span class="COMM">/**
+<span class='line'>116</span>     The response status code.
+<span class='line'>117</span>     
+<span class='line'>118</span>     @property {Number}
+<span class='line'>119</span>   */</span><span class="WHIT">
+<span class='line'>120</span>   </span><span class="NAME">status</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">100</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">// READY</span><span class="WHIT">
+<span class='line'>121</span> 
+<span class='line'>122</span>   </span><span class="COMM">/**
+<span class='line'>123</span>     Headers from the response.  Computed on-demand
+<span class='line'>124</span>     
+<span class='line'>125</span>     @property {Hash}
+<span class='line'>126</span>   */</span><span class="WHIT">
+<span class='line'>127</span>   </span><span class="NAME">headers</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>128</span>   
+<span class='line'>129</span>   </span><span class="COMM">/**
+<span class='line'>130</span>     The raw body retrieved from the transport.  This may be further parsed
+<span class='line'>131</span>     by the body property, which is probably what you want.
+<span class='line'>132</span>     
+<span class='line'>133</span>     @property {String}
+<span class='line'>134</span>   */</span><span class="WHIT">
+<span class='line'>135</span>   </span><span class="NAME">encodedBody</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>136</span>   
+<span class='line'>137</span>   </span><span class="COMM">/**
+<span class='line'>138</span>     Response body. If isJSON was set, will be parsed automatically.
+<span class='line'>139</span>     
+<span class='line'>140</span>     @response {Hash|String|SC.Error} the response body or the parsed JSON.
+<span class='line'>141</span>       Returns a SC.Error instance if there is a JSON parsing error.
+<span class='line'>142</span>   */</span><span class="WHIT">
+<span class='line'>143</span>   </span><span class="NAME">body</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>144</span>     </span><span class="COMM">// TODO: support XML</span><span class="WHIT">
+<span class='line'>145</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'encodedBody'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>146</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isJSON'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>147</span>       </span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>148</span>         </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.json.decode</span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>149</span>       </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>150</span>         </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">SC.Error.create</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>151</span>           </span><span class="NAME">message</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">e.name</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">': '</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">e.message</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>152</span>           </span><span class="NAME">label</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'Response'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>153</span>           </span><span class="NAME">errorValue</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>154</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>155</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>156</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>157</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'encodedBody'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>158</span>   
+<span class='line'>159</span>   </span><span class="COMM">/** 
+<span class='line'>160</span>     @private
+<span class='line'>161</span>     @deprecated
+<span class='line'>162</span>   
+<span class='line'>163</span>     Alias for body.  Provides compatibility with older code.
+<span class='line'>164</span>     
+<span class='line'>165</span>     @property {Hash|String}
+<span class='line'>166</span>   */</span><span class="WHIT">
+<span class='line'>167</span>   </span><span class="NAME">response</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>168</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'body'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>169</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'body'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>170</span>   
+<span class='line'>171</span>   </span><span class="COMM">/**
+<span class='line'>172</span>     Set to YES if response is cancelled
+<span class='line'>173</span>   */</span><span class="WHIT">
+<span class='line'>174</span>   </span><span class="NAME">isCancelled</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>175</span>   
+<span class='line'>176</span>   </span><span class="COMM">/**
+<span class='line'>177</span>     Set to YES if the request timed out.  Set to NO if the request has
+<span class='line'>178</span>     completed before the timeout value.  Set to null if the timeout timer is
+<span class='line'>179</span>     still ticking.
+<span class='line'>180</span>   */</span><span class="WHIT">
+<span class='line'>181</span>   </span><span class="NAME">timedOut</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>182</span>   
+<span class='line'>183</span>   </span><span class="COMM">/**
+<span class='line'>184</span>     The timer tracking the timeout
+<span class='line'>185</span>   */</span><span class="WHIT">
+<span class='line'>186</span>   </span><span class="NAME">timeoutTimer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>187</span>   
+<span class='line'>188</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>189</span>   </span><span class="COMM">// METHODS</span><span class="WHIT">
+<span class='line'>190</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>191</span> 
+<span class='line'>192</span>   </span><span class="COMM">/**
+<span class='line'>193</span>     Called by the request manager when its time to actually run.  This will
+<span class='line'>194</span>     invoke any callbacks on the source request then invoke transport() to 
+<span class='line'>195</span>     begin the actual request.
+<span class='line'>196</span>   */</span><span class="WHIT">
+<span class='line'>197</span>   </span><span class="NAME">fire</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>198</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>199</span>         </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">req.get</span><span class="PUNC">(</span><span class="STRN">'source'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>200</span>     
+<span class='line'>201</span>     
+<span class='line'>202</span>     </span><span class="COMM">// first give the source a chance to fixup the request and response</span><span class="WHIT">
+<span class='line'>203</span>     </span><span class="COMM">// then freeze req so no more changes can happen.</span><span class="WHIT">
+<span class='line'>204</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source.willSend</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">source.willSend</span><span class="PUNC">(</span><span class="NAME">req</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>205</span>     </span><span class="NAME">req.freeze</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>206</span> 
+<span class='line'>207</span>     </span><span class="COMM">// if the source did not cancel the request, then invoke the transport</span><span class="WHIT">
+<span class='line'>208</span>     </span><span class="COMM">// to actually trigger the request.  This might receive a response </span><span class="WHIT">
+<span class='line'>209</span>     </span><span class="COMM">// immediately if it is synchronous.</span><span class="WHIT">
+<span class='line'>210</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.invokeTransport</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>211</span> 
+<span class='line'>212</span> 
+<span class='line'>213</span>     </span><span class="COMM">// If the request specified a timeout value, then set a timer for it now.</span><span class="WHIT">
+<span class='line'>214</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">timeout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">req.get</span><span class="PUNC">(</span><span class="STRN">'timeout'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>215</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">timeout</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>216</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">timer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Timer.schedule</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>217</span>         </span><span class="NAME">target</span><span class="PUNC">:</span><span class="WHIT">   </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>218</span>         </span><span class="NAME">action</span><span class="PUNC">:</span><span class="WHIT">   </span><span class="STRN">'timeoutReached'</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>219</span>         </span><span class="NAME">interval</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">timeout</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>220</span>         </span><span class="NAME">repeats</span><span class="PUNC">:</span><span class="WHIT">  </span><span class="NAME">NO</span><span class="WHIT">
+<span class='line'>221</span>       </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>222</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'timeoutTimer'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">timer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>223</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>224</span> 
+<span class='line'>225</span> 
+<span class='line'>226</span>     </span><span class="COMM">// if the transport did not cancel the request for some reason, let the</span><span class="WHIT">
+<span class='line'>227</span>     </span><span class="COMM">// source know that the request was sent</span><span class="WHIT">
+<span class='line'>228</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source.didSend</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>229</span>       </span><span class="NAME">source.didSend</span><span class="PUNC">(</span><span class="NAME">req</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>230</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>231</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>232</span> 
+<span class='line'>233</span>   </span><span class="NAME">invokeTransport</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>234</span>     </span><span class="NAME">this.receive</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">proceed</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">200</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>235</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>236</span>   
+<span class='line'>237</span>   </span><span class="COMM">/**
+<span class='line'>238</span>     Invoked by the transport when it receives a response.  The passed-in
+<span class='line'>239</span>     callback will be invoked to actually process the response.  If cancelled
+<span class='line'>240</span>     we will pass NO.  You should clean up instead.
+<span class='line'>241</span>     
+<span class='line'>242</span>     Invokes callbacks on the source request also.
+<span class='line'>243</span>     
+<span class='line'>244</span>     @param {Function} callback the function to receive
+<span class='line'>245</span>     @param {Object} context context to execute the callback in
+<span class='line'>246</span>     @returns {SC.Response} receiver
+<span class='line'>247</span>   */</span><span class="WHIT">
+<span class='line'>248</span>   </span><span class="NAME">receive</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">callback</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">context</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>249</span>     </span><span class="COMM">// If we timed out, we should ignore this response.</span><span class="WHIT">
+<span class='line'>250</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'timedOut'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>251</span>       </span><span class="COMM">// If we had a timeout timer scheduled, invalidate it now.</span><span class="WHIT">
+<span class='line'>252</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">timer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'timeoutTimer'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>253</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">timer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">timer.invalidate</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>254</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'timedOut'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>255</span>     
+<span class='line'>256</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>257</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">req.get</span><span class="PUNC">(</span><span class="STRN">'source'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>258</span>     
+<span class='line'>259</span>       </span><span class="NAME">SC.RunLoop.begin</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>260</span>     
+<span class='line'>261</span>       </span><span class="COMM">// invoke the source, giving a chance to fixup the reponse or (more </span><span class="WHIT">
+<span class='line'>262</span>       </span><span class="COMM">// likely) cancel the request.</span><span class="WHIT">
+<span class='line'>263</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source.willReceive</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">source.willReceive</span><span class="PUNC">(</span><span class="NAME">req</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>264</span>     
+<span class='line'>265</span>       </span><span class="COMM">// invoke the callback.  note if the response was cancelled or not</span><span class="WHIT">
+<span class='line'>266</span>       </span><span class="NAME">callback.call</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>267</span>     
+<span class='line'>268</span>       </span><span class="COMM">// if we weren't cancelled, then give the source first crack at handling</span><span class="WHIT">
+<span class='line'>269</span>       </span><span class="COMM">// the response.  if the source doesn't want listeners to be notified,</span><span class="WHIT">
+<span class='line'>270</span>       </span><span class="COMM">// it will cancel the response.</span><span class="WHIT">
+<span class='line'>271</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source.didReceive</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>272</span>         </span><span class="NAME">source.didReceive</span><span class="PUNC">(</span><span class="NAME">req</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>273</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>274</span> 
+<span class='line'>275</span>       </span><span class="COMM">// notify listeners if we weren't cancelled.</span><span class="WHIT">
+<span class='line'>276</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.notify</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>277</span> 
+<span class='line'>278</span>       </span><span class="NAME">SC.RunLoop.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>279</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>280</span>     
+<span class='line'>281</span>     </span><span class="COMM">// no matter what, remove from inflight queue</span><span class="WHIT">
+<span class='line'>282</span>     </span><span class="NAME">SC.Request.manager.transportDidClose</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>283</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>284</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>285</span>   
+<span class='line'>286</span>   </span><span class="COMM">/**
+<span class='line'>287</span>     Default method just closes the connection.  It will also mark the request
+<span class='line'>288</span>     as cancelled, which will not call any listeners.
+<span class='line'>289</span>   */</span><span class="WHIT">
+<span class='line'>290</span>   </span><span class="NAME">cancel</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>291</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>292</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>293</span>       </span><span class="NAME">this.cancelTransport</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>294</span>       </span><span class="NAME">SC.Request.manager.transportDidClose</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>295</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>296</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>297</span>   
+<span class='line'>298</span>   </span><span class="COMM">/**
+<span class='line'>299</span>     Default method just closes the connection.
+<span class='line'>300</span>   */</span><span class="WHIT">
+<span class='line'>301</span>   </span><span class="NAME">timeoutReached</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>302</span>     </span><span class="COMM">// If we already received a response yet the timer still fired for some</span><span class="WHIT">
+<span class='line'>303</span>     </span><span class="COMM">// reason, do nothing.</span><span class="WHIT">
+<span class='line'>304</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'timedOut'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>305</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'timedOut'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>306</span>       </span><span class="NAME">this.cancelTransport</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>307</span>       </span><span class="NAME">SC.Request.manager.transportDidClose</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>308</span>       
+<span class='line'>309</span>       </span><span class="COMM">// Set our value to an error.</span><span class="WHIT">
+<span class='line'>310</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">error</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.$error</span><span class="PUNC">(</span><span class="STRN">"HTTP Request timed out"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"Request"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">408</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>311</span>       </span><span class="NAME">error.set</span><span class="PUNC">(</span><span class="STRN">"errorValue"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>312</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isError'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>313</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'errorObject'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">error</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>314</span>       
+<span class='line'>315</span>       </span><span class="COMM">// Invoke the didTimeout callback.</span><span class="WHIT">
+<span class='line'>316</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'request'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>317</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">req</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">req.get</span><span class="PUNC">(</span><span class="STRN">'source'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>318</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isCancelled'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">source.didTimeout</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>319</span>         </span><span class="NAME">source.didTimeout</span><span class="PUNC">(</span><span class="NAME">req</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>320</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>321</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>322</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>323</span>   
+<span class='line'>324</span>   </span><span class="COMM">/**
+<span class='line'>325</span>     Override with concrete implementation to actually cancel the transport.
+<span class='line'>326</span>   */</span><span class="WHIT">
+<span class='line'>327</span>   </span><span class="NAME">cancelTransport</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>328</span>   
+<span class='line'>329</span>   
+<span class='line'>330</span>   </span><span class="COMM">/** @private
+<span class='line'>331</span>     Will notify each listener.
+<span class='line'>332</span>   */</span><span class="WHIT">
+<span class='line'>333</span>   </span><span class="NAME">_notifyListener</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">listeners</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">status</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>334</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">info</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">listeners</span><span class="PUNC">[</span><span class="NAME">status</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">params</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">action</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>335</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">info</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>336</span>     
+<span class='line'>337</span>     </span><span class="NAME">params</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">info.params</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">copy</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>338</span>     </span><span class="NAME">params.unshift</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>339</span>     
+<span class='line'>340</span>     </span><span class="NAME">target</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">info.target</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>341</span>     </span><span class="NAME">action</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">info.action</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>342</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">action</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">action</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">target</span><span class="PUNC">[</span><span class="NAME">action</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>343</span>     
+<span class='line'>344</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">action.apply</span><span class="PUNC">(</span><span class="NAME">target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">params</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>345</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>346</span>   
+<span class='line'>347</span>   </span><span class="COMM">/**
+<span class='line'>348</span>     Notifies any saved target/action.  Call whenever you cancel, or end.
+<span class='line'>349</span>     
+<span class='line'>350</span>     @returns {SC.Response} receiver
+<span class='line'>351</span>   */</span><span class="WHIT">
+<span class='line'>352</span>   </span><span class="NAME">notify</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>353</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">listeners</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'listeners'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>354</span>         </span><span class="NAME">status</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>355</span>         </span><span class="NAME">baseStat</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Math.floor</span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">/</span><span class="WHIT"> </span><span class="NUMB">100</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">*</span><span class="WHIT"> </span><span class="NUMB">100</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>356</span>         </span><span class="NAME">handled</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>357</span>         
+<span class='line'>358</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">listeners</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do</span><span class="WHIT">
+<span class='line'>359</span>     
+<span class='line'>360</span>     </span><span class="NAME">handled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._notifyListener</span><span class="PUNC">(</span><span class="NAME">listeners</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">status</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>361</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">handled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">handled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._notifyListener</span><span class="PUNC">(</span><span class="NAME">listeners</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">baseStat</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>362</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">handled</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">handled</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._notifyListener</span><span class="PUNC">(</span><span class="NAME">listeners</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>363</span>     
+<span class='line'>364</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>365</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>366</span>   
+<span class='line'>367</span>   </span><span class="COMM">/**
+<span class='line'>368</span>     String representation of the response object
+<span class='line'>369</span>   */</span><span class="WHIT">
+<span class='line'>370</span>   </span><span class="NAME">toString</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>371</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>372</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">"%@&lt;%@ %@, status=%@"</span><span class="PUNC">.</span><span class="NAME">fmt</span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'type'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'address'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>373</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>374</span>   
+<span class='line'>375</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>376</span> 
+<span class='line'>377</span> </span><span class="COMM">/**
+<span class='line'>378</span>   Concrete implementation of SC.Response that implements support for using 
+<span class='line'>379</span>   XHR requests.
+<span class='line'>380</span>   
+<span class='line'>381</span>   @extends SC.Response
+<span class='line'>382</span>   @since SproutCore 1.0
+<span class='line'>383</span> */</span><span class="WHIT">
+<span class='line'>384</span> </span><span class="NAME">SC.XHRResponse</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Response.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>385</span> 
+<span class='line'>386</span>   </span><span class="COMM">/**
+<span class='line'>387</span>     Implement transport-specific support for fetching all headers
+<span class='line'>388</span>   */</span><span class="WHIT">
+<span class='line'>389</span>   </span><span class="NAME">headers</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>390</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>391</span>         </span><span class="NAME">str</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">xhr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">xhr.getAllResponseHeaders</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>392</span>         </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>393</span>         
+<span class='line'>394</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">str</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>395</span>     
+<span class='line'>396</span>     </span><span class="NAME">str.split</span><span class="PUNC">(</span><span class="STRN">"\n"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">forEach</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">header</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>397</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">header.indexOf</span><span class="PUNC">(</span><span class="STRN">':'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>398</span>           </span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>399</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">>=</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>400</span>         </span><span class="NAME">key</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">header.slice</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>401</span>         </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">header.slice</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">+</span><span class="NUMB">1</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">trim</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>402</span>         </span><span class="NAME">ret</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>403</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>404</span>     </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>405</span>     
+<span class='line'>406</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>407</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>408</span>   
+<span class='line'>409</span>   </span><span class="COMM">// returns a header value if found...</span><span class="WHIT">
+<span class='line'>410</span>   </span><span class="NAME">header</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>411</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>412</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">xhr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">xhr.getResponseHeader</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">    
+<span class='line'>413</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>414</span>   
+<span class='line'>415</span>   </span><span class="COMM">/**
+<span class='line'>416</span>     Implement transport-specific support for fetching tasks
+<span class='line'>417</span>   */</span><span class="WHIT">
+<span class='line'>418</span>   </span><span class="NAME">encodedBody</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>419</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>420</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">xhr</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>421</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isXML'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">xhr.responseXML</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>422</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">xhr.responseText</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>423</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>424</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>425</span>   
+<span class='line'>426</span> 
+<span class='line'>427</span>   </span><span class="NAME">cancelTransport</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>428</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>429</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">rawRequest</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">rawRequest.abort</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>430</span>     </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>431</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>432</span>   
+<span class='line'>433</span>   </span><span class="NAME">invokeTransport</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>434</span>     
+<span class='line'>435</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">transport</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">handleReadyStateChange</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">async</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">headers</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>436</span>     
+<span class='line'>437</span>     </span><span class="COMM">// Get an XHR object</span><span class="WHIT">
+<span class='line'>438</span>     </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="NAME">tryThese</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>439</span>       </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">arguments.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>440</span>         </span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>441</span>           </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">item</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>442</span>           </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">item</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>443</span>         </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>444</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>445</span>       </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>446</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>447</span>     
+<span class='line'>448</span>     </span><span class="NAME">rawRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">tryThese</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'>449</span>       </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">XMLHttpRequest</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>450</span>       </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="STRN">'Msxml2.XMLHTTP'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>451</span>       </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="STRN">'Microsoft.XMLHTTP'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>452</span>     </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>453</span>     
+<span class='line'>454</span>     </span><span class="COMM">// save it </span><span class="WHIT">
+<span class='line'>455</span>     </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>456</span>     
+<span class='line'>457</span>     </span><span class="COMM">// configure async callback - differs per browser...</span><span class="WHIT">
+<span class='line'>458</span>     </span><span class="NAME">async</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="PUNC">!</span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.isAsynchronous'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>459</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">async</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>460</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">SC.browser.msie</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>461</span>         </span><span class="NAME">SC.Event.add</span><span class="PUNC">(</span><span class="NAME">rawRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'readystatechange'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>462</span>                      </span><span class="NAME">this.finishRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>463</span>       </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>464</span>         </span><span class="NAME">transport</span><span class="PUNC">=</span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>465</span>         </span><span class="NAME">handleReadyStateChange</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>466</span>           </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">transport</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>467</span>           </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">transport.finishRequest</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>468</span>           </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">transport</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// cleanup memory</span><span class="WHIT">
+<span class='line'>469</span>           </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>470</span>         </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>471</span>         </span><span class="NAME">rawRequest.onreadystatechange</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">handleReadyStateChange</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>472</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>473</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>474</span>     
+<span class='line'>475</span>     </span><span class="COMM">// initiate request.  </span><span class="WHIT">
+<span class='line'>476</span>     </span><span class="NAME">rawRequest.open</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'type'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'address'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">async</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>477</span>     
+<span class='line'>478</span>     </span><span class="COMM">// headers need to be set *after* the open call.</span><span class="WHIT">
+<span class='line'>479</span>     </span><span class="NAME">headers</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.headers'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>480</span>     </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">headerKey</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">headers</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>481</span>       </span><span class="NAME">rawRequest.setRequestHeader</span><span class="PUNC">(</span><span class="NAME">headerKey</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">headers</span><span class="PUNC">[</span><span class="NAME">headerKey</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>482</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>483</span> 
+<span class='line'>484</span>     </span><span class="COMM">// now send the actual request body - for sync requests browser will</span><span class="WHIT">
+<span class='line'>485</span>     </span><span class="COMM">// block here</span><span class="WHIT">
+<span class='line'>486</span>     </span><span class="NAME">rawRequest.send</span><span class="PUNC">(</span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'request.encodedBody'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>487</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">async</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.finishRequest</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// not async</span><span class="WHIT">
+<span class='line'>488</span>     
+<span class='line'>489</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>490</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>491</span>   
+<span class='line'>492</span>   </span><span class="COMM">/**  @private
+<span class='line'>493</span>   
+<span class='line'>494</span>     Called by the XHR when it responds with some final results.
+<span class='line'>495</span>     
+<span class='line'>496</span>     @param {XMLHttpRequest} rawRequest the actual request
+<span class='line'>497</span>     @returns {SC.XHRRequestTransport} receiver
+<span class='line'>498</span>   */</span><span class="WHIT">
+<span class='line'>499</span>   </span><span class="NAME">finishRequest</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>500</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">rawRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'rawRequest'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>501</span>         </span><span class="NAME">readyState</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rawRequest.readyState</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>502</span>         </span><span class="NAME">error</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">msg</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>503</span> 
+<span class='line'>504</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">readyState</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">4</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>505</span>       </span><span class="NAME">this.receive</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">proceed</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>506</span> 
+<span class='line'>507</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">proceed</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// skip receiving...</span><span class="WHIT">
+<span class='line'>508</span>       
+<span class='line'>509</span>         </span><span class="COMM">// collect the status and decide if we're in an error state or not</span><span class="WHIT">
+<span class='line'>510</span>         </span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>511</span>         </span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>512</span>           </span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rawRequest.status</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>513</span>         </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>514</span> 
+<span class='line'>515</span>         </span><span class="COMM">// if there was an error - setup error and save it</span><span class="WHIT">
+<span class='line'>516</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">200</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NUMB">300</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>517</span>           
+<span class='line'>518</span>           </span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>519</span>             </span><span class="NAME">msg</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rawRequest.statusText</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>520</span>           </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e2</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>521</span>             </span><span class="NAME">msg</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>522</span>           </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>523</span>           
+<span class='line'>524</span>           </span><span class="NAME">error</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.$error</span><span class="PUNC">(</span><span class="NAME">msg</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">"HTTP Request failed"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"Request"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">status</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>525</span>           </span><span class="NAME">error.set</span><span class="PUNC">(</span><span class="STRN">"errorValue"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>526</span>           </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isError'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>527</span>           </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'errorObject'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">error</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>528</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>529</span> 
+<span class='line'>530</span>         </span><span class="COMM">// set the status - this will trigger changes on relatedp properties</span><span class="WHIT">
+<span class='line'>531</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">status</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>532</span>       
+<span class='line'>533</span>       </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>534</span>       </span><span class="COMM">// avoid memory leak in MSIE: clean up</span><span class="WHIT">
+<span class='line'>535</span>       </span><span class="NAME">rawRequest.onreadystatechange</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>536</span>       </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>537</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>538</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'>539</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>540</span> 
+<span class='line'>541</span>   
+<span class='line'>542</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>543</span> </span></pre></body></html>

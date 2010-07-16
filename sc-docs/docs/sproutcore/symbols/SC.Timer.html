@@ -1,0 +1,3378 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Timer</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Timer
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_timer.js.html">frameworks/sproutcore/frameworks/foundation/system/timer.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since version 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Version:</td>
+		      <td class="value">1.0</td>
+		    </tr>
+		  
+		
+		  
+		    <tr class="even">
+		      <td class="label">Author:</td>
+		      <td class="value">Charles Jolley</td>
+		    </tr>
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A Timer executes a method after a defined period of time.  Timers are significantly more efficient than using setTimeout() or setInterval() because they are cooperatively scheduled using the run loop.  Timers are also gauranteed to fire at the same time, making it far easier to keep multiple timers in sync.</p>
+
+<h2> Overview</h2>
+
+<p>Timers were created for SproutCore as a way to efficiently defer execution of code fragments for use in Animations, event handling, and other tasks.</p>
+
+<p>Browsers are typically fairly inconsistant about when they will fire a timeout or interval based on what the browser is currently doing.  Timeouts and intervals are also fairly expensive for a browser to execute, which means if you schedule a large number of them it can quickly slow down the browser considerably.</p>
+
+<p>Timers, on the other handle, are scheduled cooperatively using the SC.RunLoop, which uses exactly one timeout to fire itself when needed and then executes by timers that need to fire on its own.  This approach can be many timers faster than using timers and gaurantees that timers scheduled to execute at the same time generally will do so, keeping animations and other operations in sync.</p>
+
+<h2> Scheduling a Timer</h2>
+
+<p>To schedule a basic timer, you can simply call SC.Timer.schedule() with a target and action you wish to have invoked:</p>
+
+
+<p class="code"><code>var timer = SC.Timer.schedule({<br />target: myObject, action: 'timerFired', interval: 100<br />});</code></p>
+
+<p>When this timer fires, it will call the timerFired() method on myObject.</p>
+
+<p>In addition to calling a method on a particular object, you can also use a timer to execute a variety of other types of code:</p>
+
+<ul>	<li>If you include an action name, but not a target object, then the action will be passed down the responder chain.</li>
+	<li>If you include a property path for the action property (e.g. 'MyApp.someController.someMethod'), then the method you name will be executed.</li>
+	<li>If you include a function in the action property, then the function will be executed.  If you also include a target object, the function will be called with this set to the target object.</li>
+</ul>
+
+<p>In general these properties are read-only.  Changing an interval, target, or action after creating a timer will have an unknown effect.</p>
+
+<h2> Scheduling Repeating Timers</h2>
+
+<p>In addition to scheduling one time timers, you can also schedule timers to execute periodically until some termination date.  You make a timer repeating by adding the repeats: YES property:</p>
+
+
+<p class="code"><code>var timer = SC.Timer.schedule({<br />target: myObject,<br />action: 'updateAnimation',<br />interval: 100,<br />repeats: YES,<br />until: Time.now() + 1000<br />}) ;</code></p>
+
+<p>The above example will execute the myObject.updateAnimation() every 100msec for 1 second from the current time.</p>
+
+<p>If you want a timer to repeat without expiration, you can simply omit the until: property.  The timer will then repeat until you invalidate it.</p>
+
+<h2> Pausing and Invalidating Timers</h2>
+
+<p>If you have created a timer but you no longer want it to execute, you can call the invalidate() method on it.  This will remove the timer from the run loop and clear certain properties so that it will not run again.</p>
+
+<p>You can use the invalidate() method on both repeating and one-time timers.</p>
+
+<p>If you do not want to invalidate a timer completely but you just want to stop the timer from execution temporarily, you can alternatively set the isPaused property to YES:</p>
+
+
+<p class="code"><code>timer.set('isPaused', YES) ;<br />// Perform some critical function; timer will not execute<br />timer.set('isPaused', NO) ;</code></p>
+
+<p>When a timer is paused, it will be scheduled and will fire like normal, but it will not actually execute the action method when it fires.  For a one time timer, this means that if you have the timer paused when it fires, it may never actually execute the action method.  For repeating timers, this means the timer will remain scheduled but simply will not execute its action while the timer is paused.</p>
+
+<h2> Firing Timers</h2>
+
+<p>If you need a timer to execute immediately, you can always call the fire() method yourself.  This will execute the timer action, if the timer is not paused.  For a one time timer, it will also invalidate the timer and remove it from the run loop.  Repeating timers can be fired anytime and it will not interrupt their regular scheduled times.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.action"><code>+&nbsp;(Object) action [R/W]</code></a>
+					              
+					                <div class="description">The action to supply to SC.loadBundle.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#action"><code>-&nbsp;(Object) action [R/W]</code></a>
+					              
+					                <div class="description">The action to execute.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.anchorElement"><code>+&nbsp;(Object) anchorElement [R/W]</code></a>
+					              
+					                <div class="description">This property will be set to the element (or view.get('layer')) that 
+    triggered your picker to show.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.bundle"><code>+&nbsp;(Object) bundle [R/W]</code></a>
+					              
+					                <div class="description">The identifier of the bundle to load.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.buttonOne"><code>+&nbsp;(SC.ButtonView) buttonOne [R/W]</code></a>
+					              
+					                <div class="description">The button view for the button 1 (OK).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.buttonThree"><code>+&nbsp;(SC.ButtonView) buttonThree [R/W]</code></a>
+					              
+					                <div class="description">The button view for the button 3 (Extra).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.buttonThreeWrapper"><code>+&nbsp;(SC.View) buttonThreeWrapper [R/W]</code></a>
+					              
+					                <div class="description">The view for the button 3 (Extra) wrapper.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.buttonTwo"><code>+&nbsp;(SC.ButtonView) buttonTwo [R/W]</code></a>
+					              
+					                <div class="description">The button view for the button 2 (Cancel).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.caption"><code>+&nbsp;(String) caption [R/W]</code></a>
+					              
+					                <div class="description">An optional detailed caption.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.contentView"><code>+&nbsp;(SC.View) contentView [R/W]</code></a>
+					              
+					                <div class="description">Set this to the view you want to act as the content within the panel.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.delegate"><code>+&nbsp;(Object) delegate [R/W]</code></a>
+					              
+					                <div class="description">The delegate to notify when the pane is dismissed.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.description"><code>+&nbsp;(String) description [R/W]</code></a>
+					              
+					                <div class="description">An optional detailed decription.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.extraRightOffset"><code>+&nbsp;(Object) extraRightOffset [R/W]</code></a>
+					              
+					                <div class="description">default offset of extra-right pointer for picker-pointer or pointer-menu</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#fireTime"><code>-&nbsp;(Time) fireTime [R/W]</code></a>
+					              
+					                <div class="description">Computed property returns the next time the timer should fire.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.format"><code>+&nbsp;(Object) format [R/W]</code></a>
+					              
+					                <div class="description">The standard format you want the validator to convert dates to.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.icon"><code>+&nbsp;(String) icon [R/W]</code></a>
+					              
+					                <div class="description">The icon URL or class name.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#interval"><code>-&nbsp;(Object) interval [R/W]</code></a>
+					              
+					                <div class="description">The time interval in milliseconds.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.isModal"><code>+&nbsp;(Object) isModal [R/W]</code></a>
+					              
+					                <div class="description">Palettes are not modal by default</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#isPaused"><code>-&nbsp;(Object) isPaused [R/W]</code></a>
+					              
+					                <div class="description">Set to YES to pause the timer.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#isPooled"><code>-&nbsp;(Boolean) isPooled [R/W]</code></a>
+					              
+					                <div class="description">Set if the timer should be created from a memory pool.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#isScheduled"><code>-&nbsp;(Object) isScheduled [R/W]</code></a>
+					              
+					                <div class="description">YES onces the timer has been scheduled for the first time.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#isValid"><code>-&nbsp;(Object) isValid [R/W]</code></a>
+					              
+					                <div class="description">YES if the timer can still execute.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#lastFireTime"><code>-&nbsp;(Object) lastFireTime [R/W]</code></a>
+					              
+					                <div class="description">Set to the current time when the timer last fired.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.message"><code>+&nbsp;(String) message [R/W]</code></a>
+					              
+					                <div class="description">The primary message to display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.modalPane"><code>+&nbsp;(Object) modalPane [R/W]</code></a>
+					              
+					                <div class="description">Do not show smoke behind palettes</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.pointerOffset"><code>+&nbsp;(Array) pointerOffset [R/W]</code></a>
+					              
+					                <div class="description">default/custom offset of pointer for picker-pointer or pointer-menu</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.preferMatrix"><code>+&nbsp;(String) preferMatrix [R/W]</code></a>
+					              
+					                <div class="description">default/custom offset or position pref matrix for specific preferType</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.preferType"><code>+&nbsp;(String) preferType [R/W]</code></a>
+					              
+					                <div class="description">popular customized picker position rule</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#repeats"><code>-&nbsp;(Object) repeats [R/W]</code></a>
+					              
+					                <div class="description">YES if you want the timer to execute repeatedly.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#startTime"><code>-&nbsp;(Object) startTime [R/W]</code></a>
+					              
+					                <div class="description">Timer start date offset.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#target"><code>-&nbsp;(Object) target [R/W]</code></a>
+					              
+					                <div class="description">The target object whose method will be invoked when the time fires.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.target"><code>+&nbsp;(Object) target [R/W]</code></a>
+					              
+					                <div class="description">The target to supply to SC.loadBundle.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#.transitionDuration"><code>+&nbsp;(Number) transitionDuration [R/W]</code></a>
+					              
+					                <div class="description">Speed of transition.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Timer.html#until"><code>-&nbsp;(Object) until [R/W]</code></a>
+					              
+					                <div class="description">Last date when the timer will execute.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Timer.append">
+		<code class="type">+&nbsp;(SC.SheetPane)  append()</code>
+				              </a>
+				              
+				                <div class="description">Displays the pane.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.contentViewDidChange">
+		<code class="type">+&nbsp;(void)  contentViewDidChange()</code>
+				              </a>
+				              
+				                <div class="description">Invoked whenever the content property changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.dismiss">
+		<code class="type">+&nbsp;(void)  dismiss(sender)</code>
+				              </a>
+				              
+				                <div class="description">Action triggered whenever any button is pressed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.fieldValueForObject">
+		<code class="type">+&nbsp;(void)  fieldValueForObject(object, form, field)</code>
+				              </a>
+				              
+				                <div class="description">if we have a number, then convert to a date object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer#fire">
+		<code class="type">-&nbsp;(void)  fire()</code>
+				              </a>
+				              
+				                <div class="description">Immediately fires the timer.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer#invalidate">
+		<code class="type">-&nbsp;(SC.Timer)  invalidate()</code>
+				              </a>
+				              
+				                <div class="description">Invalidates the timer so that it will not execute again.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.mouseDown">
+		<code class="type">+&nbsp;(void)  mouseDown(evt)</code>
+				              </a>
+				              
+				                <div class="description">If owner pane implements modalPaneDidClick(), call it on mouse down.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.objectForFieldValue">
+		<code class="type">+&nbsp;(void)  objectForFieldValue(value, form, field)</code>
+				              </a>
+				              
+				                <div class="description">Try to pase value as a date.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.paneDidAttach">
+		<code class="type">+&nbsp;(void)  paneDidAttach()</code>
+				              </a>
+				              
+				                <div class="description">Once the pane has been rendered out to the DOM, begin the animation.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.paneDidRemove">
+		<code class="type">+&nbsp;(SC.ModalPane)  paneDidRemove(pane)</code>
+				              </a>
+				              
+				                <div class="description">Called by a pane just after it removes itself.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.paneWillAppend">
+		<code class="type">+&nbsp;(SC.ModalPane)  paneWillAppend(pane)</code>
+				              </a>
+				              
+				                <div class="description">Called by a pane just before it appends itself.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer#performAction">
+		<code class="type">-&nbsp;(void)  performAction()</code>
+				              </a>
+				              
+				                <div class="description">Actually fires the action.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.popup">
+		<code class="type">+&nbsp;(SC.PickerPane)  popup(anchorViewOrElement, preferType, preferMatrix, pointerOffset)</code>
+				              </a>
+				              
+				                <div class="description">Displays a new picker pane according to the passed parameters.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.remove">
+		<code class="type">+&nbsp;(SC.SheetPane)  remove()</code>
+				              </a>
+				              
+				                <div class="description">Animates the sheet up, then removes it from the DOM once it is hidden from view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.render">
+		<code class="type">+&nbsp;(void)  render(newContent, firstTime)</code>
+				              </a>
+				              
+				                <div class="description">Replaces any child views with the passed new content.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer#reset">
+		<code class="type">-&nbsp;(SC.Timer)  reset(props)</code>
+				              </a>
+				              
+				                <div class="description">Resets the timer settings with the new settings.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.returnTimerToPool">
+		<code class="type">+&nbsp;(void)  returnTimerToPool(timer)</code>
+				              </a>
+				              
+				                <div class="description">Returns a timer instance to the timer pool for later use.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer#schedule">
+		<code class="type">-&nbsp;(SC.Timer)  schedule()</code>
+				              </a>
+				              
+				                <div class="description">Schedules the timer to execute in the runloop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.timerFromPool">
+		<code class="type">+&nbsp;(void)  timerFromPool(props)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new timer from the timer pool, copying the passed properties onto
+  the timer instance.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Timer.windowSizeDidChange">
+		<code class="type">+&nbsp;(void)  windowSizeDidChange(oldSize, newSize)</code>
+				              </a>
+				              
+				                <div class="description">Invoked by the root responder.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".action"></a> 
+			          <div class="field">
+			            <a name=".action"></a> 
+			            <h3>action
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The action to supply to SC.loadBundle.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">action</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="action"></a> 
+			          <div class="field">
+			            <a name="action"></a> 
+			            <h3>action
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The action to execute.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">action</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The action can be a method name, a property path, or a function.  If you pass a method name, it will be invoked on the target object or it will be called up the responder chain if target is null.  If you pass a property path and it resolves to a function then the function will be called.  If you pass a function instead, then the function will be called in the context of the target object.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".anchorElement"></a> 
+			          <div class="field">
+			            <a name=".anchorElement"></a> 
+			            <h3>anchorElement
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This property will be set to the element (or view.get('layer')) that 
+    triggered your picker to show.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">anchorElement</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can use this to properly position your picker.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".bundle"></a> 
+			          <div class="field">
+			            <a name=".bundle"></a> 
+			            <h3>bundle
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The identifier of the bundle to load.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">bundle</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".buttonOne"></a> 
+			          <div class="field">
+			            <a name=".buttonOne"></a> 
+			            <h3>buttonOne
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The button view for the button 1 (OK).</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.ButtonView
+		              </span>
+		              <span class="name">buttonOne</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".buttonThree"></a> 
+			          <div class="field">
+			            <a name=".buttonThree"></a> 
+			            <h3>buttonThree
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The button view for the button 3 (Extra).</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.ButtonView
+		              </span>
+		              <span class="name">buttonThree</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".buttonThreeWrapper"></a> 
+			          <div class="field">
+			            <a name=".buttonThreeWrapper"></a> 
+			            <h3>buttonThreeWrapper
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The view for the button 3 (Extra) wrapper.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">buttonThreeWrapper</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".buttonTwo"></a> 
+			          <div class="field">
+			            <a name=".buttonTwo"></a> 
+			            <h3>buttonTwo
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The button view for the button 2 (Cancel).</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.ButtonView
+		              </span>
+		              <span class="name">buttonTwo</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".caption"></a> 
+			          <div class="field">
+			            <a name=".caption"></a> 
+			            <h3>caption
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An optional detailed caption.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">caption</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Use this string to provide further fine print explanation of the condition and, optionally, ways the user can resolve the problem.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".contentView"></a> 
+			          <div class="field">
+			            <a name=".contentView"></a> 
+			            <h3>contentView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set this to the view you want to act as the content within the panel.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">contentView</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".delegate"></a> 
+			          <div class="field">
+			            <a name=".delegate"></a> 
+			            <h3>delegate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The delegate to notify when the pane is dismissed.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">delegate</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you set a delegate, it should respond to the method:</p>
+
+
+<p class="code"><code>alertPaneDidDismiss: function(pane, status)</code></p>
+
+<p>The status will be on of SC.BUTTON1_STATUS, SC.BUTTON2_STATUS or SC.BUTTON3_STATUS depending on which button was clicked.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".description"></a> 
+			          <div class="field">
+			            <a name=".description"></a> 
+			            <h3>description
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An optional detailed decription.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">description</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Use this string to provide further explanation of the condition and, optionally, ways the user can resolve the problem.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".extraRightOffset"></a> 
+			          <div class="field">
+			            <a name=".extraRightOffset"></a> 
+			            <h3>extraRightOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">default offset of extra-right pointer for picker-pointer or pointer-menu</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">extraRightOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="fireTime"></a> 
+			          <div class="field">
+			            <a name="fireTime"></a> 
+			            <h3>fireTime
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed property returns the next time the timer should fire.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Time
+		              </span>
+		              <span class="name">fireTime</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This property resets each time the timer fires.  Returns -1 if the timer cannot fire again.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".format"></a> 
+			          <div class="field">
+			            <a name=".format"></a> 
+			            <h3>format
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The standard format you want the validator to convert dates to.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">format</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".icon"></a> 
+			          <div class="field">
+			            <a name=".icon"></a> 
+			            <h3>icon
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The icon URL or class name.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">icon</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you do not set this, an alert icon will be shown instead.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="interval"></a> 
+			          <div class="field">
+			            <a name="interval"></a> 
+			            <h3>interval
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The time interval in milliseconds.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">interval</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You generally set this when you create the timer.  If you do not set it then the timer will fire as soon as possible in the next run loop.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".isModal"></a> 
+			          <div class="field">
+			            <a name=".isModal"></a> 
+			            <h3>isModal
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Palettes are not modal by default</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isModal</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isPaused"></a> 
+			          <div class="field">
+			            <a name="isPaused"></a> 
+			            <h3>isPaused
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES to pause the timer.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isPaused</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Pausing a timer does not remove it from the run loop, but it will temporarily suspend it from firing.  You should use this property if you will want the timer to fire again the future, but you want to prevent it from firing temporarily.</p>
+
+<p>If you are done with a timer, you should call invalidate() instead of setting this property.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isPooled"></a> 
+			          <div class="field">
+			            <a name="isPooled"></a> 
+			            <h3>isPooled
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set if the timer should be created from a memory pool.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isPooled</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Normally you will want to leave this set, but if you plan to use bindings or observers with this timer, then you must set isPooled to NO to avoid reusing your timer.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isScheduled"></a> 
+			          <div class="field">
+			            <a name="isScheduled"></a> 
+			            <h3>isScheduled
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES onces the timer has been scheduled for the first time.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isScheduled</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isValid"></a> 
+			          <div class="field">
+			            <a name="isValid"></a> 
+			            <h3>isValid
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the timer can still execute.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isValid</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This read only property will return YES as long as the timer may possibly fire again in the future.  Once a timer has become invalid, it cannot become valid again.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="lastFireTime"></a> 
+			          <div class="field">
+			            <a name="lastFireTime"></a> 
+			            <h3>lastFireTime
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to the current time when the timer last fired.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">lastFireTime</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Used to find the next 'frame' to execute.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".message"></a> 
+			          <div class="field">
+			            <a name=".message"></a> 
+			            <h3>message
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The primary message to display.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">message</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This message will appear in large bold type at the top of the alert.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".modalPane"></a> 
+			          <div class="field">
+			            <a name=".modalPane"></a> 
+			            <h3>modalPane
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Do not show smoke behind palettes</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">modalPane</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".pointerOffset"></a> 
+			          <div class="field">
+			            <a name=".pointerOffset"></a> 
+			            <h3>pointerOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">default/custom offset of pointer for picker-pointer or pointer-menu</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">pointerOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".preferMatrix"></a> 
+			          <div class="field">
+			            <a name=".preferMatrix"></a> 
+			            <h3>preferMatrix
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">default/custom offset or position pref matrix for specific preferType</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">preferMatrix</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".preferType"></a> 
+			          <div class="field">
+			            <a name=".preferType"></a> 
+			            <h3>preferType
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">popular customized picker position rule</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">preferType</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="repeats"></a> 
+			          <div class="field">
+			            <a name="repeats"></a> 
+			            <h3>repeats
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if you want the timer to execute repeatedly.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">repeats</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="startTime"></a> 
+			          <div class="field">
+			            <a name="startTime"></a> 
+			            <h3>startTime
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Timer start date offset.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">startTime</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The start date determines when the timer will be scheduled.  The first time the timer fires will be interval milliseconds after the start date.</p>
+
+<p>Generally you will not set this property yourself.  Instead it will be set automatically to the current run loop start date when you schedule the timer.  This ensures that all timers scheduled in the same run loop cycle will execute in the sync with one another.</p>
+
+<p>The value of this property is an offset like what you get if you call Date.now().</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="target"></a> 
+			          <div class="field">
+			            <a name="target"></a> 
+			            <h3>target
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The target object whose method will be invoked when the time fires.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">target</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can set either a target/action property or you can pass a specific method.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".target"></a> 
+			          <div class="field">
+			            <a name=".target"></a> 
+			            <h3>target
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The target to supply to SC.loadBundle.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">target</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".transitionDuration"></a> 
+			          <div class="field">
+			            <a name=".transitionDuration"></a> 
+			            <h3>transitionDuration
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Speed of transition.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">transitionDuration</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Should be expressed in msec.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="until"></a> 
+			          <div class="field">
+			            <a name="until"></a> 
+			            <h3>until
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Last date when the timer will execute.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">until</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If you have set repeats to YES, then you can also set this property to have the timer automatically stop executing past a certain date.</p>
+
+<p>This property should contain an offset value like startOffset.  However if you set it to a Date object on create, it will be converted to an offset for you.</p>
+
+<p>If this property is null, then the timer will continue to repeat until you call invalidate().</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.append"></a> 
+			          <h3>append()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Displays the pane.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.SheetPane)
+			              </span>
+			              <span class="name">append</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.SheetPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>SheetPane will calculate the height of your pane, draw it offscreen, then animate it down so that it is attached to the top of the viewport.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.contentViewDidChange"></a> 
+			          <h3>contentViewDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked whenever the content property changes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentViewDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will simply call replaceContent.  Override replaceContent to change how the view is swapped out.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.dismiss"></a> 
+			          <h3>dismiss()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Action triggered whenever any button is pressed.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">dismiss</span> <span class="params">(sender)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Notifies any delegate and then hides the alert pane.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.fieldValueForObject"></a> 
+			          <h3>fieldValueForObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">if we have a number, then convert to a date object.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">fieldValueForObject</span> <span class="params">(object, form, field)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer#fire"></a> 
+			          <h3>fire()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Immediately fires the timer.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">fire</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If the timer is not-repeating, it will be invalidated.  If it is repeating you can call this method without interrupting its normal schedule.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer#invalidate"></a> 
+			          <h3>invalidate()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invalidates the timer so that it will not execute again.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Timer)
+			              </span>
+			              <span class="name">invalidate</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Timer)</span>
+			                <span class="desc">The receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If a timer has been scheduled, it will be removed from the run loop immediately.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.mouseDown"></a> 
+			          <h3>mouseDown()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If owner pane implements modalPaneDidClick(), call it on mouse down.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">mouseDown</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.objectForFieldValue"></a> 
+			          <h3>objectForFieldValue()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Try to pase value as a date.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">objectForFieldValue</span> <span class="params">(value, form, field)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>convert into a number, or return null if it could not be parsed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.paneDidAttach"></a> 
+			          <h3>paneDidAttach()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Once the pane has been rendered out to the DOM, begin the animation.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">paneDidAttach</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.paneDidRemove"></a> 
+			          <h3>paneDidRemove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a pane just after it removes itself.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ModalPane)
+			              </span>
+			              <span class="name">paneDidRemove</span> <span class="params">(pane)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">pane</span>
+			              
+			              <span class="desc">the pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ModalPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The modal pane can remove itself if needed.   Modal panes only remove themselves when an equal number of paneWillAppend() and paneDidRemove() calls are received.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.paneWillAppend"></a> 
+			          <h3>paneWillAppend()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a pane just before it appends itself.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ModalPane)
+			              </span>
+			              <span class="name">paneWillAppend</span> <span class="params">(pane)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Pane)</span><span class="name">pane</span>
+			              
+			              <span class="desc">the pane</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ModalPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The modal pane can make itself visible first if needed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer#performAction"></a> 
+			          <h3>performAction()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Actually fires the action.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">performAction</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can override this method if you need to change how the timer fires its action.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.popup"></a> 
+			          <h3>popup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Displays a new picker pane according to the passed parameters.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.PickerPane)
+			              </span>
+			              <span class="name">popup</span> <span class="params">(anchorViewOrElement, preferType, preferMatrix, pointerOffset)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">anchorViewOrElement</span>
+			              
+			              <span class="desc">view or element to anchor to</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">preferType</span>
+			              
+			              <span class="desc">optional apply picker position rule</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">preferMatrix</span>
+			              
+			              <span class="desc">optional apply custom offset or position pref matrix for specific preferType</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.PickerPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Every parameter except for the anchorViewOrElement is optional.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Animates the sheet up, then removes it from the DOM once it is hidden from view.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.SheetPane)
+			              </span>
+			              <span class="name">remove</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.SheetPane)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.render"></a> 
+			          <h3>render()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Replaces any child views with the passed new content.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">render</span> <span class="params">(newContent, firstTime)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.View)</span><span class="name">newContent</span>
+			              
+			              <span class="desc">the new panel view or null.</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This method is automatically called whenever your contentView property changes.  You can override it if you want to provide some behavior other than the default.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer#reset"></a> 
+			          <h3>reset()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Resets the timer settings with the new settings.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Timer)
+			              </span>
+			              <span class="name">reset</span> <span class="params">(props)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Timer)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is the method called by the Timer pool when a timer is reused.  You will not normally call this method yourself, though you could override it if you need to reset additonal properties when a timer is reused.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.returnTimerToPool"></a> 
+			          <h3>returnTimerToPool()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a timer instance to the timer pool for later use.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">returnTimerToPool</span> <span class="params">(timer)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is done automatically when a timer is invalidated if isPooled is YES.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer#schedule"></a> 
+			          <h3>schedule()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Schedules the timer to execute in the runloop.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Timer)
+			              </span>
+			              <span class="name">schedule</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Timer)</span>
+			                <span class="desc">The receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This method is called automatically if you create the timer using the schedule() class method.  If you create the timer manually, you will need to call this method yourself for the timer to execute.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.timerFromPool"></a> 
+			          <h3>timerFromPool()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new timer from the timer pool, copying the passed properties onto
+  the timer instance.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">timerFromPool</span> <span class="params">(props)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the timer pool is currently empty, this will return a new instance.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Timer.windowSizeDidChange"></a> 
+			          <h3>windowSizeDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked by the root responder.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">windowSizeDidChange</span> <span class="params">(oldSize, newSize)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Re-position picker whenever the window resizes.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:58 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

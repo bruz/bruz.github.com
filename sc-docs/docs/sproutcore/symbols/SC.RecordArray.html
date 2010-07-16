@@ -1,0 +1,1415 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.RecordArray</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.RecordArray
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Array.html#constructor">SC.Array</a>, <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>, <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_system_record_array.js.html">frameworks/sproutcore/frameworks/datastore/system/record_array.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A RecordArray wraps an array of storeKeys and, optionally, a Query object. When you access the items of a RecordArray it will automatically convert the storeKeys into actual SC.Record objects that the rest of your application can work with.</p>
+
+<p>Normally you do not create RecordArray's yourself.  Instead, a RecordArray is returned when you call SC.Store.findAll(), already properly configured. You can usually just work with the RecordArray instance just like another array.</p>
+
+<p>The information below about RecordArray internals is only intended for those who need to override this class for some reason to do some special.</p>
+
+<h2> Internal Notes</h2>
+
+<p>Normally the RecordArray behavior is very simple.  Any array-like operations will be translated into similar calls onto the underlying array of storeKeys.  The underlying array can be a real array or it may be a SparseArray, which is how you implement incremental loading.</p>
+
+<p>If the RecordArray is created with an SC.Query objects as well (and it almost always will have a Query object), then the RecordArray will also consult the query for various delegate operations such as determining if the record array should update automatically whenever records in the store changes.</p>
+
+<p>It will also ask the Query to refresh the storeKeys whenever records change in the store.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#errorObject"><code>-&nbsp;(SC.Error) errorObject [R/W]</code></a>
+					              
+					                <div class="description">Returns the current error object only if the record array is in an error state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#errorValue"><code>-&nbsp;(SC.Record) errorValue [R/W]</code></a>
+					              
+					                <div class="description">Returns the receiver if the record array is in an error state.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">The current editabile state based on the query.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#isError"><code>-&nbsp;(Boolean) isError [R/W]</code></a>
+					              
+					                <div class="description">Returns YES whenever the status is SC.Record.ERROR.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#needsFlush"><code>-&nbsp;(Boolean) needsFlush [R/W]</code></a>
+					              
+					                <div class="description">Set to YES when the query is dirty and needs to update its storeKeys 
+    before returning any results.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#query"><code>-&nbsp;(SC.Query) query [R/W]</code></a>
+					              
+					                <div class="description">The Query object this record array is based upon.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#status"><code>-&nbsp;(Number) status [R/W]</code></a>
+					              
+					                <div class="description">The current status for the record array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#store"><code>-&nbsp;(SC.Store) store [R/W]</code></a>
+					              
+					                <div class="description">The store that owns this record array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.RecordArray.html#storeKeys"><code>-&nbsp;(SC.Array) storeKeys [R/W]</code></a>
+					              
+					                <div class="description">The array of storeKeys as retrieved from the owner store.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.isEnumerable">isEnumerable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.isSCArray">isSCArray</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#add">
+		<code class="type">-&nbsp;(SC.RecordArray)  add(record)</code>
+				              </a>
+				              
+				                <div class="description">Adds the specified record to the record array if it is not already part 
+    of the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#contains">
+		<code class="type">-&nbsp;(Boolean)  contains(record)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the passed can be found in the record array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#destroy">
+		<code class="type">-&nbsp;(SC.RecordArray)  destroy()</code>
+				              </a>
+				              
+				                <div class="description">Destroys the record array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#find">
+		<code class="type">-&nbsp;(SC.RecordArray)  find(query, target)</code>
+				              </a>
+				              
+				                <div class="description">Extends the standard SC.Enumerable implementation to return results based
+    on a Query if you pass it in.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#flush">
+		<code class="type">-&nbsp;(SC.RecordArray)  flush(_flush)</code>
+				              </a>
+				              
+				                <div class="description">Applies the query to any pending changed store keys, updating the record
+    array contents as necessary.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#refresh">
+		<code class="type">-&nbsp;(SC.RecordArray)  refresh()</code>
+				              </a>
+				              
+				                <div class="description">Call whenever you want to refresh the results of this query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#reload">
+		<code class="type">-&nbsp;(SC.RecordArray)  reload()</code>
+				              </a>
+				              
+				                <div class="description">Will recompute the results based on the SC.Query attached to the record
+    array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.RecordArray#remove">
+		<code class="type">-&nbsp;(SC.RecordArray)  remove(record)</code>
+				              </a>
+				              
+				                <div class="description">Removes the specified record from the array if it is not already a part
+    of the array.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.enumerableContentDidChange">enumerableContentDidChange</a>, <a href="../symbols/SC.Enumerable.html#.enumerator">enumerator</a>, <a href="../symbols/SC.Enumerable.html#.every">every</a>, <a href="../symbols/SC.Enumerable.html#.everyProperty">everyProperty</a>, <a href="../symbols/SC.Enumerable.html#.filter">filter</a>, <a href="../symbols/SC.Enumerable.html#.filterProperty">filterProperty</a>, <a href="../symbols/SC.Enumerable.html#.findProperty">findProperty</a>, <a href="../symbols/SC.Enumerable.html#.firstObject">firstObject</a>, <a href="../symbols/SC.Enumerable.html#.forEach">forEach</a>, <a href="../symbols/SC.Enumerable.html#.getEach">getEach</a>, <a href="../symbols/SC.Enumerable.html#.groupBy">groupBy</a>, <a href="../symbols/SC.Enumerable.html#.invoke">invoke</a>, <a href="../symbols/SC.Enumerable.html#.invokeWhile">invokeWhile</a>, <a href="../symbols/SC.Enumerable.html#.lastObject">lastObject</a>, <a href="../symbols/SC.Enumerable.html#.map">map</a>, <a href="../symbols/SC.Enumerable.html#.mapProperty">mapProperty</a>, <a href="../symbols/SC.Enumerable.html#.nextObject">nextObject</a>, <a href="../symbols/SC.Enumerable.html#.reduce">reduce</a>, <a href="../symbols/SC.Enumerable.html#.reduceAverage">reduceAverage</a>, <a href="../symbols/SC.Enumerable.html#.reducedProperty">reducedProperty</a>, <a href="../symbols/SC.Enumerable.html#.reduceMax">reduceMax</a>, <a href="../symbols/SC.Enumerable.html#.reduceMaxObject">reduceMaxObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceMin">reduceMin</a>, <a href="../symbols/SC.Enumerable.html#.reduceMinObject">reduceMinObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceSum">reduceSum</a>, <a href="../symbols/SC.Enumerable.html#.setEach">setEach</a>, <a href="../symbols/SC.Enumerable.html#.some">some</a>, <a href="../symbols/SC.Enumerable.html#.someProperty">someProperty</a>, <a href="../symbols/SC.Enumerable.html#.sortProperty">sortProperty</a>, <a href="../symbols/SC.Enumerable.html#.toArray">toArray</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.addRangeObserver">addRangeObserver</a>, <a href="../symbols/SC.Array.html#.compact">compact</a>, <a href="../symbols/SC.Array.html#.indexOf">indexOf</a>, <a href="../symbols/SC.Array.html#.insertAt">insertAt</a>, <a href="../symbols/SC.Array.html#.isEqual">isEqual</a>, <a href="../symbols/SC.Array.html#.lastIndexOf">lastIndexOf</a>, <a href="../symbols/SC.Array.html#.max">max</a>, <a href="../symbols/SC.Array.html#.min">min</a>, <a href="../symbols/SC.Array.html#.objectAt">objectAt</a>, <a href="../symbols/SC.Array.html#.popObject">popObject</a>, <a href="../symbols/SC.Array.html#.pushObject">pushObject</a>, <a href="../symbols/SC.Array.html#.pushObjects">pushObjects</a>, <a href="../symbols/SC.Array.html#.removeAt">removeAt</a>, <a href="../symbols/SC.Array.html#.removeObject">removeObject</a>, <a href="../symbols/SC.Array.html#.removeObjects">removeObjects</a>, <a href="../symbols/SC.Array.html#.removeRangeObserver">removeRangeObserver</a>, <a href="../symbols/SC.Array.html#.replace">replace</a>, <a href="../symbols/SC.Array.html#.shiftObject">shiftObject</a>, <a href="../symbols/SC.Array.html#.slice">slice</a>, <a href="../symbols/SC.Array.html#.uniq">uniq</a>, <a href="../symbols/SC.Array.html#.unshiftObject">unshiftObject</a>, <a href="../symbols/SC.Array.html#.unshiftObjects">unshiftObjects</a>, <a href="../symbols/SC.Array.html#.updateRangeObserver">updateRangeObserver</a>, <a href="../symbols/SC.Array.html#.without">without</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="errorObject"></a> 
+			          <div class="field">
+			            <a name="errorObject"></a> 
+			            <h3>errorObject
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the current error object only if the record array is in an error state.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Error
+		              </span>
+		              <span class="name">errorObject</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>If no explicit error object has been set, returns SC.Record.GENERIC_ERROR.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="errorValue"></a> 
+			          <div class="field">
+			            <a name="errorValue"></a> 
+			            <h3>errorValue
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the receiver if the record array is in an error state.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Record
+		              </span>
+		              <span class="name">errorValue</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Returns null otherwise.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current editabile state based on the query.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isError"></a> 
+			          <div class="field">
+			            <a name="isError"></a> 
+			            <h3>isError
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES whenever the status is SC.Record.ERROR.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isError</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will allow you to put the UI into an error state.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="needsFlush"></a> 
+			          <div class="field">
+			            <a name="needsFlush"></a> 
+			            <h3>needsFlush
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES when the query is dirty and needs to update its storeKeys 
+    before returning any results.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">needsFlush</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>RecordArrays always start dirty and become clean the first time you try to access their contents.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="query"></a> 
+			          <div class="field">
+			            <a name="query"></a> 
+			            <h3>query
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The Query object this record array is based upon.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Query
+		              </span>
+		              <span class="name">query</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>All record arrays MUST have an associated query in order to function correctly.  You cannot change this property once it has been set.</p>
+
+<p>NOTE: You MUST set this property on the RecordArray when creating it or else it will fail.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="status"></a> 
+			          <div class="field">
+			            <a name="status"></a> 
+			            <h3>status
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current status for the record array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">status</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Read from the underlying store.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="store"></a> 
+			          <div class="field">
+			            <a name="store"></a> 
+			            <h3>store
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The store that owns this record array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Store
+		              </span>
+		              <span class="name">store</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>All record arrays must have a store to function properly.</p>
+
+<p>NOTE: You MUST set this property on the RecordArray when creating it or else it will fail.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="storeKeys"></a> 
+			          <div class="field">
+			            <a name="storeKeys"></a> 
+			            <h3>storeKeys
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The array of storeKeys as retrieved from the owner store.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">storeKeys</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#add"></a> 
+			          <h3>add()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds the specified record to the record array if it is not already part 
+    of the array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">add</span> <span class="params">(record)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Provided for compatibilty with SC.Set.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#contains"></a> 
+			          <h3>contains()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the passed can be found in the record array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contains</span> <span class="params">(record)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+			              <span class="desc">the record</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is provided for compatibility with SC.Set.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#destroy"></a> 
+			          <h3>destroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Destroys the record array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">destroy</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Releases any storeKeys, and deregisters with the owner store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#find"></a> 
+			          <h3>find()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Extends the standard SC.Enumerable implementation to return results based
+    on a Query if you pass it in.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">find</span> <span class="params">(query, target)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">a SC.Query object</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#flush"></a> 
+			          <h3>flush()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Applies the query to any pending changed store keys, updating the record
+    array contents as necessary.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">flush</span> <span class="params">(_flush)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">_flush</span>
+			              
+			              <span class="desc">to force it - use reload() to trigger it</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called automatically anytime you access the RecordArray to make sure it is up to date, but you can call it yourself as well if you need to force the record array to fully update immediately.</p>
+
+<p>Currently this method only has an effect if the query location is SC.Query.LOCAL.  You can call this method on any RecordArray however, without an error.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#refresh"></a> 
+			          <h3>refresh()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call whenever you want to refresh the results of this query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">refresh</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will notify the data source, asking it to refresh the contents.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#reload"></a> 
+			          <h3>reload()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Will recompute the results based on the SC.Query attached to the record
+    array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">reload</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Useful if your query is based on computed properties that might have changed. Use refresh() instead of you want to trigger a fetch on your data source since this will purely look at records already loaded into the store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.RecordArray#remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the specified record from the array if it is not already a part
+    of the array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RecordArray)
+			              </span>
+			              <span class="name">remove</span> <span class="params">(record)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">record</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RecordArray)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Provided for compatibility with SC.Set.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

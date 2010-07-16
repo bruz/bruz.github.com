@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.ImageView</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.ImageView
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Control.html#constructor">SC.Control</a>, <a href="../symbols/SC.View.html#constructor">SC.View</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_views_image.js.html">frameworks/sproutcore/frameworks/foundation/views/image.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>Displays an image in the browser.</p>
+
+<p>The ImageView can be used to efficiently display images in the browser. It includes a built in support for a number of features that can improve your page load time if you use a lot of images including a image loading queue and automatic support for CSS spriting.</p>
+
+<p>Note that there are actually many controls that will natively include images using an icon property name.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#canLoadInBackground"><code>-&nbsp;(Object) canLoadInBackground [R/W]</code></a>
+					              
+					                <div class="description">If YES, this image can load in the background.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#classNames"><code>-&nbsp;(Object) classNames [R/W]</code></a>
+					              
+					                <div class="description">Image views contain an img tag.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#localize"><code>-&nbsp;(Object) localize [R/W]</code></a>
+					              
+					                <div class="description">If YES, any specified toolTip will be localized before display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#status"><code>-&nbsp;(String) status [R/W]</code></a>
+					              
+					                <div class="description">Current load status of the image.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#useImageCache"><code>-&nbsp;(String) useImageCache [R/W]</code></a>
+					              
+					                <div class="description">If YES, image view will use the imageCache to control loading.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ImageView.html#value"><code>-&nbsp;(String) value [R/W]</code></a>
+					              
+					                <div class="description">A url or CSS class name.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#acceptsFirstResponder">acceptsFirstResponder</a>, <a href="../symbols/SC.View.html#backgroundColor">backgroundColor</a>, <a href="../symbols/SC.View.html#childViews">childViews</a>, <a href="../symbols/SC.View.html#childViewsNeedLayout">childViewsNeedLayout</a>, <a href="../symbols/SC.View.html#clippingFrame">clippingFrame</a>, <a href="../symbols/SC.View.html#containerLayer">containerLayer</a>, <a href="../symbols/SC.View.html#contentClippingFrame">contentClippingFrame</a>, <a href="../symbols/SC.View.html#cursor">cursor</a>, <a href="../symbols/SC.View.html#displayProperties">displayProperties</a>, <a href="../symbols/SC.View.html#frame">frame</a>, <a href="../symbols/SC.View.html#isDescendantOf">isDescendantOf</a>, <a href="../symbols/SC.View.html#isEnabled">isEnabled</a>, <a href="../symbols/SC.View.html#isEnabledInPane">isEnabledInPane</a>, <a href="../symbols/SC.View.html#isKeyResponder">isKeyResponder</a>, <a href="../symbols/SC.View.html#isTextSelectable">isTextSelectable</a>, <a href="../symbols/SC.View.html#isView">isView</a>, <a href="../symbols/SC.View.html#isVisible">isVisible</a>, <a href="../symbols/SC.View.html#isVisibleInWindow">isVisibleInWindow</a>, <a href="../symbols/SC.View.html#layer">layer</a>, <a href="../symbols/SC.View.html#layerId">layerId</a>, <a href="../symbols/SC.View.html#layerLocationNeedsUpdate">layerLocationNeedsUpdate</a>, <a href="../symbols/SC.View.html#layerNeedsUpdate">layerNeedsUpdate</a>, <a href="../symbols/SC.View.html#layoutStyle">layoutStyle</a>, <a href="../symbols/SC.View.html#nextKeyView">nextKeyView</a>, <a href="../symbols/SC.View.html#nextResponder">nextResponder</a>, <a href="../symbols/SC.View.html#nextValidKeyView">nextValidKeyView</a>, <a href="../symbols/SC.View.html#page">page</a>, <a href="../symbols/SC.View.html#pane">pane</a>, <a href="../symbols/SC.View.html#parentView">parentView</a>, <a href="../symbols/SC.View.html#previousKeyView">previousKeyView</a>, <a href="../symbols/SC.View.html#previousValidKeyView">previousValidKeyView</a>, <a href="../symbols/SC.View.html#recomputeIsVisibleInWindow">recomputeIsVisibleInWindow</a>, <a href="../symbols/SC.View.html#shouldInheritCursor">shouldInheritCursor</a>, <a href="../symbols/SC.View.html#splitView">splitView</a>, <a href="../symbols/SC.View.html#toolTip">toolTip</a>, <a href="../symbols/SC.View.html#touchBoundary">touchBoundary</a>, <a href="../symbols/SC.View.html#updateLayerLocationIfNeeded">updateLayerLocationIfNeeded</a>, <a href="../symbols/SC.View.html#useStaticLayout">useStaticLayout</a>, <a href="../symbols/SC.View.html#wantsAcceleratedLayer">wantsAcceleratedLayer</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Control.html#constructor">SC.Control</a>: </dt><dd><a href="../symbols/SC.Control.html#.content">content</a>, <a href="../symbols/SC.Control.html#.contentValueKey">contentValueKey</a>, <a href="../symbols/SC.Control.html#.controlSize">controlSize</a>, <a href="../symbols/SC.Control.html#.errorLabel">errorLabel</a>, <a href="../symbols/SC.Control.html#.fieldKey">fieldKey</a>, <a href="../symbols/SC.Control.html#.fieldLabel">fieldLabel</a>, <a href="../symbols/SC.Control.html#.isActive">isActive</a>, <a href="../symbols/SC.Control.html#.isSelected">isSelected</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.ImageView#imageDidLoad">
+		<code class="type">-&nbsp;(void)  imageDidLoad(url, imageOrError)</code>
+				              </a>
+				              
+				                <div class="description">Called when the imageCache indicates that the image has loaded.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ImageView.valueIsUrl">
+		<code class="type">+&nbsp;(void)  valueIsUrl(value)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the passed value looks like an URL and not a CSS class
+  name.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#$">$</a>, <a href="../symbols/SC.View.html#adjust">adjust</a>, <a href="../symbols/SC.View.html#appendChild">appendChild</a>, <a href="../symbols/SC.View.html#.applyLocalizedAttributes">applyLocalizedAttributes</a>, <a href="../symbols/SC.View.html#awake">awake</a>, <a href="../symbols/SC.View.html#beginLiveResize">beginLiveResize</a>, <a href="../symbols/SC.View.html#.bind">bind</a>, <a href="../symbols/SC.View.html#.childView">childView</a>, <a href="../symbols/SC.View.html#computeFrameWithParentFrame">computeFrameWithParentFrame</a>, <a href="../symbols/SC.View.html#contextMenu">contextMenu</a>, <a href="../symbols/SC.View.html#convertFrameFromView">convertFrameFromView</a>, <a href="../symbols/SC.View.html#convertFrameToView">convertFrameToView</a>, <a href="../symbols/SC.View.html#.convertLayoutToAnchoredLayout">convertLayoutToAnchoredLayout</a>, <a href="../symbols/SC.View.html#.convertLayoutToCustomLayout">convertLayoutToCustomLayout</a>, <a href="../symbols/SC.View.html#.create">create</a>, <a href="../symbols/SC.View.html#createChildView">createChildView</a>, <a href="../symbols/SC.View.html#createChildViews">createChildViews</a>, <a href="../symbols/SC.View.html#createLayer">createLayer</a>, <a href="../symbols/SC.View.html#.design">design</a>, <a href="../symbols/SC.View.html#destroy">destroy</a>, <a href="../symbols/SC.View.html#destroyLayer">destroyLayer</a>, <a href="../symbols/SC.View.html#didBecomeKeyResponderFrom">didBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#didLoseKeyResponderTo">didLoseKeyResponderTo</a>, <a href="../symbols/SC.View.html#displayDidChange">displayDidChange</a>, <a href="../symbols/SC.View.html#endLiveResize">endLiveResize</a>, <a href="../symbols/SC.View.html#findLayerInParentLayer">findLayerInParentLayer</a>, <a href="../symbols/SC.View.html#hasAcceleratedLayer">hasAcceleratedLayer</a>, <a href="../symbols/SC.View.html#insertBefore">insertBefore</a>, <a href="../symbols/SC.View.html#insertText">insertText</a>, <a href="../symbols/SC.View.html#interpretKeyEvents">interpretKeyEvents</a>, <a href="../symbols/SC.View.html#isContextMenuEnabled">isContextMenuEnabled</a>, <a href="../symbols/SC.View.html#layerIdDidChange">layerIdDidChange</a>, <a href="../symbols/SC.View.html#.layout">layout</a>, <a href="../symbols/SC.View.html#layoutChildViews">layoutChildViews</a>, <a href="../symbols/SC.View.html#layoutChildViewsIfNeeded">layoutChildViewsIfNeeded</a>, <a href="../symbols/SC.View.html#layoutDidChange">layoutDidChange</a>, <a href="../symbols/SC.View.html#layoutDidChangeFor">layoutDidChangeFor</a>, <a href="../symbols/SC.View.html#layoutView">layoutView</a>, <a href="../symbols/SC.View.html#.loc">loc</a>, <a href="../symbols/SC.View.html#.localization">localization</a>, <a href="../symbols/SC.View.html#parentViewDidChange">parentViewDidChange</a>, <a href="../symbols/SC.View.html#parentViewDidResize">parentViewDidResize</a>, <a href="../symbols/SC.View.html#performKeyEquivalent">performKeyEquivalent</a>, <a href="../symbols/SC.View.html#prepareContext">prepareContext</a>, <a href="../symbols/SC.View.html#.prop">prop</a>, <a href="../symbols/SC.View.html#propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.View.html#removeAllChildren">removeAllChildren</a>, <a href="../symbols/SC.View.html#removeChild">removeChild</a>, <a href="../symbols/SC.View.html#removeFromParent">removeFromParent</a>, <a href="../symbols/SC.View.html#render">render</a>, <a href="../symbols/SC.View.html#renderChildViews">renderChildViews</a>, <a href="../symbols/SC.View.html#renderContext">renderContext</a>, <a href="../symbols/SC.View.html#renderLayout">renderLayout</a>, <a href="../symbols/SC.View.html#replaceAllChildren">replaceAllChildren</a>, <a href="../symbols/SC.View.html#replaceChild">replaceChild</a>, <a href="../symbols/SC.View.html#replaceLayer">replaceLayer</a>, <a href="../symbols/SC.View.html#scrollToVisible">scrollToVisible</a>, <a href="../symbols/SC.View.html#selectStart">selectStart</a>, <a href="../symbols/SC.View.html#.tagName">tagName</a>, <a href="../symbols/SC.View.html#touchIsInBoundary">touchIsInBoundary</a>, <a href="../symbols/SC.View.html#updateLayer">updateLayer</a>, <a href="../symbols/SC.View.html#updateLayerIfNeeded">updateLayerIfNeeded</a>, <a href="../symbols/SC.View.html#updateLayerLocation">updateLayerLocation</a>, <a href="../symbols/SC.View.html#updateLayout">updateLayout</a>, <a href="../symbols/SC.View.html#viewDidResize">viewDidResize</a>, <a href="../symbols/SC.View.html#.viewFor">viewFor</a>, <a href="../symbols/SC.View.html#willBecomeKeyResponderFrom">willBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#willLoseKeyResponderTo">willLoseKeyResponderTo</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.DelegateSupport.html#constructor">SC.DelegateSupport</a>: </dt><dd><a href="../symbols/SC.DelegateSupport.html#.delegateFor">delegateFor</a>, <a href="../symbols/SC.DelegateSupport.html#.getDelegateProperty">getDelegateProperty</a>, <a href="../symbols/SC.DelegateSupport.html#.invokeDelegateMethod">invokeDelegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Control.html#constructor">SC.Control</a>: </dt><dd><a href="../symbols/SC.Control.html#.contentPropertyDidChange">contentPropertyDidChange</a>, <a href="../symbols/SC.Control.html#.updateContentWithValueObserver">updateContentWithValueObserver</a>, <a href="../symbols/SC.Control.html#.updatePropertyFromContent">updatePropertyFromContent</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canLoadInBackground"></a> 
+			          <div class="field">
+			            <a name="canLoadInBackground"></a> 
+			            <h3>canLoadInBackground
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, this image can load in the background.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">canLoadInBackground</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Otherwise, it is treated as a foreground image.  If the image is not visible on screen, it will always be treated as a background image.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="classNames"></a> 
+			          <div class="field">
+			            <a name="classNames"></a> 
+			            <h3>classNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Image views contain an img tag.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">classNames</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="localize"></a> 
+			          <div class="field">
+			            <a name="localize"></a> 
+			            <h3>localize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, any specified toolTip will be localized before display.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">localize</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="status"></a> 
+			          <div class="field">
+			            <a name="status"></a> 
+			            <h3>status
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Current load status of the image.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">status</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This status changes as an image is loaded from the server.  If spriting is used, this will always be loaded.  Must be one of the following constants: SC.IMAGE_STATE_NONE, SC.IMAGE_STATE_LOADING, SC.IMAGE_STATE_LOADED, SC.IMAGE_STATE_FAILED, SC.IMAGE_STATE_SPRITE</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="useImageCache"></a> 
+			          <div class="field">
+			            <a name="useImageCache"></a> 
+			            <h3>useImageCache
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, image view will use the imageCache to control loading.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">useImageCache</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This setting is generally preferred.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="value"></a> 
+			          <div class="field">
+			            <a name="value"></a> 
+			            <h3>value
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A url or CSS class name.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">value</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is the image you want the view to display.  It should be either a url or css class name.  You can also set the content and contentValueKey properties to have this value extracted automatically.</p>
+
+<p>If you want to use CSS spriting, set this value to a CSS class name.  If you need to use multiple class names to set your icon, separate them by spaces.</p>
+
+<p>Note that if you provide a URL, it must contain at least one '/' as this is how we autodetect URLs.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.ImageView#imageDidLoad"></a> 
+			          <h3>imageDidLoad()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called when the imageCache indicates that the image has loaded.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">imageDidLoad</span> <span class="params">(url, imageOrError)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Changing the image state will update the display.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ImageView.valueIsUrl"></a> 
+			          <h3>valueIsUrl()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the passed value looks like an URL and not a CSS class
+  name.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">valueIsUrl</span> <span class="params">(value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:53 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

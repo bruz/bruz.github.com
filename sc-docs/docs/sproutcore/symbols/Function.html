@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - Function</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Built-In Namespace Function
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#Function#cacheable">
+		<code class="type">-&nbsp;(Function)  cacheable(aFlag)</code>
+				              </a>
+				              
+				                <div class="description">You can call this method on a computed property to indicate that the 
+    property is cacheable (or not cacheable).</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#Function#idempotent">
+		<code class="type">-&nbsp;(Function)  idempotent(aFlag)</code>
+				              </a>
+				              
+				                <div class="description">Indicates that the computed property is volatile.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#Function#invokeLater">
+		<code class="type">-&nbsp;(SC.Timer)  invokeLater(target, interval)</code>
+				              </a>
+				              
+				                <div class="description">Creates a timer that will execute the function after a specified 
+    period of time.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#Function#observes">
+		<code class="type">-&nbsp;(Function)  observes(propertyPaths)</code>
+				              </a>
+				              
+				                <div class="description">Declare that a function should observe an object at the named path.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#Function#property">
+		<code class="type">-&nbsp;(Function)  property(dependentKeys)</code>
+				              </a>
+				              
+				                <div class="description">Indicates that the function should be treated as a computed property.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="Function#cacheable"></a> 
+			          <h3>cacheable()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">You can call this method on a computed property to indicate that the 
+    property is cacheable (or not cacheable).</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Function)
+			              </span>
+			              <span class="name">cacheable</span> <span class="params">(aFlag)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">aFlag</span>
+			              
+			              <span class="desc">optionally indicate cacheable or no, default YES</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Function)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>By default all computed properties are not cached.  Enabling this feature will allow SproutCore to cache the return value of your computed property and to use that value until one of your dependent properties changes or until you invoke propertyDidChange() and name the computed property itself.</p>
+
+<p>If you do not specify this option, computed properties are assumed to be not cacheable.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="Function#idempotent"></a> 
+			          <h3>idempotent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Indicates that the computed property is volatile.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Function)
+			              </span>
+			              <span class="name">idempotent</span> <span class="params">(aFlag)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">aFlag</span>
+			              
+			              <span class="desc">optionally indicate state, default to YES</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Function)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Normally SproutCore assumes that your computed property is idempotent.  That is, calling set() on your property more than once with the same value has the same effect as calling it only once.</p>
+
+<p>All non-computed properties are idempotent and normally you should make your computed properties behave the same way.  However, if you need to make your property change its return value everytime your method is called, you may chain this to your property to make it volatile.</p>
+
+<p>If you do not specify this option, properties are assumed to be non-volatile.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="Function#invokeLater"></a> 
+			          <h3>invokeLater()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates a timer that will execute the function after a specified 
+    period of time.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Timer)
+			              </span>
+			              <span class="name">invokeLater</span> <span class="params">(target, interval)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">target</span>
+			              
+			              <span class="desc">{Object} optional target object to use as this</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">interval</span>
+			              
+			              <span class="desc">{Number} the time to wait, in msec</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Timer)</span>
+			                <span class="desc">scheduled timer</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If you pass an optional set of arguments, the arguments will be passed to the function as well.  Otherwise the function should have the signature:</p>
+
+
+<p class="code"><code>function functionName(timer)</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="Function#observes"></a> 
+			          <h3>observes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Declare that a function should observe an object at the named path.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Function)
+			              </span>
+			              <span class="name">observes</span> <span class="params">(propertyPaths)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Function)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that the path is used only to construct the observation one time.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="Function#property"></a> 
+			          <h3>property()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Indicates that the function should be treated as a computed property.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Function)
+			              </span>
+			              <span class="name">property</span> <span class="params">(dependentKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">dependentKeys</span>
+			              
+			              <span class="desc">{String...} optional set of dependent keys</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Function)</span>
+			                <span class="desc">the declared function instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Computed properties are methods that you want to treat as if they were static properties.  When you use get() or set() on a computed property, the object will call the property method and return its value instead of returning the method itself.  This makes it easy to create "virtual properties" that are computed dynamically from other properties.</p>
+
+<p>Consider the following example:</p>
+
+
+<p class="code"><code>contact = SC.Object.create({<br /><br />firstName: "Charles",<br />lastName: "Jolley",<br /><br />// This is a computed property!<br />fullName: function() {<br />return this.getEach('firstName','lastName').compact().join(' ') ;<br />}.property('firstName', 'lastName'),<br /><br />// this is not<br />getFullName: function() {<br />return this.getEach('firstName','lastName').compact().join(' ') ;<br />}<br />});<br /><br />contact.get('firstName') ;<br />--&gt; "Charles"<br /><br />contact.get('fullName') ;<br />--&gt; "Charles Jolley"<br /><br />contact.get('getFullName') ;<br />--&gt; function()</code></p>
+
+<p>Note that when you get the fullName property, SproutCore will call the fullName() function and return its value whereas when you get() a property that contains a regular method (such as getFullName above), then the function itself will be returned instead.</p>
+
+<h2> Using Dependent Keys</h2>
+
+<p>Computed properties are often computed dynamically from other member properties.  Whenever those properties change, you need to notify any object that is observing the computed property that the computed property has changed also.  We call these properties the computed property is based upon "dependent keys".</p>
+
+<p>For example, in the contact object above, the fullName property depends on the firstName and lastName property.  If either property value changes, any observer watching the fullName property will need to be notified as well.</p>
+
+<p>You inform SproutCore of these dependent keys by passing the key names as parameters to the property() function.  Whenever the value of any key you name here changes, the computed property will be marked as changed also.</p>
+
+<p>You should always register dependent keys for computed properties to ensure they update.</p>
+
+<h2> Using Computed Properties as Setters</h2>
+
+<p>Computed properties can be used to modify the state of an object as well as to return a value.  Unlike many other key-value system, you use the same method to both get and set values on a computed property.  To write a setter, simply declare two extra parameters: key and value.</p>
+
+<p>Whenever your property function is called as a setter, the value parameter will be set.  Whenever your property is called as a getter the value parameter will be undefined.</p>
+
+<p>For example, the following object will split any full name that you set into a first name and last name components and save them.</p>
+
+
+<p class="code"><code>contact = SC.Object.create({<br /><br />fullName: function(key, value) {<br />if (value !== undefined) {<br />var parts = value.split(' ') ;<br />this.beginPropertyChanges()<br />.set('firstName', parts[0])<br />.set('lastName', parts[1])<br />.endPropertyChanges() ;<br />}<br />return this.getEach('firstName', 'lastName').compact().join(' ');<br />}.property('firstName','lastName')<br /><br />}) ;<br /></code></p>
+
+<h2> Why Use The Same Method for Getters and Setters?</h2>
+
+<p>Most property-based frameworks expect you to write two methods for each property but SproutCore only uses one. We do this because most of the time when you write a setter is is basically a getter plus some extra work. There is little added benefit in writing both methods when you can conditionally exclude part of it. This helps to keep your code more compact and easier to maintain.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:47 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

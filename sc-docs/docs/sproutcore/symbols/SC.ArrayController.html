@@ -1,0 +1,1184 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.ArrayController</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.ArrayController
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Array.html#constructor">SC.Array</a>, <a href="../symbols/SC.Controller.html#constructor">SC.Controller</a>, <a href="../symbols/SC.SelectionSupport.html#constructor">SC.SelectionSupport</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_controllers_array.js.html">frameworks/sproutcore/frameworks/foundation/controllers/array.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+		    <tr class="odd">
+		      <td class="label">Author:</td>
+		      <td class="value">Charles Jolley</td>
+		    </tr>
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>An ArrayController provides a way for you to publish an array of objects for CollectionView or other controllers to work with.  To work with an ArrayController, set the content property to the array you want the controller to manage.  Then work directly with the controller object as if it were the array itself.</p>
+
+<p>When you want to display an array of objects in a CollectionView, bind the "arrangedObjects" of the array controller to the CollectionView's "content" property.  This will automatically display the array in the collection view.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#allowsSingleContent"><code>-&nbsp;(Boolean) allowsSingleContent [R/W]</code></a>
+					              
+					                <div class="description">Set to YES if you want the controller to wrap non-enumerable content    
+    in an array and publish it.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#arrangedObjects"><code>-&nbsp;(SC.Array) arrangedObjects [R/W]</code></a>
+					              
+					                <div class="description">Returns an SC.Array object suitable for use in a CollectionView.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#canAddContent"><code>-&nbsp;(Boolean) canAddContent [R/W]</code></a>
+					              
+					                <div class="description">Computed property insides whether you can add content.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#canRemoveContent"><code>-&nbsp;(Boolean) canRemoveContent [R/W]</code></a>
+					              
+					                <div class="description">Computed property indicates whether or not the array controller can 
+    remove content.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#canReorderContent"><code>-&nbsp;(Boolean) canReorderContent [R/W]</code></a>
+					              
+					                <div class="description">Computed property indicates whether you can reorder content.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#content"><code>-&nbsp;(SC.Array) content [R/W]</code></a>
+					              
+					                <div class="description">The content array managed by this controller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#destroyOnRemoval"><code>-&nbsp;(Boolean) destroyOnRemoval [R/W]</code></a>
+					              
+					                <div class="description">Set to YES if you want objects removed from the array to also be
+    deleted.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#hasContent"><code>-&nbsp;(Boolean) hasContent [R/W]</code></a>
+					              
+					                <div class="description">Set to YES if the controller has valid content that can be displayed,
+    even an empty array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#isEditable"><code>-&nbsp;(Boolean) isEditable [R/W]</code></a>
+					              
+					                <div class="description">Makes the array editable or not.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#length"><code>-&nbsp;(Number) length [R/W]</code></a>
+					              
+					                <div class="description">Compute the length of the array based on the observable content</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#orderBy"><code>-&nbsp;(String|Array|Function) orderBy [R/W]</code></a>
+					              
+					                <div class="description">Used to sort the array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ArrayController.html#status"><code>-&nbsp;(Number) status [R/W]</code></a>
+					              
+					                <div class="description">Returns the current status property for the content.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.isSCArray">isSCArray</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.isEnumerable">isEnumerable</a></dd><dt>Properties borrowed from class <a href="../symbols/SC.SelectionSupport.html#constructor">SC.SelectionSupport</a>: </dt><dd><a href="../symbols/SC.SelectionSupport.html#.allowsEmptySelection">allowsEmptySelection</a>, <a href="../symbols/SC.SelectionSupport.html#.allowsMultipleSelection">allowsMultipleSelection</a>, <a href="../symbols/SC.SelectionSupport.html#.allowsSelection">allowsSelection</a>, <a href="../symbols/SC.SelectionSupport.html#.hasSelection">hasSelection</a>, <a href="../symbols/SC.SelectionSupport.html#.hasSelectionSupport">hasSelectionSupport</a>, <a href="../symbols/SC.SelectionSupport.html#.selection">selection</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.ArrayController#addObject">
+		<code class="type">-&nbsp;(SC.ArrayController)  addObject(object)</code>
+				              </a>
+				              
+				                <div class="description">Adds an object to the array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ArrayController#removeObject">
+		<code class="type">-&nbsp;(SC.ArrayController)  removeObject(object)</code>
+				              </a>
+				              
+				                <div class="description">Removes the passed object from the array.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Array.html#constructor">SC.Array</a>: </dt><dd><a href="../symbols/SC.Array.html#.addRangeObserver">addRangeObserver</a>, <a href="../symbols/SC.Array.html#.compact">compact</a>, <a href="../symbols/SC.Array.html#.enumerableContentDidChange">enumerableContentDidChange</a>, <a href="../symbols/SC.Array.html#.indexOf">indexOf</a>, <a href="../symbols/SC.Array.html#.insertAt">insertAt</a>, <a href="../symbols/SC.Array.html#.isEqual">isEqual</a>, <a href="../symbols/SC.Array.html#.lastIndexOf">lastIndexOf</a>, <a href="../symbols/SC.Array.html#.max">max</a>, <a href="../symbols/SC.Array.html#.min">min</a>, <a href="../symbols/SC.Array.html#.objectAt">objectAt</a>, <a href="../symbols/SC.Array.html#.popObject">popObject</a>, <a href="../symbols/SC.Array.html#.pushObject">pushObject</a>, <a href="../symbols/SC.Array.html#.pushObjects">pushObjects</a>, <a href="../symbols/SC.Array.html#.removeAt">removeAt</a>, <a href="../symbols/SC.Array.html#.removeObjects">removeObjects</a>, <a href="../symbols/SC.Array.html#.removeRangeObserver">removeRangeObserver</a>, <a href="../symbols/SC.Array.html#.replace">replace</a>, <a href="../symbols/SC.Array.html#.shiftObject">shiftObject</a>, <a href="../symbols/SC.Array.html#.slice">slice</a>, <a href="../symbols/SC.Array.html#.uniq">uniq</a>, <a href="../symbols/SC.Array.html#.unshiftObject">unshiftObject</a>, <a href="../symbols/SC.Array.html#.unshiftObjects">unshiftObjects</a>, <a href="../symbols/SC.Array.html#.updateRangeObserver">updateRangeObserver</a>, <a href="../symbols/SC.Array.html#.without">without</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.Enumerable.html#constructor">SC.Enumerable</a>: </dt><dd><a href="../symbols/SC.Enumerable.html#.enumerator">enumerator</a>, <a href="../symbols/SC.Enumerable.html#.every">every</a>, <a href="../symbols/SC.Enumerable.html#.everyProperty">everyProperty</a>, <a href="../symbols/SC.Enumerable.html#.filter">filter</a>, <a href="../symbols/SC.Enumerable.html#.filterProperty">filterProperty</a>, <a href="../symbols/SC.Enumerable.html#.find">find</a>, <a href="../symbols/SC.Enumerable.html#.findProperty">findProperty</a>, <a href="../symbols/SC.Enumerable.html#.firstObject">firstObject</a>, <a href="../symbols/SC.Enumerable.html#.forEach">forEach</a>, <a href="../symbols/SC.Enumerable.html#.getEach">getEach</a>, <a href="../symbols/SC.Enumerable.html#.groupBy">groupBy</a>, <a href="../symbols/SC.Enumerable.html#.invoke">invoke</a>, <a href="../symbols/SC.Enumerable.html#.invokeWhile">invokeWhile</a>, <a href="../symbols/SC.Enumerable.html#.lastObject">lastObject</a>, <a href="../symbols/SC.Enumerable.html#.map">map</a>, <a href="../symbols/SC.Enumerable.html#.mapProperty">mapProperty</a>, <a href="../symbols/SC.Enumerable.html#.nextObject">nextObject</a>, <a href="../symbols/SC.Enumerable.html#.reduce">reduce</a>, <a href="../symbols/SC.Enumerable.html#.reduceAverage">reduceAverage</a>, <a href="../symbols/SC.Enumerable.html#.reducedProperty">reducedProperty</a>, <a href="../symbols/SC.Enumerable.html#.reduceMax">reduceMax</a>, <a href="../symbols/SC.Enumerable.html#.reduceMaxObject">reduceMaxObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceMin">reduceMin</a>, <a href="../symbols/SC.Enumerable.html#.reduceMinObject">reduceMinObject</a>, <a href="../symbols/SC.Enumerable.html#.reduceSum">reduceSum</a>, <a href="../symbols/SC.Enumerable.html#.setEach">setEach</a>, <a href="../symbols/SC.Enumerable.html#.some">some</a>, <a href="../symbols/SC.Enumerable.html#.someProperty">someProperty</a>, <a href="../symbols/SC.Enumerable.html#.sortProperty">sortProperty</a>, <a href="../symbols/SC.Enumerable.html#.toArray">toArray</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.SelectionSupport.html#constructor">SC.SelectionSupport</a>: </dt><dd><a href="../symbols/SC.SelectionSupport.html#.deselectObject">deselectObject</a>, <a href="../symbols/SC.SelectionSupport.html#.deselectObjects">deselectObjects</a>, <a href="../symbols/SC.SelectionSupport.html#.firstSelectableObject">firstSelectableObject</a>, <a href="../symbols/SC.SelectionSupport.html#.selectObject">selectObject</a>, <a href="../symbols/SC.SelectionSupport.html#.selectObjects">selectObjects</a>, <a href="../symbols/SC.SelectionSupport.html#.updateSelectionAfterContentChange">updateSelectionAfterContentChange</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="allowsSingleContent"></a> 
+			          <div class="field">
+			            <a name="allowsSingleContent"></a> 
+			            <h3>allowsSingleContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES if you want the controller to wrap non-enumerable content    
+    in an array and publish it.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">allowsSingleContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Otherwise, it will treat single content like null content.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="arrangedObjects"></a> 
+			          <div class="field">
+			            <a name="arrangedObjects"></a> 
+			            <h3>arrangedObjects
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns an SC.Array object suitable for use in a CollectionView.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">arrangedObjects</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Depending on how you have your ArrayController configured, this property may be one of several different values.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canAddContent"></a> 
+			          <div class="field">
+			            <a name="canAddContent"></a> 
+			            <h3>canAddContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed property insides whether you can add content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">canAddContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can add content as long as the controller isEditable and the content is not a single object.</p>
+
+<p>Note that the only way to simply add object to an ArrayController is to use the addObject() or pushObject() methods.  All other methods imply reordering and will fail.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canRemoveContent"></a> 
+			          <div class="field">
+			            <a name="canRemoveContent"></a> 
+			            <h3>canRemoveContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed property indicates whether or not the array controller can 
+    remove content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">canRemoveContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can delete content only if the content is not single content and isEditable is YES.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canReorderContent"></a> 
+			          <div class="field">
+			            <a name="canReorderContent"></a> 
+			            <h3>canReorderContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Computed property indicates whether you can reorder content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">canReorderContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can reorder content as long a the controller isEditable and the content is a real SC.Array-like object.  You cannot reorder content when orderBy is non-null.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="content"></a> 
+			          <div class="field">
+			            <a name="content"></a> 
+			            <h3>content
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The content array managed by this controller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Array
+		              </span>
+		              <span class="name">content</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can set the content of the ArrayController to any object that implements SC.Array or SC.Enumerable.  If you set the content to an object that implements SC.Enumerable only, you must also set the orderBy property so that the ArrayController can order the enumerable for you.</p>
+
+<p>If you set the content to a non-enumerable and non-array object, then the ArrayController will wrap the item in an array in an attempt to normalize the result.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="destroyOnRemoval"></a> 
+			          <div class="field">
+			            <a name="destroyOnRemoval"></a> 
+			            <h3>destroyOnRemoval
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES if you want objects removed from the array to also be
+    deleted.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">destroyOnRemoval</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is a convenient way to manage lists of items owned by a parent record object.</p>
+
+<p>Note that even if this is set to NO, calling destroyObject() instead of removeObject() will still destroy the object in question as well as removing it from the parent array.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasContent"></a> 
+			          <div class="field">
+			            <a name="hasContent"></a> 
+			            <h3>hasContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES if the controller has valid content that can be displayed,
+    even an empty array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">hasContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Returns NO if the content is null or not enumerable and allowsSingleContent is NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEditable"></a> 
+			          <div class="field">
+			            <a name="isEditable"></a> 
+			            <h3>isEditable
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Makes the array editable or not.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isEditable</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is set to NO, then any attempts at changing the array content itself will throw an exception.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="length"></a> 
+			          <div class="field">
+			            <a name="length"></a> 
+			            <h3>length
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Compute the length of the array based on the observable content</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">length</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="orderBy"></a> 
+			          <div class="field">
+			            <a name="orderBy"></a> 
+			            <h3>orderBy
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Used to sort the array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String|Array|Function
+		              </span>
+		              <span class="name">orderBy</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If you set this property to a key name, array of key names, or a function, then then ArrayController will automatically reorder your content array to match the sort order.  (If you set a function, the function will be used to sort).</p>
+
+<p>Normally, you should only use this property if you set the content of the controller to an unordered enumerable such as SC.Set or SC.SelectionSet. In this case the orderBy property is required in order for the controller to property order the content for display.</p>
+
+<p>If you set the content to an array, it is usually best to maintain the array in the proper order that you want to display things rather than using this method to order the array since it requires an extra processing step.  You can use this orderBy property, however, for displaying smaller arrays of content.</p>
+
+<p>Note that you can only to use addObject() to insert new objects into an array that is ordered.  You cannot manually reorder or insert new objects into specific locations because the order is managed by this property instead.</p>
+
+<p>If you pass a function, it should be suitable for use in compare().</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="status"></a> 
+			          <div class="field">
+			            <a name="status"></a> 
+			            <h3>status
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns the current status property for the content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">status</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If the content does not have a status property, returns SC.Record.READY.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.ArrayController#addObject"></a> 
+			          <h3>addObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds an object to the array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ArrayController)
+			              </span>
+			              <span class="name">addObject</span> <span class="params">(object)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">object</span>
+			              
+			              <span class="desc">the object to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ArrayController)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the content is ordered, this will add the object to the end of the content array.  The content is not ordered, the location depends on the implementation of the content.</p>
+
+<p>If the source content does not support adding an object, then this method will throw an exception.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ArrayController#removeObject"></a> 
+			          <h3>removeObject()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the passed object from the array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ArrayController)
+			              </span>
+			              <span class="name">removeObject</span> <span class="params">(object)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">object</span>
+			              
+			              <span class="desc">the object to remove</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ArrayController)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the underyling content is a single object, then this simply sets the content to null.  Otherwise it will call removeObject() on the content.</p>
+
+<p>Also, if destroyOnRemoval is YES, this will actually destroy the object.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:50 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

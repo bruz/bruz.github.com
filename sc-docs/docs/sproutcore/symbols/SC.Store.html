@@ -1,0 +1,5830 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Store</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Store
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.Object.html#constructor">SC.Object</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_datastore_system_store.js.html">frameworks/sproutcore/frameworks/datastore/system/store.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>The Store is where you can find all of your dataHashes. Stores can be chained for editing purposes and committed back one chain level at a time all the way back to a persistent data source.</p>
+
+<p>Every application you create should generally have its own store objects. Once you create the store, you will rarely need to work with the store directly except to retrieve records and collections.</p>
+
+<p>Internally, the store will keep track of changes to your json data hashes and manage syncing those changes with your data source.  A data source may be a server, local storage, or any other persistent code.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#changelog"><code>-&nbsp;(SC.Set) changelog [R/W]</code></a>
+					              
+					                <div class="description">A set of storeKeys that need to be committed back to the data source.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#commitRecordsAutomatically"><code>-&nbsp;(Boolean) commitRecordsAutomatically [R/W]</code></a>
+					              
+					                <div class="description">This type of store is not nested.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#dataSource"><code>-&nbsp;(SC.DataSource) dataSource [R/W]</code></a>
+					              
+					                <div class="description">The data source is the persistent storage that will provide data to the
+    store and save changes.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#editables"><code>-&nbsp;(Array) editables [R/W]</code></a>
+					              
+					                <div class="description">Array indicates whether a data hash is possibly in use by an external 
+    record for editing.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#isNested"><code>-&nbsp;(Boolean) isNested [R/W]</code></a>
+					              
+					                <div class="description">This type of store is not nested.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#name"><code>-&nbsp;(String) name [R/W]</code></a>
+					              
+					                <div class="description">An (optional) name of the store, which can be useful during debugging,
+    especially if you have multiple nested stores.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#nestedStores"><code>-&nbsp;(Array) nestedStores [R/W]</code></a>
+					              
+					                <div class="description">An array of all the chained stores that current rely on the receiver 
+    store.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#queryErrors"><code>-&nbsp;(Hash) queryErrors [R/W]</code></a>
+					              
+					                <div class="description">A hash of SC.Error objects associated with queries (indexed by the GUID
+    of the query).</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#recordArraysWithQuery"><code>-&nbsp;(Array) recordArraysWithQuery [R/W]</code></a>
+					              
+					                <div class="description">A set of SC.RecordArray that have been returned from findAll with an 
+    SC.Query.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Store.html#recordErrors"><code>-&nbsp;(Array) recordErrors [R/W]</code></a>
+					              
+					                <div class="description">An array of SC.Error objects associated with individual records in the
+    store (indexed by store keys).</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#concatenatedProperties">concatenatedProperties</a>, <a href="../symbols/SC.Object.html#.isClass">isClass</a>, <a href="../symbols/SC.Object.html#isDestroyed">isDestroyed</a>, <a href="../symbols/SC.Object.html#isObject">isObject</a>, <a href="../symbols/SC.Object.html#.subclasses">subclasses</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Store#cancelRecord">
+		<code class="type">-&nbsp;(SC.Store)  cancelRecord(recordTypes, ids, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Cancels an inflight request for the passed record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#cancelRecords">
+		<code class="type">-&nbsp;(SC.Store)  cancelRecords(recordTypes, ids, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Cancels an inflight request for the passed records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#cascade">
+		<code class="type">-&nbsp;(SC.Store)  cascade(dataSource)</code>
+				              </a>
+				              
+				                <div class="description">Convenience method.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#chain">
+		<code class="type">-&nbsp;(SC.NestedStore)  chain(attrs, newStoreClass)</code>
+				              </a>
+				              
+				                <div class="description">Returns a new nested store instance that can be used to buffer changes
+    until you are ready to commit them.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#commitRecord">
+		<code class="type">-&nbsp;(Boolean)  commitRecord(recordType, id, storeKey, params)</code>
+				              </a>
+				              
+				                <div class="description">Commits the passed store key or id.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#commitRecords">
+		<code class="type">-&nbsp;(Boolean)  commitRecords(recordTypes, ids, storeKeys, params)</code>
+				              </a>
+				              
+				                <div class="description">Commits the passed store keys or ids.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#createRecord">
+		<code class="type">-&nbsp;(SC.Record)  createRecord(recordType, dataHash, id)</code>
+				              </a>
+				              
+				                <div class="description">Creates a new record instance with the passed recordType and dataHash.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#createRecords">
+		<code class="type">-&nbsp;(Array)  createRecords(recordTypes, dataHashes, ids)</code>
+				              </a>
+				              
+				                <div class="description">Creates an array of new records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataHashDidChange">
+		<code class="type">-&nbsp;(SC.Store)  dataHashDidChange(storeKeys, rev, statusOnly, key)</code>
+				              </a>
+				              
+				                <div class="description">Call this method whenever you modify some editable data hash to register
+    with the Store that the attribute values have actually changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidCancel">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidCancel(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Called by a dataSource when it cancels an inflight operation on a 
+    record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidCancelQuery">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidCancelQuery(query)</code>
+				              </a>
+				              
+				                <div class="description">Called by your data source if it cancels fetching the results of a query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidComplete">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidComplete(storeKey, dataHash, newId)</code>
+				              </a>
+				              
+				                <div class="description">Called by a data source when it creates or commits a record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidDestroy">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidDestroy(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Called by a data source when it has destroyed a record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidError">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidError(storeKey, error)</code>
+				              </a>
+				              
+				                <div class="description">Converts the passed record into an error object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidErrorQuery">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidErrorQuery(query, error)</code>
+				              </a>
+				              
+				                <div class="description">Called by your data source if it encountered an error loading the query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#dataSourceDidFetchQuery">
+		<code class="type">-&nbsp;(SC.Store)  dataSourceDidFetchQuery(query)</code>
+				              </a>
+				              
+				                <div class="description">Called by your data source whenever you finish fetching the results of a 
+    query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#destroyRecord">
+		<code class="type">-&nbsp;(SC.Store)  destroyRecord(recordType, id, storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Destroys a record, removing the data hash from the store and adding the
+    record to the destroyed changelog.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#destroyRecords">
+		<code class="type">-&nbsp;(SC.Store)  destroyRecords(recordTypes, ids, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Destroys a group of records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#find">
+		<code class="type">-&nbsp;(SC.Record)  find(recordType, id)</code>
+				              </a>
+				              
+				                <div class="description">Finds a single record instance with the specified recordType and id or an 
+    array of records matching some query conditions.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#flush">
+		<code class="type">-&nbsp;(SC.Store)  flush()</code>
+				              </a>
+				              
+				                <div class="description">Delivers any pending changes to materialized records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#from">
+		<code class="type">-&nbsp;(SC.Store)  from(dataSource)</code>
+				              </a>
+				              
+				                <div class="description">Convenience method.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#hasNestedStore">
+		<code class="type">-&nbsp;(Boolean)  hasNestedStore(store)</code>
+				              </a>
+				              
+				                <div class="description">Used to determine if a nested store belongs directly or indirectly to the
+    receiver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#idFor">
+		<code class="type">-&nbsp;(String)  idFor(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Given a storeKey, return the primaryKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#loadQueryResults">
+		<code class="type">-&nbsp;(SC.Store)  loadQueryResults(query, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Sets the passed array of storeKeys as the new data for the query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#loadRecord">
+		<code class="type">-&nbsp;(String)  loadRecord(recordType, dataHash, id)</code>
+				              </a>
+				              
+				                <div class="description">Convenience method can be called by the store or other parts of your 
+    application to load a record into the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#loadRecords">
+		<code class="type">-&nbsp;(Array)  loadRecords(recordTypes, dataHashes, ids)</code>
+				              </a>
+				              
+				                <div class="description">Convenience method can be called by the store or other parts of your 
+    application to load records into the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#materializeRecord">
+		<code class="type">-&nbsp;(SC.Record)  materializeRecord(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Given a storeKey, return a materialized record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#peekStatus">
+		<code class="type">-&nbsp;(Number)  peekStatus(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Reads the current status for the storeKey without actually locking the 
+    record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#pushDestroy">
+		<code class="type">-&nbsp;(Number|Boolean)  pushDestroy(recordType, id, storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Call by the data source whenever you want to push a deletion into the 
+    store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#pushError">
+		<code class="type">-&nbsp;(Number|Boolean)  pushError(recordType, id, error, storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Call by the data source whenever you want to push an error into the 
+    store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#pushRetrieve">
+		<code class="type">-&nbsp;(Number|Boolean)  pushRetrieve(recordType, id, dataHash, storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Call by the data source whenever you want to push new data out of band 
+    into the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readDataHash">
+		<code class="type">-&nbsp;(Hash)  readDataHash(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the data hash for the given storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readEditableDataHash">
+		<code class="type">-&nbsp;(Hash)  readEditableDataHash(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the data hash for the storeKey, cloned so that you can edit
+    the contents of the attributes if you like.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readEditableProperty">
+		<code class="type">-&nbsp;(Object)  readEditableProperty(storeKey, propertyName)</code>
+				              </a>
+				              
+				                <div class="description">Reads a property from the hash - cloning it if needed so you can modify 
+    it independently of any parent store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readError">
+		<code class="type">-&nbsp;(SC.Error)  readError(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the SC.Error object associated with a specific record.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readQueryError">
+		<code class="type">-&nbsp;(SC.Error)  readQueryError(query)</code>
+				              </a>
+				              
+				                <div class="description">Returns the SC.Error object associated with a specific query.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#readStatus">
+		<code class="type">-&nbsp;(Number)  readStatus(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Reads the current status for a storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#recordArrayWillDestroy">
+		<code class="type">-&nbsp;(SC.Store)  recordArrayWillDestroy(recordArray)</code>
+				              </a>
+				              
+				                <div class="description">Called by the record array just before it is destroyed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#recordDidChange">
+		<code class="type">-&nbsp;(SC.Store)  recordDidChange(recordType, id, storeKey, key, if)</code>
+				              </a>
+				              
+				                <div class="description">Notes that the data for the given record id has changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#recordsDidChange">
+		<code class="type">-&nbsp;(SC.Store)  recordsDidChange(recordTypes, ids, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Mark a group of records as dirty.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#recordsFor">
+		<code class="type">-&nbsp;(SC.Array)  recordsFor(recordType)</code>
+				              </a>
+				              
+				                <div class="description">Array of all records currently in the store with the specified
+    type.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#recordTypeFor">
+		<code class="type">-&nbsp;(SC.Record)  recordTypeFor(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Given a storeKey, return the recordType.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#refreshQuery">
+		<code class="type">-&nbsp;(SC.Store)  refreshQuery(query)</code>
+				              </a>
+				              
+				                <div class="description">Called by the record array whenever it needs the data source to refresh
+    its contents.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#refreshRecord">
+		<code class="type">-&nbsp;(Boolean)  refreshRecord(id, recordType, storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Refreshes a record from the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#refreshRecords">
+		<code class="type">-&nbsp;(Boolean)  refreshRecords(recordTypes, ids, storeKeys)</code>
+				              </a>
+				              
+				                <div class="description">Refreshes a set of records from the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#removeDataHash">
+		<code class="type">-&nbsp;(SC.Store)  removeDataHash(storeKey, status)</code>
+				              </a>
+				              
+				                <div class="description">Removes the data hash from the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#reset">
+		<code class="type">-&nbsp;(SC.Store)  reset()</code>
+				              </a>
+				              
+				                <div class="description">Resets the store content.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#retrieveRecord">
+		<code class="type">-&nbsp;(Number)  retrieveRecord(recordType, id, storeKey, isRefresh)</code>
+				              </a>
+				              
+				                <div class="description">Retrieves a record from the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#retrieveRecords">
+		<code class="type">-&nbsp;(Array)  retrieveRecords(recordTypes, ids, storeKeys, isRefresh)</code>
+				              </a>
+				              
+				                <div class="description">Retrieves a set of records from the server.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#statusString">
+		<code class="type">-&nbsp;(String)  statusString(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns string representation of a storeKey, with status.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#storeKeyEditState">
+		<code class="type">-&nbsp;(Number)  storeKeyEditState(storeKey)</code>
+				              </a>
+				              
+				                <div class="description">Returns the current edit status of a storekey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#storeKeyExists">
+		<code class="type">-&nbsp;(Number)  storeKeyExists(id, primaryKey)</code>
+				              </a>
+				              
+				                <div class="description">Given a primaryKey value for the record, returns the associated
+    storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#storeKeyFor">
+		<code class="type">-&nbsp;(Number)  storeKeyFor(recordType, primaryKey)</code>
+				              </a>
+				              
+				                <div class="description">Given a recordType and primaryKey, find the storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#storeKeys">
+		<code class="type">-&nbsp;(Array)  storeKeys()</code>
+				              </a>
+				              
+				                <div class="description">Finds all storeKeys in this store
+    and returns an array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#storeKeysFor">
+		<code class="type">-&nbsp;(Array)  storeKeysFor(recordType)</code>
+				              </a>
+				              
+				                <div class="description">Finds all storeKeys of a certain record type in this store
+    and returns an array.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#unloadRecord">
+		<code class="type">-&nbsp;(SC.Store)  unloadRecord(recordType, id, storeKey, newStatus)</code>
+				              </a>
+				              
+				                <div class="description">Unloads a record, removing the data hash from the store.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#unloadRecords">
+		<code class="type">-&nbsp;(SC.Store)  unloadRecords(recordTypes, ids, storeKeys, newStatus)</code>
+				              </a>
+				              
+				                <div class="description">Unloads a group of records.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#writeDataHash">
+		<code class="type">-&nbsp;(SC.Store)  writeDataHash(storeKey, hash, status)</code>
+				              </a>
+				              
+				                <div class="description">Replaces the data hash for the storeKey.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Store#writeStatus">
+		<code class="type">-&nbsp;(SC.Store)  writeStatus(storeKey, newStatus, error)</code>
+				              </a>
+				              
+				                <div class="description">Writes the current status for a storeKey.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.Object.html#constructor">SC.Object</a>: </dt><dd><a href="../symbols/SC.Object.html#awake">awake</a>, <a href="../symbols/SC.Object.html#.create">create</a>, <a href="../symbols/SC.Object.html#.design">design</a>, <a href="../symbols/SC.Object.html#destroy">destroy</a>, <a href="../symbols/SC.Object.html#.extend">extend</a>, <a href="../symbols/SC.Object.html#.hasSubclass">hasSubclass</a>, <a href="../symbols/SC.Object.html#init">init</a>, <a href="../symbols/SC.Object.html#instanceOf">instanceOf</a>, <a href="../symbols/SC.Object.html#invokeLast">invokeLast</a>, <a href="../symbols/SC.Object.html#invokeLater">invokeLater</a>, <a href="../symbols/SC.Object.html#invokeOnce">invokeOnce</a>, <a href="../symbols/SC.Object.html#invokeWith">invokeWith</a>, <a href="../symbols/SC.Object.html#.kindOf">kindOf</a>, <a href="../symbols/SC.Object.html#.mixin">mixin</a>, <a href="../symbols/SC.Object.html#respondsTo">respondsTo</a>, <a href="../symbols/SC.Object.html#.subclassOf">subclassOf</a>, <a href="../symbols/SC.Object.html#superclass">superclass</a>, <a href="../symbols/SC.Object.html#tryToPerform">tryToPerform</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="changelog"></a> 
+			          <div class="field">
+			            <a name="changelog"></a> 
+			            <h3>changelog
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A set of storeKeys that need to be committed back to the data source.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Set
+		              </span>
+		              <span class="name">changelog</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you call commitRecords() without passing any other parameters, the keys in this set will be committed instead.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="commitRecordsAutomatically"></a> 
+			          <div class="field">
+			            <a name="commitRecordsAutomatically"></a> 
+			            <h3>commitRecordsAutomatically
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This type of store is not nested.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">commitRecordsAutomatically</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="dataSource"></a> 
+			          <div class="field">
+			            <a name="dataSource"></a> 
+			            <h3>dataSource
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The data source is the persistent storage that will provide data to the
+    store and save changes.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.DataSource
+		              </span>
+		              <span class="name">dataSource</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You normally will set your data source when you first create your store in your application.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="editables"></a> 
+			          <div class="field">
+			            <a name="editables"></a> 
+			            <h3>editables
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Array indicates whether a data hash is possibly in use by an external 
+    record for editing.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">editables</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If a data hash is editable then it may be modified at any time and therefore chained stores may need to clone the attributes before keeping a copy of them.</p>
+
+<p>Note that this is kept as an array because it will be stored as a dense array on some browsers, making it faster.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isNested"></a> 
+			          <div class="field">
+			            <a name="isNested"></a> 
+			            <h3>isNested
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This type of store is not nested.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isNested</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="name"></a> 
+			          <div class="field">
+			            <a name="name"></a> 
+			            <h3>name
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An (optional) name of the store, which can be useful during debugging,
+    especially if you have multiple nested stores.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">name</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="nestedStores"></a> 
+			          <div class="field">
+			            <a name="nestedStores"></a> 
+			            <h3>nestedStores
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An array of all the chained stores that current rely on the receiver 
+    store.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">nestedStores</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="queryErrors"></a> 
+			          <div class="field">
+			            <a name="queryErrors"></a> 
+			            <h3>queryErrors
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A hash of SC.Error objects associated with queries (indexed by the GUID
+    of the query).</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Hash
+		              </span>
+		              <span class="name">queryErrors</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Errors passed from the data source in the call to dataSourceDidErrorQuery() are stored here.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="recordArraysWithQuery"></a> 
+			          <div class="field">
+			            <a name="recordArraysWithQuery"></a> 
+			            <h3>recordArraysWithQuery
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A set of SC.RecordArray that have been returned from findAll with an 
+    SC.Query.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">recordArraysWithQuery</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>These will all be notified with _notifyRecordArraysWithQuery() whenever the store changes.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="recordErrors"></a> 
+			          <div class="field">
+			            <a name="recordErrors"></a> 
+			            <h3>recordErrors
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">An array of SC.Error objects associated with individual records in the
+    store (indexed by store keys).</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">recordErrors</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Errors passed form the data source in the call to dataSourceDidError() are stored here.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#cancelRecord"></a> 
+			          <h3>cancelRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Cancels an inflight request for the passed record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">cancelRecord</span> <span class="params">(recordTypes, ids, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">the store.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Depending on the server implementation, this could cancel an entire request, causing other records to also transition their current state.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#cancelRecords"></a> 
+			          <h3>cancelRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Cancels an inflight request for the passed records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">cancelRecords</span> <span class="params">(recordTypes, ids, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">the store.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Depending on the server implementation, this could cancel an entire request, causing other records to also transition their current state.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#cascade"></a> 
+			          <h3>cascade()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Convenience method.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">cascade</span> <span class="params">(dataSource)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DataSource...)</span><span class="name">dataSource</span>
+			              
+			              <span class="desc">one or more data source arguments</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Creates a CascadeDataSource with the passed data source arguments and sets the CascadeDataSource as the data source for the receiver.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#chain"></a> 
+			          <h3>chain()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a new nested store instance that can be used to buffer changes
+    until you are ready to commit them.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.NestedStore)
+			              </span>
+			              <span class="name">chain</span> <span class="params">(attrs, newStoreClass)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">attrs</span>
+			              
+			              <span class="desc">optional attributes to set on new store</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Class)</span><span class="name">newStoreClass</span>
+			              
+			              <span class="desc">optional the class of the newly-created nested store (defaults to SC.NestedStore)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.NestedStore)</span>
+			                <span class="desc">new nested store chained to receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>When you are ready to commit your changes, call commitChanges() or destroyChanges() and then destroy() when you are finished with the chained store altogether.</p>
+
+
+<p class="code"><code>store = MyApp.store.chain();<br />.. edit edit edit<br />store.commitChanges().destroy();</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#commitRecord"></a> 
+			          <h3>commitRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Commits the passed store key or id.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">commitRecord</span> <span class="params">(recordType, id, storeKey, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the expected record type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the id of the record to commit</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the storeKey of the record to commit</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional additonal params that will passed down
+      to the data source</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">if the action was successful.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Based on the current state of the record, this will ask the data source to perform the appropriate action on the store key.</p>
+
+<p>You have to pass either the id or the storeKey otherwise it will return NO.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#commitRecords"></a> 
+			          <h3>commitRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Commits the passed store keys or ids.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">commitRecords</span> <span class="params">(recordTypes, ids, storeKeys, params)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">the expected record types (SC.Record)</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">to commit</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Set)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">to commit</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">params</span>
+			              
+			              <span class="desc">optional additional parameters to pass along to the
+      data source</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">if the action was succesful.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If no storeKeys are given it will commit any records in the changelog.</p>
+
+<p>Based on the current state of the record, this will ask the data source to perform the appropriate actions on the store keys.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#createRecord"></a> 
+			          <h3>createRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates a new record instance with the passed recordType and dataHash.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">createRecord</span> <span class="params">(recordType, dataHash, id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record class to use on creation</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">dataHash</span>
+			              
+			              <span class="desc">the JSON attributes to assign to the hash.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">(optional) id to assign to record</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">Returns the created record</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>You can also optionally specify an id or else it will be pulled from the data hash.</p>
+
+<p>Note that the record will not yet be saved back to the server.  To save a record to the server, call commitChanges() on the store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#createRecords"></a> 
+			          <h3>createRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Creates an array of new records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">createRecords</span> <span class="params">(recordTypes, dataHashes, ids)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">dataHashes</span>
+			              
+			              <span class="desc">array of data hashes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">(optional) ids to assign to records</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">array of materialized record instances.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You must pass an array of dataHashes plus a recordType and, optionally, an array of ids.  This will create an array of record instances with the same record type.</p>
+
+<p>If you need to instead create a bunch of records with different data types you can instead pass an array of recordTypes, one for each data hash.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataHashDidChange"></a> 
+			          <h3>dataHashDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call this method whenever you modify some editable data hash to register
+    with the Store that the attribute values have actually changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataHashDidChange</span> <span class="params">(storeKeys, rev, statusOnly, key)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number|Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">one or more store keys that changed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">rev</span>
+			              
+			              <span class="desc">optional new revision number. normally leave null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">statusOnly</span>
+			              
+			              <span class="desc">(optional) YES if only status changed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">that changed (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will do the book-keeping necessary to track the change across stores including managing locks.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidCancel"></a> 
+			          <h3>dataSourceDidCancel()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a dataSource when it cancels an inflight operation on a 
+    record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidCancel</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">record store key to cancel</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will transition the record back to it non-inflight state.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidCancelQuery"></a> 
+			          <h3>dataSourceDidCancelQuery()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by your data source if it cancels fetching the results of a query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidCancelQuery</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the query you cancelled</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This will put any RecordArray's back into its original state (READY or EMPTY).</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidComplete"></a> 
+			          <h3>dataSourceDidComplete()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a data source when it creates or commits a record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidComplete</span> <span class="params">(storeKey, dataHash, newId)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">record store key to change to READY_CLEAN state</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">dataHash</span>
+			              
+			              <span class="desc">optional data hash to replace current hash</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">newId</span>
+			              
+			              <span class="desc">optional new id to replace the old one</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Passing an optional id will remap the storeKey to the new record id.  This is required when you commit a record that does not have an id yet.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidDestroy"></a> 
+			          <h3>dataSourceDidDestroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a data source when it has destroyed a record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidDestroy</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">record store key to cancel</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will transition the record to the proper state.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidError"></a> 
+			          <h3>dataSourceDidError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Converts the passed record into an error object.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidError</span> <span class="params">(storeKey, error)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">record store key to error</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Error)</span><span class="name">error</span>
+			              
+			              <span class="desc">[optional] an SC.Error instance to associate with storeKey</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidErrorQuery"></a> 
+			          <h3>dataSourceDidErrorQuery()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by your data source if it encountered an error loading the query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidErrorQuery</span> <span class="params">(query, error)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the query with the error</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Error)</span><span class="name">error</span>
+			              
+			              <span class="desc">[optional] an SC.Error instance to associate with query</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>This will put the query into an error state until you try to refresh it again.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#dataSourceDidFetchQuery"></a> 
+			          <h3>dataSourceDidFetchQuery()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by your data source whenever you finish fetching the results of a 
+    query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">dataSourceDidFetchQuery</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the query you fetched</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will put the query into a READY state if it was loading.</p>
+
+<p>Note that if the query is a REMOTE query, then you must separately load the results into the query using loadQueryResults().  If the query is LOCAL, then the query will update automatically with any new records you added to the store.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#destroyRecord"></a> 
+			          <h3>destroyRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Destroys a record, removing the data hash from the store and adding the
+    record to the destroyed changelog.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">destroyRecord</span> <span class="params">(recordType, id, storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the recordType</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">(optional) if passed, ignores recordType and id</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you try to destroy a record that is already destroyed then this method will have no effect.  If you destroy a record that does not exist or an error then an exception will be raised.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#destroyRecords"></a> 
+			          <h3>destroyRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Destroys a group of records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">destroyRecords</span> <span class="params">(recordTypes, ids, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you have a set of record ids, destroying them this way can be faster than retrieving each record and destroying it individually.</p>
+
+<p>You can pass either a single recordType or an array of recordTypes.  If you pass a single recordType, then the record type will be used for each record.  If you pass an array, then each id must have a matching record type in the array.</p>
+
+<p>You can optionally pass an array of storeKeys instead of the recordType and ids.  In this case the first two parameters will be ignored.  This is usually only used by low-level internal methods.  You will not usually destroy records this way.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#find"></a> 
+			          <h3>find()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Finds a single record instance with the specified recordType and id or an 
+    array of records matching some query conditions.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">find</span> <span class="params">(recordType, id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|String)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the expected record type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the id to load</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">record instance or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<h2> Finding a Single Record</h2>
+
+<p>If you pass a single recordType and id, this method will return an actual record instance.  If the record has not been loaded into the store yet, this method will ask the data source to retrieve it.  If no data source indicates that it can retrieve the record, then this method will return null.</p>
+
+<p>Note that if the record needs to be retrieved from the server, then the record instance returned from this method will not have any data yet. Instead it will have a status of SC.Record.READY_LOADING.  You can monitor the status property to be notified when the record data is available for you to use it.</p>
+
+<h2> Find a Collection of Records</h2>
+
+<p>If you pass only a record type or a query object, you can instead find all records matching a specified set of conditions.  When you call find() in this way, it will create a query if needed and pass it to the data source to fetch the results.</p>
+
+<p>If this is the first time you have fetched the query, then the store will automatically ask the data source to fetch any records related to it as well.  Otherwise you can refresh the query results at anytime by calling refresh() on the returned RecordArray.</p>
+
+<p>You can detect whether a RecordArray is fetching from the server by checking its status.</p>
+
+<h2> Examples</h2>
+
+<p>Finding a single record:</p>
+
+
+<p class="code"><code>MyApp.store.find(MyApp.Contact, "23"); // returns MyApp.Contact</code></p>
+
+<p>Finding all records of a particular type:</p>
+
+
+<p class="code"><code>MyApp.store.find(MyApp.Contact); // returns SC.RecordArray of contacts</code></p>
+
+<p>Finding all contacts with first name John:</p>
+
+
+<p class="code"><code>var query = SC.Query.local(MyApp.Contact, "firstName = %@", "John");<br />MyApp.store.find(query); // returns SC.RecordArray of contacts</code></p>
+
+<p>Finding all contacts using a remote query:</p>
+
+
+<p class="code"><code>var query = SC.Query.remote(MyApp.Contact);<br />MyApp.store.find(query); // returns SC.RecordArray filled by server</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#flush"></a> 
+			          <h3>flush()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Delivers any pending changes to materialized records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">flush</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Normally this happens once, automatically, at the end of the RunLoop.  If you have updated some records and need to update records immediately, however, you may call this manually.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#from"></a> 
+			          <h3>from()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Convenience method.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">from</span> <span class="params">(dataSource)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.DataSource|String)</span><span class="name">dataSource</span>
+			              
+			              <span class="desc">the data source</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Sets the current data source to the passed property. This will also set the store property on the dataSource to the receiver.</p>
+
+<p>If you are using this from the core.js method of your app, you may need to just pass a string naming your data source class.  If this is the case, then your data source will be instantiated the first time it is requested.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#hasNestedStore"></a> 
+			          <h3>hasNestedStore()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Used to determine if a nested store belongs directly or indirectly to the
+    receiver.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">hasNestedStore</span> <span class="params">(store)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Store)</span><span class="name">store</span>
+			              
+			              <span class="desc">store instance</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if belongs</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#idFor"></a> 
+			          <h3>idFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a storeKey, return the primaryKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">idFor</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc">primaryKey value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#loadQueryResults"></a> 
+			          <h3>loadQueryResults()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Sets the passed array of storeKeys as the new data for the query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">loadQueryResults</span> <span class="params">(query, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the query you are loading.  must be remote.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">array of store keys</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can call this at any time for a remote query to update its content.  If you want to use incremental loading, then pass a SparseArray object.</p>
+
+<p>If the query you pass is not a REMOTE query, then this method will raise an exception.  This will also implicitly transition the query state to SC.Record.READY.</p>
+
+<p>If you called loadRecords() before to load the actual content, you can call this method with the return value of that method to actually set the storeKeys on the result.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#loadRecord"></a> 
+			          <h3>loadRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Convenience method can be called by the store or other parts of your 
+    application to load a record into the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">loadRecord</span> <span class="params">(recordType, dataHash, id)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">dataHash</span>
+			              
+			              <span class="desc">to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">id</span>
+			              
+			              <span class="desc">optional.  if not passed lookup on the hash</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc">store keys assigned to these id</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will take a recordType and a data hashes and either add or update the record in the store.</p>
+
+<p>The loaded records will be in an SC.Record.READY_CLEAN state, indicating they were loaded from the data source and do not need to be committed back before changing.</p>
+
+<p>This method will check the state of the storeKey and call either pushRetrieve() or dataSourceDidComplete().  The standard state constraints for these methods apply here.</p>
+
+<p>The return value will be the storeKey used for the push.  This is often convenient to pass into loadQuery(), if you are fetching a remote query.</p>
+
+<p>If you are upgrading from a pre SproutCore 1.0 application, this method is the closest to the old updateRecord().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#loadRecords"></a> 
+			          <h3>loadRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Convenience method can be called by the store or other parts of your 
+    application to load records into the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">loadRecords</span> <span class="params">(recordTypes, dataHashes, ids)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">the record type or array of record types</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">dataHashes</span>
+			              
+			              <span class="desc">array of data hashes to update</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">optional array of ids.  if not passed lookup on hashes</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">store keys assigned to these ids</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will take a recordType and an array of data hashes and either add or update the record in the store.</p>
+
+<p>The loaded records will be in an SC.Record.READY_CLEAN state, indicating they were loaded from the data source and do not need to be committed back before changing.</p>
+
+<p>This method will check the state of each storeKey and call either pushRetrieve() or dataSourceDidComplete().  The standard state constraints for these methods apply here.</p>
+
+<p>The return value will be the storeKeys used for each push.  This is often convenient to pass into loadQuery(), if you are fetching a remote query.</p>
+
+<p>If you are upgrading from a pre SproutCore 1.0 application, this method is the closest to the old updateRecords().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#materializeRecord"></a> 
+			          <h3>materializeRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a storeKey, return a materialized record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">materializeRecord</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">The storeKey for the dataHash.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">Returns a record instance.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You will not usually call this method yourself.  Instead it will used by other methods when you find records by id or perform other searches.</p>
+
+<p>If a recordType has been mapped to the storeKey, then a record instance will be returned even if the data hash has not been requested yet.</p>
+
+<p>Each Store instance returns unique record instances for each storeKey.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#peekStatus"></a> 
+			          <h3>peekStatus()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads the current status for the storeKey without actually locking the 
+    record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">peekStatus</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">status</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Usually you won't need to use this method.  It is mostly used internally.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#pushDestroy"></a> 
+			          <h3>pushDestroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call by the data source whenever you want to push a deletion into the 
+    store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number|Boolean)
+			              </span>
+			              <span class="name">pushDestroy</span> <span class="params">(recordType, id, storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Class)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the SC.Record subclass</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">optional store key.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number|Boolean)</span>
+			                <span class="desc">storeKey if push was allowed, NO if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#pushError"></a> 
+			          <h3>pushError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call by the data source whenever you want to push an error into the 
+    store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number|Boolean)
+			              </span>
+			              <span class="name">pushError</span> <span class="params">(recordType, id, error, storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Class)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the SC.Record subclass</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Error)</span><span class="name">error</span>
+			              
+			              <span class="desc">[optional] an SC.Error instance to associate with id or storeKey</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">optional store key.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number|Boolean)</span>
+			                <span class="desc">storeKey if push was allowed, NO if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#pushRetrieve"></a> 
+			          <h3>pushRetrieve()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Call by the data source whenever you want to push new data out of band 
+    into the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number|Boolean)
+			              </span>
+			              <span class="name">pushRetrieve</span> <span class="params">(recordType, id, dataHash, storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Class)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the SC.Record subclass</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id or null</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">dataHash</span>
+			              
+			              <span class="desc">data hash to load</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">optional store key.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number|Boolean)</span>
+			                <span class="desc">storeKey if push was allowed, NO if not</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readDataHash"></a> 
+			          <h3>readDataHash()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the data hash for the given storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Hash)
+			              </span>
+			              <span class="name">readDataHash</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">key to retrieve</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Hash)</span>
+			                <span class="desc">data hash or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will also 'lock' the hash so that further edits to the parent store will no longer be reflected in this store until you reset.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readEditableDataHash"></a> 
+			          <h3>readEditableDataHash()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the data hash for the storeKey, cloned so that you can edit
+    the contents of the attributes if you like.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Hash)
+			              </span>
+			              <span class="name">readEditableDataHash</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key to retrieve</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Hash)</span>
+			                <span class="desc">the attributes hash</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will do the extra work to make sure that you only clone the attributes one time.</p>
+
+<p>If you use this method to modify data hash, be sure to call dataHashDidChange() when you make edits to record the change.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readEditableProperty"></a> 
+			          <h3>readEditableProperty()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads a property from the hash - cloning it if needed so you can modify 
+    it independently of any parent store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">readEditableProperty</span> <span class="params">(storeKey, propertyName)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">storeKey of data hash</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">propertyName</span>
+			              
+			              <span class="desc">property to read</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">editable property value</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is really only well tested for use with toMany relationships.  Although it is public you generally should not call it directly.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readError"></a> 
+			          <h3>readError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the SC.Error object associated with a specific record.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Error)
+			              </span>
+			              <span class="name">readError</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">The store key of the record.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Error)</span>
+			                <span class="desc">SC.Error or undefined if no error associated with the record.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readQueryError"></a> 
+			          <h3>readQueryError()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the SC.Error object associated with a specific query.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Error)
+			              </span>
+			              <span class="name">readQueryError</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">The SC.Query with which the error is associated.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Error)</span>
+			                <span class="desc">SC.Error or undefined if no error associated with the query.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#readStatus"></a> 
+			          <h3>readStatus()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads the current status for a storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">readStatus</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">status</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will also lock the data hash.  If no status is found, returns SC.RECORD_EMPTY.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#recordArrayWillDestroy"></a> 
+			          <h3>recordArrayWillDestroy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the record array just before it is destroyed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">recordArrayWillDestroy</span> <span class="params">(recordArray)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RecordArray)</span><span class="name">recordArray</span>
+			              
+			              <span class="desc">the record array</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will de-register it from receiving future notifications.</p>
+
+<p>You should never call this method yourself.  Instead call destroy() on the RecordArray directly.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#recordDidChange"></a> 
+			          <h3>recordDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Notes that the data for the given record id has changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">recordDidChange</span> <span class="params">(recordType, id, storeKey, key, if)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the recordType</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">(optional) if passed, ignores recordType and id</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">key</span>
+			              
+			              <span class="desc">that changed (optional)</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">if</span>
+			              
+			              <span class="desc">the change is to statusOnly (optional)</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The record will be committed to the server the next time you commit the root store.  Only call this method on a record in a READY state of some type.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#recordsDidChange"></a> 
+			          <h3>recordsDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Mark a group of records as dirty.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">recordsDidChange</span> <span class="params">(recordTypes, ids, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The records will be committed to the server the next time you commit changes on the root store.  If you have a set of record ids, marking them dirty this way can be faster than retrieving each record and destroying it individually.</p>
+
+<p>You can pass either a single recordType or an array of recordTypes.  If you pass a single recordType, then the record type will be used for each record.  If you pass an array, then each id must have a matching record type in the array.</p>
+
+<p>You can optionally pass an array of storeKeys instead of the recordType and ids.  In this case the first two parameters will be ignored.  This is usually only used by low-level internal methods.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#recordsFor"></a> 
+			          <h3>recordsFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Array of all records currently in the store with the specified
+    type.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Array)
+			              </span>
+			              <span class="name">recordsFor</span> <span class="params">(recordType)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Array)</span>
+			                <span class="desc">array instance - usually SC.RecordArray</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method only reflects the actual records loaded into memory and therefore is not usually needed at runtime.  However you will often use this method for testing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#recordTypeFor"></a> 
+			          <h3>recordTypeFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a storeKey, return the recordType.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Record)
+			              </span>
+			              <span class="name">recordTypeFor</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Record)</span>
+			                <span class="desc">record instance</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#refreshQuery"></a> 
+			          <h3>refreshQuery()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the record array whenever it needs the data source to refresh
+    its contents.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">refreshQuery</span> <span class="params">(query)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Query)</span><span class="name">query</span>
+			              
+			              <span class="desc">the record array query to refresh</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Nested stores will actually just pass this along to the parent store.  The parent store will call fetch() on the data source.</p>
+
+<p>You should never call this method yourself.  Instead call refresh() on the RecordArray directly.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#refreshRecord"></a> 
+			          <h3>refreshRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Refreshes a record from the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">refreshRecord</span> <span class="params">(id, recordType, storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">to id of the record to load</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the expected record type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">(optional) optional store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if the retrieval was a success.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the record has already been loaded in the store, then this method will request a refresh from the dataSource. Otherwise it will attempt to retrieve the record.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#refreshRecords"></a> 
+			          <h3>refreshRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Refreshes a set of records from the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">refreshRecords</span> <span class="params">(recordTypes, ids, storeKeys)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to destroy</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to destroy</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if the retrieval was a success.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the records has already been loaded in the store, then this method will request a refresh from the dataSource. Otherwise it will attempt to retrieve them.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#removeDataHash"></a> 
+			          <h3>removeDataHash()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the data hash from the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">removeDataHash</span> <span class="params">(storeKey, status)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">status</span>
+			              
+			              <span class="desc">optional new status</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">reciever</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This does not imply a deletion of the record.  You could be simply unloading the record.  Eitherway, removing the dataHash will be synced back to the parent store but not to the server.</p>
+
+<p>Note that you can optionally pass a new status to go along with this. If you do not pass a status, it will change the status to SC.RECORD_EMPTY (assuming you just unloaded the record).  If you are deleting the record you may set it to SC.Record.DESTROYED_CLEAN.</p>
+
+<p>Be sure to also call dataHashDidChange() to register this change.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#reset"></a> 
+			          <h3>reset()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Resets the store content.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">reset</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will clear all internal data for all records, resetting them to an EMPTY state.  You generally do not want to call this method yourself, though you may override it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#retrieveRecord"></a> 
+			          <h3>retrieveRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Retrieves a record from the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">retrieveRecord</span> <span class="params">(recordType, id, storeKey, isRefresh)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">class</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">id to retrieve</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">(optional) store key</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">isRefresh</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">storeKey that was retrieved</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the record has already been loaded in the store, then this method will simply return.  Otherwise if your store has a dataSource, this will call the dataSource to retrieve the record.  Generally you will not need to call this method yourself. Instead you can just use find().</p>
+
+<p>This will not actually create a record instance but it will initiate a load of the record from the server.  You can subsequently get a record instance itself using materializeRecord()</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#retrieveRecords"></a> 
+			          <h3>retrieveRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Retrieves a set of records from the server.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">retrieveRecords</span> <span class="params">(recordTypes, ids, storeKeys, isRefresh)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to retrieve</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to retrieve</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">isRefresh</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">storeKeys to be retrieved</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the records has already been loaded in the store, then this method will simply return. Otherwise if your store has a dataSource, this will call the dataSource to retrieve the record.  Generally you will not need to call this method yourself. Instead you can just use find().</p>
+
+<p>This will not actually create a record instance but it will initiate a load of the record from the server.  You can subsequently get a record instance itself using materializeRecord()</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#statusString"></a> 
+			          <h3>statusString()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns string representation of a storeKey, with status.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">statusString</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#storeKeyEditState"></a> 
+			          <h3>storeKeyEditState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the current edit status of a storekey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyEditState</span> <span class="params">(storeKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">edit status</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>May be one of EDITABLE or LOCKED.  Used mostly for unit testing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#storeKeyExists"></a> 
+			          <h3>storeKeyExists()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a primaryKey value for the record, returns the associated
+    storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyExists</span> <span class="params">(id, primaryKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">a record id</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">a storeKey.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>As opposed to storeKeyFor() however, this method will NOT generate a new storeKey but returned undefined.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#storeKeyFor"></a> 
+			          <h3>storeKeyFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Given a recordType and primaryKey, find the storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">storeKeyFor</span> <span class="params">(recordType, primaryKey)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the record type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">primaryKey</span>
+			              
+			              <span class="desc">the primary key</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">storeKey</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the primaryKey has not been assigned a storeKey yet, it will be added.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#storeKeys"></a> 
+			          <h3>storeKeys()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Finds all storeKeys in this store
+    and returns an array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">storeKeys</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">set of storeKeys</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#storeKeysFor"></a> 
+			          <h3>storeKeysFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Finds all storeKeys of a certain record type in this store
+    and returns an array.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">storeKeysFor</span> <span class="params">(recordType)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">set of storeKeys</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#unloadRecord"></a> 
+			          <h3>unloadRecord()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Unloads a record, removing the data hash from the store.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">unloadRecord</span> <span class="params">(recordType, id, storeKey, newStatus)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record)</span><span class="name">recordType</span>
+			              
+			              <span class="desc">the recordType</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">id</span>
+			              
+			              <span class="desc">the record id</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">(optional) if passed, ignores recordType and id</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you try to unload a record that is already destroyed then this method will have no effect. If you unload a record that does not exist or an error then an exception will be raised.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#unloadRecords"></a> 
+			          <h3>unloadRecords()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Unloads a group of records.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">unloadRecords</span> <span class="params">(recordTypes, ids, storeKeys, newStatus)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Record|Array)</span><span class="name">recordTypes</span>
+			              
+			              <span class="desc">class or array of classes</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">ids</span>
+			              
+			              <span class="desc">ids to unload</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">storeKeys</span>
+			              
+			              <span class="desc">(optional) store keys to unload</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you have a set of record ids, unloading them this way can be faster than retrieving each record and unloading it individually.</p>
+
+<p>You can pass either a single recordType or an array of recordTypes.  If you pass a single recordType, then the record type will be used for each record.  If you pass an array, then each id must have a matching record type in the array.</p>
+
+<p>You can optionally pass an array of storeKeys instead of the recordType and ids.  In this case the first two parameters will be ignored.  This is usually only used by low-level internal methods.  You will not usually unload records this way.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#writeDataHash"></a> 
+			          <h3>writeDataHash()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Replaces the data hash for the storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">writeDataHash</span> <span class="params">(storeKey, hash, status)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key to write</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">hash</span>
+			              
+			              <span class="desc">the new hash</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">status</span>
+			              
+			              <span class="desc">the new hash status</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will lock the data hash and mark them as cloned.  This will also call dataHashDidChange() for you.</p>
+
+<p>Note that the hash you set here must be a different object from the original data hash.  Once you make a change here, you must also call dataHashDidChange() to register the changes.</p>
+
+<p>If the data hash does not yet exist in the store, this method will add it. Pass the optional status to edit the status as well.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Store#writeStatus"></a> 
+			          <h3>writeStatus()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Writes the current status for a storeKey.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Store)
+			              </span>
+			              <span class="name">writeStatus</span> <span class="params">(storeKey, newStatus, error)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">storeKey</span>
+			              
+			              <span class="desc">the store key</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">newStatus</span>
+			              
+			              <span class="desc">the new status</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Error)</span><span class="name">error</span>
+			              
+			              <span class="desc">optional error object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Store)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the new status is SC.Record.ERROR, you may also pass an optional error object.  Otherwise this param is ignored.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:57 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

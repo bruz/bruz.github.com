@@ -1,0 +1,4500 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.ScrollView</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.ScrollView
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.View.html#constructor">SC.View</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_desktop_views_scroll.js.html">frameworks/sproutcore/frameworks/desktop/views/scroll.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>Implements a complete scroll view.  This class uses a manual implementation of scrollers in order to properly support clipping frames.</p>
+
+<p>Important Events:</p>
+
+<ul>	<li>contentView frame size changes (to autoshow/hide scrollbar - adjust scrollbar size)</li>
+	<li>horizontalScrollOffset change</li>
+	<li>verticalScrollOffsetChanges</li>
+	<li>scroll wheel events</li>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#_scale"><code>-&nbsp;(Object) _scale [R/W]</code></a>
+					              
+					                <div class="description">The current scale.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#alwaysBounceHorizontal"><code>-&nbsp;(Object) alwaysBounceHorizontal [R/W]</code></a>
+					              
+					                <div class="description">If YES, bouncing will always be enabled in the horizontal direction, even if the content
+    is smaller or the same size as the view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#alwaysBounceVertical"><code>-&nbsp;(Object) alwaysBounceVertical [R/W]</code></a>
+					              
+					                <div class="description">If NO, bouncing will not be enabled in the vertical direction when the content is smaller
+    or the same size as the scroll view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#animatedBackgroundMatrix"><code>-&nbsp;(Array) animatedBackgroundMatrix [R/W]</code></a>
+					              
+					                <div class="description">Set to the matrix used for background image position for animation.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#autohidesHorizontalScroller"><code>-&nbsp;(Object) autohidesHorizontalScroller [R/W]</code></a>
+					              
+					                <div class="description">If YES, the horizontal scroller will autohide if the contentView is
+    smaller than the visible area.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#autohidesVerticalScroller"><code>-&nbsp;(Object) autohidesVerticalScroller [R/W]</code></a>
+					              
+					                <div class="description">If YES, the vertical scroller will autohide if the contentView is
+    smaller than the visible area.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#autoScaleRange"><code>-&nbsp;(Object) autoScaleRange [R/W]</code></a>
+					              
+					                <div class="description">Whether to automatically determine the scale range based on the size of the content.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#canScale"><code>-&nbsp;(Object) canScale [R/W]</code></a>
+					              
+					                <div class="description">Determines whether scaling is allowed.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#canScrollHorizontal"><code>-&nbsp;(Boolean) canScrollHorizontal [R/W]</code></a>
+					              
+					                <div class="description">Returns YES if the view both has a horizontal scroller, the scroller is
+    visible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#canScrollVertical"><code>-&nbsp;(Boolean) canScrollVertical [R/W]</code></a>
+					              
+					                <div class="description">Returns YES if the view both has a horizontal scroller, the scroller is
+    visible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#classNames"><code>-&nbsp;(Object) classNames [R/W]</code></a>
+					              
+					                <div class="description">SC.StackedView.prototype</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#containerView"><code>-&nbsp;(Object) containerView [R/W]</code></a>
+					              
+					                <div class="description">The container view that will contain your main content view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#contentIsIndeterminateKey"><code>-&nbsp;(String) contentIsIndeterminateKey [R/W]</code></a>
+					              
+					                <div class="description">Optionally specify the key used to extract the isIndeterminate value 
+    from the content object.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#contentMaximumKey"><code>-&nbsp;(String) contentMaximumKey [R/W]</code></a>
+					              
+					                <div class="description">Optionally specify the key used to extract the maximum progress value 
+    from the content object.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#contentMinimumKey"><code>-&nbsp;(String) contentMinimumKey [R/W]</code></a>
+					              
+					                <div class="description">Optionally specify the key used to extract the minimum progress value 
+    from the content object.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#contentView"><code>-&nbsp;(Object) contentView [R/W]</code></a>
+					              
+					                <div class="description">The content view you want the scroll view to manage.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#controlSize"><code>-&nbsp;(Object) controlSize [R/W]</code></a>
+					              
+					                <div class="description">Control Size for Menu content: change verticalLineScroll</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#decelerationRate"><code>-&nbsp;(Object) decelerationRate [R/W]</code></a>
+					              
+					                <div class="description">The scroll deceleration rate.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#delaysContentTouches"><code>-&nbsp;(Object) delaysContentTouches [R/W]</code></a>
+					              
+					                <div class="description">Whether to delay touches from passing through to the content.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#hasHorizontalScroller"><code>-&nbsp;(Boolean) hasHorizontalScroller [R/W]</code></a>
+					              
+					                <div class="description">YES if the view should maintain a horizontal scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#hasVerticalScroller"><code>-&nbsp;(Boolean) hasVerticalScroller [R/W]</code></a>
+					              
+					                <div class="description">YES if the view shuld maintain a vertical scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#horizontalAlign"><code>-&nbsp;(Object) horizontalAlign [R/W]</code></a>
+					              
+					                <div class="description">The horizontal alignment for non-filling content inside of the ScrollView.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#horizontalLineScroll"><code>-&nbsp;(Object) horizontalLineScroll [R/W]</code></a>
+					              
+					                <div class="description">Amount to scroll one horizontal line.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#horizontalOverlay"><code>-&nbsp;(Boolean) horizontalOverlay [R/W]</code></a>
+					              
+					                <div class="description">Use this to overlay the horizontal scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#horizontalScrollerLayout"><code>-&nbsp;(Object) horizontalScrollerLayout [R/W]</code></a>
+					              
+					                <div class="description">Use to control the positioning of the horizontal scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#horizontalScrollerView"><code>-&nbsp;(SC.View) horizontalScrollerView [R/W]</code></a>
+					              
+					                <div class="description">The horizontal scroller view class.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#isEnabled"><code>-&nbsp;(Object) isEnabled [R/W]</code></a>
+					              
+					                <div class="description">YES if enable scrollbar, NO to disable it.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#isHorizontalScrollerVisible"><code>-&nbsp;(Boolean) isHorizontalScrollerVisible [R/W]</code></a>
+					              
+					                <div class="description">YES if the horizontal scroller should be visible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#isIndeterminate"><code>-&nbsp;(Boolean) isIndeterminate [R/W]</code></a>
+					              
+					                <div class="description">Set to true if the item in progress is indeterminate.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#isRunning"><code>-&nbsp;(Object) isRunning [R/W]</code></a>
+					              
+					                <div class="description">Set to YES when the process is currently running.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#isVerticalScrollerVisible"><code>-&nbsp;(Boolean) isVerticalScrollerVisible [R/W]</code></a>
+					              
+					                <div class="description">YES if the vertical scroller should be visible.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#layout"><code>-&nbsp;(Object) layout [R/W]</code></a>
+					              
+					                <div class="description">Default layout for a stacked view will fill the parent view but auto-
+    adjust the height of the view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#layoutDirection"><code>-&nbsp;(Object) layoutDirection [R/W]</code></a>
+					              
+					                <div class="description">Determine the layout direction.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#maximum"><code>-&nbsp;(Object) maximum [R/W]</code></a>
+					              
+					                <div class="description">The maximum value of the progress bar.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#maximumHorizontalScrollOffset"><code>-&nbsp;(Number) maximumHorizontalScrollOffset [R/W]</code></a>
+					              
+					                <div class="description">The maximum horizontal scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#maximumScale"><code>-&nbsp;(Object) maximumScale [R/W]</code></a>
+					              
+					                <div class="description">The maximum scale.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#maximumVerticalScrollOffset"><code>-&nbsp;(Number) maximumVerticalScrollOffset [R/W]</code></a>
+					              
+					                <div class="description">The maximum vertical scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#minimum"><code>-&nbsp;(Object) minimum [R/W]</code></a>
+					              
+					                <div class="description">The minimum value of the progress.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#minimumHorizontalScrollOffset"><code>-&nbsp;(Number) minimumHorizontalScrollOffset [R/W]</code></a>
+					              
+					                <div class="description">The minimum horizontal scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#minimumScale"><code>-&nbsp;(Object) minimumScale [R/W]</code></a>
+					              
+					                <div class="description">The minimum scale.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#minimumVerticalScrollOffset"><code>-&nbsp;(Number) minimumVerticalScrollOffset [R/W]</code></a>
+					              
+					                <div class="description">The minimum vertical scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#offsetRange"><code>-&nbsp;(Integer) offsetRange [R/W]</code></a>
+					              
+					                <div class="description">The value of the progress inner offset range.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#ownerScrollValueKey"><code>-&nbsp;(String) ownerScrollValueKey [R/W]</code></a>
+					              
+					                <div class="description">This function overrides the default function in SC.Scroller as 
+    menus only have vertical scrolling.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#scrollDown"><code>-&nbsp;(Object) scrollDown [R/W]</code></a>
+					              
+					                <div class="description">Used to set the scrolling direction of the scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#value"><code>-&nbsp;(Object) value [R/W]</code></a>
+					              
+					                <div class="description">Bind this to the current value of the progress bar.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalAlign"><code>-&nbsp;(Object) verticalAlign [R/W]</code></a>
+					              
+					                <div class="description">The vertical alignment for non-filling content inside of the ScrollView.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalLineScroll"><code>-&nbsp;(Object) verticalLineScroll [R/W]</code></a>
+					              
+					                <div class="description">Amount to scroll one vertical line.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalOverlay"><code>-&nbsp;(Boolean) verticalOverlay [R/W]</code></a>
+					              
+					                <div class="description">Use this to overlay the vertical scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalScrollerBottom"><code>-&nbsp;(Number) verticalScrollerBottom [R/W]</code></a>
+					              
+					                <div class="description">Use this property to set the 'bottom' offset of your vertical scroller, 
+    to make room for a thumb view or other accessory view.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalScrollerLayout"><code>-&nbsp;(Object) verticalScrollerLayout [R/W]</code></a>
+					              
+					                <div class="description">Use to control the positioning of the vertical scroller.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.ScrollView.html#verticalScrollerView"><code>-&nbsp;(SC.View) verticalScrollerView [R/W]</code></a>
+					              
+					                <div class="description">The vertical scroller view class.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#acceptsFirstResponder">acceptsFirstResponder</a>, <a href="../symbols/SC.View.html#backgroundColor">backgroundColor</a>, <a href="../symbols/SC.View.html#childViews">childViews</a>, <a href="../symbols/SC.View.html#childViewsNeedLayout">childViewsNeedLayout</a>, <a href="../symbols/SC.View.html#clippingFrame">clippingFrame</a>, <a href="../symbols/SC.View.html#containerLayer">containerLayer</a>, <a href="../symbols/SC.View.html#contentClippingFrame">contentClippingFrame</a>, <a href="../symbols/SC.View.html#cursor">cursor</a>, <a href="../symbols/SC.View.html#displayProperties">displayProperties</a>, <a href="../symbols/SC.View.html#frame">frame</a>, <a href="../symbols/SC.View.html#isDescendantOf">isDescendantOf</a>, <a href="../symbols/SC.View.html#isEnabledInPane">isEnabledInPane</a>, <a href="../symbols/SC.View.html#isKeyResponder">isKeyResponder</a>, <a href="../symbols/SC.View.html#isTextSelectable">isTextSelectable</a>, <a href="../symbols/SC.View.html#isView">isView</a>, <a href="../symbols/SC.View.html#isVisible">isVisible</a>, <a href="../symbols/SC.View.html#isVisibleInWindow">isVisibleInWindow</a>, <a href="../symbols/SC.View.html#layer">layer</a>, <a href="../symbols/SC.View.html#layerId">layerId</a>, <a href="../symbols/SC.View.html#layerLocationNeedsUpdate">layerLocationNeedsUpdate</a>, <a href="../symbols/SC.View.html#layerNeedsUpdate">layerNeedsUpdate</a>, <a href="../symbols/SC.View.html#layoutStyle">layoutStyle</a>, <a href="../symbols/SC.View.html#nextKeyView">nextKeyView</a>, <a href="../symbols/SC.View.html#nextResponder">nextResponder</a>, <a href="../symbols/SC.View.html#nextValidKeyView">nextValidKeyView</a>, <a href="../symbols/SC.View.html#page">page</a>, <a href="../symbols/SC.View.html#pane">pane</a>, <a href="../symbols/SC.View.html#parentView">parentView</a>, <a href="../symbols/SC.View.html#previousKeyView">previousKeyView</a>, <a href="../symbols/SC.View.html#previousValidKeyView">previousValidKeyView</a>, <a href="../symbols/SC.View.html#recomputeIsVisibleInWindow">recomputeIsVisibleInWindow</a>, <a href="../symbols/SC.View.html#shouldInheritCursor">shouldInheritCursor</a>, <a href="../symbols/SC.View.html#splitView">splitView</a>, <a href="../symbols/SC.View.html#toolTip">toolTip</a>, <a href="../symbols/SC.View.html#touchBoundary">touchBoundary</a>, <a href="../symbols/SC.View.html#updateLayerLocationIfNeeded">updateLayerLocationIfNeeded</a>, <a href="../symbols/SC.View.html#useStaticLayout">useStaticLayout</a>, <a href="../symbols/SC.View.html#wantsAcceleratedLayer">wantsAcceleratedLayer</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#_invokeScrollOnMouseOver">
+		<code class="type">-&nbsp;(void)  _invokeScrollOnMouseOver()</code>
+				              </a>
+				              
+				                <div class="description">We use this function to simulate mouseOver.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#_sc_scroller_valueDidChange">
+		<code class="type">-&nbsp;(void)  _sc_scroller_valueDidChange()</code>
+				              </a>
+				              
+				                <div class="description">This function overrides the default function in SC.Scroller.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#_scrollMenu">
+		<code class="type">-&nbsp;(void)  _scrollMenu()</code>
+				              </a>
+				              
+				                <div class="description">Scroll the menu if it is is an up or down arrow.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#beginTouchTracking">
+		<code class="type">-&nbsp;(void)  beginTouchTracking(evt, starting)</code>
+				              </a>
+				              
+				                <div class="description">Initializes the start state of the gesture.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#computeNowShowing">
+		<code class="type">-&nbsp;(SC.IndexSet)  computeNowShowing(rect)</code>
+				              </a>
+				              
+				                <div class="description">Return full range of its indexes for nowShowing</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#horizontalPageScroll">
+		<code class="type">-&nbsp;(void)  horizontalPageScroll()</code>
+				              </a>
+				              
+				                <div class="description">Amount to scroll one horizontal page.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#horizontalScrollOffset">
+		<code class="type">-&nbsp;(void)  horizontalScrollOffset(key, value)</code>
+				              </a>
+				              
+				                <div class="description">The current horizontal scroll offset.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollBy">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollBy(x, y)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver in the horizontal and vertical directions by the 
+    amount specified, if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollDownLine">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollDownLine(lines)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver down one or more lines if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollDownPage">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollDownPage(pages)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver down one or more page if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollLeftLine">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollLeftLine(lines)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver left one or more lines if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollLeftPage">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollLeftPage(pages)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver left one or more page if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollRightLine">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollRightLine(lines)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver right one or more lines if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollRightPage">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollRightPage(pages)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver right one or more page if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollTo">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollTo(x, y)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver to the specified x,y coordinate.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollToRect">
+		<code class="type">-&nbsp;(Boolean)  scrollToRect(Rectangle)</code>
+				              </a>
+				              
+				                <div class="description">Scroll to the supplied rectangle.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollToVisible">
+		<code class="type">-&nbsp;(Boolean)  scrollToVisible(view)</code>
+				              </a>
+				              
+				                <div class="description">Scroll the view to make the view's frame visible.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollUpLine">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollUpLine(lines)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver up one or more lines if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#scrollUpPage">
+		<code class="type">-&nbsp;(SC.ScrollView)  scrollUpPage(pages)</code>
+				              </a>
+				              
+				                <div class="description">Scrolls the receiver up one or more page if allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#tile">
+		<code class="type">-&nbsp;(void)  tile()</code>
+				              </a>
+				              
+				                <div class="description">Adjusts the layout for the various internal views.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#updateHeight">
+		<code class="type">-&nbsp;(SC.StackedView)  updateHeight(immediately)</code>
+				              </a>
+				              
+				                <div class="description">Updates the height of the stacked view to reflect the current content of 
+    the view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#verticalPageScroll">
+		<code class="type">-&nbsp;(void)  verticalPageScroll()</code>
+				              </a>
+				              
+				                <div class="description">Amount to scroll one vertical page.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.ScrollView#verticalScrollOffset">
+		<code class="type">-&nbsp;(void)  verticalScrollOffset(key, value)</code>
+				              </a>
+				              
+				                <div class="description">The current vertical scroll offset.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#$">$</a>, <a href="../symbols/SC.View.html#adjust">adjust</a>, <a href="../symbols/SC.View.html#appendChild">appendChild</a>, <a href="../symbols/SC.View.html#.applyLocalizedAttributes">applyLocalizedAttributes</a>, <a href="../symbols/SC.View.html#awake">awake</a>, <a href="../symbols/SC.View.html#beginLiveResize">beginLiveResize</a>, <a href="../symbols/SC.View.html#.bind">bind</a>, <a href="../symbols/SC.View.html#.childView">childView</a>, <a href="../symbols/SC.View.html#computeFrameWithParentFrame">computeFrameWithParentFrame</a>, <a href="../symbols/SC.View.html#contextMenu">contextMenu</a>, <a href="../symbols/SC.View.html#convertFrameFromView">convertFrameFromView</a>, <a href="../symbols/SC.View.html#convertFrameToView">convertFrameToView</a>, <a href="../symbols/SC.View.html#.convertLayoutToAnchoredLayout">convertLayoutToAnchoredLayout</a>, <a href="../symbols/SC.View.html#.convertLayoutToCustomLayout">convertLayoutToCustomLayout</a>, <a href="../symbols/SC.View.html#.create">create</a>, <a href="../symbols/SC.View.html#createChildView">createChildView</a>, <a href="../symbols/SC.View.html#createChildViews">createChildViews</a>, <a href="../symbols/SC.View.html#createLayer">createLayer</a>, <a href="../symbols/SC.View.html#.design">design</a>, <a href="../symbols/SC.View.html#destroy">destroy</a>, <a href="../symbols/SC.View.html#destroyLayer">destroyLayer</a>, <a href="../symbols/SC.View.html#didBecomeKeyResponderFrom">didBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#didLoseKeyResponderTo">didLoseKeyResponderTo</a>, <a href="../symbols/SC.View.html#displayDidChange">displayDidChange</a>, <a href="../symbols/SC.View.html#endLiveResize">endLiveResize</a>, <a href="../symbols/SC.View.html#findLayerInParentLayer">findLayerInParentLayer</a>, <a href="../symbols/SC.View.html#hasAcceleratedLayer">hasAcceleratedLayer</a>, <a href="../symbols/SC.View.html#insertBefore">insertBefore</a>, <a href="../symbols/SC.View.html#insertText">insertText</a>, <a href="../symbols/SC.View.html#interpretKeyEvents">interpretKeyEvents</a>, <a href="../symbols/SC.View.html#isContextMenuEnabled">isContextMenuEnabled</a>, <a href="../symbols/SC.View.html#layerIdDidChange">layerIdDidChange</a>, <a href="../symbols/SC.View.html#layoutChildViews">layoutChildViews</a>, <a href="../symbols/SC.View.html#layoutChildViewsIfNeeded">layoutChildViewsIfNeeded</a>, <a href="../symbols/SC.View.html#layoutDidChange">layoutDidChange</a>, <a href="../symbols/SC.View.html#layoutDidChangeFor">layoutDidChangeFor</a>, <a href="../symbols/SC.View.html#layoutView">layoutView</a>, <a href="../symbols/SC.View.html#.loc">loc</a>, <a href="../symbols/SC.View.html#.localization">localization</a>, <a href="../symbols/SC.View.html#parentViewDidChange">parentViewDidChange</a>, <a href="../symbols/SC.View.html#parentViewDidResize">parentViewDidResize</a>, <a href="../symbols/SC.View.html#performKeyEquivalent">performKeyEquivalent</a>, <a href="../symbols/SC.View.html#prepareContext">prepareContext</a>, <a href="../symbols/SC.View.html#.prop">prop</a>, <a href="../symbols/SC.View.html#propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.View.html#removeAllChildren">removeAllChildren</a>, <a href="../symbols/SC.View.html#removeChild">removeChild</a>, <a href="../symbols/SC.View.html#removeFromParent">removeFromParent</a>, <a href="../symbols/SC.View.html#render">render</a>, <a href="../symbols/SC.View.html#renderChildViews">renderChildViews</a>, <a href="../symbols/SC.View.html#renderContext">renderContext</a>, <a href="../symbols/SC.View.html#renderLayout">renderLayout</a>, <a href="../symbols/SC.View.html#replaceAllChildren">replaceAllChildren</a>, <a href="../symbols/SC.View.html#replaceChild">replaceChild</a>, <a href="../symbols/SC.View.html#replaceLayer">replaceLayer</a>, <a href="../symbols/SC.View.html#selectStart">selectStart</a>, <a href="../symbols/SC.View.html#.tagName">tagName</a>, <a href="../symbols/SC.View.html#touchIsInBoundary">touchIsInBoundary</a>, <a href="../symbols/SC.View.html#updateLayer">updateLayer</a>, <a href="../symbols/SC.View.html#updateLayerIfNeeded">updateLayerIfNeeded</a>, <a href="../symbols/SC.View.html#updateLayerLocation">updateLayerLocation</a>, <a href="../symbols/SC.View.html#updateLayout">updateLayout</a>, <a href="../symbols/SC.View.html#viewDidResize">viewDidResize</a>, <a href="../symbols/SC.View.html#.viewFor">viewFor</a>, <a href="../symbols/SC.View.html#willBecomeKeyResponderFrom">willBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#willLoseKeyResponderTo">willLoseKeyResponderTo</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.DelegateSupport.html#constructor">SC.DelegateSupport</a>: </dt><dd><a href="../symbols/SC.DelegateSupport.html#.delegateFor">delegateFor</a>, <a href="../symbols/SC.DelegateSupport.html#.getDelegateProperty">getDelegateProperty</a>, <a href="../symbols/SC.DelegateSupport.html#.invokeDelegateMethod">invokeDelegateMethod</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="_scale"></a> 
+			          <div class="field">
+			            <a name="_scale"></a> 
+			            <h3>_scale
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current scale.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">_scale</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="alwaysBounceHorizontal"></a> 
+			          <div class="field">
+			            <a name="alwaysBounceHorizontal"></a> 
+			            <h3>alwaysBounceHorizontal
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, bouncing will always be enabled in the horizontal direction, even if the content
+    is smaller or the same size as the view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">alwaysBounceHorizontal</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>NO by default.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="alwaysBounceVertical"></a> 
+			          <div class="field">
+			            <a name="alwaysBounceVertical"></a> 
+			            <h3>alwaysBounceVertical
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If NO, bouncing will not be enabled in the vertical direction when the content is smaller
+    or the same size as the scroll view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">alwaysBounceVertical</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>YES by default.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="animatedBackgroundMatrix"></a> 
+			          <div class="field">
+			            <a name="animatedBackgroundMatrix"></a> 
+			            <h3>animatedBackgroundMatrix
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to the matrix used for background image position for animation.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">animatedBackgroundMatrix</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="autohidesHorizontalScroller"></a> 
+			          <div class="field">
+			            <a name="autohidesHorizontalScroller"></a> 
+			            <h3>autohidesHorizontalScroller
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, the horizontal scroller will autohide if the contentView is
+    smaller than the visible area.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">autohidesHorizontalScroller</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You must set hasHorizontalScroller to YES for this property to have any effect.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="autohidesVerticalScroller"></a> 
+			          <div class="field">
+			            <a name="autohidesVerticalScroller"></a> 
+			            <h3>autohidesVerticalScroller
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, the vertical scroller will autohide if the contentView is
+    smaller than the visible area.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">autohidesVerticalScroller</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You must set hasVerticalScroller to YES for this property to have any effect.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="autoScaleRange"></a> 
+			          <div class="field">
+			            <a name="autoScaleRange"></a> 
+			            <h3>autoScaleRange
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether to automatically determine the scale range based on the size of the content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">autoScaleRange</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canScale"></a> 
+			          <div class="field">
+			            <a name="canScale"></a> 
+			            <h3>canScale
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Determines whether scaling is allowed.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">canScale</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canScrollHorizontal"></a> 
+			          <div class="field">
+			            <a name="canScrollHorizontal"></a> 
+			            <h3>canScrollHorizontal
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES if the view both has a horizontal scroller, the scroller is
+    visible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">canScrollHorizontal</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="canScrollVertical"></a> 
+			          <div class="field">
+			            <a name="canScrollVertical"></a> 
+			            <h3>canScrollVertical
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns YES if the view both has a horizontal scroller, the scroller is
+    visible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">canScrollVertical</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="classNames"></a> 
+			          <div class="field">
+			            <a name="classNames"></a> 
+			            <h3>classNames
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">SC.StackedView.prototype</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">classNames</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="containerView"></a> 
+			          <div class="field">
+			            <a name="containerView"></a> 
+			            <h3>containerView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The container view that will contain your main content view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">containerView</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can replace this property with your own custom subclass if you prefer.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="contentIsIndeterminateKey"></a> 
+			          <div class="field">
+			            <a name="contentIsIndeterminateKey"></a> 
+			            <h3>contentIsIndeterminateKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optionally specify the key used to extract the isIndeterminate value 
+    from the content object.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">contentIsIndeterminateKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is set to null then the isIndeterminate value will not be derived from the content object.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="contentMaximumKey"></a> 
+			          <div class="field">
+			            <a name="contentMaximumKey"></a> 
+			            <h3>contentMaximumKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optionally specify the key used to extract the maximum progress value 
+    from the content object.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">contentMaximumKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is set to null then the maximum value will not be derived from the content object.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="contentMinimumKey"></a> 
+			          <div class="field">
+			            <a name="contentMinimumKey"></a> 
+			            <h3>contentMinimumKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Optionally specify the key used to extract the minimum progress value 
+    from the content object.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">contentMinimumKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this is set to null then the minimum value will not be derived from the content object.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="contentView"></a> 
+			          <div class="field">
+			            <a name="contentView"></a> 
+			            <h3>contentView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The content view you want the scroll view to manage.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">contentView</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will be assigned to the contentView of the clipView also.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="controlSize"></a> 
+			          <div class="field">
+			            <a name="controlSize"></a> 
+			            <h3>controlSize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Control Size for Menu content: change verticalLineScroll</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">controlSize</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="decelerationRate"></a> 
+			          <div class="field">
+			            <a name="decelerationRate"></a> 
+			            <h3>decelerationRate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The scroll deceleration rate.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">decelerationRate</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="delaysContentTouches"></a> 
+			          <div class="field">
+			            <a name="delaysContentTouches"></a> 
+			            <h3>delaysContentTouches
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether to delay touches from passing through to the content.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">delaysContentTouches</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasHorizontalScroller"></a> 
+			          <div class="field">
+			            <a name="hasHorizontalScroller"></a> 
+			            <h3>hasHorizontalScroller
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the view should maintain a horizontal scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">hasHorizontalScroller</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This property must be set when the view is created.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasVerticalScroller"></a> 
+			          <div class="field">
+			            <a name="hasVerticalScroller"></a> 
+			            <h3>hasVerticalScroller
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the view shuld maintain a vertical scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">hasVerticalScroller</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This property must be set when the view is created.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="horizontalAlign"></a> 
+			          <div class="field">
+			            <a name="horizontalAlign"></a> 
+			            <h3>horizontalAlign
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The horizontal alignment for non-filling content inside of the ScrollView.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">horizontalAlign</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="horizontalLineScroll"></a> 
+			          <div class="field">
+			            <a name="horizontalLineScroll"></a> 
+			            <h3>horizontalLineScroll
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Amount to scroll one horizontal line.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">horizontalLineScroll</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Used by the default implementation of scrollLeftLine() and scrollRightLine(). Defaults to 20px.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="horizontalOverlay"></a> 
+			          <div class="field">
+			            <a name="horizontalOverlay"></a> 
+			            <h3>horizontalOverlay
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Use this to overlay the horizontal scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">horizontalOverlay</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="horizontalScrollerLayout"></a> 
+			          <div class="field">
+			            <a name="horizontalScrollerLayout"></a> 
+			            <h3>horizontalScrollerLayout
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Use to control the positioning of the horizontal scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">horizontalScrollerLayout</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you do not set 'horizontalOverlay' to YES, then the content view will be automatically sized to meet the top edge of the horizontal scroller, wherever it may be.</p>
+
+<p>If you do set 'horizontalOverlay' to YES, then the scroller view will “float on top” of the content view.</p>
+
+<p>Example: { left: 0, bottom: 0, right: 0 }</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="horizontalScrollerView"></a> 
+			          <div class="field">
+			            <a name="horizontalScrollerView"></a> 
+			            <h3>horizontalScrollerView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The horizontal scroller view class.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">horizontalScrollerView</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will be replaced with a view instance when the ScrollView is created unless hasHorizontalScroller is NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEnabled"></a> 
+			          <div class="field">
+			            <a name="isEnabled"></a> 
+			            <h3>isEnabled
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if enable scrollbar, NO to disable it.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isEnabled</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Scrollbars will automatically disable if the maximum scroll width does not exceed their capacity.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isHorizontalScrollerVisible"></a> 
+			          <div class="field">
+			            <a name="isHorizontalScrollerVisible"></a> 
+			            <h3>isHorizontalScrollerVisible
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the horizontal scroller should be visible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isHorizontalScrollerVisible</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>You can change this property value anytime to show or hide the horizontal scroller.  If you do not want to use a horizontal scroller at all, you should instead set hasHorizontalScroller to NO to avoid creating a scroller view in the first place.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isIndeterminate"></a> 
+			          <div class="field">
+			            <a name="isIndeterminate"></a> 
+			            <h3>isIndeterminate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to true if the item in progress is indeterminate.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isIndeterminate</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This may be overridden by the actual value.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRunning"></a> 
+			          <div class="field">
+			            <a name="isRunning"></a> 
+			            <h3>isRunning
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES when the process is currently running.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isRunning</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will cause the progress bar to animate, especially if it is indeterminate.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isVerticalScrollerVisible"></a> 
+			          <div class="field">
+			            <a name="isVerticalScrollerVisible"></a> 
+			            <h3>isVerticalScrollerVisible
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the vertical scroller should be visible.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isVerticalScrollerVisible</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>For SC.MenuScroll the vertical scroller is always there we just hide the arrows to scroll.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="layout"></a> 
+			          <div class="field">
+			            <a name="layout"></a> 
+			            <h3>layout
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Default layout for a stacked view will fill the parent view but auto-
+    adjust the height of the view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">layout</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="layoutDirection"></a> 
+			          <div class="field">
+			            <a name="layoutDirection"></a> 
+			            <h3>layoutDirection
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Determine the layout direction.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">layoutDirection</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Determines whether the scrollbar should appear horizontal or vertical.  This must be set when the view is created. Changing this once the view has been created will have no effect.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="maximum"></a> 
+			          <div class="field">
+			            <a name="maximum"></a> 
+			            <h3>maximum
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The maximum value of the progress bar.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">maximum</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="maximumHorizontalScrollOffset"></a> 
+			          <div class="field">
+			            <a name="maximumHorizontalScrollOffset"></a> 
+			            <h3>maximumHorizontalScrollOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The maximum horizontal scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">maximumHorizontalScrollOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If horizontal scrolling is disabled, this will always return 0.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="maximumScale"></a> 
+			          <div class="field">
+			            <a name="maximumScale"></a> 
+			            <h3>maximumScale
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The maximum scale.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">maximumScale</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="maximumVerticalScrollOffset"></a> 
+			          <div class="field">
+			            <a name="maximumVerticalScrollOffset"></a> 
+			            <h3>maximumVerticalScrollOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The maximum vertical scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">maximumVerticalScrollOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If vertical scrolling is disabled, this will always return 0 (or whatever alignment dictates).</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="minimum"></a> 
+			          <div class="field">
+			            <a name="minimum"></a> 
+			            <h3>minimum
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The minimum value of the progress.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">minimum</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="minimumHorizontalScrollOffset"></a> 
+			          <div class="field">
+			            <a name="minimumHorizontalScrollOffset"></a> 
+			            <h3>minimumHorizontalScrollOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The minimum horizontal scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">minimumHorizontalScrollOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If horizontal scrolling is disabled, this will always return 0 (or whatever alignment dictates).</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="minimumScale"></a> 
+			          <div class="field">
+			            <a name="minimumScale"></a> 
+			            <h3>minimumScale
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The minimum scale.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">minimumScale</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="minimumVerticalScrollOffset"></a> 
+			          <div class="field">
+			            <a name="minimumVerticalScrollOffset"></a> 
+			            <h3>minimumVerticalScrollOffset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The minimum vertical scroll offset allowed given the current contentView 
+    size and the size of the scroll view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">minimumVerticalScrollOffset</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If vertical scrolling is disabled, this will always return 0 (or whatever alignment dictates).</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="offsetRange"></a> 
+			          <div class="field">
+			            <a name="offsetRange"></a> 
+			            <h3>offsetRange
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The value of the progress inner offset range.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Integer
+		              </span>
+		              <span class="name">offsetRange</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Should be the same as width of image. Default it to 24</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="ownerScrollValueKey"></a> 
+			          <div class="field">
+			            <a name="ownerScrollValueKey"></a> 
+			            <h3>ownerScrollValueKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This function overrides the default function in SC.Scroller as 
+    menus only have vertical scrolling.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">ownerScrollValueKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="scrollDown"></a> 
+			          <div class="field">
+			            <a name="scrollDown"></a> 
+			            <h3>scrollDown
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Used to set the scrolling direction of the scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">scrollDown</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="value"></a> 
+			          <div class="field">
+			            <a name="value"></a> 
+			            <h3>value
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Bind this to the current value of the progress bar.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">value</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Note that by default an empty value will disable the progress bar and a multiple value will make it indeterminate.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalAlign"></a> 
+			          <div class="field">
+			            <a name="verticalAlign"></a> 
+			            <h3>verticalAlign
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The vertical alignment for non-filling content inside of the ScrollView.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">verticalAlign</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalLineScroll"></a> 
+			          <div class="field">
+			            <a name="verticalLineScroll"></a> 
+			            <h3>verticalLineScroll
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Amount to scroll one vertical line.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">verticalLineScroll</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Defaults to 20px.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalOverlay"></a> 
+			          <div class="field">
+			            <a name="verticalOverlay"></a> 
+			            <h3>verticalOverlay
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Use this to overlay the vertical scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">verticalOverlay</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This ensures that the container frame will not resize to accomodate the vertical scroller, hence overlaying the scroller on top of the container.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalScrollerBottom"></a> 
+			          <div class="field">
+			            <a name="verticalScrollerBottom"></a> 
+			            <h3>verticalScrollerBottom
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Use this property to set the 'bottom' offset of your vertical scroller, 
+    to make room for a thumb view or other accessory view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">verticalScrollerBottom</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Default is 0.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalScrollerLayout"></a> 
+			          <div class="field">
+			            <a name="verticalScrollerLayout"></a> 
+			            <h3>verticalScrollerLayout
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Use to control the positioning of the vertical scroller.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">verticalScrollerLayout</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If you do not set 'verticalOverlay' to YES, then the content view will be automatically sized to meet the left edge of the vertical scroller, wherever it may be. This allows you to easily, for example, have “one pixel higher and one pixel lower” scroll bars that blend into their parent views.</p>
+
+<p>If you do set 'verticalOverlay' to YES, then the scroller view will “float on top” of the content view.</p>
+
+<p>Example: { top: -1, bottom: -1, right: 0 }</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="verticalScrollerView"></a> 
+			          <div class="field">
+			            <a name="verticalScrollerView"></a> 
+			            <h3>verticalScrollerView
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The vertical scroller view class.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.View
+		              </span>
+		              <span class="name">verticalScrollerView</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will be replaced with a view instance when the ScrollView is created unless hasVerticalScroller is NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#_invokeScrollOnMouseOver"></a> 
+			          <h3>_invokeScrollOnMouseOver()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">We use this function to simulate mouseOver.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_invokeScrollOnMouseOver</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It checks for the flag isMouseOver which is turned on when mouseEntered is called and turned off when mouseExited is called.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#_sc_scroller_valueDidChange"></a> 
+			          <h3>_sc_scroller_valueDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This function overrides the default function in SC.Scroller.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_sc_scroller_valueDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>SC.MenuScroller and SC.MenuScroll use valueBinding so this function is not neccesary.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#_scrollMenu"></a> 
+			          <h3>_scrollMenu()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scroll the menu if it is is an up or down arrow.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">_scrollMenu</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is called by the function that simulates mouseOver.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#beginTouchTracking"></a> 
+			          <h3>beginTouchTracking()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Initializes the start state of the gesture.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">beginTouchTracking</span> <span class="params">(evt, starting)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Event)</span><span class="name">evt</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>We keep information about the initial location of the touch so we can disambiguate between a tap and a drag.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#computeNowShowing"></a> 
+			          <h3>computeNowShowing()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Return full range of its indexes for nowShowing</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">computeNowShowing</span> <span class="params">(rect)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">full range of indexes</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#horizontalPageScroll"></a> 
+			          <h3>horizontalPageScroll()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Amount to scroll one horizontal page.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">horizontalPageScroll</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Used by the default implementation of scrollLeftPage() and scrollRightPage().  Defaults to current innerFrame width.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#horizontalScrollOffset"></a> 
+			          <h3>horizontalScrollOffset()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The current horizontal scroll offset.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">horizontalScrollOffset</span> <span class="params">(key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Changing this value will update both the contentView and the horizontal scroller, if there is one.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollBy"></a> 
+			          <h3>scrollBy()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver in the horizontal and vertical directions by the 
+    amount specified, if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollBy</span> <span class="params">(x, y)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">x</span>
+			              
+			              <span class="desc">{Number} change in the x direction (or hash)</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">y</span>
+			              
+			              <span class="desc">{Number} change in the y direction</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The actual scroll amount will be constrained by the current scroll view settings.</p>
+
+<p>If you only want to scroll in one direction, pass null or 0 for the other direction.  You can also optionally pass a Hash for the first parameter with x and y coordinates.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollDownLine"></a> 
+			          <h3>scrollDownLine()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver down one or more lines if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollDownLine</span> <span class="params">(lines)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">lines</span>
+			              
+			              <span class="desc">{Number} options number of lines</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of lines is not specified, scrolls one line.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollDownPage"></a> 
+			          <h3>scrollDownPage()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver down one or more page if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollDownPage</span> <span class="params">(pages)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">pages</span>
+			              
+			              <span class="desc">{Number} options number of pages</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of pages is not specified, scrolls one page.  The page size is determined by the verticalPageScroll value.  By default this is the size of the current scrollable area.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollLeftLine"></a> 
+			          <h3>scrollLeftLine()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver left one or more lines if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollLeftLine</span> <span class="params">(lines)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">lines</span>
+			              
+			              <span class="desc">{Number} options number of lines</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of lines is not specified, scrolls one line.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollLeftPage"></a> 
+			          <h3>scrollLeftPage()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver left one or more page if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollLeftPage</span> <span class="params">(pages)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">pages</span>
+			              
+			              <span class="desc">{Number} options number of pages</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of pages is not specified, scrolls one page.  The page size is determined by the verticalPageScroll value.  By default this is the size of the current scrollable area.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollRightLine"></a> 
+			          <h3>scrollRightLine()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver right one or more lines if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollRightLine</span> <span class="params">(lines)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">lines</span>
+			              
+			              <span class="desc">{Number} options number of lines</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of lines is not specified, scrolls one line.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollRightPage"></a> 
+			          <h3>scrollRightPage()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver right one or more page if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollRightPage</span> <span class="params">(pages)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">pages</span>
+			              
+			              <span class="desc">{Number} options number of pages</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of pages is not specified, scrolls one page.  The page size is determined by the verticalPageScroll value.  By default this is the size of the current scrollable area.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollTo"></a> 
+			          <h3>scrollTo()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver to the specified x,y coordinate.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollTo</span> <span class="params">(x, y)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">x</span>
+			              
+			              <span class="desc">{Number} the x scroll location</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">y</span>
+			              
+			              <span class="desc">{Number} the y scroll location</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This should be the offset into the contentView you want to appear at the top-left corner of the scroll view.</p>
+
+<p>This method will contrain the actual scroll based on whether the view can scroll in the named direction and the maximum distance it can scroll.</p>
+
+<p>If you only want to scroll in one direction, pass null for the other direction.  You can also optionally pass a Hash for the first parameter with x and y coordinates.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollToRect"></a> 
+			          <h3>scrollToRect()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scroll to the supplied rectangle.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">scrollToRect</span> <span class="params">(Rectangle)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(rect)</span><span class="name">Rectangle</span>
+			              
+			              <span class="desc">to scroll to.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if scroll position was changed.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollToVisible"></a> 
+			          <h3>scrollToVisible()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scroll the view to make the view's frame visible.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">scrollToVisible</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.View)</span><span class="name">view</span>
+			              
+			              <span class="desc">view to scroll or null to scroll receiver visible</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if scroll position was changed</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For this to make sense, the view should be a subview of the contentView.  Otherwise the results will be undefined.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollUpLine"></a> 
+			          <h3>scrollUpLine()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver up one or more lines if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollUpLine</span> <span class="params">(lines)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">lines</span>
+			              
+			              <span class="desc">{Number} options number of lines</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of lines is not specified, scrolls one line.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#scrollUpPage"></a> 
+			          <h3>scrollUpPage()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Scrolls the receiver up one or more page if allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.ScrollView)
+			              </span>
+			              <span class="name">scrollUpPage</span> <span class="params">(pages)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">pages</span>
+			              
+			              <span class="desc">{Number} options number of pages</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.ScrollView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If number of pages is not specified, scrolls one page.  The page size is determined by the verticalPageScroll value.  By default this is the size of the current scrollable area.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#tile"></a> 
+			          <h3>tile()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adjusts the layout for the various internal views.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">tile</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called once when the scroll view is first configured and then anytime a scroller is shown or hidden.  You can call this method yourself as well to retile.</p>
+
+<p>You may also want to override this method to handle layout for any additional controls you have added to the view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#updateHeight"></a> 
+			          <h3>updateHeight()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Updates the height of the stacked view to reflect the current content of 
+    the view.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.StackedView)
+			              </span>
+			              <span class="name">updateHeight</span> <span class="params">(immediately)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">immediately</span>
+			              
+			              <span class="desc">YES to update immedately</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.StackedView)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is called automatically whenever an item view is reloaded. You can also call this method directly if the height of one of your views has changed.</p>
+
+<p>The height will be recomputed based on the actual location and dimensions of the last child view.</p>
+
+<p>Note that normally this method will defer actually updating the height of the view until the end of the run loop.  You can force an immediate update by passing YES to the "immediately" parameter.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#verticalPageScroll"></a> 
+			          <h3>verticalPageScroll()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Amount to scroll one vertical page.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">verticalPageScroll</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Used by the default implementation of scrollUpPage() and scrollDownPage(). Defaults to current frame height.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.ScrollView#verticalScrollOffset"></a> 
+			          <h3>verticalScrollOffset()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">The current vertical scroll offset.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">verticalScrollOffset</span> <span class="params">(key, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Changing this value will update both the contentView and the vertical scroller, if there is one.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

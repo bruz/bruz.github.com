@@ -1,0 +1,1161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.CollectionContent</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.CollectionContent
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_mixins_collection_content.js.html">frameworks/sproutcore/frameworks/foundation/mixins/collection_content.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>This mixin provides standard methods used by a CollectionView to provide additional meta-data about content in a collection view such as selection or enabled state.</p>
+
+<p>You can apply this mixin to a class that you set as a delegate or to the object you set as content.  SC.ArrayControllers automatically implement this mixin.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.CollectionContent.html#.isCollectionContent"><code>+&nbsp;(Boolean) isCollectionContent [R/W]</code></a>
+					              
+					                <div class="description">Used to detect the mixin by SC.CollectionView</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentGroupIndexes">
+		<code class="type">+&nbsp;(SC.IndexSet)  contentGroupIndexes(view, content)</code>
+				              </a>
+				              
+				                <div class="description">Optionally return an index set containing the indexes that may be group
+    views.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexCollapse">
+		<code class="type">+&nbsp;(void)  contentIndexCollapse(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Called to collapse a content index item if it is currently in an open 
+    disclosure state.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexDisclosureState">
+		<code class="type">+&nbsp;(Boolean)  contentIndexDisclosureState(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns a constant indicating the disclosure state of the item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexExpand">
+		<code class="type">+&nbsp;(void)  contentIndexExpand(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Called to expand a content index item if it is currently in a closed 
+    disclosure state.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexIsEnabled">
+		<code class="type">+&nbsp;(Boolean)  contentIndexIsEnabled(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the content index should be enabled.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexIsGroup">
+		<code class="type">+&nbsp;(Boolean)  contentIndexIsGroup(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the item at the specified content index should be rendered
+    using the groupExampleView instead of the regular exampleView.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexIsSelected">
+		<code class="type">+&nbsp;(Boolean)  contentIndexIsSelected(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Return YES if the content index should be selected.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionContent.contentIndexOutlineLevel">
+		<code class="type">+&nbsp;(Boolean)  contentIndexOutlineLevel(view, content, idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns the outline level for the item at the specified index.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".isCollectionContent"></a> 
+			          <div class="field">
+			            <a name=".isCollectionContent"></a> 
+			            <h3>isCollectionContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Used to detect the mixin by SC.CollectionView</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isCollectionContent</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentGroupIndexes"></a> 
+			          <h3>contentGroupIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Optionally return an index set containing the indexes that may be group
+    views.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">contentGroupIndexes</span> <span class="params">(view, content)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the calling view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>For each group view, the delegate will actually be asked to confirm the view is a group using the contentIndexIsGroup() method.</p>
+
+<p>If grouping is not enabled, return null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexCollapse"></a> 
+			          <h3>contentIndexCollapse()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called to collapse a content index item if it is currently in an open 
+    disclosure state.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexCollapse</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation does nothing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexDisclosureState"></a> 
+			          <h3>contentIndexDisclosureState()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns a constant indicating the disclosure state of the item.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contentIndexDisclosureState</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Must be one of SC.BRANCH_OPEN, SC.BRANCH_CLOSED, SC.LEAF_NODE.  If you return one of the BRANCH options then the item may be rendered with a disclosure triangle open or closed.  If you return SC.LEAF_NODe then the item will be rendered as a leaf node.</p>
+
+<p>Default returns SC.LEAF_NODE.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexExpand"></a> 
+			          <h3>contentIndexExpand()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called to expand a content index item if it is currently in a closed 
+    disclosure state.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">contentIndexExpand</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(void)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The default implementation does nothing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexIsEnabled"></a> 
+			          <h3>contentIndexIsEnabled()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the content index should be enabled.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contentIndexIsEnabled</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Default looks at the isEnabled state of the collection view. looks at the selection property on the view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexIsGroup"></a> 
+			          <h3>contentIndexIsGroup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the item at the specified content index should be rendered
+    using the groupExampleView instead of the regular exampleView.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contentIndexIsGroup</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that a group view is different from a branch/leaf view.  Group views often appear with different layout and a different look and feel.</p>
+
+<p>Default always returns NO.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexIsSelected"></a> 
+			          <h3>contentIndexIsSelected()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Return YES if the content index should be selected.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contentIndexIsSelected</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Default behavior looks at the selection property on the view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionContent.contentIndexOutlineLevel"></a> 
+			          <h3>contentIndexOutlineLevel()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the outline level for the item at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">contentIndexOutlineLevel</span> <span class="params">(view, content, idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Array)</span><span class="name">content</span>
+			              
+			              <span class="desc">the content object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the content index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES, NO, or SC.MIXED_STATE</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Can be used to display hierarchical lists.</p>
+
+<p>Default always returns -1 (no outline).</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:51 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

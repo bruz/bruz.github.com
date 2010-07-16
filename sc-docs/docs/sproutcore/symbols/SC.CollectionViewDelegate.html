@@ -1,0 +1,1569 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.CollectionViewDelegate</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.CollectionViewDelegate
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_desktop_mixins_collection_view_delegate.js.html">frameworks/sproutcore/frameworks/desktop/mixins/collection_view_delegate.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>A Collection View Delegate is consulted by a SC.CollectionView's to make policy decisions about certain behaviors such as selection control and drag and drop.  If you need to control other aspects of your data, you may also want to add the SC.CollectionContent mixin.</p>
+
+<p>To act as a Collection Delegate, just apply this mixin to your class.  You must then set the "delegate" property on the CollectionView to your object.</p>
+
+<p>Alternatively, if no delegate is set on a CollectionView, but the content implements this mixin, the content object will be used as the delegate instead.</p>
+
+<p>If you set an ArrayController or its arrangedObjects property as the content of a CollectionView, the ArrayController will automatically act as the delegate for the view.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.CollectionViewDelegate.html#.ghostActsLikeCursor"><code>+&nbsp;(Boolean) ghostActsLikeCursor [R/W]</code></a>
+					              
+					                <div class="description">Allows the ghost view created in collectionViewDragViewFor to be displayed
+    like a cursor instead of the default implementation.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.CollectionViewDelegate.html#.isCollectionViewDelegate"><code>+&nbsp;(Object) isCollectionViewDelegate [R/W]</code></a>
+					              
+					                <div class="description">Used to detect the mixin by SC.CollectionView</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewComputeDragOperations">
+		<code class="type">+&nbsp;(Number)  collectionViewComputeDragOperations(view, drag, proposedDragOperations)</code>
+				              </a>
+				              
+				                <div class="description">Called once during a drag the first time view is entered.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewDeleteContent">
+		<code class="type">+&nbsp;(Boolean)  collectionViewDeleteContent(view, indexes, indexes)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view to actually delete the selected items.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewDragDataForType">
+		<code class="type">+&nbsp;(Object)  collectionViewDragDataForType(view, dataType, drag)</code>
+				              </a>
+				              
+				                <div class="description">Called by a collection view when a drag concludes to give you the option
+    to provide the drag data for the drop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewDragDataTypes">
+		<code class="type">+&nbsp;(Array)  collectionViewDragDataTypes(view)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view just before it starts a drag so that 
+    you can provide the data types you would like to support in the data.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewDragViewFor">
+		<code class="type">+&nbsp;(SC.View)  collectionViewDragViewFor(view, dragContent)</code>
+				              </a>
+				              
+				                <div class="description">Renders a drag view for the passed content indexes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewPerformDragOperation">
+		<code class="type">+&nbsp;()  collectionViewPerformDragOperation(view, drag, op, proposedInsertionIndex, proposedDropOperation)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view to actually accept a drop.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewSelectionForProposedSelection">
+		<code class="type">+&nbsp;(SC.IndexSet)  collectionViewSelectionForProposedSelection(view, sel)</code>
+				              </a>
+				              
+				                <div class="description">This method will be called anytime the collection view is about to
+    change the selection in response to user mouse clicks or keyboard events.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewShouldBeginDrag">
+		<code class="type">+&nbsp;(Boolean)  collectionViewShouldBeginDrag(view)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view just before it starts a drag to give you
+    an opportunity to decide if the drag should be allowed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewShouldDeleteIndexes">
+		<code class="type">+&nbsp;(SC.IndexSet)  collectionViewShouldDeleteIndexes(view, indexes)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view whenever the deleteSelection() method is
+    called.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewShouldDeselectIndexes">
+		<code class="type">+&nbsp;(SC.IndexSet)  collectionViewShouldDeselectIndexes(view, indexes)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection when attempting to deselect an item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewShouldSelectIndexes">
+		<code class="type">+&nbsp;(SC.IndexSet)  collectionViewShouldSelectIndexes(view, indexes, extend)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection when attempting to select an item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.CollectionViewDelegate.collectionViewValidateDragOperation">
+		<code class="type">+&nbsp;()  collectionViewValidateDragOperation(view, drag, op, proposedInsertionIndex, proposedDropOperation)</code>
+				              </a>
+				              
+				                <div class="description">Called by the collection view during a drag to let you determine the
+    kind and location of a drop you might want to accept.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".ghostActsLikeCursor"></a> 
+			          <div class="field">
+			            <a name=".ghostActsLikeCursor"></a> 
+			            <h3>ghostActsLikeCursor
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Allows the ghost view created in collectionViewDragViewFor to be displayed
+    like a cursor instead of the default implementation.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">ghostActsLikeCursor</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This sets the view origin to be the location of the mouse cursor.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".isCollectionViewDelegate"></a> 
+			          <div class="field">
+			            <a name=".isCollectionViewDelegate"></a> 
+			            <h3>isCollectionViewDelegate
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Used to detect the mixin by SC.CollectionView</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isCollectionViewDelegate</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewComputeDragOperations"></a> 
+			          <h3>collectionViewComputeDragOperations()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called once during a drag the first time view is entered.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">collectionViewComputeDragOperations</span> <span class="params">(view, drag, proposedDragOperations)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view that initiated the drag</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Drag)</span><span class="name">drag</span>
+			              
+			              <span class="desc">the drag object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">proposedDragOperations</span>
+			              
+			              <span class="desc">proposed logical OR of allowed drag operations.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc">the allowed drag operations. Defaults to op</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Return all possible drag operations OR'd together.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewDeleteContent"></a> 
+			          <h3>collectionViewDeleteContent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view to actually delete the selected items.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">collectionViewDeleteContent</span> <span class="params">(view, indexes, indexes)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">the items to delete</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if the deletion was a success.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The default behavior will use standard array operators to delete the indexes from the array.  You can implement this method to provide your own deletion method.</p>
+
+<p>If you simply want to control the items to be deleted, you should instead implement collectionViewShouldDeleteItems().  This method will only be called if canDeleteContent is YES and collectionViewShouldDeleteIndexes() returns a non-empty index set</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewDragDataForType"></a> 
+			          <h3>collectionViewDragDataForType()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a collection view when a drag concludes to give you the option
+    to provide the drag data for the drop.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">collectionViewDragDataForType</span> <span class="params">(view, dataType, drag)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">view</span>
+			              
+			              <span class="desc">{SC.CollectionView} 
+      the collection view that initiated the drag</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">dataType</span>
+			              
+			              <span class="desc">{String} the data type to provide</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">drag</span>
+			              
+			              <span class="desc">{SC.Drag} the drag object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">the data object or null if the data could not be provided.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This method should be implemented essentially as you would implement the dragDataForType() if you were a drag data source.  You will never be asked to provide drag data for a reorder event, only for other types of data.</p>
+
+<p>The default implementation returns null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewDragDataTypes"></a> 
+			          <h3>collectionViewDragDataTypes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view just before it starts a drag so that 
+    you can provide the data types you would like to support in the data.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">collectionViewDragDataTypes</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">view</span>
+			              
+			              <span class="desc">{SC.CollectionView} the collection view to begin dragging.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc">array of supported data types.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can implement this method to return an array of the data types you will provide for the drag data.</p>
+
+<p>If you return null or an empty array, can you have set canReorderContent to YES on the CollectionView, then the drag will go ahead but only reordering will be allowed.  If canReorderContent is NO, then the drag will not be allowed to start.</p>
+
+<p>If you simply want to control whether a drag is allowed or not, you should instead implement collectionViewShouldBeginDrag().</p>
+
+<p>The default returns an empty array.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewDragViewFor"></a> 
+			          <h3>collectionViewDragViewFor()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Renders a drag view for the passed content indexes.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.View)
+			              </span>
+			              <span class="name">collectionViewDragViewFor</span> <span class="params">(view, dragContent)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">dragContent</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.View)</span>
+			                <span class="desc">view or null</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you return null from this, then a default drag view will be generated for you.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewPerformDragOperation"></a> 
+			          <h3>collectionViewPerformDragOperation()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view to actually accept a drop.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">collectionViewPerformDragOperation</span> <span class="params">(view, drag, op, proposedInsertionIndex, proposedDropOperation)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">view</span>
+			              
+			              <span class="desc">{SC.CollectionView}</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">drag</span>
+			              
+			              <span class="desc">{SC.Drag} the current drag object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">op</span>
+			              
+			              <span class="desc">{Number} proposed logical OR of allowed drag operations.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">proposedInsertionIndex</span>
+			              
+			              <span class="desc">{Number} an index into the content array representing the proposed insertion point.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">proposedDropOperation</span>
+			              
+			              <span class="desc">{String} the proposed drop operation.  Will be one of SC.DROP_ON, SC.DROP_BEFORE, or SC.DROP_ANY.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                
+			                <span class="desc">the allowed drag operation.  Defaults to proposedDragOperation</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will only be invoked AFTER your validateDrop method has been called to determine if you want to even allow the drag operation to go through.</p>
+
+<p>You should actually make changes to the data model if needed here and then return the actual drag operation that was performed.  If you return SC.DRAG_NONE and the dragOperation was SC.DRAG_REORDER, then the default reorder behavior will be provided by the collection view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewSelectionForProposedSelection"></a> 
+			          <h3>collectionViewSelectionForProposedSelection()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This method will be called anytime the collection view is about to
+    change the selection in response to user mouse clicks or keyboard events.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">collectionViewSelectionForProposedSelection</span> <span class="params">(view, sel)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">sel</span>
+			              
+			              <span class="desc">Proposed array of selected objects.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">Actual allow selection index set</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can use this method to adjust the proposed selection, eliminating any selected objects that cannot be selected.  The default implementation of this method simply returns the proposed selection.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewShouldBeginDrag"></a> 
+			          <h3>collectionViewShouldBeginDrag()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view just before it starts a drag to give you
+    an opportunity to decide if the drag should be allowed.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">collectionViewShouldBeginDrag</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">view</span>
+			              
+			              <span class="desc">{SC.CollectionView} the collection view</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES to alow, NO to prevent it</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can use this method to implement fine-grained control over when a drag will be allowed and when it will not be allowed.  For example, you may enable content reordering but then implement this method to prevent reordering of certain items in the view.</p>
+
+<p>The default implementation always returns YES.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewShouldDeleteIndexes"></a> 
+			          <h3>collectionViewShouldDeleteIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view whenever the deleteSelection() method is
+    called.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">collectionViewShouldDeleteIndexes</span> <span class="params">(view, indexes)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">proposed index set of items to delete.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">index set allowed to delete or null.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can implement this method to get fine-grained control over which items can be deleted.  To prevent deletion, return null.</p>
+
+<p>This method is only called if canDeleteContent is YES on the collection view.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewShouldDeselectIndexes"></a> 
+			          <h3>collectionViewShouldDeselectIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection when attempting to deselect an item.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">collectionViewShouldDeselectIndexes</span> <span class="params">(view, indexes)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the view collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">the indexes to be selected</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">allowed index set</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Return the actual indexes you want to allow to be deselected.  Return null to disallow the change.  The default allows all selection.</p>
+
+<p>Note that you should not modify the passed in IndexSet.  clone it instead.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewShouldSelectIndexes"></a> 
+			          <h3>collectionViewShouldSelectIndexes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection when attempting to select an item.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.IndexSet)
+			              </span>
+			              <span class="name">collectionViewShouldSelectIndexes</span> <span class="params">(view, indexes, extend)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.CollectionView)</span><span class="name">view</span>
+			              
+			              <span class="desc">the view collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.IndexSet)</span><span class="name">indexes</span>
+			              
+			              <span class="desc">the indexes to be selected</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">extend</span>
+			              
+			              <span class="desc">YES if the indexes will extend existing sel</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.IndexSet)</span>
+			                <span class="desc">allowed index set</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Return the actual indexes you want to allow to be selected.  Return null to disallow the change.  The default allows all selection.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.CollectionViewDelegate.collectionViewValidateDragOperation"></a> 
+			          <h3>collectionViewValidateDragOperation()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by the collection view during a drag to let you determine the
+    kind and location of a drop you might want to accept.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">collectionViewValidateDragOperation</span> <span class="params">(view, drag, op, proposedInsertionIndex, proposedDropOperation)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">view</span>
+			              
+			              <span class="desc">{SC.CollectionView} the collection view</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">drag</span>
+			              
+			              <span class="desc">{SC.Drag} the current drag object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">op</span>
+			              
+			              <span class="desc">{Number} proposed logical OR of allowed drag operations.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">proposedInsertionIndex</span>
+			              
+			              <span class="desc">{Number} an index into the content array 
+      representing the proposed insertion point.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">proposedDropOperation</span>
+			              
+			              <span class="desc">{String} the proposed drop operation.  Will be one of SC.DROP_ON, SC.DROP_BEFORE, or SC.DROP_ANY.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                
+			                <span class="desc">the allowed drag operation.  Defaults to op</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>You can override this method to implement fine-grained control over how and when a dragged item is allowed to be dropped into a collection view.</p>
+
+<p>This method will be called by the collection view both to determine in general which operations you might support and specifically the operations you would support if the user dropped an item over a specific location.</p>
+
+<p>If the proposedDropOperation parameter is SC.DROP_ON or SC.DROP_BEFORE, then the proposedInsertionPoint will be a non-negative value and you should determine the specific operations you will support if the user dropped the drag item at that point.</p>
+
+<p>If you do not like the proposed drop operation or insertion point, you can override these properties as well by setting the proposedDropOperation and proposedInsertionIndex properties on the collection view during this method.  These properties are ignored all other times.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:52 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

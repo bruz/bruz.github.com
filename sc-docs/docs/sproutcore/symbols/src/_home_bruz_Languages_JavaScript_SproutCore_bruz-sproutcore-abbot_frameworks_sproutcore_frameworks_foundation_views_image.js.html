@@ -1,0 +1,188 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'views/view'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'mixins/control'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 10</span> 
+<span class='line'> 11</span> </span><span class="NAME">SC.IMAGE_STATE_NONE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'none'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="NAME">SC.IMAGE_STATE_LOADING</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'loading'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="NAME">SC.IMAGE_STATE_LOADED</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'loaded'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="NAME">SC.IMAGE_STATE_FAILED</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'failed'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="NAME">SC.IMAGE_STATE_SPRITE</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sprite'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 16</span> 
+<span class='line'> 17</span> </span><span class="COMM">/**
+<span class='line'> 18</span>   URL to a transparent GIF.  Used for spriting.
+<span class='line'> 19</span> */</span><span class="WHIT">
+<span class='line'> 20</span> </span><span class="NAME">SC.BLANK_IMAGE_DATAURL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"data:image/gif;base64,R0lGODlhAQABAJAAAP///wAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw=="</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 21</span> 
+<span class='line'> 22</span> </span><span class="NAME">SC.BLANK_IMAGE_URL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.browser.msie</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">SC.browser.msie</span><span class="PUNC">&lt;</span><span class="NUMB">8</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">sc_static</span><span class="PUNC">(</span><span class="STRN">'blank.gif'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BLANK_IMAGE_DATAURL</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 23</span> 
+<span class='line'> 24</span> </span><span class="COMM">/**
+<span class='line'> 25</span>   @class
+<span class='line'> 26</span> 
+<span class='line'> 27</span>   Displays an image in the browser.  
+<span class='line'> 28</span>   
+<span class='line'> 29</span>   The ImageView can be used to efficiently display images in the browser.
+<span class='line'> 30</span>   It includes a built in support for a number of features that can improve
+<span class='line'> 31</span>   your page load time if you use a lot of images including a image loading
+<span class='line'> 32</span>   queue and automatic support for CSS spriting.
+<span class='line'> 33</span> 
+<span class='line'> 34</span>   Note that there are actually many controls that will natively include 
+<span class='line'> 35</span>   images using an icon property name.
+<span class='line'> 36</span>   
+<span class='line'> 37</span>   @extends SC.View
+<span class='line'> 38</span>   @extends SC.Control
+<span class='line'> 39</span>   @since SproutCore 1.0
+<span class='line'> 40</span> */</span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="NAME">SC.ImageView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="NAME">SC.Control</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'> 42</span> </span><span class="COMM">/** @scope SC.ImageView.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span>   
+<span class='line'> 44</span>   </span><span class="COMM">/** Image views contain an img tag. */</span><span class="WHIT">
+<span class='line'> 45</span>   </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'sc-image-view'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 46</span>   </span><span class="NAME">tagName</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'img'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 47</span>   
+<span class='line'> 48</span>   </span><span class="COMM">/**
+<span class='line'> 49</span>     Current load status of the image.
+<span class='line'> 50</span>     
+<span class='line'> 51</span>     This status changes as an image is loaded from the server.  If spriting
+<span class='line'> 52</span>     is used, this will always be loaded.  Must be one of the following
+<span class='line'> 53</span>     constants: SC.IMAGE_STATE_NONE, SC.IMAGE_STATE_LOADING, 
+<span class='line'> 54</span>     SC.IMAGE_STATE_LOADED, SC.IMAGE_STATE_FAILED, SC.IMAGE_STATE_SPRITE
+<span class='line'> 55</span>     
+<span class='line'> 56</span>     @property {String}
+<span class='line'> 57</span>   */</span><span class="WHIT">
+<span class='line'> 58</span>   </span><span class="NAME">status</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_NONE</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 59</span>   
+<span class='line'> 60</span>   </span><span class="COMM">/**
+<span class='line'> 61</span>     A url or CSS class name.
+<span class='line'> 62</span>     
+<span class='line'> 63</span>     This is the image you want the view to display.  It should be either a
+<span class='line'> 64</span>     url or css class name.  You can also set the content and 
+<span class='line'> 65</span>     contentValueKey properties to have this value extracted 
+<span class='line'> 66</span>     automatically.
+<span class='line'> 67</span>     
+<span class='line'> 68</span>     If you want to use CSS spriting, set this value to a CSS class name.  If
+<span class='line'> 69</span>     you need to use multiple class names to set your icon, separate them by
+<span class='line'> 70</span>     spaces.
+<span class='line'> 71</span>     
+<span class='line'> 72</span>     Note that if you provide a URL, it must contain at least one '/' as this
+<span class='line'> 73</span>     is how we autodetect URLs.
+<span class='line'> 74</span>     
+<span class='line'> 75</span>     @property {String}
+<span class='line'> 76</span>   */</span><span class="WHIT">
+<span class='line'> 77</span>   </span><span class="NAME">value</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 78</span> 
+<span class='line'> 79</span>   </span><span class="COMM">/**
+<span class='line'> 80</span>     If YES, image view will use the imageCache to control loading.  This 
+<span class='line'> 81</span>     setting is generally preferred.
+<span class='line'> 82</span>     
+<span class='line'> 83</span>     @property {String}
+<span class='line'> 84</span>   */</span><span class="WHIT">
+<span class='line'> 85</span>   </span><span class="NAME">useImageCache</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 86</span>   
+<span class='line'> 87</span>   </span><span class="COMM">/**
+<span class='line'> 88</span>     If YES, this image can load in the background.  Otherwise, it is treated
+<span class='line'> 89</span>     as a foreground image.  If the image is not visible on screen, it will
+<span class='line'> 90</span>     always be treated as a background image.
+<span class='line'> 91</span>   */</span><span class="WHIT">
+<span class='line'> 92</span>   </span><span class="NAME">canLoadInBackground</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 93</span>   
+<span class='line'> 94</span>   </span><span class="COMM">/**
+<span class='line'> 95</span>     If YES, any specified toolTip will be localized before display.
+<span class='line'> 96</span>   */</span><span class="WHIT">
+<span class='line'> 97</span>   </span><span class="NAME">localize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 98</span>   
+<span class='line'> 99</span>   </span><span class="NAME">displayProperties</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'status toolTip'</span><span class="PUNC">.</span><span class="NAME">w</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>100</span>   
+<span class='line'>101</span>   </span><span class="NAME">render</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>102</span>     </span><span class="COMM">// the image source is the value if the status is LOADED or blank</span><span class="WHIT">
+<span class='line'>103</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span>     
+<span class='line'>105</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_NONE</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this._image_valueDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// setup initial state</span><span class="WHIT">
+<span class='line'>106</span>     
+<span class='line'>107</span>     </span><span class="COMM">// query the status again, as calling this._image_valueDidChange() may</span><span class="WHIT">
+<span class='line'>108</span>     </span><span class="COMM">// update status to SC.IMAGE_STATE_LOADED or SC.IMAGE_STATE_SPRITE</span><span class="WHIT">
+<span class='line'>109</span>     </span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>110</span> 
+<span class='line'>111</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">src</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_LOADED</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BLANK_IMAGE_URL</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>112</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">status</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_SPRITE</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">context.addClass</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>113</span>     </span><span class="NAME">context.attr</span><span class="PUNC">(</span><span class="STRN">'src'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">src</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>114</span>     
+<span class='line'>115</span>     </span><span class="COMM">// If there is a toolTip set, grab it and localize if necessary.</span><span class="WHIT">
+<span class='line'>116</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">toolTip</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'toolTip'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>117</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">toolTip</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>118</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'localize'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">toolTip</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">toolTip.loc</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>119</span>       </span><span class="NAME">context.attr</span><span class="PUNC">(</span><span class="STRN">'title'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">toolTip</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>120</span>       </span><span class="NAME">context.attr</span><span class="PUNC">(</span><span class="STRN">'alt'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">toolTip</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>121</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>122</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>123</span>   
+<span class='line'>124</span>   </span><span class="COMM">/** @private - 
+<span class='line'>125</span>     Whenever the value changes, update the image state and possibly schedule
+<span class='line'>126</span>     an image to load.
+<span class='line'>127</span>   */</span><span class="WHIT">
+<span class='line'>128</span>   </span><span class="NAME">_image_valueDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>129</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">isUrl</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>130</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">value.isEnumerable</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">value.firstObject</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span>     
+<span class='line'>132</span>     </span><span class="NAME">isUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ImageView.valueIsUrl</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>133</span> 
+<span class='line'>134</span>     </span><span class="COMM">// if the old image is still loading, cancel it</span><span class="WHIT">
+<span class='line'>135</span>     </span><span class="COMM">// if (this._loadingUrl) SC.imageCache.abortImage(this._loadingUrl);</span><span class="WHIT">
+<span class='line'>136</span>     
+<span class='line'>137</span>     </span><span class="COMM">// now update local state as needed....</span><span class="WHIT">
+<span class='line'>138</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">isUrl</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'useImageCache'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>139</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">isBackground</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isVisibleInWindow'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'canLoadInBackground'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>140</span>       
+<span class='line'>141</span>       </span><span class="NAME">this._loadingUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// note that we're loading...</span><span class="WHIT">
+<span class='line'>142</span>       </span><span class="NAME">SC.imageCache.loadImage</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.imageDidLoad</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">isBackground</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>143</span>       
+<span class='line'>144</span>       </span><span class="COMM">// only mark us as loading if we are still loading...</span><span class="WHIT">
+<span class='line'>145</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._loadingUrl</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_LOADING</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>146</span>       
+<span class='line'>147</span>     </span><span class="COMM">// otherwise, just set state immediately</span><span class="WHIT">
+<span class='line'>148</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>149</span>       </span><span class="NAME">this._loadingUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// not loading...</span><span class="WHIT">
+<span class='line'>150</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">isUrl</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_LOADED</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_SPRITE</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>151</span>       </span><span class="NAME">this.displayDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// call manually in case status did not change</span><span class="WHIT">
+<span class='line'>152</span>       </span><span class="COMM">// (e.g value changes from one sprite to another)</span><span class="WHIT">
+<span class='line'>153</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>154</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>155</span>   
+<span class='line'>156</span>   </span><span class="COMM">/** 
+<span class='line'>157</span>     Called when the imageCache indicates that the image has loaded. 
+<span class='line'>158</span>     Changing the image state will update the display.
+<span class='line'>159</span>   */</span><span class="WHIT">
+<span class='line'>160</span>   </span><span class="NAME">imageDidLoad</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">url</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">imageOrError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>161</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">url</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">this._loadingUrl</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this._loadingUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>162</span> 
+<span class='line'>163</span>     </span><span class="COMM">// do nothing if we get this notification by the value of the image has </span><span class="WHIT">
+<span class='line'>164</span>     </span><span class="COMM">// since changed.</span><span class="WHIT">
+<span class='line'>165</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">url</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>166</span>       </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.$ok</span><span class="PUNC">(</span><span class="NAME">imageOrError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_LOADED</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.IMAGE_STATE_FAILED</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>167</span>       </span><span class="NAME">this.displayDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>168</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>169</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>170</span>   
+<span class='line'>171</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>172</span> 
+<span class='line'>173</span> </span><span class="COMM">/**
+<span class='line'>174</span>   Returns YES if the passed value looks like an URL and not a CSS class
+<span class='line'>175</span>   name.
+<span class='line'>176</span> */</span><span class="WHIT">
+<span class='line'>177</span> </span><span class="NAME">SC.ImageView.valueIsUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>178</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">value.indexOf</span><span class="PUNC">(</span><span class="STRN">'/'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>179</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>180</span> 
+<span class='line'>181</span> </span></pre></body></html>

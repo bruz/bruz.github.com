@@ -1,0 +1,4461 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Touch</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Touch
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_root_responder.js.html">frameworks/sproutcore/frameworks/foundation/system/root_responder.js</a></td>
+		    </tr>
+		  
+
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>SC.Touch Represents a touch.</p>
+
+<p>Views receive touchStart and touchEnd.</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#inflight"><code>-&nbsp;(Array) inflight [R/W]</code></a>
+					              
+					                <div class="description">Current requests that are inflight.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#interval"><code>-&nbsp;(Object) interval [R/W]</code></a>
+					              
+					                <div class="description">The duration between idle runs.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#isOffline"><code>-&nbsp;(Boolean) isOffline [R/W]</code></a>
+					              
+					                <div class="description">Indicates whether the device is currently online or offline.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#isRunning"><code>-&nbsp;(Object) isRunning [R/W]</code></a>
+					              
+					                <div class="description">If running, YES.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#length"><code>-&nbsp;(Number) length [R/W]</code></a>
+					              
+					                <div class="description">the current number of strings owned by the context, including the opening
+    tag.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#location"><code>-&nbsp;(Object) location [R/W]</code></a>
+					              
+					                <div class="description">The current location hash.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#maxRequests"><code>-&nbsp;(Number) maxRequests [R/W]</code></a>
+					              
+					                <div class="description">Maximum number of concurrent requests allowed.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#minimumIdleDuration"><code>-&nbsp;(Object) minimumIdleDuration [R/W]</code></a>
+					              
+					                <div class="description">The minimum elapsed time since the last event.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#mouseLocation"><code>-&nbsp;(Point) mouseLocation [R/W]</code></a>
+					              
+					                <div class="description">Returns a Point containing the last known X and Y coordinates of the
+    mouse, if present.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#needsContent"><code>-&nbsp;(Object) needsContent [R/W]</code></a>
+					              
+					                <div class="description">YES if the context needs its content filled in, not just its outer 
+    attributes edited.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#offset"><code>-&nbsp;(Number) offset [R/W]</code></a>
+					              
+					                <div class="description">this initial offset into the strings array where this context instance
+    has its opening tag.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#orientation"><code>-&nbsp;(String) orientation [R/W]</code></a>
+					              
+					                <div class="description">Sets the orientation for touch devices, either 'landscape' or 'portrait'.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#pending"><code>-&nbsp;(Array) pending [R/W]</code></a>
+					              
+					                <div class="description">Requests that are pending and have not been started yet.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#runLimit"><code>-&nbsp;(Object) runLimit [R/W]</code></a>
+					              
+					                <div class="description">A limit which, if exceeded, the task queue will wait until a later run
+    to continue.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#runWhenIdle"><code>-&nbsp;(Object) runWhenIdle [R/W]</code></a>
+					              
+					                <div class="description">If YES, the queue will automatically run in the background when the browser idles.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#SELF_CLOSING"><code>-&nbsp;(Object) SELF_CLOSING [R/W]</code></a>
+					              
+					                <div class="description">SC.RenderContext.fn</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#strings"><code>-&nbsp;(Array) strings [R/W]</code></a>
+					              
+					                <div class="description">The current working array of strings.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#supportsOnHashChange"><code>-&nbsp;(Boolean) supportsOnHashChange [R/W]</code></a>
+					              
+					                <div class="description">Whether the browser supports HTML5 history management.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Touch.html#updateMode"><code>-&nbsp;(String) updateMode [R/W]</code></a>
+					              
+					                <div class="description">Specify the method that should be used to update content on the element.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Touch#add">
+		<code class="type">-&nbsp;(void)  add(route, target, method)</code>
+				              </a>
+				              
+				                <div class="description">Adds a route handler.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#addClass">
+		<code class="type">-&nbsp;(SC.RenderContext)  addClass(nameOrClasses)</code>
+				              </a>
+				              
+				                <div class="description">Adds the specified className to the current tag, if it does not already
+    exist.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#addStyle">
+		<code class="type">-&nbsp;(SC.RenderContext)  addStyle(nameOrStyles, value)</code>
+				              </a>
+				              
+				                <div class="description">Apply the passed styles to the tag.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#allowDefault">
+		<code class="type">-&nbsp;(void)  allowDefault()</code>
+				              </a>
+				              
+				                <div class="description">Indicates that you want to allow the normal default behavior.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#attr">
+		<code class="type">-&nbsp;(SC.RenderContext)  attr(nameOrAttrs, value)</code>
+				              </a>
+				              
+				                <div class="description">Sets the named attribute on the tag.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#averagedTouchesForView">
+		<code class="type">-&nbsp;(void)  averagedTouchesForView(view, addSelf)</code>
+				              </a>
+				              
+				                <div class="description">Returns average data--x, y, and d (distance)--for the touches owned by the supplied view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#begin">
+		<code class="type">-&nbsp;(SC.RenderContext)  begin(tagNameOrElement)</code>
+				              </a>
+				              
+				                <div class="description">Begins a new render context based on the passed tagName or element.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#cancel">
+		<code class="type">-&nbsp;(Boolean)  cancel(response)</code>
+				              </a>
+				              
+				                <div class="description">Cancels a specific request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#cancelAll">
+		<code class="type">-&nbsp;(Boolean)  cancelAll()</code>
+				              </a>
+				              
+				                <div class="description">Cancels all inflight and pending requests.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#captureTouch">
+		<code class="type">-&nbsp;(void)  captureTouch(startingPoint, shouldStack)</code>
+				              </a>
+				              
+				                <div class="description">Captures, or recaptures, the touch.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#classNames">
+		<code class="type">-&nbsp;(Array|SC.RenderContext)  classNames(classNames, cloneOnModify)</code>
+				              </a>
+				              
+				                <div class="description">Reads the current classNames array or sets the array if a param is passed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#element">
+		<code class="type">-&nbsp;(DOMElement)  element()</code>
+				              </a>
+				              
+				                <div class="description">If the current context targets an element, this method returns the 
+    element.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#encodedBody">
+		<code class="type">-&nbsp;(void)  encodedBody()</code>
+				              </a>
+				              
+				                <div class="description">Implement transport-specific support for fetching tasks</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#end">
+		<code class="type">-&nbsp;(SC.RenderContext)  end()</code>
+				              </a>
+				              
+				                <div class="description">Ends the current tag editing context.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#fireRequestIfNeeded">
+		<code class="type">-&nbsp;(Object)  fireRequestIfNeeded()</code>
+				              </a>
+				              
+				                <div class="description">Checks the inflight queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#get">
+		<code class="type">-&nbsp;(String|Array)  get(idx)</code>
+				              </a>
+				              
+				                <div class="description">Returns the string at the designated index.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#hasClass">
+		<code class="type">-&nbsp;(Boolean)  hasClass(className)</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if the outer tag current has the passed class name, NO 
+    otherwise.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#hashChange">
+		<code class="type">-&nbsp;(void)  hashChange(event)</code>
+				              </a>
+				              
+				                <div class="description">Event handler for the hashchange event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#hasTasks">
+		<code class="type">-&nbsp;(void)  hasTasks()</code>
+				              </a>
+				              
+				                <div class="description">Returns YES if there are tasks in the queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#headers">
+		<code class="type">-&nbsp;(void)  headers()</code>
+				              </a>
+				              
+				                <div class="description">Implement transport-specific support for fetching all headers</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#id">
+		<code class="type">-&nbsp;(String|SC.RenderContext)  id(idName)</code>
+				              </a>
+				              
+				                <div class="description">Reads the outer tag id if no param is passed, sets the id otherwise.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#init">
+		<code class="type">-&nbsp;(SC.RenderContext)  init(tagNameOrElement, prevContext)</code>
+				              </a>
+				              
+				                <div class="description">When you create a context you should pass either a tag name or an element
+    that should be used as the basis for building the context.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#join">
+		<code class="type">-&nbsp;(String)  join(joinChar)</code>
+				              </a>
+				              
+				                <div class="description">Joins the strings together, returning the result.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#locationDidChange">
+		<code class="type">-&nbsp;(void)  locationDidChange()</code>
+				              </a>
+				              
+				                <div class="description">Observer of the 'location' property that calls the correct route handler
+    when the location changes.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#makeTouchResponder">
+		<code class="type">-&nbsp;(void)  makeTouchResponder(responder, shouldStack)</code>
+				              </a>
+				              
+				                <div class="description">Changes the touch responder for the touch.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#near">
+		<code class="type">-&nbsp;(Boolean)  near(n1, n2, lambda)</code>
+				              </a>
+				              
+				                <div class="description">Checks to see if the number is near the supplied parameter to a certain lambda.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#next">
+		<code class="type">-&nbsp;(void)  next()</code>
+				              </a>
+				              
+				                <div class="description">Removes and returns the first task in the queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#ping">
+		<code class="type">-&nbsp;(void)  ping()</code>
+				              </a>
+				              
+				                <div class="description">You usually don't need to call this method.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#preventDefault">
+		<code class="type">-&nbsp;(void)  preventDefault()</code>
+				              </a>
+				              
+				                <div class="description">If the touch is associated with an event, prevents default action on the event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#push">
+		<code class="type">-&nbsp;(void)  push(task)</code>
+				              </a>
+				              
+				                <div class="description">Adds the task to the end of the queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#remove">
+		<code class="type">-&nbsp;(void)  remove(elementId)</code>
+				              </a>
+				              
+				                <div class="description">Removes an element with the passed id in the currently managed element.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#removeClass">
+		<code class="type">-&nbsp;(SC.RenderContext)  removeClass(className)</code>
+				              </a>
+				              
+				                <div class="description">Removes the specified className from the current tag.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#removeStyle">
+		<code class="type">-&nbsp;(SC.RenderContext)  removeStyle(styleName)</code>
+				              </a>
+				              
+				                <div class="description">Removes the named style from the style hash.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#resetClassNames">
+		<code class="type">-&nbsp;(SC.RenderContext)  resetClassNames()</code>
+				              </a>
+				              
+				                <div class="description">Removes all classnames from the currentContext.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#round">
+		<code class="type">-&nbsp;(Number)  round(n, decimalPlace)</code>
+				              </a>
+				              
+				                <div class="description">Rounds a number to a given decimal place.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#run">
+		<code class="type">-&nbsp;(void)  run(limit)</code>
+				              </a>
+				              
+				                <div class="description">Runs tasks until limit (TaskQueue.runLimit by default) is reached.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#sendRequest">
+		<code class="type">-&nbsp;(SC.Object)  sendRequest(request)</code>
+				              </a>
+				              
+				                <div class="description">Invoked by the send() method on a request.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#setClass">
+		<code class="type">-&nbsp;(SC.RenderContext)  setClass(className, shouldAdd)</code>
+				              </a>
+				              
+				                <div class="description">You can either pass a single class name and a boolean indicating whether
+    the value should be added or removed, or you can pass a hash with all
+    the class names you want to add or remove with a boolean indicating 
+    whether they should be there or not.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#setup">
+		<code class="type">-&nbsp;(void)  setup()</code>
+				              </a>
+				              
+				                <div class="description">As soon as the DOM is up and running, make sure we attach necessary
+    event handlers</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#styles">
+		<code class="type">-&nbsp;(Hash|SC.RenderContext)  styles(styles, cloneOnModify)</code>
+				              </a>
+				              
+				                <div class="description">Retrieves or sets the current styles for the outer tag.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#tag">
+		<code class="type">-&nbsp;(SC.RenderContext)  tag(tagName, opts)</code>
+				              </a>
+				              
+				                <div class="description">Generates a tag with the passed options.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#tagName">
+		<code class="type">-&nbsp;(String|SC.RenderContext)  tagName(tagName)</code>
+				              </a>
+				              
+				                <div class="description">Reads outer tagName if no param is passed, sets tagName otherwise.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#taskCount">
+		<code class="type">-&nbsp;(void)  taskCount()</code>
+				              </a>
+				              
+				                <div class="description">Returns the number of tasks in the queue.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#text">
+		<code class="type">-&nbsp;(SC.RenderContext)  text(line)</code>
+				              </a>
+				              
+				                <div class="description">Pushes the passed string onto the array, but first escapes the string
+    to ensure that no user-entered HTML is processed as HTML.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#touchesForView">
+		<code class="type">-&nbsp;(void)  touchesForView(view)</code>
+				              </a>
+				              
+				                <div class="description">Returns all touches for a specified view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#transportDidClose">
+		<code class="type">-&nbsp;(void)  transportDidClose(response)</code>
+				              </a>
+				              
+				                <div class="description">Called by a response/transport object when finishes running.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#trigger">
+		<code class="type">-&nbsp;(void)  trigger()</code>
+				              </a>
+				              
+				                <div class="description">Triggers a route even if already in that route (does change the location, if it
+    is not already changed, as well).</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#update">
+		<code class="type">-&nbsp;(SC.RenderContext)  update()</code>
+				              </a>
+				              
+				                <div class="description">If an element was set on this context when it was created, this method 
+    will actually apply any changes to the element itself.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="inflight"></a> 
+			          <div class="field">
+			            <a name="inflight"></a> 
+			            <h3>inflight
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Current requests that are inflight.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">inflight</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="interval"></a> 
+			          <div class="field">
+			            <a name="interval"></a> 
+			            <h3>interval
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The duration between idle runs.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">interval</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isOffline"></a> 
+			          <div class="field">
+			            <a name="isOffline"></a> 
+			            <h3>isOffline
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Indicates whether the device is currently online or offline.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">isOffline</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">NO</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description"><p>For browsers that do not support this feature, the default value is NO.</p>
+
+<p>Is currently inverse of the navigator.onLine property. Most modern browsers will update this property when switching to or from the browser's Offline mode, and when losing/regaining network connectivity.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isRunning"></a> 
+			          <div class="field">
+			            <a name="isRunning"></a> 
+			            <h3>isRunning
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If running, YES.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isRunning</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="length"></a> 
+			          <div class="field">
+			            <a name="length"></a> 
+			            <h3>length
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">the current number of strings owned by the context, including the opening
+    tag.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">length</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="location"></a> 
+			          <div class="field">
+			            <a name="location"></a> 
+			            <h3>location
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current location hash.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">location</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>It is the part in the browser's location after the '#' mark.</p>
+
+<p>The following code</p>
+
+
+<p class="code"><code>SC.routes.set('location', 'notes/edit/4');</code></p>
+
+<p>will change the location to http://domain.tld/my_app#notes/edit/4 and call the correct route handler if it has been registered with the add method.</p>
+
+<p>You can also pass additional parameters. They will be relayed to the route handler. For example, the following code</p>
+
+
+<p class="code"><code>SC.routes.add(':controller/:action/:id', MyApp, MyApp.route);<br />SC.routes.set('location', 'notes/show/4?format=xml&amp;language=fr');</code></p>
+
+<p>will change the location to http://domain.tld/my_app#notes/show/4?format=xml&language=fr and call the MyApp.route method with the following argument:</p>
+
+
+<p class="code"><code>{ route: 'notes/show/4',<br />params: '?format=xml&amp;language=fr',<br />controller: 'notes',<br />action: 'show',<br />id: '4',<br />format: 'xml',<br />language: 'fr' }</code></p>
+
+<p>The location can also be set with a hash, the following code</p>
+
+
+<p class="code"><code>SC.routes.set('location',<br />{ route: 'notes/edit/4', format: 'xml', language: 'fr' });</code></p>
+
+<p>will change the location to http://domain.tld/my_app#notes/show/4?format=xml&language=fr.</p>
+
+<p>The 'notes/show/4&format=xml&language=fr' syntax for passing parameters, using a '&' instead of a '?', as used in SproutCore 1.0 is still supported.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="maxRequests"></a> 
+			          <div class="field">
+			            <a name="maxRequests"></a> 
+			            <h3>maxRequests
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Maximum number of concurrent requests allowed.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">maxRequests</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>6 for all browsers.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="minimumIdleDuration"></a> 
+			          <div class="field">
+			            <a name="minimumIdleDuration"></a> 
+			            <h3>minimumIdleDuration
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The minimum elapsed time since the last event.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">minimumIdleDuration</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>As a rule of thumb, perhaps something equivalent to the expected duration of a task.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="mouseLocation"></a> 
+			          <div class="field">
+			            <a name="mouseLocation"></a> 
+			            <h3>mouseLocation
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Returns a Point containing the last known X and Y coordinates of the
+    mouse, if present.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Point
+		              </span>
+		              <span class="name">mouseLocation</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="needsContent"></a> 
+			          <div class="field">
+			            <a name="needsContent"></a> 
+			            <h3>needsContent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">YES if the context needs its content filled in, not just its outer 
+    attributes edited.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">needsContent</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This will be set to YES anytime you push strings into the context or if you don't create it with an element to start with.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="offset"></a> 
+			          <div class="field">
+			            <a name="offset"></a> 
+			            <h3>offset
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">this initial offset into the strings array where this context instance
+    has its opening tag.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Number
+		              </span>
+		              <span class="name">offset</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="orientation"></a> 
+			          <div class="field">
+			            <a name="orientation"></a> 
+			            <h3>orientation
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Sets the orientation for touch devices, either 'landscape' or 'portrait'.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">orientation</span>
+		            </p>
+
+			          
+
+			          
+			              <p class="parameter">
+			                <strong>Default Value: </strong> <span class="type">'desktop'</span>
+			              </p>
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>Will be 'desktop' in the case of non-touch devices.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="pending"></a> 
+			          <div class="field">
+			            <a name="pending"></a> 
+			            <h3>pending
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Requests that are pending and have not been started yet.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">pending</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="runLimit"></a> 
+			          <div class="field">
+			            <a name="runLimit"></a> 
+			            <h3>runLimit
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A limit which, if exceeded, the task queue will wait until a later run
+    to continue.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">runLimit</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="runWhenIdle"></a> 
+			          <div class="field">
+			            <a name="runWhenIdle"></a> 
+			            <h3>runWhenIdle
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, the queue will automatically run in the background when the browser idles.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">runWhenIdle</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="SELF_CLOSING"></a> 
+			          <div class="field">
+			            <a name="SELF_CLOSING"></a> 
+			            <h3>SELF_CLOSING
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">SC.RenderContext.fn</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">SELF_CLOSING</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="strings"></a> 
+			          <div class="field">
+			            <a name="strings"></a> 
+			            <h3>strings
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The current working array of strings.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">strings</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="supportsOnHashChange"></a> 
+			          <div class="field">
+			            <a name="supportsOnHashChange"></a> 
+			            <h3>supportsOnHashChange
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Whether the browser supports HTML5 history management.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">supportsOnHashChange</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Code copied from Google's closure library which is under the Apache 2 license.</p>
+
+<p>{@link http://closure-library.googlecode.com/svn/trunk/closure/goog/history/history.js} {@link http://www.w3.org/TR/html5/history.html}</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="updateMode"></a> 
+			          <div class="field">
+			            <a name="updateMode"></a> 
+			            <h3>updateMode
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Specify the method that should be used to update content on the element.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">updateMode</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+<p>In almost all cases you want to replace the content.  Very carefully managed code (such as in CollectionView) can append or prepend content instead.</p>
+
+<p>You probably do not want to change this propery unless you know what you are doing.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#add"></a> 
+			          <h3>add()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds a route handler.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">add</span> <span class="params">(route, target, method)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">route</span>
+			              
+			              <span class="desc">the route to be registered</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+			              <span class="desc">the object on which the method will be called, or
+      directly the function to be called to handle the route</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Function)</span><span class="name">method</span>
+			              
+			              <span class="desc">the method to be called on target to handle the
+      route, can be a function or a string</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Routes have the following format:</p>
+<ul>	<li>'users/show/5' is a static route and only matches this exact string,</li>
+	<li>':action/:controller/:id' is a dynamic route and the handler will be</li>
+</ul>
+<p>called with the 'action', 'controller' and 'id' parameters passed in a hash,</p>
+<ul>	<li>'*url' is a wildcard route, it matches the whole route and the handler</li>
+</ul>
+<p>will be called with the 'url' parameter passed in a hash.</p>
+
+<p>Route types can be combined, the following are valid routes:</p>
+<ul>	<li>'users/:action/:id'</li>
+	<li>':controller/show/:id'</li>
+	<li>':controller/ *url' (ignore the space, because of jslint)</li></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#addClass"></a> 
+			          <h3>addClass()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds the specified className to the current tag, if it does not already
+    exist.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">addClass</span> <span class="params">(nameOrClasses)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Array)</span><span class="name">nameOrClasses</span>
+			              
+			              <span class="desc">the class name or an array of classes</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method has no effect if there is no open tag.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#addStyle"></a> 
+			          <h3>addStyle()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Apply the passed styles to the tag.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">addStyle</span> <span class="params">(nameOrStyles, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Hash)</span><span class="name">nameOrStyles</span>
+			              
+			              <span class="desc">the style name or a hash of styles</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Number)</span><span class="name">value</span>
+			              
+			              <span class="desc">style value if string name was passed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can pass either a single key value pair or a hash of styles.  Note that if you set a style on an existing element, it will replace any existing styles on the element.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#allowDefault"></a> 
+			          <h3>allowDefault()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Indicates that you want to allow the normal default behavior.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">allowDefault</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Sets the hasCustomEventHandling property to YES but does not cancel the event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#attr"></a> 
+			          <h3>attr()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Sets the named attribute on the tag.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">attr</span> <span class="params">(nameOrAttrs, value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Hash)</span><span class="name">nameOrAttrs</span>
+			              
+			              <span class="desc">the attr name or hash of attrs.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">value</span>
+			              
+			              <span class="desc">attribute value if attribute name was passed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Note that if you set the 'class' attribute or the 'styles' attribute, it will be ignored.  Use the relevant class name and style methods instead.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#averagedTouchesForView"></a> 
+			          <h3>averagedTouchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns average data--x, y, and d (distance)--for the touches owned by the supplied view.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">averagedTouchesForView</span> <span class="params">(view, addSelf)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>addSelf adds this touch to the set being considered. This is useful from touchStart. If you use it from anywhere else, it will make this touch be used twice--so use caution.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#begin"></a> 
+			          <h3>begin()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Begins a new render context based on the passed tagName or element.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">begin</span> <span class="params">(tagNameOrElement)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">new context</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Generate said context using end().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#cancel"></a> 
+			          <h3>cancel()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Cancels a specific request.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">cancel</span> <span class="params">(response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">response</span>
+			              
+			              <span class="desc">a response object</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if cancelled</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the request is pending it will simply be removed.  Otherwise it will actually be cancelled.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#cancelAll"></a> 
+			          <h3>cancelAll()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Cancels all inflight and pending requests.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">cancelAll</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if any items were cancelled.</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#captureTouch"></a> 
+			          <h3>captureTouch()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Captures, or recaptures, the touch.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">captureTouch</span> <span class="params">(startingPoint, shouldStack)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This works from the touch's raw target view up to the startingPoint, and finds either a view that returns YES to captureTouch() or touchStart().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#classNames"></a> 
+			          <h3>classNames()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads the current classNames array or sets the array if a param is passed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array|SC.RenderContext)
+			              </span>
+			              <span class="name">classNames</span> <span class="params">(classNames, cloneOnModify)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Array)</span><span class="name">classNames</span>
+			              
+			              <span class="desc">array</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">cloneOnModify</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array|SC.RenderContext)</span>
+			                <span class="desc">classNames array or receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+<p>Note that if you get the classNames array and then modify it, you MUST call this method again to set the array or else it may not be copied to the element.</p>
+
+<p>If you do pass a classNames array, you can also pass YES for the cloneOnModify param.  This will cause the context to clone the class names before making any further edits.  This is useful is you have a shared array of class names you want to start with but edits should not change the shared array.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#element"></a> 
+			          <h3>element()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If the current context targets an element, this method returns the 
+    element.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (DOMElement)
+			              </span>
+			              <span class="name">element</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(DOMElement)</span>
+			                <span class="desc">the element</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If the context does not target an element, this method will render the context into an offscreen element and return it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#encodedBody"></a> 
+			          <h3>encodedBody()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Implement transport-specific support for fetching tasks</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">encodedBody</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#end"></a> 
+			          <h3>end()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Ends the current tag editing context.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">end</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will generate the tag string including any attributes you might have set along with a closing tag.</p>
+
+<p>The generated HTML will be added to the render context strings.  This will also return the previous context if there is one or the receiver.</p>
+
+<p>If you do not have a current tag, this does nothing.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#fireRequestIfNeeded"></a> 
+			          <h3>fireRequestIfNeeded()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Checks the inflight queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">fireRequestIfNeeded</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If there is an open slot, this will move a request from pending to inflight.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#get"></a> 
+			          <h3>get()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the string at the designated index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String|Array)
+			              </span>
+			              <span class="name">get</span> <span class="params">(idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">idx</span>
+			              
+			              <span class="desc">the index</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String|Array)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you do not pass anything returns the string array.  This index is an offset from the start of the strings owned by this context.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#hasClass"></a> 
+			          <h3>hasClass()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if the outer tag current has the passed class name, NO 
+    otherwise.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">hasClass</span> <span class="params">(className)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">className</span>
+			              
+			              <span class="desc">the class name</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#hashChange"></a> 
+			          <h3>hashChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Event handler for the hashchange event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">hashChange</span> <span class="params">(event)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Called automatically by the browser if it supports the hashchange event, or by our timer if not.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#hasTasks"></a> 
+			          <h3>hasTasks()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns YES if there are tasks in the queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">hasTasks</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#headers"></a> 
+			          <h3>headers()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Implement transport-specific support for fetching all headers</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">headers</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#id"></a> 
+			          <h3>id()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads the outer tag id if no param is passed, sets the id otherwise.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String|SC.RenderContext)
+			              </span>
+			              <span class="name">id</span> <span class="params">(idName)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">idName</span>
+			              
+			              <span class="desc">the id or set</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String|SC.RenderContext)</span>
+			                <span class="desc">id or receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#init"></a> 
+			          <h3>init()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">When you create a context you should pass either a tag name or an element
+    that should be used as the basis for building the context.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">init</span> <span class="params">(tagNameOrElement, prevContext)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|DOMElement)</span><span class="name">tagNameOrElement</span>
+			              
+						</p>
+			            
+			            
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you pass an element, then the element will be inspected for class names, styles and other attributes.  You can also call update() or replace() to modify the element with you context contents.</p>
+
+<p>If you do not pass any parameters, then we assume the tag name is 'div'.</p>
+
+<p>A second parameter, parentContext, is used internally for chaining.  You should never pass a second argument.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#join"></a> 
+			          <h3>join()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Joins the strings together, returning the result.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String)
+			              </span>
+			              <span class="name">join</span> <span class="params">(joinChar)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">joinChar</span>
+			              
+			              <span class="desc">optional string to use in joins. def empty string</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String)</span>
+			                <span class="desc">joined string</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>But first, this will end any open tags.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#locationDidChange"></a> 
+			          <h3>locationDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Observer of the 'location' property that calls the correct route handler
+    when the location changes.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">locationDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#makeTouchResponder"></a> 
+			          <h3>makeTouchResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Changes the touch responder for the touch.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">makeTouchResponder</span> <span class="params">(responder, shouldStack)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If shouldStack === YES, the current responder will be saved so that the next responder may return to it.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#near"></a> 
+			          <h3>near()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Checks to see if the number is near the supplied parameter to a certain lambda.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">near</span> <span class="params">(n1, n2, lambda)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">n1</span>
+			              
+			              <span class="desc">First number in comparison.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">n2</span>
+			              
+			              <span class="desc">Number to compare against the first.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">lambda</span>
+			              
+			              <span class="desc">The closeness sufficient for a positive result. Default 0.00001</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#next"></a> 
+			          <h3>next()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes and returns the first task in the queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">next</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#ping"></a> 
+			          <h3>ping()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">You usually don't need to call this method.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">ping</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>It is done automatically after the application has been initialized.</p>
+
+<p>It registers for the hashchange event if available. If not, it creates a timer that looks for location changes every 150ms.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#preventDefault"></a> 
+			          <h3>preventDefault()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If the touch is associated with an event, prevents default action on the event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">preventDefault</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#push"></a> 
+			          <h3>push()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Adds the task to the end of the queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">push</span> <span class="params">(task)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes an element with the passed id in the currently managed element.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">remove</span> <span class="params">(elementId)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#removeClass"></a> 
+			          <h3>removeClass()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the specified className from the current tag.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">removeClass</span> <span class="params">(className)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">className</span>
+			              
+			              <span class="desc">the class to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method has no effect if there is not an open tag.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#removeStyle"></a> 
+			          <h3>removeStyle()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes the named style from the style hash.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">removeStyle</span> <span class="params">(styleName)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">styleName</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>Note that if you delete a style, the style will not actually be removed from the style hash.  Instead, its value will be set to null.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#resetClassNames"></a> 
+			          <h3>resetClassNames()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes all classnames from the currentContext.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">resetClassNames</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#round"></a> 
+			          <h3>round()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Rounds a number to a given decimal place.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Number)
+			              </span>
+			              <span class="name">round</span> <span class="params">(n, decimalPlace)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Number)</span><span class="name">n</span>
+			              
+			              <span class="desc">The number to round</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Integer)</span><span class="name">decimalPlace</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Number)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If a negative decimalPlace parameter is provided, the number will be rounded outward (ie. providing -3 will round to the thousands).</p>
+
+<p>Function is insufficient for high negative values of decimalPlace parameter. For example, (123456.789).round(-5) should evaluate to 100000 but instead evaluates to 99999.999...</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#run"></a> 
+			          <h3>run()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Runs tasks until limit (TaskQueue.runLimit by default) is reached.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">run</span> <span class="params">(limit)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#sendRequest"></a> 
+			          <h3>sendRequest()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked by the send() method on a request.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Object)
+			              </span>
+			              <span class="name">sendRequest</span> <span class="params">(request)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Request)</span><span class="name">request</span>
+			              
+			              <span class="desc">the request to send</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Object)</span>
+			                <span class="desc">response object</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will create a new low- level transport object and queue it if needed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#setClass"></a> 
+			          <h3>setClass()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">You can either pass a single class name and a boolean indicating whether
+    the value should be added or removed, or you can pass a hash with all
+    the class names you want to add or remove with a boolean indicating 
+    whether they should be there or not.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">setClass</span> <span class="params">(className, shouldAdd)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String|Hash)</span><span class="name">className</span>
+			              
+			              <span class="desc">class name or hash of classNames + bools</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">shouldAdd</span>
+			              
+			              <span class="desc">for class name if a string was passed</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This is far more efficient than using addClass/removeClass.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#setup"></a> 
+			          <h3>setup()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">As soon as the DOM is up and running, make sure we attach necessary
+    event handlers</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">setup</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#styles"></a> 
+			          <h3>styles()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Retrieves or sets the current styles for the outer tag.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Hash|SC.RenderContext)
+			              </span>
+			              <span class="name">styles</span> <span class="params">(styles, cloneOnModify)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">styles</span>
+			              
+			              <span class="desc">styles hash</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">cloneOnModify</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Hash|SC.RenderContext)</span>
+			                <span class="desc">styles hash or receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you retrieve the styles hash to edit it, you must set the hash again in order for it to be applied to the element on rendering.</p>
+
+<p>Optionally you can also pass YES to the cloneOnModify param to cause the styles has to be cloned before it is edited.  This is useful if you want to start with a shared style hash and then optionally modify it for each context.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#tag"></a> 
+			          <h3>tag()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generates a tag with the passed options.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">tag</span> <span class="params">(tagName, opts)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">tagName</span>
+			              
+			              <span class="desc">optional tag name.  default 'div'</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">opts</span>
+			              
+			              <span class="desc">optional tag options.  defaults to empty options.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Like calling context.begin().end().</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#tagName"></a> 
+			          <h3>tagName()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Reads outer tagName if no param is passed, sets tagName otherwise.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (String|SC.RenderContext)
+			              </span>
+			              <span class="name">tagName</span> <span class="params">(tagName)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">tagName</span>
+			              
+			              <span class="desc">pass to set tag name.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(String|SC.RenderContext)</span>
+			                <span class="desc">tag name or receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#taskCount"></a> 
+			          <h3>taskCount()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the number of tasks in the queue.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">taskCount</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#text"></a> 
+			          <h3>text()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Pushes the passed string onto the array, but first escapes the string
+    to ensure that no user-entered HTML is processed as HTML.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">text</span> <span class="params">(line)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">line</span>
+			              
+			              <span class="desc">one or mroe lines of text to add</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#touchesForView"></a> 
+			          <h3>touchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns all touches for a specified view.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">touchesForView</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Put as a convenience on the touch itself; this method is also available on the event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#transportDidClose"></a> 
+			          <h3>transportDidClose()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Called by a response/transport object when finishes running.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">transportDidClose</span> <span class="params">(response)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Removes the transport from the queue and kicks off the next one.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#trigger"></a> 
+			          <h3>trigger()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Triggers a route even if already in that route (does change the location, if it
+    is not already changed, as well).</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">trigger</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>If the location is not the same as the supplied location, this simply lets "location" handle it (which ends up coming back to here).</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Touch#update"></a> 
+			          <h3>update()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If an element was set on this context when it was created, this method 
+    will actually apply any changes to the element itself.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">update</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">previous context or null if top</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you have not written any inner html into the context, then the innerHTML of the element will not be changed, otherwise it will be replaced with the new innerHTML.</p>
+
+<p>Also, any attributes, id, classNames or styles you've set will be updated as well.  This also ends the editing context session and cleans up.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:58 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

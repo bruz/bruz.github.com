@@ -1,0 +1,1 @@
+SC.Binding.builder, , FUNCTION, SC.Binding, Static

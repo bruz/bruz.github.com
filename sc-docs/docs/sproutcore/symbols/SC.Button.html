@@ -1,0 +1,1299 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Button</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Namespace SC.Button
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_mixins_button.js.html">frameworks/sproutcore/frameworks/foundation/mixins/button.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>This mixin implements many of the basic state-handling attributes for button-like views, including an auto-updated title, and mapping the current value to an isSelected state.</p>
+
+<p>Usually you will not work with this mixin directly.  Instead, you should use a class that incorporates the mixin such as SC.ButtonView, SC.CheckboxView or SC.RadioView.</p>
+
+<p>This mixin assumes you have already applied the SC.Control and SC.DelegateSupport mixins as well.</p>
+
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.contentIconKey"><code>+&nbsp;(String) contentIconKey [R/W]</code></a>
+					              
+					                <div class="description">If you set this property, the icon will be updated automatically from the
+    content using the key you specify.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.contentPropertyDidChange"><code>+&nbsp;(SC.Button) contentPropertyDidChange [R/W]</code></a>
+					              
+					                <div class="description">Updates the value, title, and icon keys based on the content object, if 
+    set.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.contentTitleKey"><code>+&nbsp;(String) contentTitleKey [R/W]</code></a>
+					              
+					                <div class="description">If you set this property, the title property will be updated automatically
+    from the content using the key you specify.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.displayTitle"><code>+&nbsp;(String) displayTitle [R/W]</code></a>
+					              
+					                <div class="description">The computed display title.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.icon"><code>+&nbsp;(String) icon [R/W]</code></a>
+					              
+					                <div class="description">The button icon.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.keyEquivalent"><code>+&nbsp;(String) keyEquivalent [R/W]</code></a>
+					              
+					                <div class="description">The key equivalent that should trigger this button on the page.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.localize"><code>+&nbsp;(Boolean) localize [R/W]</code></a>
+					              
+					                <div class="description">If YES, then the title will be localized.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.needsEllipsis"><code>+&nbsp;(Boolean) needsEllipsis [R/W]</code></a>
+					              
+					                <div class="description">If YES, button will attempt to display an ellipsis if the title cannot 
+    fit inside of the visible area.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.title"><code>+&nbsp;(String) title [R/W]</code></a>
+					              
+					                <div class="description">The button title.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.toggleOffValue"><code>+&nbsp;(Object) toggleOffValue [R/W]</code></a>
+					              
+					                <div class="description">Value of an unselected toggle button.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.toggleOnValue"><code>+&nbsp;(Object) toggleOnValue [R/W]</code></a>
+					              
+					                <div class="description">Value of a selected toggle button.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.triggerAction"><code>+&nbsp;(void) triggerAction [R/W]</code></a>
+					              
+					                <div class="description">Your class should implement this method to perform the default action on
+    the button.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Button.html#.value"><code>+&nbsp;(Object) value [R/W]</code></a>
+					              
+					                <div class="description">Used to automatically update the state of the button view for toggle style
+    buttons.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Button.computeIsSelectedForValue">
+		<code class="type">+&nbsp;(Boolean)  computeIsSelectedForValue(value)</code>
+				              </a>
+				              
+				                <div class="description">This is the standard logic to compute a proposed isSelected state for a
+    new value.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Button.performKeyEquivalent">
+		<code class="type">+&nbsp;(Boolean)  performKeyEquivalent(keystring, evt)</code>
+				              </a>
+				              
+				                <div class="description">Handle a key equivalent if set.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Button.renderTitle">
+		<code class="type">+&nbsp;(SC.RenderContext)  renderTitle(context, firstTime)</code>
+				              </a>
+				              
+				                <div class="description">Classes that include this mixin can invoke this method from their 
+    render method to render the proper title HTML.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".contentIconKey"></a> 
+			          <div class="field">
+			            <a name=".contentIconKey"></a> 
+			            <h3>contentIconKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If you set this property, the icon will be updated automatically from the
+    content using the key you specify.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">contentIconKey</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".contentPropertyDidChange"></a> 
+			          <div class="field">
+			            <a name=".contentPropertyDidChange"></a> 
+			            <h3>contentPropertyDidChange
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Updates the value, title, and icon keys based on the content object, if 
+    set.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                SC.Button
+		              </span>
+		              <span class="name">contentPropertyDidChange</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".contentTitleKey"></a> 
+			          <div class="field">
+			            <a name=".contentTitleKey"></a> 
+			            <h3>contentTitleKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If you set this property, the title property will be updated automatically
+    from the content using the key you specify.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">contentTitleKey</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".displayTitle"></a> 
+			          <div class="field">
+			            <a name=".displayTitle"></a> 
+			            <h3>displayTitle
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The computed display title.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">displayTitle</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is generated by localizing the title property if necessary.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".icon"></a> 
+			          <div class="field">
+			            <a name=".icon"></a> 
+			            <h3>icon
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The button icon.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">icon</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Set this to either a URL or a CSS class name (for spriting).  Note that if you pass a URL, it must contain at least one slash to be detected as such.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".keyEquivalent"></a> 
+			          <div class="field">
+			            <a name=".keyEquivalent"></a> 
+			            <h3>keyEquivalent
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key equivalent that should trigger this button on the page.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">keyEquivalent</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".localize"></a> 
+			          <div class="field">
+			            <a name=".localize"></a> 
+			            <h3>localize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, then the title will be localized.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">localize</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".needsEllipsis"></a> 
+			          <div class="field">
+			            <a name=".needsEllipsis"></a> 
+			            <h3>needsEllipsis
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, button will attempt to display an ellipsis if the title cannot 
+    fit inside of the visible area.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Boolean
+		              </span>
+		              <span class="name">needsEllipsis</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This feature is not available on all browsers.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".title"></a> 
+			          <div class="field">
+			            <a name=".title"></a> 
+			            <h3>title
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The button title.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">title</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If localize is YES, then this should be the localization key to display.  Otherwise, this will be the actual string displayed in the title.  This property is observable and bindable.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".toggleOffValue"></a> 
+			          <div class="field">
+			            <a name=".toggleOffValue"></a> 
+			            <h3>toggleOffValue
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Value of an unselected toggle button.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">toggleOffValue</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>For a toggle button, set this to any object value you want.  When the user toggle's the button off, the value of the button will be set to this value.</p>
+
+<p>default is NO</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".toggleOnValue"></a> 
+			          <div class="field">
+			            <a name=".toggleOnValue"></a> 
+			            <h3>toggleOnValue
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Value of a selected toggle button.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">toggleOnValue</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>for a toggle button, set this to any object value you want.  The button will be selected if the value property equals the targetValue.  If the value is an array of multiple items that contains the targetValue, then the button will be set to a mixed state.</p>
+
+<p>default is YES</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".triggerAction"></a> 
+			          <div class="field">
+			            <a name=".triggerAction"></a> 
+			            <h3>triggerAction
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Your class should implement this method to perform the default action on
+    the button.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                void
+		              </span>
+		              <span class="name">triggerAction</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is used to implement keyboard control.  Your button may make this change in its own way also.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".value"></a> 
+			          <div class="field">
+			            <a name=".value"></a> 
+			            <h3>value
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Used to automatically update the state of the button view for toggle style
+    buttons.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">value</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>for toggle style buttons, you can set the value and it will be used to update the isSelected state of the button view.  The value will also change as the user selects or deselects.  You can control which values the button will treat as isSelected by setting the toggleOnValue and toggleOffValue.  Alternatively, if you leave these properties set to YES or NO, the button will do its best to convert a value to an appropriate state:</p>
+
+<ul>	<li>null, false, 0  -> isSelected = false</li>
+	<li>any other single value -> isSelected = true</li>
+	<li>array -> if all values are the same state: that state.  otherwise MIXED.</li></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Button.computeIsSelectedForValue"></a> 
+			          <h3>computeIsSelectedForValue()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This is the standard logic to compute a proposed isSelected state for a
+    new value.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">computeIsSelectedForValue</span> <span class="params">(value)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">value</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">return state</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This takes into account the toggleOnValue/toggleOffValue properties, among other things.  It may return YES, NO, or SC.MIXED_STATE.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Button.performKeyEquivalent"></a> 
+			          <h3>performKeyEquivalent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Handle a key equivalent if set.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">performKeyEquivalent</span> <span class="params">(keystring, evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">keystring</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.Event)</span><span class="name">evt</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">YES if handled, NO otherwise</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Trigger the default action for the button.  Depending on the implementation this may vary.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Button.renderTitle"></a> 
+			          <h3>renderTitle()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Classes that include this mixin can invoke this method from their 
+    render method to render the proper title HTML.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.RenderContext)
+			              </span>
+			              <span class="name">renderTitle</span> <span class="params">(context, firstTime)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(SC.RenderContext)</span><span class="name">context</span>
+			              
+			              <span class="desc">the context to render</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Boolean)</span><span class="name">firstTime</span>
+			              
+			              <span class="desc">YES if first time rendering</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.RenderContext)</span>
+			                <span class="desc">the context</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will include an icon if necessary along with any other standard markup.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:50 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

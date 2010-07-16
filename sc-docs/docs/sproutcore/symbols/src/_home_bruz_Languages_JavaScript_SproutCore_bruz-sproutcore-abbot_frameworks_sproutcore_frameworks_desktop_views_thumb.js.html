@@ -1,0 +1,61 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/**
+<span class='line'>  9</span>   @class
+<span class='line'> 10</span> 
+<span class='line'> 11</span>   A ThumbView works in concert with SC.SplitView to adjust the divider 
+<span class='line'> 12</span>   position from an arbitrary subview of the SplitView. Simply make an
+<span class='line'> 13</span>   instance of ThumbView a child somewhere in the childViews (or 
+<span class='line'> 14</span>   descendants) of the split view and add the path to the ThumbView to the
+<span class='line'> 15</span>   SplitView's thumbViews array.
+<span class='line'> 16</span>   
+<span class='line'> 17</span>   SplitView will automatically set the splitView property of the views in
+<span class='line'> 18</span>   its thumbViews array.
+<span class='line'> 19</span> 
+<span class='line'> 20</span>   @extends SC.View
+<span class='line'> 21</span>   @author Erich Ocean
+<span class='line'> 22</span>   @test in split
+<span class='line'> 23</span> */</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="NAME">SC.ThumbView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="COMM">/** @scope SC.ThumbView.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 26</span> 
+<span class='line'> 27</span>   </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'sc-thumb-view'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 28</span>   
+<span class='line'> 29</span>   </span><span class="COMM">/**
+<span class='line'> 30</span>     Enable this thumb view to control its parent split view.
+<span class='line'> 31</span>   */</span><span class="WHIT">
+<span class='line'> 32</span>   </span><span class="NAME">isEnabled</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 33</span>   </span><span class="NAME">isEnabledBindingDefault</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Binding.bool</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 34</span>   
+<span class='line'> 35</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'> 36</span>   </span><span class="NAME">prepareContext</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 37</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">splitView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'splitView'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">splitView</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'cursor'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">splitView.get</span><span class="PUNC">(</span><span class="STRN">'thumbViewCursor'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 39</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 41</span>   
+<span class='line'> 42</span>   </span><span class="NAME">mouseDown</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isEnabled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 44</span>     
+<span class='line'> 45</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">splitView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'splitView'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 46</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">splitView</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">splitView.mouseDownInThumbView</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 47</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 48</span>   
+<span class='line'> 49</span>   </span><span class="NAME">touchStart</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 50</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.mouseDown</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 51</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 52</span>     
+<span class='line'> 53</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 54</span> </span></pre></body></html>

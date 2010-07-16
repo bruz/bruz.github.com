@@ -1,0 +1,139 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">// standard browser cursor definitions</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">SC.SYSTEM_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'default'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="NAME">SC.AUTO_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.DEFAULT_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="NAME">SC.CROSSHAIR_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'crosshair'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="NAME">SC.HAND_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.POINTER_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'pointer'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="NAME">SC.MOVE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'move'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="NAME">SC.E_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'e-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="NAME">SC.NE_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'ne-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="NAME">SC.NW_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'nw-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 17</span> </span><span class="NAME">SC.N_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'n-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">SC.SE_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'se-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="NAME">SC.SW_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sw-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 20</span> </span><span class="NAME">SC.S_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'s-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 21</span> </span><span class="NAME">SC.W_RESIZE_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'w-resize'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 22</span> </span><span class="NAME">SC.IBEAM_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.TEXT_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'text'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 23</span> </span><span class="NAME">SC.WAIT_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'wait'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="NAME">SC.HELP_CURSOR</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'help'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 25</span> 
+<span class='line'> 26</span> </span><span class="COMM">/**
+<span class='line'> 27</span>   @class SC.Cursor
+<span class='line'> 28</span> 
+<span class='line'> 29</span>   A Cursor object is used to sychronize the cursor used by multiple views at 
+<span class='line'> 30</span>   the same time. For example, thumb views within a split view acquire a cursor
+<span class='line'> 31</span>   instance from the split view and set it as their cursor. The split view is 
+<span class='line'> 32</span>   able to update its cursor object to reflect the state of the split view.
+<span class='line'> 33</span>   Because cursor objects are implemented internally with CSS, this is a very 
+<span class='line'> 34</span>   efficient way to update the same cursor for a group of view objects.
+<span class='line'> 35</span>   
+<span class='line'> 36</span>   Note: This object creates an anonymous CSS class to represent the cursor. 
+<span class='line'> 37</span>   The anonymous CSS class is automatically added by SproutCore to views that
+<span class='line'> 38</span>   have the cursor object set as "their" cursor. Thus, all objects attached to 
+<span class='line'> 39</span>   the same cursor object will have their cursors updated simultaneously with a
+<span class='line'> 40</span>   single DOM call.
+<span class='line'> 41</span>   
+<span class='line'> 42</span>   @extends SC.Object
+<span class='line'> 43</span> */</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="NAME">SC.Cursor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="COMM">/** @scope SC.Cursor.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 46</span>   
+<span class='line'> 47</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'> 48</span>   </span><span class="NAME">init</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 49</span>     </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 50</span>     
+<span class='line'> 51</span>     </span><span class="COMM">// create a unique style rule and add it to the shared cursor style sheet</span><span class="WHIT">
+<span class='line'> 52</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">cursorStyle</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'cursorStyle'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">SC.DEFAULT_CURSOR</span><span class="WHIT"> </span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 53</span>         </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.constructor.sharedStyleSheet</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 54</span>         </span><span class="NAME">guid</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.guidFor</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 55</span>     
+<span class='line'> 56</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ss.insertRule</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// WC3</span><span class="WHIT">
+<span class='line'> 57</span>       </span><span class="NAME">ss.insertRule</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 58</span>         </span><span class="STRN">'.'</span><span class="PUNC">+</span><span class="NAME">guid</span><span class="PUNC">+</span><span class="STRN">' {cursor: '</span><span class="PUNC">+</span><span class="NAME">cursorStyle</span><span class="PUNC">+</span><span class="STRN">';}'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 59</span>         </span><span class="NAME">ss.cssRules</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">ss.cssRules.length</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT">
+<span class='line'> 60</span>       </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 61</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ss.addRule</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// IE</span><span class="WHIT">
+<span class='line'> 62</span>       </span><span class="NAME">ss.addRule</span><span class="PUNC">(</span><span class="STRN">'.'</span><span class="PUNC">+</span><span class="NAME">guid</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'cursor: '</span><span class="PUNC">+</span><span class="NAME">cursorStyle</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 64</span>     
+<span class='line'> 65</span>     </span><span class="NAME">this.cursorStyle</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">cursorStyle</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 66</span>     </span><span class="NAME">this.className</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">guid</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// used by cursor clients...</span><span class="WHIT">
+<span class='line'> 67</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 68</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 69</span>   
+<span class='line'> 70</span>   </span><span class="COMM">/**
+<span class='line'> 71</span>     This property is the connection between cursors and views. The default
+<span class='line'> 72</span>     SC.View behavior is to add this className to a view's layer if it has
+<span class='line'> 73</span>     its cursor property defined.
+<span class='line'> 74</span>     
+<span class='line'> 75</span>     @readOnly
+<span class='line'> 76</span>     @property {String} the css class name updated by this cursor
+<span class='line'> 77</span>   */</span><span class="WHIT">
+<span class='line'> 78</span>   </span><span class="NAME">className</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 79</span>   
+<span class='line'> 80</span>   </span><span class="COMM">/**
+<span class='line'> 81</span>     @property {String} the cursor value, can be 'url("path/to/cursor")'
+<span class='line'> 82</span>   */</span><span class="WHIT">
+<span class='line'> 83</span>   </span><span class="NAME">cursorStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.DEFAULT_CURSOR</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 84</span>   
+<span class='line'> 85</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'> 86</span>   </span><span class="NAME">cursorStyleDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 87</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">cursorStyle</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rule</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">selector</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ss</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rules</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 88</span>     </span><span class="NAME">cursorStyle</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'cursorStyle'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">SC.DEFAULT_CURSOR</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 89</span>     </span><span class="NAME">rule</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._rule</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 90</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">rule</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 91</span>       </span><span class="NAME">rule.style.cursor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">cursorStyle</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// fast path</span><span class="WHIT">
+<span class='line'> 92</span>       </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 94</span>     
+<span class='line'> 95</span>     </span><span class="COMM">// slow path, taken only once</span><span class="WHIT">
+<span class='line'> 96</span>     </span><span class="NAME">selector</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'.'</span><span class="PUNC">+</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'className'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 97</span>     </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.constructor.sharedStyleSheet</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 98</span>     </span><span class="NAME">rules</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ss.cssRules</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">ss.cssRules</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">ss.rules</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span>     
+<span class='line'>100</span>     </span><span class="COMM">// find our rule, cache it, and update the cursor style property</span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rules.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">++</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>102</span>       </span><span class="NAME">rule</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rules</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>103</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">rule.selectorText</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">selector</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>104</span>         </span><span class="NAME">this._rule</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rule</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// cache for next time</span><span class="WHIT">
+<span class='line'>105</span>         </span><span class="NAME">rule.style.cursor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">cursorStyle</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// update the cursor</span><span class="WHIT">
+<span class='line'>106</span>         </span><span class="KEYW">break</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>107</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>108</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>109</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'cursorStyle'</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>110</span>   
+<span class='line'>111</span>   </span><span class="COMM">// TODO implement destroy</span><span class="WHIT">
+<span class='line'>112</span>   
+<span class='line'>113</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>114</span> 
+<span class='line'>115</span> </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>116</span> </span><span class="NAME">SC.Cursor.sharedStyleSheet</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>117</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">head</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._styleSheet</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>118</span>   </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">ss</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>119</span>     </span><span class="COMM">// create the stylesheet object the hard way (works everywhere)</span><span class="WHIT">
+<span class='line'>120</span>     </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.createElement</span><span class="PUNC">(</span><span class="STRN">'style'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>121</span>     </span><span class="NAME">ss.type</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'text/css'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>122</span>     </span><span class="NAME">head</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.getElementsByTagName</span><span class="PUNC">(</span><span class="STRN">'head'</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>123</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">head</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">head</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.documentElement</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// fix for Opera</span><span class="WHIT">
+<span class='line'>124</span>     </span><span class="NAME">head.appendChild</span><span class="PUNC">(</span><span class="NAME">ss</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>     
+<span class='line'>126</span>     </span><span class="COMM">// get the actual stylesheet object, not the DOM element</span><span class="WHIT">
+<span class='line'>127</span>     </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.styleSheets</span><span class="PUNC">[</span><span class="NAME">document.styleSheets.length</span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>128</span>     </span><span class="NAME">this._styleSheet</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>129</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>130</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ss</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>132</span> </span></pre></body></html>

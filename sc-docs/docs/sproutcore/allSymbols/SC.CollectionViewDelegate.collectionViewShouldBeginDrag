@@ -1,0 +1,1 @@
+SC.CollectionViewDelegate.collectionViewShouldBeginDrag, Boolean, FUNCTION, SC.CollectionViewDelegate, Static

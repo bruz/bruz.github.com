@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.SegmentedView</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.SegmentedView
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Extends:</td>
+		      <td class="value">
+		        <a href="../symbols/SC.View.html#constructor">SC.View</a>
+		      </td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_desktop_views_segmented.js.html">frameworks/sproutcore/frameworks/desktop/views/segmented.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+			<h2>
+				Overview
+			</h2>   
+			<div class="description">
+		      <p>SegmentedView is a special type of button that can display multiple segments.  Each segment has a value assigned to it.  When the user clicks on the segment, the value of that segment will become the new value of the control.</p>
+
+<p>You can also optionally configure a target/action that will fire whenever the user clicks on an item.  This will give your code an opportunity to take some action depending on the new value.  (of course, you can always bind to the value as well, which is generally the preferred approach.)</p>
+
+<h1> Defining Your Segments</h1>
+
+<p>You define your segments by providing a items array, much like you provide to a RadioView.  Your items array can be as simple as an array of strings or as complex as full model objects.  Based on how you configure your itemKey properties, the segmented view will read the properties it needs from the array and construct the button.</p>
+
+<p>You can define the following properties on objects you pass in:</p>
+
+<p>| <strong>itemTitleKey</strong> | the title of the button | | <strong>itemValueKey</strong> | the value of the button | | <strong>itemWidthKey</strong> | the preferred width. if omitted, it autodetects | | <strong>itemIconKey</strong>  | an icon | | <strong>itemActionKey</strong> | an optional action to fire when pressed | | <strong>itemTargetKey</strong> | an optional target for the action |</p>
+		    </div>
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#allowsEmptySelection"><code>-&nbsp;(Object) allowsEmptySelection [R/W]</code></a>
+					              
+					                <div class="description">If YES, clicking a selected button again will deselect it, setting the
+    segmented views value to null.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#allowsMultipleSelection"><code>-&nbsp;(Object) allowsMultipleSelection [R/W]</code></a>
+					              
+					                <div class="description">If YES, then clicking on a tab will not deselect the other segments, it
+    will simply add or remove it from the selection.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#displayItems"><code>-&nbsp;(Array) displayItems [R/W]</code></a>
+					              
+					                <div class="description">This computed property is generated from the items array based on the 
+    itemKey properties that you set.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#isEnabled"><code>-&nbsp;(Object) isEnabled [R/W]</code></a>
+					              
+					                <div class="description">Set to YES to enabled the segmented view, NO to disabled it.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemActionKey"><code>-&nbsp;(String) itemActionKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the action for this item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemIconKey"><code>-&nbsp;(String) itemIconKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the icon for each item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemIsEnabledKey"><code>-&nbsp;(String) itemIsEnabledKey [R/W]</code></a>
+					              
+					                <div class="description">A key that determines if this item in particular is enabled.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemKeyEquivalentKey"><code>-&nbsp;(Object) itemKeyEquivalentKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the key equivalent for each item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemKeys"><code>-&nbsp;(Array) itemKeys [R/W]</code></a>
+					              
+					                <div class="description">The array of itemKeys that will be searched to build the displayItems
+    array.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#items"><code>-&nbsp;(Array) items [R/W]</code></a>
+					              
+					                <div class="description">The array of items to display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemTargetKey"><code>-&nbsp;(String) itemTargetKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the target for this item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemTitleKey"><code>-&nbsp;(String) itemTitleKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the title for each item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemValueKey"><code>-&nbsp;(String) itemValueKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the value for each item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#itemWidthKey"><code>-&nbsp;(String) itemWidthKey [R/W]</code></a>
+					              
+					                <div class="description">The key that contains the desired width for each item.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#layoutDirection"><code>-&nbsp;(Object) layoutDirection [R/W]</code></a>
+					              
+					                <div class="description">Change the layout direction to make this a vertical set of tabs instead
+    of horizontal ones.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#localize"><code>-&nbsp;(Object) localize [R/W]</code></a>
+					              
+					                <div class="description">If YES, titles will be localized before display.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.SegmentedView.html#value"><code>-&nbsp;(Object) value [R/W]</code></a>
+					              
+					                <div class="description">The value of the segmented view.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+			    <dl class="inheritsList">
+			    <dt>Properties borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#backgroundColor">backgroundColor</a>, <a href="../symbols/SC.View.html#childViews">childViews</a>, <a href="../symbols/SC.View.html#childViewsNeedLayout">childViewsNeedLayout</a>, <a href="../symbols/SC.View.html#clippingFrame">clippingFrame</a>, <a href="../symbols/SC.View.html#containerLayer">containerLayer</a>, <a href="../symbols/SC.View.html#contentClippingFrame">contentClippingFrame</a>, <a href="../symbols/SC.View.html#cursor">cursor</a>, <a href="../symbols/SC.View.html#displayProperties">displayProperties</a>, <a href="../symbols/SC.View.html#frame">frame</a>, <a href="../symbols/SC.View.html#isDescendantOf">isDescendantOf</a>, <a href="../symbols/SC.View.html#isEnabledInPane">isEnabledInPane</a>, <a href="../symbols/SC.View.html#isKeyResponder">isKeyResponder</a>, <a href="../symbols/SC.View.html#isTextSelectable">isTextSelectable</a>, <a href="../symbols/SC.View.html#isView">isView</a>, <a href="../symbols/SC.View.html#isVisible">isVisible</a>, <a href="../symbols/SC.View.html#isVisibleInWindow">isVisibleInWindow</a>, <a href="../symbols/SC.View.html#layer">layer</a>, <a href="../symbols/SC.View.html#layerId">layerId</a>, <a href="../symbols/SC.View.html#layerLocationNeedsUpdate">layerLocationNeedsUpdate</a>, <a href="../symbols/SC.View.html#layerNeedsUpdate">layerNeedsUpdate</a>, <a href="../symbols/SC.View.html#layoutStyle">layoutStyle</a>, <a href="../symbols/SC.View.html#nextKeyView">nextKeyView</a>, <a href="../symbols/SC.View.html#nextResponder">nextResponder</a>, <a href="../symbols/SC.View.html#nextValidKeyView">nextValidKeyView</a>, <a href="../symbols/SC.View.html#page">page</a>, <a href="../symbols/SC.View.html#pane">pane</a>, <a href="../symbols/SC.View.html#parentView">parentView</a>, <a href="../symbols/SC.View.html#previousKeyView">previousKeyView</a>, <a href="../symbols/SC.View.html#previousValidKeyView">previousValidKeyView</a>, <a href="../symbols/SC.View.html#recomputeIsVisibleInWindow">recomputeIsVisibleInWindow</a>, <a href="../symbols/SC.View.html#shouldInheritCursor">shouldInheritCursor</a>, <a href="../symbols/SC.View.html#splitView">splitView</a>, <a href="../symbols/SC.View.html#toolTip">toolTip</a>, <a href="../symbols/SC.View.html#touchBoundary">touchBoundary</a>, <a href="../symbols/SC.View.html#updateLayerLocationIfNeeded">updateLayerLocationIfNeeded</a>, <a href="../symbols/SC.View.html#useStaticLayout">useStaticLayout</a>, <a href="../symbols/SC.View.html#wantsAcceleratedLayer">wantsAcceleratedLayer</a></dd>
+			    </dl>
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#acceptsFirstResponder">
+		<code class="type">-&nbsp;(void)  acceptsFirstResponder()</code>
+				              </a>
+				              
+				                <div class="description">tied to the isEnabled state</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#displayItemIndexForEvent">
+		<code class="type">-&nbsp;(void)  displayItemIndexForEvent(evt)</code>
+				              </a>
+				              
+				                <div class="description">Determines the index into the displayItems array where the passed mouse
+    event occurred.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#displayItemIndexForPosition">
+		<code class="type">-&nbsp;(void)  displayItemIndexForPosition(pageX, pageY)</code>
+				              </a>
+				              
+				                <div class="description">NOTE: #renderer should implement</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#itemContentDidChange">
+		<code class="type">-&nbsp;(void)  itemContentDidChange()</code>
+				              </a>
+				              
+				                <div class="description">Invoked whenever the item array or an item in the array is changed.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#itemsDidChange">
+		<code class="type">-&nbsp;(void)  itemsDidChange()</code>
+				              </a>
+				              
+				                <div class="description">If the items array itself changes, add/remove observer on item.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#renderDisplayItems">
+		<code class="type">-&nbsp;(void)  renderDisplayItems(context, items)</code>
+				              </a>
+				              
+				                <div class="description">Actually generates the segment HTML for the display items.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.SegmentedView#triggerItemAtIndex">
+		<code class="type">-&nbsp;(void)  triggerItemAtIndex(idx)</code>
+				              </a>
+				              
+				                <div class="description">Simulates the user clicking on the segment at the specified index.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		      <dl class="inheritsList">
+		      <dt>Methods borrowed from class <a href="../symbols/SC.View.html#constructor">SC.View</a>: </dt><dd><a href="../symbols/SC.View.html#$">$</a>, <a href="../symbols/SC.View.html#adjust">adjust</a>, <a href="../symbols/SC.View.html#appendChild">appendChild</a>, <a href="../symbols/SC.View.html#.applyLocalizedAttributes">applyLocalizedAttributes</a>, <a href="../symbols/SC.View.html#awake">awake</a>, <a href="../symbols/SC.View.html#beginLiveResize">beginLiveResize</a>, <a href="../symbols/SC.View.html#.bind">bind</a>, <a href="../symbols/SC.View.html#.childView">childView</a>, <a href="../symbols/SC.View.html#.classNames">classNames</a>, <a href="../symbols/SC.View.html#computeFrameWithParentFrame">computeFrameWithParentFrame</a>, <a href="../symbols/SC.View.html#contextMenu">contextMenu</a>, <a href="../symbols/SC.View.html#convertFrameFromView">convertFrameFromView</a>, <a href="../symbols/SC.View.html#convertFrameToView">convertFrameToView</a>, <a href="../symbols/SC.View.html#.convertLayoutToAnchoredLayout">convertLayoutToAnchoredLayout</a>, <a href="../symbols/SC.View.html#.convertLayoutToCustomLayout">convertLayoutToCustomLayout</a>, <a href="../symbols/SC.View.html#.create">create</a>, <a href="../symbols/SC.View.html#createChildView">createChildView</a>, <a href="../symbols/SC.View.html#createChildViews">createChildViews</a>, <a href="../symbols/SC.View.html#createLayer">createLayer</a>, <a href="../symbols/SC.View.html#.design">design</a>, <a href="../symbols/SC.View.html#destroy">destroy</a>, <a href="../symbols/SC.View.html#destroyLayer">destroyLayer</a>, <a href="../symbols/SC.View.html#didBecomeKeyResponderFrom">didBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#didLoseKeyResponderTo">didLoseKeyResponderTo</a>, <a href="../symbols/SC.View.html#displayDidChange">displayDidChange</a>, <a href="../symbols/SC.View.html#endLiveResize">endLiveResize</a>, <a href="../symbols/SC.View.html#findLayerInParentLayer">findLayerInParentLayer</a>, <a href="../symbols/SC.View.html#hasAcceleratedLayer">hasAcceleratedLayer</a>, <a href="../symbols/SC.View.html#insertBefore">insertBefore</a>, <a href="../symbols/SC.View.html#insertText">insertText</a>, <a href="../symbols/SC.View.html#interpretKeyEvents">interpretKeyEvents</a>, <a href="../symbols/SC.View.html#isContextMenuEnabled">isContextMenuEnabled</a>, <a href="../symbols/SC.View.html#layerIdDidChange">layerIdDidChange</a>, <a href="../symbols/SC.View.html#.layout">layout</a>, <a href="../symbols/SC.View.html#layoutChildViews">layoutChildViews</a>, <a href="../symbols/SC.View.html#layoutChildViewsIfNeeded">layoutChildViewsIfNeeded</a>, <a href="../symbols/SC.View.html#layoutDidChange">layoutDidChange</a>, <a href="../symbols/SC.View.html#layoutDidChangeFor">layoutDidChangeFor</a>, <a href="../symbols/SC.View.html#layoutView">layoutView</a>, <a href="../symbols/SC.View.html#.loc">loc</a>, <a href="../symbols/SC.View.html#.localization">localization</a>, <a href="../symbols/SC.View.html#parentViewDidChange">parentViewDidChange</a>, <a href="../symbols/SC.View.html#parentViewDidResize">parentViewDidResize</a>, <a href="../symbols/SC.View.html#performKeyEquivalent">performKeyEquivalent</a>, <a href="../symbols/SC.View.html#prepareContext">prepareContext</a>, <a href="../symbols/SC.View.html#.prop">prop</a>, <a href="../symbols/SC.View.html#propertyDidChange">propertyDidChange</a>, <a href="../symbols/SC.View.html#removeAllChildren">removeAllChildren</a>, <a href="../symbols/SC.View.html#removeChild">removeChild</a>, <a href="../symbols/SC.View.html#removeFromParent">removeFromParent</a>, <a href="../symbols/SC.View.html#render">render</a>, <a href="../symbols/SC.View.html#renderChildViews">renderChildViews</a>, <a href="../symbols/SC.View.html#renderContext">renderContext</a>, <a href="../symbols/SC.View.html#renderLayout">renderLayout</a>, <a href="../symbols/SC.View.html#replaceAllChildren">replaceAllChildren</a>, <a href="../symbols/SC.View.html#replaceChild">replaceChild</a>, <a href="../symbols/SC.View.html#replaceLayer">replaceLayer</a>, <a href="../symbols/SC.View.html#scrollToVisible">scrollToVisible</a>, <a href="../symbols/SC.View.html#selectStart">selectStart</a>, <a href="../symbols/SC.View.html#.tagName">tagName</a>, <a href="../symbols/SC.View.html#touchIsInBoundary">touchIsInBoundary</a>, <a href="../symbols/SC.View.html#updateLayer">updateLayer</a>, <a href="../symbols/SC.View.html#updateLayerIfNeeded">updateLayerIfNeeded</a>, <a href="../symbols/SC.View.html#updateLayerLocation">updateLayerLocation</a>, <a href="../symbols/SC.View.html#updateLayout">updateLayout</a>, <a href="../symbols/SC.View.html#viewDidResize">viewDidResize</a>, <a href="../symbols/SC.View.html#.viewFor">viewFor</a>, <a href="../symbols/SC.View.html#willBecomeKeyResponderFrom">willBecomeKeyResponderFrom</a>, <a href="../symbols/SC.View.html#willLoseKeyResponderTo">willLoseKeyResponderTo</a></dd><dt>Methods borrowed from class <a href="../symbols/SC.DelegateSupport.html#constructor">SC.DelegateSupport</a>: </dt><dd><a href="../symbols/SC.DelegateSupport.html#.delegateFor">delegateFor</a>, <a href="../symbols/SC.DelegateSupport.html#.getDelegateProperty">getDelegateProperty</a>, <a href="../symbols/SC.DelegateSupport.html#.invokeDelegateMethod">invokeDelegateMethod</a></dd>
+		      </dl>
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="allowsEmptySelection"></a> 
+			          <div class="field">
+			            <a name="allowsEmptySelection"></a> 
+			            <h3>allowsEmptySelection
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, clicking a selected button again will deselect it, setting the
+    segmented views value to null.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">allowsEmptySelection</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Defaults to NO.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="allowsMultipleSelection"></a> 
+			          <div class="field">
+			            <a name="allowsMultipleSelection"></a> 
+			            <h3>allowsMultipleSelection
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, then clicking on a tab will not deselect the other segments, it
+    will simply add or remove it from the selection.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">allowsMultipleSelection</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="displayItems"></a> 
+			          <div class="field">
+			            <a name="displayItems"></a> 
+			            <h3>displayItems
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This computed property is generated from the items array based on the 
+    itemKey properties that you set.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">displayItems</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>The return value is an array of arrays that contain private information used by the SegmentedView to render.</p>
+
+<p>You will not generally need to access or edit this property.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="isEnabled"></a> 
+			          <div class="field">
+			            <a name="isEnabled"></a> 
+			            <h3>isEnabled
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES to enabled the segmented view, NO to disabled it.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">isEnabled</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemActionKey"></a> 
+			          <div class="field">
+			            <a name="itemActionKey"></a> 
+			            <h3>itemActionKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the action for this item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemActionKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If defined, then selecting this item will fire the action in addition to changing the value.  See also itemTargetKey.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemIconKey"></a> 
+			          <div class="field">
+			            <a name="itemIconKey"></a> 
+			            <h3>itemIconKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the icon for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemIconKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If omitted, no icons will be displayed.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemIsEnabledKey"></a> 
+			          <div class="field">
+			            <a name="itemIsEnabledKey"></a> 
+			            <h3>itemIsEnabledKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">A key that determines if this item in particular is enabled.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemIsEnabledKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>Note if the control in general is not enabled, no items will be enabled, even if the item's enabled property returns YES.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemKeyEquivalentKey"></a> 
+			          <div class="field">
+			            <a name="itemKeyEquivalentKey"></a> 
+			            <h3>itemKeyEquivalentKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the key equivalent for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">itemKeyEquivalentKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If defined then pressing that key equivalent will be like selecting the tab.  Also, pressing the Alt or Option key for 3 seconds will display the key equivalent in the tab.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemKeys"></a> 
+			          <div class="field">
+			            <a name="itemKeys"></a> 
+			            <h3>itemKeys
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The array of itemKeys that will be searched to build the displayItems
+    array.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">itemKeys</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This is used internally by the class.  You will not generally need to access or edit this array.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="items"></a> 
+			          <div class="field">
+			            <a name="items"></a> 
+			            <h3>items
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The array of items to display.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Array
+		              </span>
+		              <span class="name">items</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This can be a simple array of strings, objects or hashes.  If you pass objects or hashes, you must also set the various itemKey properties to tell the SegmentedView how to extract the information it needs.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemTargetKey"></a> 
+			          <div class="field">
+			            <a name="itemTargetKey"></a> 
+			            <h3>itemTargetKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the target for this item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemTargetKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If this and itemActionKey are defined, then this will be the target of the action fired.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemTitleKey"></a> 
+			          <div class="field">
+			            <a name="itemTitleKey"></a> 
+			            <h3>itemTitleKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the title for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemTitleKey</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemValueKey"></a> 
+			          <div class="field">
+			            <a name="itemValueKey"></a> 
+			            <h3>itemValueKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the value for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemValueKey</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="itemWidthKey"></a> 
+			          <div class="field">
+			            <a name="itemWidthKey"></a> 
+			            <h3>itemWidthKey
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The key that contains the desired width for each item.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                String
+		              </span>
+		              <span class="name">itemWidthKey</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>If omitted, the width will autosize.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="layoutDirection"></a> 
+			          <div class="field">
+			            <a name="layoutDirection"></a> 
+			            <h3>layoutDirection
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Change the layout direction to make this a vertical set of tabs instead
+    of horizontal ones.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">layoutDirection</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="localize"></a> 
+			          <div class="field">
+			            <a name="localize"></a> 
+			            <h3>localize
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">If YES, titles will be localized before display.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">localize</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="value"></a> 
+			          <div class="field">
+			            <a name="value"></a> 
+			            <h3>value
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">The value of the segmented view.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">value</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description">
+
+<p>The SegmentedView's value will always be the value of the currently selected button.  Setting this value will change the selected button. If you set this value to something that has no matching button, then no buttons will be selected.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#acceptsFirstResponder"></a> 
+			          <h3>acceptsFirstResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">tied to the isEnabled state</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">acceptsFirstResponder</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#displayItemIndexForEvent"></a> 
+			          <h3>displayItemIndexForEvent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Determines the index into the displayItems array where the passed mouse
+    event occurred.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">displayItemIndexForEvent</span> <span class="params">(evt)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#displayItemIndexForPosition"></a> 
+			          <h3>displayItemIndexForPosition()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">NOTE: #renderer should implement</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">displayItemIndexForPosition</span> <span class="params">(pageX, pageY)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#itemContentDidChange"></a> 
+			          <h3>itemContentDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Invoked whenever the item array or an item in the array is changed.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">itemContentDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method will reginerate the list of items.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#itemsDidChange"></a> 
+			          <h3>itemsDidChange()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">If the items array itself changes, add/remove observer on item.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">itemsDidChange</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>..</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#renderDisplayItems"></a> 
+			          <h3>renderDisplayItems()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Actually generates the segment HTML for the display items.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">renderDisplayItems</span> <span class="params">(context, items)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This method is called the first time a view is constructed and any time the display items change thereafter.  This will construct the HTML but will not set any "transient" states such as the global isEnabled property or selection.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.SegmentedView#triggerItemAtIndex"></a> 
+			          <h3>triggerItemAtIndex()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Simulates the user clicking on the segment at the specified index.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">triggerItemAtIndex</span> <span class="params">(idx)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This will update the value if possible and fire the action.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:56 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

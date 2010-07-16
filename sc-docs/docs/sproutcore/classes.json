@@ -1,0 +1,2072 @@
+
+[
+  
+    { "type": "Doc", 
+      "guid": "_global_", 
+      "name": "_global_", 
+      
+        "title": "_global_",
+      
+      
+      "url": "_global_.html",
+      
+        "group": "undefined",
+      
+      "symbols": "pane isResponder item fallBackOnAlert nextResponder acceptsFirstResponder format currentWindowSize domain reporter menuPane isFirstResponder hasFocus branchIndexes exists length name debugEnabled isCookie fallBackOnLog panes children keyPane index value delegate hasFirstResponder parentObserver secure previousKeyPanes disclosureState expires mainPane defaultResponder responderContext path",
+      "path": ""
+    },
+  
+    { "type": "Doc", 
+      "guid": "Function", 
+      "name": "Function", 
+      
+        "title": "Function",
+      
+      
+      "url": "Function.html",
+      
+        "group": "undefined",
+      
+      "symbols": "",
+      "path": ""
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC", 
+      "name": "SC", 
+      
+      
+        "title": "SproutCore (SC)",
+      
+      "url": "SC.html",
+      
+      "symbols": "SC.SCANNER_SCAN_ARRAY_ERROR SC.DRAG_REORDER SC.PARSE_COLOR_RGBRE SC.LAYOUT_VERTICAL SC.Comparable SC.CAPTURE_BACKSPACE_KEY SC.CollectionFastPath SC.LOGGER_LOG_DELIMITER SC.BUTTON2_STATUS SC.STRINGS SC.ChildRecord SC.Button SC.Editable SC.Control SC.ANCHOR_RIGHT SC.LOGGER_LOG_DEBUG SC.LARGE_CONTROL_SIZE SC.Locale SC.ANCHOR_TOP SC.ZERO_RANGE SC.HUGE_CONTROL_SIZE SC.DATETIME_COMPAREDATE_TIMEZONE_ERROR SC.Enumerable SC.CONTEXT_MENU_ENABLED SC.RenderContext SC.DROP_ON SC.ANCHOR_BOTTOM_RIGHT SC.SMALL_CONTROL_SIZE SC.HORIZONTAL_ORIENTATION SC.LOG_BINDINGS SC.platform SC.LOG_OBSERVERS SC.EMPTY_HASH SC.ZERO_POINT SC.LAYOUT_AUTO SC.Freezable SC.MIXED_STATE SC.EMPTY_PLACEHOLDER SC.DROP_BEFORE SC.SCANNER_SKIP_ERROR SC.LOGGER_LOG_ERROR SC.TINY_CONTROL_SIZE SC.VERTICAL_ORIENTATION SC.MODE_APPEND SC.LAYOUT_HORIZONTAL SC.BENCHMARK_BINDING_SETUP SC.logBundleLoading SC.LEAF_NODE SC.TaskQueue SC.CollectionGroup SC.EMPTY_RANGE SC.DROP_AFTER SC.BRANCH_CLOSED SC.ANCHOR_LEFT SC.NULL_PLACEHOLDER SC.DROP_ANY SC.Array SC.FROZEN_ERROR SC.Validatable SC.SCANNER_OUT_OF_BOUNDS_ERROR SC.PalettePane SC.TABBING_ONLY_INSIDE_DOCUMENT SC.CollectionRowDelegate SC.PICKER_MENU SC.Benchmark SC.String SC.ANCHOR_BOTTOM SC.CollectionContent SC.device SC.ResponderContext SC.TreeItemContent SC.BUTTON3_STATUS SC.EMPTY_ARRAY SC.Task SC.DATETIME_ISO8601 SC.BUTTON1_STATUS SC.BLANK_IMAGE_DATAURL SC.MULTIPLE_PLACEHOLDER SC.POINTER_LAYOUT SC.Scrollable SC.SAFARI_FOCUS_BEHAVIOR SC.ANCHOR_CENTER SC.Binding SC.Observable SC.DelegateSupport SC.Observers SC.ObserverSet SC.userDefaults SC.SelectionSupport SC.SCANNER_INT_ERROR SC.FULL_WIDTH SC.SplitView SC.ContentDisplay SC.LOGGER_LOG_INFO SC.BENCHMARK_BINDING_NOTIFICATIONS SC.StaticLayout SC.XHRResponse SC.MODE_REPLACE SC.BRANCH_OPEN SC.Response SC.Copyable SC.allowsBackspaceToPreviousPage SC.CollectionViewDelegate SC.Border SC.REGULAR_CONTROL_SIZE SC.LOGGER_LOG_WARN SC.MODE_PREPEND SC.FULL_HEIGHT SC.routes SC.SheetPane",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/core.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.AlertPane", 
+      "name": "SC.AlertPane", 
+      
+        "title": "SC.AlertPane",
+      
+      
+      "url": "SC.AlertPane.html",
+      
+        "group": "frameworks/desktop/panes",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/panes/alert.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Application", 
+      "name": "SC.Application", 
+      
+        "title": "SC.Application",
+      
+      
+      "url": "SC.Application.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.ResponderContext.nextResponder SC.ResponderContext.trace SC.ResponderContext.firstResponder SC.ResponderContext.defaultResponder",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/application.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Array", 
+      "name": "SC.Array", 
+      
+        "title": "SC.Array",
+      
+      
+      "url": "SC.Array.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Enumerable.isEnumerable SC.Array.isSCArray",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ArrayController", 
+      "name": "SC.ArrayController", 
+      
+        "title": "SC.ArrayController",
+      
+      
+      "url": "SC.ArrayController.html",
+      
+        "group": "frameworks/foundation/controllers",
+      
+      "symbols": "SC.SelectionSupport.allowsSelection SC.SelectionSupport.hasSelection SC.SelectionSupport.allowsMultipleSelection SC.SelectionSupport.allowsEmptySelection SC.SelectionSupport.selection SC.SelectionSupport.hasSelectionSupport SC.Enumerable.isEnumerable SC.Array.isSCArray SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.ArrayController#orderBy SC.ArrayController#canRemoveContent SC.ArrayController#hasContent SC.ArrayController#length SC.ArrayController#destroyOnRemoval SC.ArrayController#status SC.ArrayController#canReorderContent SC.ArrayController#allowsSingleContent SC.ArrayController#arrangedObjects SC.ArrayController#content SC.ArrayController#isEditable SC.ArrayController#canAddContent",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/controllers/array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Benchmark", 
+      "name": "SC.Benchmark", 
+      
+        "title": "SC.Benchmark",
+      
+      
+      "url": "SC.Benchmark.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Benchmark.globalStartTime SC.Benchmark.enabled SC.Benchmark.verbose SC.Benchmark.stats",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/benchmark.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Binding", 
+      "name": "SC.Binding", 
+      
+        "title": "SC.Binding",
+      
+      
+      "url": "SC.Binding.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/binding.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Border", 
+      "name": "SC.Border", 
+      
+        "title": "SC.Border",
+      
+      
+      "url": "SC.Border.html",
+      
+        "group": "frameworks/desktop/mixins",
+      
+      "symbols": "SC.Border.borderLeft SC.Border.borderTop SC.Border.borderBottom SC.Border.borderStyle SC.Border.borderRight",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/mixins/border.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Builder", 
+      "name": "SC.Builder", 
+      
+        "title": "SC.Builder",
+      
+      
+      "url": "SC.Builder.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Builder.fn",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/builder.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Button", 
+      "name": "SC.Button", 
+      
+        "title": "SC.Button",
+      
+      
+      "url": "SC.Button.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.Button.contentPropertyDidChange SC.Button.toggleOffValue SC.Button.value SC.Button.contentIconKey SC.Button.icon SC.Button.needsEllipsis SC.Button.keyEquivalent SC.Button.contentTitleKey SC.Button.displayTitle SC.Button.title SC.Button.triggerAction SC.Button.localize SC.Button.toggleOnValue",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/button.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ButtonView", 
+      "name": "SC.ButtonView", 
+      
+        "title": "SC.ButtonView",
+      
+      
+      "url": "SC.ButtonView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Button.toggleOffValue SC.Button.contentIconKey SC.Button.icon SC.Button.needsEllipsis SC.Button.keyEquivalent SC.Button.contentTitleKey SC.Button.displayTitle SC.Button.title SC.Button.localize SC.Button.toggleOnValue SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.ButtonView#titleMinWidth SC.ButtonView#target SC.ButtonView#classNames SC.ButtonView#buttonBehavior SC.ButtonView#supportFocusRing SC.ButtonView#action SC.ButtonView#didTriggerAction SC.ButtonView#theme SC.ButtonView.CLICK_AND_HOLD_DELAY SC.ButtonView#isDefault SC.ButtonView#renderStyle SC.ButtonView#isCancel SC.ButtonView#href SC.ButtonView#tagName",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/button.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CascadeDataSource", 
+      "name": "SC.CascadeDataSource", 
+      
+        "title": "SC.CascadeDataSource",
+      
+      
+      "url": "SC.CascadeDataSource.html",
+      
+        "group": "frameworks/datastore/data_sources",
+      
+      "symbols": "SC.CascadeDataSource#dataSources",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/data_sources/cascade.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CheckboxView", 
+      "name": "SC.CheckboxView", 
+      
+        "title": "SC.CheckboxView",
+      
+      
+      "url": "SC.CheckboxView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#isTextArea SC.FieldView#fieldValue",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/checkbox.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ChildArray", 
+      "name": "SC.ChildArray", 
+      
+        "title": "SC.ChildArray",
+      
+      
+      "url": "SC.ChildArray.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Array.isSCArray SC.Enumerable.isEnumerable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/child_array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ChildAttribute", 
+      "name": "SC.ChildAttribute", 
+      
+        "title": "SC.ChildAttribute",
+      
+      
+      "url": "SC.ChildAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#isEditable SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/child_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ChildrenAttribute", 
+      "name": "SC.ChildrenAttribute", 
+      
+        "title": "SC.ChildrenAttribute",
+      
+      
+      "url": "SC.ChildrenAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#isEditable SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/children_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CollectionContent", 
+      "name": "SC.CollectionContent", 
+      
+        "title": "SC.CollectionContent",
+      
+      
+      "url": "SC.CollectionContent.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.CollectionContent.isCollectionContent",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/collection_content.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CollectionGroup", 
+      "name": "SC.CollectionGroup", 
+      
+        "title": "SC.CollectionGroup",
+      
+      
+      "url": "SC.CollectionGroup.html",
+      
+        "group": "frameworks/desktop/mixins",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/mixins/collection_group.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CollectionRowDelegate", 
+      "name": "SC.CollectionRowDelegate", 
+      
+        "title": "SC.CollectionRowDelegate",
+      
+      
+      "url": "SC.CollectionRowDelegate.html",
+      
+        "group": "frameworks/desktop/mixins",
+      
+      "symbols": "SC.CollectionRowDelegate.isCollectionRowDelegate SC.CollectionRowDelegate.customRowHeightIndexes SC.CollectionRowDelegate.rowHeight",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/mixins/collection_row_delegate.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CollectionView", 
+      "name": "SC.CollectionView", 
+      
+        "title": "SC.CollectionView",
+      
+      
+      "url": "SC.CollectionView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.CollectionContent.isCollectionContent SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.CollectionView#reorderDataType SC.CollectionView#calculatedWidth SC.CollectionView#action SC.CollectionView#contentValueKey SC.CollectionView#contentExampleViewKey SC.CollectionView#isEditable SC.CollectionView#allContentIndexes SC.CollectionView#calculatedHeight SC.CollectionView#content SC.CollectionView#useToggleSelection SC.CollectionView#selection SC.CollectionView#proposedInsertionIndex SC.CollectionView#isEnabled SC.CollectionView#canEditContent SC.CollectionView#dragDataTypes SC.CollectionView#acceptsFirstResponder SC.CollectionView#delegate SC.CollectionView#actOnSelect SC.CollectionView#groupExampleView SC.CollectionView#canReorderContent SC.CollectionView#selectionDelegate SC.CollectionView#exampleView SC.CollectionView#selectOnMouseDown SC.CollectionView#useFastPath SC.CollectionView#target SC.CollectionView#nowShowing SC.CollectionView#contentGroupExampleViewKey SC.CollectionView#isDropTarget SC.CollectionView#length SC.CollectionView#isActive SC.CollectionView#contentDelegate SC.CollectionView#dragContent SC.CollectionView#canDeleteContent SC.CollectionView#isSelectable SC.CollectionView#proposedDropOperation",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/collection.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CollectionViewDelegate", 
+      "name": "SC.CollectionViewDelegate", 
+      
+        "title": "SC.CollectionViewDelegate",
+      
+      
+      "url": "SC.CollectionViewDelegate.html",
+      
+        "group": "frameworks/desktop/mixins",
+      
+      "symbols": "SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/mixins/collection_view_delegate.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Comparable", 
+      "name": "SC.Comparable", 
+      
+        "title": "SC.Comparable",
+      
+      
+      "url": "SC.Comparable.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Comparable.isComparable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/comparable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ContainerView", 
+      "name": "SC.ContainerView", 
+      
+        "title": "SC.ContainerView",
+      
+      
+      "url": "SC.ContainerView.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ContainerView#contentView SC.ContainerView#nowShowing",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/container.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ContentDisplay", 
+      "name": "SC.ContentDisplay", 
+      
+        "title": "SC.ContentDisplay",
+      
+      
+      "url": "SC.ContentDisplay.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.ContentDisplay.contentDisplayProperties",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/content_display.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Control", 
+      "name": "SC.Control", 
+      
+        "title": "SC.Control",
+      
+      
+      "url": "SC.Control.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/control.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Controller", 
+      "name": "SC.Controller", 
+      
+        "title": "SC.Controller",
+      
+      
+      "url": "SC.Controller.html",
+      
+        "group": "frameworks/foundation/controllers",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Controller#isEditable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/controllers/controller.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Cookie", 
+      "name": "SC.Cookie", 
+      
+        "title": "SC.Cookie",
+      
+      
+      "url": "SC.Cookie.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/cookie.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Copyable", 
+      "name": "SC.Copyable", 
+      
+        "title": "SC.Copyable",
+      
+      
+      "url": "SC.Copyable.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Copyable.isCopyable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/copyable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CoreQuery", 
+      "name": "SC.CoreQuery", 
+      
+        "title": "SC.CoreQuery",
+      
+      
+      "url": "SC.CoreQuery.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Builder.fn.mixin",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/core_query.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.CoreSet", 
+      "name": "SC.CoreSet", 
+      
+        "title": "SC.CoreSet",
+      
+      
+      "url": "SC.CoreSet.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Observable.isObservable SC.Enumerable.isEnumerable SC.Set#length SC.Set#firstObject SC.Set#isSet",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/set.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Cursor", 
+      "name": "SC.Cursor", 
+      
+        "title": "SC.Cursor",
+      
+      
+      "url": "SC.Cursor.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Cursor#cursorStyle SC.Cursor#className",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/cursor.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.DataSource", 
+      "name": "SC.DataSource", 
+      
+        "title": "SC.DataSource",
+      
+      
+      "url": "SC.DataSource.html",
+      
+        "group": "frameworks/datastore/data_sources",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/data_sources/data_source.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.DateFieldView", 
+      "name": "SC.DateFieldView", 
+      
+        "title": "SC.DateFieldView",
+      
+      
+      "url": "SC.DateFieldView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#fieldValue SC.TextFieldView#spellCheckEnabled SC.TextFieldView#selection SC.TextFieldView#hint SC.TextFieldView#isContextMenuEnabled SC.TextFieldView#rightAccessoryView SC.TextFieldView#isPassword SC.TextFieldView#leftAccessoryView SC.TextFieldView#isEditing SC.TextFieldView#_forceRenderFirstTime SC.TextFieldView#defaultTabbingEnabled SC.TextFieldView#_topOffsetForFirefoxCursorFix SC.TextFieldView#isTextArea SC.DateFieldView#format SC.DateFieldView#tabsSelections SC.DateFieldView#validator",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/date_field.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.DateTime", 
+      "name": "SC.DateTime", 
+      
+        "title": "SC.DateTime",
+      
+      
+      "url": "SC.DateTime.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Copyable.isCopyable SC.Freezable.isFreezable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.DateTime#isFrozen SC.DateTime.monthNames SC.DateTime.abbreviatedDayNames SC.DateTime.timezone SC.DateTime.abbreviatedMonthNames SC.DateTime.dayNames SC.DateTime.recordFormat SC.DateTime#timezone",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/datetime.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.DelegateSupport", 
+      "name": "SC.DelegateSupport", 
+      
+        "title": "SC.DelegateSupport",
+      
+      
+      "url": "SC.DelegateSupport.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/delegate_support.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.DisclosureView", 
+      "name": "SC.DisclosureView", 
+      
+        "title": "SC.DisclosureView",
+      
+      
+      "url": "SC.DisclosureView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Button.contentIconKey SC.Button.icon SC.Button.needsEllipsis SC.Button.keyEquivalent SC.Button.contentTitleKey SC.Button.displayTitle SC.Button.title SC.Button.localize SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.ButtonView#titleMinWidth SC.ButtonView#target SC.ButtonView#classNames SC.ButtonView#buttonBehavior SC.ButtonView#supportFocusRing SC.ButtonView#action SC.ButtonView#didTriggerAction SC.ButtonView#theme SC.ButtonView.CLICK_AND_HOLD_DELAY SC.ButtonView#isDefault SC.ButtonView#renderStyle SC.ButtonView#isCancel SC.ButtonView#href SC.ButtonView#tagName SC.DisclosureView#toggleOffValue SC.DisclosureView#toggleOnValue",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/disclosure.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Drag", 
+      "name": "SC.Drag", 
+      
+        "title": "SC.Drag",
+      
+      
+      "url": "SC.Drag.html",
+      
+        "group": "frameworks/desktop/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Drag#data SC.Drag#allowedDragOperations SC.Drag#dragView SC.Drag#slideBack SC.Drag#ghostView SC.Drag#ghostOffset SC.Drag#source SC.Drag#dataTypes SC.Drag#location SC.Drag#ghost SC.Drag#ghostActsLikeCursor SC.Drag#dataSource SC.Drag#mouseDownEvent",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/system/drag.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Editable", 
+      "name": "SC.Editable", 
+      
+        "title": "SC.Editable",
+      
+      
+      "url": "SC.Editable.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.Editable.isEditable SC.Editable.isEditing",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/editable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Enumerable", 
+      "name": "SC.Enumerable", 
+      
+        "title": "SC.Enumerable",
+      
+      
+      "url": "SC.Enumerable.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Enumerable.isEnumerable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/enumerable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Enumerator", 
+      "name": "SC.Enumerator", 
+      
+        "title": "SC.Enumerator",
+      
+      
+      "url": "SC.Enumerator.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/enumerator.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Error", 
+      "name": "SC.Error", 
+      
+        "title": "SC.Error",
+      
+      
+      "url": "SC.Error.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Error#code SC.Error#errorValue SC.Error#errorObject SC.Error#message SC.Error#isError SC.Error#label SC.Error.HAS_MULTIPLE_VALUES",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/error.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Event", 
+      "name": "SC.Event", 
+      
+        "title": "SC.Event",
+      
+      
+      "url": "SC.Event.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Event.observe SC.Event#normalized SC.Event#hasCustomEventHandling SC.Event.special SC.Event.stopObserving SC.Event.fire",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/event.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.FetchedAttribute", 
+      "name": "SC.FetchedAttribute", 
+      
+        "title": "SC.FetchedAttribute",
+      
+      
+      "url": "SC.FetchedAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate SC.FetchedAttribute#isEditable SC.FetchedAttribute#paramValueKey SC.FetchedAttribute#paramRelKey SC.FetchedAttribute#queryKey SC.FetchedAttribute#paramOwnerKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/fetched_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.FieldView", 
+      "name": "SC.FieldView", 
+      
+        "title": "SC.FieldView",
+      
+      
+      "url": "SC.FieldView.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#isTextArea SC.FieldView#fieldValue",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/field.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.FixturesDataSource", 
+      "name": "SC.FixturesDataSource", 
+      
+        "title": "SC.FixturesDataSource",
+      
+      
+      "url": "SC.FixturesDataSource.html",
+      
+        "group": "frameworks/datastore/data_sources",
+      
+      "symbols": "SC.FixturesDataSource#simulateRemoteResponse SC.FixturesDataSource#latency",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/data_sources/fixtures.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Freezable", 
+      "name": "SC.Freezable", 
+      
+        "title": "SC.Freezable",
+      
+      
+      "url": "SC.Freezable.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/freezable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.GridView", 
+      "name": "SC.GridView", 
+      
+        "title": "SC.GridView",
+      
+      
+      "url": "SC.GridView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.CollectionContent.isCollectionContent SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.CollectionView#reorderDataType SC.CollectionView#calculatedWidth SC.CollectionView#action SC.CollectionView#contentValueKey SC.CollectionView#contentExampleViewKey SC.CollectionView#isEditable SC.CollectionView#allContentIndexes SC.CollectionView#calculatedHeight SC.CollectionView#content SC.CollectionView#useToggleSelection SC.CollectionView#selection SC.CollectionView#proposedInsertionIndex SC.CollectionView#isEnabled SC.CollectionView#canEditContent SC.CollectionView#dragDataTypes SC.CollectionView#acceptsFirstResponder SC.CollectionView#delegate SC.CollectionView#actOnSelect SC.CollectionView#groupExampleView SC.CollectionView#canReorderContent SC.CollectionView#selectionDelegate SC.CollectionView#selectOnMouseDown SC.CollectionView#useFastPath SC.CollectionView#target SC.CollectionView#nowShowing SC.CollectionView#contentGroupExampleViewKey SC.CollectionView#isDropTarget SC.CollectionView#length SC.CollectionView#isActive SC.CollectionView#contentDelegate SC.CollectionView#dragContent SC.CollectionView#canDeleteContent SC.CollectionView#isSelectable SC.CollectionView#proposedDropOperation SC.GridView#columnWidth SC.GridView#rowHeight SC.GridView#exampleView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/grid.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.imageCache", 
+      "name": "SC.imageCache", 
+      
+        "title": "SC.imageCache",
+      
+      
+      "url": "SC.imageCache.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.imageCache#loadLimit SC.imageCache#activeRequests",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/image_cache.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ImageView", 
+      "name": "SC.ImageView", 
+      
+        "title": "SC.ImageView",
+      
+      
+      "url": "SC.ImageView.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ImageView#classNames SC.ImageView#status SC.ImageView#canLoadInBackground SC.ImageView#localize SC.ImageView#value SC.ImageView#useImageCache",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/image.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.IndexSet", 
+      "name": "SC.IndexSet", 
+      
+        "title": "SC.IndexSet",
+      
+      
+      "url": "SC.IndexSet.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Observable.isObservable SC.Enumerable.isEnumerable SC.IndexSet#length SC.IndexSet#min SC.IndexSet#max SC.IndexSet#isIndexSet SC.IndexSet#LOG_OBSERVING SC.IndexSet#firstObject SC.IndexSet#source",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/index_set.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.InlineTextFieldView", 
+      "name": "SC.InlineTextFieldView", 
+      
+        "title": "SC.InlineTextFieldView",
+      
+      
+      "url": "SC.InlineTextFieldView.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#fieldValue SC.TextFieldView#spellCheckEnabled SC.TextFieldView#selection SC.TextFieldView#hint SC.TextFieldView#isContextMenuEnabled SC.TextFieldView#rightAccessoryView SC.TextFieldView#isPassword SC.TextFieldView#leftAccessoryView SC.TextFieldView#_forceRenderFirstTime SC.TextFieldView#defaultTabbingEnabled SC.TextFieldView#isTextArea SC.InlineTextFieldView#_topOffsetForFirefoxCursorFix SC.InlineTextFieldView.editor SC.InlineTextFieldView#isEditing",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/inline_text_field.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.LabelView", 
+      "name": "SC.LabelView", 
+      
+        "title": "SC.LabelView",
+      
+      
+      "url": "SC.LabelView.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.LabelView#isEditable SC.LabelView#localize SC.LabelView#formatter SC.LabelView#value SC.LabelView#hint SC.LabelView#exampleInlineTextFieldView SC.LabelView#isInlineEditorMultiline SC.LabelView#icon SC.LabelView#textAlign SC.LabelView#escapeHTML SC.LabelView#isEditing SC.LabelView#validator SC.LabelView#displayValue SC.LabelView#fontWeight",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/label.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ListItemView", 
+      "name": "SC.ListItemView", 
+      
+        "title": "SC.ListItemView",
+      
+      
+      "url": "SC.ListItemView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.StaticLayout.hasStaticLayout SC.Editable.isEditable SC.Control.isActive SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ListItemView#validator SC.ListItemView#contentIsBranchKey SC.ListItemView#content SC.ListItemView#contentUnreadCountKey SC.ListItemView#contentValueKey SC.ListItemView#outlineIndent SC.ListItemView#contentRightIconKey SC.ListItemView#hasContentIcon SC.ListItemView#hasContentRightIcon SC.ListItemView#hasContentBranch SC.ListItemView#escapeHTML SC.ListItemView#isEditing SC.ListItemView#contentIconKey SC.ListItemView#outlineLevel SC.ListItemView#disclosureState SC.ListItemView#contentCheckboxKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/list_item.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ListView", 
+      "name": "SC.ListView", 
+      
+        "title": "SC.ListView",
+      
+      
+      "url": "SC.ListView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.CollectionRowDelegate.isCollectionRowDelegate SC.CollectionRowDelegate.customRowHeightIndexes SC.CollectionRowDelegate.rowHeight SC.CollectionContent.isCollectionContent SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.CollectionView#reorderDataType SC.CollectionView#calculatedWidth SC.CollectionView#action SC.CollectionView#contentValueKey SC.CollectionView#contentExampleViewKey SC.CollectionView#isEditable SC.CollectionView#allContentIndexes SC.CollectionView#calculatedHeight SC.CollectionView#content SC.CollectionView#useToggleSelection SC.CollectionView#selection SC.CollectionView#proposedInsertionIndex SC.CollectionView#isEnabled SC.CollectionView#canEditContent SC.CollectionView#dragDataTypes SC.CollectionView#acceptsFirstResponder SC.CollectionView#delegate SC.CollectionView#actOnSelect SC.CollectionView#groupExampleView SC.CollectionView#canReorderContent SC.CollectionView#selectionDelegate SC.CollectionView#exampleView SC.CollectionView#selectOnMouseDown SC.CollectionView#useFastPath SC.CollectionView#target SC.CollectionView#nowShowing SC.CollectionView#contentGroupExampleViewKey SC.CollectionView#isDropTarget SC.CollectionView#length SC.CollectionView#isActive SC.CollectionView#contentDelegate SC.CollectionView#dragContent SC.CollectionView#canDeleteContent SC.CollectionView#isSelectable SC.CollectionView#proposedDropOperation SC.ListView#showAlternatingRows SC.ListView#insertionPointView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/list.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Logger", 
+      "name": "SC.Logger", 
+      
+        "title": "SC.Logger",
+      
+      
+      "url": "SC.Logger.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/logger.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.MainPane", 
+      "name": "SC.MainPane", 
+      
+        "title": "SC.MainPane",
+      
+      
+      "url": "SC.MainPane.html",
+      
+        "group": "frameworks/foundation/panes",
+      
+      "symbols": "SC.ResponderContext.trace SC.ResponderContext.defaultResponder SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.Pane#currentWindowSize SC.Pane#nextResponder SC.Pane#isPaneAttached SC.Pane#isKeyPane SC.Pane#zIndex SC.Pane#isMainPane SC.Pane#touchZ SC.Pane#page SC.Pane#rootResponder SC.Pane#acceptsKeyPane SC.Pane#isPane SC.Pane#firstResponder SC.Pane#hasTouchIntercept",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/panes/main.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ManyArray", 
+      "name": "SC.ManyArray", 
+      
+        "title": "SC.ManyArray",
+      
+      
+      "url": "SC.ManyArray.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Array.isSCArray SC.Enumerable.isEnumerable SC.ManyArray#storeKey SC.ManyArray#orderBy SC.ManyArray#children SC.ManyArray#store SC.ManyArray#recordType SC.ManyArray#readOnlyStoreIds SC.ManyArray#isMaster SC.ManyArray#editableStoreIds SC.ManyArray#inverse SC.ManyArray#manyAttribute SC.ManyArray#propertyName SC.ManyArray#record SC.ManyArray#readOnlyChildren SC.ManyArray#defaultRecordType SC.ManyArray#isEditable SC.ManyArray#editableChildren",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/many_array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ManyAttribute", 
+      "name": "SC.ManyAttribute", 
+      
+        "title": "SC.ManyAttribute",
+      
+      
+      "url": "SC.ManyAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#isEditable SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate SC.ManyAttribute#inverse SC.ManyAttribute#isMaster SC.ManyAttribute#orderBy",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/many_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Math", 
+      "name": "SC.Math", 
+      
+        "title": "SC.Math",
+      
+      
+      "url": "SC.Math.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/math.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.MenuItemView", 
+      "name": "SC.MenuItemView", 
+      
+        "title": "SC.MenuItemView",
+      
+      
+      "url": "SC.MenuItemView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Button.toggleOffValue SC.Button.contentIconKey SC.Button.icon SC.Button.needsEllipsis SC.Button.keyEquivalent SC.Button.contentTitleKey SC.Button.displayTitle SC.Button.title SC.Button.localize SC.Button.toggleOnValue SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.ButtonView#titleMinWidth SC.ButtonView#target SC.ButtonView#classNames SC.ButtonView#buttonBehavior SC.ButtonView#supportFocusRing SC.ButtonView#action SC.ButtonView#didTriggerAction SC.ButtonView#theme SC.ButtonView.CLICK_AND_HOLD_DELAY SC.ButtonView#isDefault SC.ButtonView#renderStyle SC.ButtonView#isCancel SC.ButtonView#href SC.ButtonView#tagName SC.MenuItemView#content SC.MenuItemView#isSeparator SC.MenuItemView#subMenu SC.MenuItemView#blocksIEDeactivate SC.MenuItemView#hasSubMenu SC.MenuItemView#isEnabled",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/menu_item.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.MenuPane", 
+      "name": "SC.MenuPane", 
+      
+        "title": "SC.MenuPane",
+      
+      
+      "url": "SC.MenuPane.html",
+      
+        "group": "frameworks/desktop/panes",
+      
+      "symbols": "SC.PickerPane.PICKER_POINTER_OFFSET SC.MenuPane#itemActionKey SC.MenuPane#selectedItem SC.MenuPane#itemHeight SC.MenuPane.TINY_MENU_ITEM_HEIGHT SC.MenuPane#controlSize SC.MenuPane#acceptsMenuPane SC.MenuPane#itemTitleKey SC.MenuPane#itemValueKey SC.MenuPane#menuItemViews SC.MenuPane#itemSeparatorKey SC.MenuPane#itemDisableMenuFlashKey SC.MenuPane#submenuOffsetX SC.MenuPane#itemIconKey SC.MenuPane#itemIsEnabledKey SC.MenuPane#anchor SC.MenuPane#itemHeightKey SC.MenuPane#itemSubMenuKey SC.MenuPane#rootMenu SC.MenuPane#itemKeyEquivalentKey SC.MenuPane#displayItems SC.MenuPane#localize SC.MenuPane#itemCheckboxKey SC.MenuPane#exampleView SC.MenuPane#items SC.MenuPane#isSubMenu SC.MenuPane#itemShortCutKey SC.MenuPane#menuHeightPadding SC.MenuPane#menuHeight SC.MenuPane#itemSeparatorHeight SC.MenuPane#itemTargetKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/panes/menu.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.MenuScrollerView", 
+      "name": "SC.MenuScrollerView", 
+      
+        "title": "SC.MenuScrollerView",
+      
+      
+      "url": "SC.MenuScrollerView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ScrollerView#proportion SC.ScrollerView#capLength SC.ScrollerView#layoutDirection SC.ScrollerView#value SC.ScrollerView#hasButtons SC.ScrollerView#capOverlap SC.ScrollerView#isEnabled SC.ScrollerView#buttonLength SC.ScrollerView#minimum SC.ScrollerView#scrollbarThickness SC.ScrollerView#buttonOverlap SC.ScrollerView#maximum SC.MenuScrollerView.REGULAR_SCROLLER_THICKNESS",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/menu_scroll.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.MenuScrollView", 
+      "name": "SC.MenuScrollView", 
+      
+        "title": "SC.MenuScrollView",
+      
+      
+      "url": "SC.MenuScrollView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.ScrollView#hasHorizontalScroller SC.ScrollView#minimumHorizontalScrollOffset SC.ScrollView#animatedBackgroundMatrix SC.ScrollView#offsetRange SC.ScrollView#isRunning SC.ScrollView#verticalScrollerView SC.ScrollView#maximumHorizontalScrollOffset SC.ScrollView#isIndeterminate SC.ScrollView#layout SC.ScrollView#verticalScrollerLayout SC.ScrollView#verticalAlign SC.ScrollView#verticalOverlay SC.ScrollView#verticalScrollerBottom SC.ScrollView#canScale SC.ScrollView#alwaysBounceVertical SC.ScrollView#canScrollVertical SC.ScrollView#ownerScrollValueKey SC.ScrollView#controlSize SC.ScrollView#classNames SC.ScrollView#contentIsIndeterminateKey SC.ScrollView#containerView SC.ScrollView#maximumScale SC.ScrollView#contentView SC.ScrollView#verticalLineScroll SC.ScrollView#alwaysBounceHorizontal SC.ScrollView#delaysContentTouches SC.ScrollView#_scale SC.ScrollView#layoutDirection SC.ScrollView#minimumScale SC.ScrollView#contentMinimumKey SC.ScrollView#isVerticalScrollerVisible SC.ScrollView#contentMaximumKey SC.ScrollView#horizontalAlign SC.ScrollView#minimumVerticalScrollOffset SC.ScrollView#decelerationRate SC.ScrollView#isEnabled SC.ScrollView#maximumVerticalScrollOffset SC.ScrollView#canScrollHorizontal SC.ScrollView#minimum SC.ScrollView#horizontalLineScroll SC.ScrollView#horizontalScrollerLayout SC.ScrollView#hasVerticalScroller SC.ScrollView#autohidesHorizontalScroller SC.ScrollView#scrollDown SC.ScrollView#maximum SC.ScrollView#horizontalScrollerView SC.ScrollView#autohidesVerticalScroller SC.ScrollView#horizontalOverlay SC.ScrollView#isHorizontalScrollerVisible SC.ScrollView#autoScaleRange SC.ScrollView#value",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/menu_scroll.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ModalPane", 
+      "name": "SC.ModalPane", 
+      
+        "title": "SC.ModalPane",
+      
+      
+      "url": "SC.ModalPane.html",
+      
+        "group": "frameworks/desktop/panes",
+      
+      "symbols": "SC.ResponderContext.trace SC.ResponderContext.defaultResponder SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.Pane#currentWindowSize SC.Pane#nextResponder SC.Pane#isPaneAttached SC.Pane#isKeyPane SC.Pane#zIndex SC.Pane#isMainPane SC.Pane#touchZ SC.Pane#page SC.Pane#rootResponder SC.Pane#acceptsKeyPane SC.Pane#isPane SC.Pane#firstResponder SC.Pane#hasTouchIntercept",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/panes/modal.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.NestedStore", 
+      "name": "SC.NestedStore", 
+      
+        "title": "SC.NestedStore",
+      
+      
+      "url": "SC.NestedStore.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Store#nestedStores SC.Store#dataSource SC.Store#editables SC.Store#commitRecordsAutomatically SC.Store#name SC.Store#recordArraysWithQuery SC.Store#changelog SC.Store#queryErrors SC.Store#recordErrors SC.NestedStore#parentStore SC.NestedStore#lockOnRead SC.NestedStore#hasChanges SC.NestedStore#isNested",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/nested_store.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Object", 
+      "name": "SC.Object", 
+      
+        "title": "SC.Object",
+      
+      
+      "url": "SC.Object.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object.superclass SC.Object#isDestroyed SC.Object.subclasses",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/object.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ObjectController", 
+      "name": "SC.ObjectController", 
+      
+        "title": "SC.ObjectController",
+      
+      
+      "url": "SC.ObjectController.html",
+      
+        "group": "frameworks/foundation/controllers",
+      
+      "symbols": "SC.ObjectController#allowsMultipleContent SC.ObjectController#hasContent SC.ObjectController#observableContent SC.ObjectController#unknownProperty SC.ObjectController#content SC.ObjectController#isEditable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/controllers/object.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Observable", 
+      "name": "SC.Observable", 
+      
+        "title": "SC.Observable",
+      
+      
+      "url": "SC.Observable.html",
+      
+        "group": "frameworks/runtime/mixins",
+      
+      "symbols": "SC.Observable.isObservable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/mixins/observable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Observers", 
+      "name": "SC.Observers", 
+      
+        "title": "SC.Observers",
+      
+      
+      "url": "SC.Observers.html",
+      
+        "group": "frameworks/runtime/private",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/private/observer_queue.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ObserverSet", 
+      "name": "SC.ObserverSet", 
+      
+        "title": "SC.ObserverSet",
+      
+      
+      "url": "SC.ObserverSet.html",
+      
+        "group": "frameworks/runtime/private",
+      
+      "symbols": "SC.ObserverSet.targets",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/private/observer_set.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Page", 
+      "name": "SC.Page", 
+      
+        "title": "SC.Page",
+      
+      
+      "url": "SC.Page.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Page.design SC.Page#owner",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/page.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Pane", 
+      "name": "SC.Pane", 
+      
+        "title": "SC.Pane",
+      
+      
+      "url": "SC.Pane.html",
+      
+        "group": "frameworks/foundation/panes",
+      
+      "symbols": "SC.ResponderContext.trace SC.ResponderContext.defaultResponder SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.Pane#currentWindowSize SC.Pane#nextResponder SC.Pane#isPaneAttached SC.Pane#isKeyPane SC.Pane#zIndex SC.Pane#isMainPane SC.Pane#touchZ SC.Pane#page SC.Pane#rootResponder SC.Pane#acceptsKeyPane SC.Pane#isPane SC.Pane#firstResponder SC.Pane#hasTouchIntercept",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/panes/pane.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.PanelPane", 
+      "name": "SC.PanelPane", 
+      
+        "title": "SC.PanelPane",
+      
+      
+      "url": "SC.PanelPane.html",
+      
+        "group": "frameworks/desktop/panes",
+      
+      "symbols": "SC.ResponderContext.trace SC.ResponderContext.defaultResponder SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.Pane#currentWindowSize SC.Pane#nextResponder SC.Pane#isPaneAttached SC.Pane#isKeyPane SC.Pane#zIndex SC.Pane#isMainPane SC.Pane#touchZ SC.Pane#page SC.Pane#rootResponder SC.Pane#acceptsKeyPane SC.Pane#isPane SC.Pane#firstResponder SC.Pane#hasTouchIntercept",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/panes/panel.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.PickerPane", 
+      "name": "SC.PickerPane", 
+      
+        "title": "SC.PickerPane",
+      
+      
+      "url": "SC.PickerPane.html",
+      
+        "group": "frameworks/desktop/panes",
+      
+      "symbols": "SC.PickerPane.PICKER_POINTER_OFFSET",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/panes/picker.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.PopupButtonView", 
+      "name": "SC.PopupButtonView", 
+      
+        "title": "SC.PopupButtonView",
+      
+      
+      "url": "SC.PopupButtonView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Button.toggleOffValue SC.Button.contentIconKey SC.Button.icon SC.Button.needsEllipsis SC.Button.keyEquivalent SC.Button.contentTitleKey SC.Button.displayTitle SC.Button.title SC.Button.localize SC.Button.toggleOnValue SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.ButtonView#titleMinWidth SC.ButtonView#target SC.ButtonView#classNames SC.ButtonView#buttonBehavior SC.ButtonView#supportFocusRing SC.ButtonView#action SC.ButtonView#didTriggerAction SC.ButtonView#theme SC.ButtonView.CLICK_AND_HOLD_DELAY SC.ButtonView#isDefault SC.ButtonView#renderStyle SC.ButtonView#isCancel SC.ButtonView#href SC.ButtonView#tagName SC.PopupButtonView#preferMatrix SC.PopupButtonView#menu",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/popup_button.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ProgressView", 
+      "name": "SC.ProgressView", 
+      
+        "title": "SC.ProgressView",
+      
+      
+      "url": "SC.ProgressView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/progress.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Query", 
+      "name": "SC.Query", 
+      
+        "title": "SC.Query",
+      
+      
+      "url": "SC.Query.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Query#conditions SC.Query.REMOTE SC.Query#recordTypes SC.Query#recordType SC.Query#parameters SC.Query#isLocal SC.Query#location SC.Query#orderBy SC.Query.LOCAL SC.Query#queryLanguage SC.Query#expandedRecordTypes SC.Query#scope SC.Query#isQuery SC.Query#isRemote SC.Query#isEditable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/query.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RadioView", 
+      "name": "SC.RadioView", 
+      
+        "title": "SC.RadioView",
+      
+      
+      "url": "SC.RadioView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#isTextArea SC.FieldView#fieldValue SC.RadioView#itemIsEnabledKey SC.RadioView#value SC.RadioView#displayProperties SC.RadioView#itemIconKey SC.RadioView#layoutDirection SC.RadioView#itemTitleKey SC.RadioView#items SC.RadioView#itemValueKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/radio.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RangeObserver", 
+      "name": "SC.RangeObserver", 
+      
+        "title": "SC.RangeObserver",
+      
+      
+      "url": "SC.RangeObserver.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.RangeObserver.isRangeObserver",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/range_observer.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Record", 
+      "name": "SC.Record", 
+      
+        "title": "SC.Record",
+      
+      
+      "url": "SC.Record.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object.subclasses SC.Record.BUSY_LOADING SC.Record.BUSY SC.Record#primaryKey SC.Record#readOnlyAttributes SC.Record#errorValue SC.Record.CLEAN SC.Record#storeKey SC.Record#isRecord SC.Record.BUSY_CREATING SC.Record.DIRTY SC.Record.ERROR SC.Record.BUSY_DESTROYING SC.Record.READY_NEW SC.Record.READY_CLEAN SC.Record.BUSY_REFRESH_CLEAN SC.Record.RECORD_EXISTS_ERROR SC.Record.DESTROYED_CLEAN SC.Record.EMPTY SC.Record#store SC.Record#isEditable SC.Record.fixtures SC.Record.READY SC.Record#isLoaded SC.Record.READY_DIRTY SC.Record.BUSY_REFRESH_DIRTY SC.Record.BUSY_ERROR SC.Record.DESTROYED_DIRTY SC.Record#childRecordNamespace SC.Record.BUSY_REFRESH SC.Record#attributes SC.Record#status SC.Record.ignoreUnknownProperties SC.Record.DESTROYED SC.Record.NOT_FOUND_ERROR SC.Record.BUSY_COMMITTING SC.Record#id SC.Record#relationships SC.Record#errorObject SC.Record#childRecords SC.Record#isDestroyed SC.Record._nextChildKey SC.Record.BAD_STATE_ERROR SC.Record.GENERIC_ERROR SC.Record#isError",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/record.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RecordArray", 
+      "name": "SC.RecordArray", 
+      
+        "title": "SC.RecordArray",
+      
+      
+      "url": "SC.RecordArray.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Array.isSCArray SC.Enumerable.isEnumerable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RecordArray#storeKeys SC.RecordArray#needsFlush SC.RecordArray#isError SC.RecordArray#isEditable SC.RecordArray#errorValue SC.RecordArray#status SC.RecordArray#query SC.RecordArray#store SC.RecordArray#errorObject",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/record_array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RecordAttribute", 
+      "name": "SC.RecordAttribute", 
+      
+        "title": "SC.RecordAttribute",
+      
+      
+      "url": "SC.RecordAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#isEditable SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/record_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RenderContext", 
+      "name": "SC.RenderContext", 
+      
+        "title": "SC.RenderContext",
+      
+      
+      "url": "SC.RenderContext.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/render_context.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Request", 
+      "name": "SC.Request", 
+      
+        "title": "SC.Request",
+      
+      
+      "url": "SC.Request.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Request.manager SC.Request#isJSON SC.Request#responseClass SC.Request#isXML SC.Request#async SC.Request#body SC.Request#json SC.Request#isAsynchronous SC.Request#address SC.Request#type SC.Request#source SC.Request#xml SC.Request#timeout",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/request.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Responder", 
+      "name": "SC.Responder", 
+      
+        "title": "SC.Responder",
+      
+      
+      "url": "SC.Responder.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/responder.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ResponderContext", 
+      "name": "SC.ResponderContext", 
+      
+        "title": "SC.ResponderContext",
+      
+      
+      "url": "SC.ResponderContext.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.ResponderContext.nextResponder SC.ResponderContext.trace SC.ResponderContext.firstResponder SC.ResponderContext.defaultResponder",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/responder_context.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RootResponder", 
+      "name": "SC.RootResponder", 
+      
+        "title": "SC.RootResponder",
+      
+      
+      "url": "SC.RootResponder.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/root_responder.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.RunLoop", 
+      "name": "SC.RunLoop", 
+      
+        "title": "SC.RunLoop",
+      
+      
+      "url": "SC.RunLoop.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RunLoop#startTime SC.RunLoop.currentRunLoop SC.RunLoop#isRunLoopInProgress SC.RunLoop.runLoopClass",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/run_loop.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Scanner", 
+      "name": "SC.Scanner", 
+      
+        "title": "SC.Scanner",
+      
+      
+      "url": "SC.Scanner.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Scanner#string SC.Scanner#scanLocation",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/datetime.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SceneView", 
+      "name": "SC.SceneView", 
+      
+        "title": "SC.SceneView",
+      
+      
+      "url": "SC.SceneView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.SceneView#scenes SC.SceneView#nowShowing SC.SceneView#transitionDuration",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/scene.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Scrollable", 
+      "name": "SC.Scrollable", 
+      
+        "title": "SC.Scrollable",
+      
+      
+      "url": "SC.Scrollable.html",
+      
+        "group": "frameworks/desktop/mixins",
+      
+      "symbols": "SC.Scrollable.verticalLineScroll SC.Scrollable.horizontalLineScroll SC.Scrollable.isScrollable",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/mixins/scrollable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ScrollerView", 
+      "name": "SC.ScrollerView", 
+      
+        "title": "SC.ScrollerView",
+      
+      
+      "url": "SC.ScrollerView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ScrollerView#proportion SC.ScrollerView#capLength SC.ScrollerView#layoutDirection SC.ScrollerView#value SC.ScrollerView#hasButtons SC.ScrollerView#capOverlap SC.ScrollerView#isEnabled SC.ScrollerView#buttonLength SC.ScrollerView#minimum SC.ScrollerView#scrollbarThickness SC.ScrollerView#buttonOverlap SC.ScrollerView#maximum",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/scroller.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ScrollView", 
+      "name": "SC.ScrollView", 
+      
+        "title": "SC.ScrollView",
+      
+      
+      "url": "SC.ScrollView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ScrollView#hasHorizontalScroller SC.ScrollView#minimumHorizontalScrollOffset SC.ScrollView#animatedBackgroundMatrix SC.ScrollView#offsetRange SC.ScrollView#isRunning SC.ScrollView#verticalScrollerView SC.ScrollView#maximumHorizontalScrollOffset SC.ScrollView#isIndeterminate SC.ScrollView#layout SC.ScrollView#verticalScrollerLayout SC.ScrollView#verticalAlign SC.ScrollView#verticalOverlay SC.ScrollView#verticalScrollerBottom SC.ScrollView#canScale SC.ScrollView#alwaysBounceVertical SC.ScrollView#canScrollVertical SC.ScrollView#ownerScrollValueKey SC.ScrollView#controlSize SC.ScrollView#classNames SC.ScrollView#contentIsIndeterminateKey SC.ScrollView#containerView SC.ScrollView#maximumScale SC.ScrollView#contentView SC.ScrollView#verticalLineScroll SC.ScrollView#alwaysBounceHorizontal SC.ScrollView#delaysContentTouches SC.ScrollView#_scale SC.ScrollView#layoutDirection SC.ScrollView#minimumScale SC.ScrollView#contentMinimumKey SC.ScrollView#isVerticalScrollerVisible SC.ScrollView#contentMaximumKey SC.ScrollView#horizontalAlign SC.ScrollView#minimumVerticalScrollOffset SC.ScrollView#decelerationRate SC.ScrollView#isEnabled SC.ScrollView#maximumVerticalScrollOffset SC.ScrollView#canScrollHorizontal SC.ScrollView#minimum SC.ScrollView#horizontalLineScroll SC.ScrollView#horizontalScrollerLayout SC.ScrollView#hasVerticalScroller SC.ScrollView#autohidesHorizontalScroller SC.ScrollView#scrollDown SC.ScrollView#maximum SC.ScrollView#horizontalScrollerView SC.ScrollView#autohidesVerticalScroller SC.ScrollView#horizontalOverlay SC.ScrollView#isHorizontalScrollerVisible SC.ScrollView#autoScaleRange SC.ScrollView#value",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/scroll.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SegmentedView", 
+      "name": "SC.SegmentedView", 
+      
+        "title": "SC.SegmentedView",
+      
+      
+      "url": "SC.SegmentedView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.SegmentedView#itemIsEnabledKey SC.SegmentedView#itemIconKey SC.SegmentedView#itemTargetKey SC.SegmentedView#allowsEmptySelection SC.SegmentedView#isEnabled SC.SegmentedView#itemActionKey SC.SegmentedView#localize SC.SegmentedView#itemValueKey SC.SegmentedView#allowsMultipleSelection SC.SegmentedView#layoutDirection SC.SegmentedView#value SC.SegmentedView#itemKeys SC.SegmentedView#itemWidthKey SC.SegmentedView#itemTitleKey SC.SegmentedView#displayItems SC.SegmentedView#itemKeyEquivalentKey SC.SegmentedView#items",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/segmented.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SelectFieldView", 
+      "name": "SC.SelectFieldView", 
+      
+        "title": "SC.SelectFieldView",
+      
+      
+      "url": "SC.SelectFieldView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#isTextArea SC.FieldView#fieldValue SC.SelectFieldView#nameKey SC.SelectFieldView#cpDidChange SC.SelectFieldView#objects SC.SelectFieldView#disableSort SC.SelectFieldView#sortKey SC.SelectFieldView#valueKey SC.SelectFieldView#emptyName SC.SelectFieldView#localize SC.SelectFieldView#objectsBindingDefault",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/select_field.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SelectionSet", 
+      "name": "SC.SelectionSet", 
+      
+        "title": "SC.SelectionSet",
+      
+      
+      "url": "SC.SelectionSet.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Copyable.isCopyable SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Enumerable.isEnumerable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.SelectionSet#sources SC.SelectionSet.EMPTY SC.SelectionSet#isSelectionSet SC.SelectionSet#length",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/selection_set.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SelectionSupport", 
+      "name": "SC.SelectionSupport", 
+      
+        "title": "SC.SelectionSupport",
+      
+      
+      "url": "SC.SelectionSupport.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.SelectionSupport.allowsSelection SC.SelectionSupport.hasSelection SC.SelectionSupport.allowsMultipleSelection SC.SelectionSupport.allowsEmptySelection SC.SelectionSupport.selection SC.SelectionSupport.hasSelectionSupport",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/selection_support.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SeparatorView", 
+      "name": "SC.SeparatorView", 
+      
+        "title": "SC.SeparatorView",
+      
+      
+      "url": "SC.SeparatorView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.SeparatorView#layoutDirection",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/separator.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Set", 
+      "name": "SC.Set", 
+      
+        "title": "SC.Set",
+      
+      
+      "url": "SC.Set.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Observable.isObservable SC.Enumerable.isEnumerable SC.Set#length SC.Set#firstObject SC.Set#isSet",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/set.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SingleAttribute", 
+      "name": "SC.SingleAttribute", 
+      
+        "title": "SC.SingleAttribute",
+      
+      
+      "url": "SC.SingleAttribute.html",
+      
+        "group": "frameworks/datastore/models",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.RecordAttribute#useIsoDate SC.RecordAttribute#typeClass SC.RecordAttribute#key SC.RecordAttribute#type SC.RecordAttribute#defaultValue SC.RecordAttribute#isEditable SC.RecordAttribute#transform SC.RecordAttribute#isRequired SC.RecordAttribute#aggregate SC.SingleAttribute#isMaster SC.SingleAttribute#inverse",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/models/single_attribute.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SliderView", 
+      "name": "SC.SliderView", 
+      
+        "title": "SC.SliderView",
+      
+      
+      "url": "SC.SliderView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.SliderView#contentMinimumKey SC.SliderView#contentMaximumKey SC.SliderView#step SC.SliderView#handleSelector SC.SliderView#minimum SC.SliderView#maximum SC.SliderView#value",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/slider.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SourceListGroupView", 
+      "name": "SC.SourceListGroupView", 
+      
+        "title": "SC.SourceListGroupView",
+      
+      
+      "url": "SC.SourceListGroupView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/source_list_group.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SourceListView", 
+      "name": "SC.SourceListView", 
+      
+        "title": "SC.SourceListView",
+      
+      
+      "url": "SC.SourceListView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.CollectionRowDelegate.isCollectionRowDelegate SC.CollectionRowDelegate.customRowHeightIndexes SC.CollectionContent.isCollectionContent SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.CollectionView#reorderDataType SC.CollectionView#calculatedWidth SC.CollectionView#action SC.CollectionView#contentValueKey SC.CollectionView#contentExampleViewKey SC.CollectionView#isEditable SC.CollectionView#allContentIndexes SC.CollectionView#calculatedHeight SC.CollectionView#content SC.CollectionView#useToggleSelection SC.CollectionView#selection SC.CollectionView#proposedInsertionIndex SC.CollectionView#isEnabled SC.CollectionView#canEditContent SC.CollectionView#dragDataTypes SC.CollectionView#acceptsFirstResponder SC.CollectionView#delegate SC.CollectionView#groupExampleView SC.CollectionView#canReorderContent SC.CollectionView#selectionDelegate SC.CollectionView#exampleView SC.CollectionView#useFastPath SC.CollectionView#target SC.CollectionView#nowShowing SC.CollectionView#contentGroupExampleViewKey SC.CollectionView#isDropTarget SC.CollectionView#length SC.CollectionView#isActive SC.CollectionView#contentDelegate SC.CollectionView#dragContent SC.CollectionView#canDeleteContent SC.CollectionView#isSelectable SC.CollectionView#proposedDropOperation SC.ListView#showAlternatingRows SC.ListView#insertionPointView SC.SourceListView#rowHeight SC.SourceListView#classNames SC.SourceListView#selectOnMouseDown SC.SourceListView#actOnSelect",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/source_list.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SparseArray", 
+      "name": "SC.SparseArray", 
+      
+        "title": "SC.SparseArray",
+      
+      
+      "url": "SC.SparseArray.html",
+      
+        "group": "frameworks/runtime/system",
+      
+      "symbols": "SC.Observable.isObservable SC.Array.isSCArray SC.Enumerable.isEnumerable SC.SparseArray#length SC.SparseArray#rangeWindowSize",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/runtime/system/sparse_array.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.SplitDividerView", 
+      "name": "SC.SplitDividerView", 
+      
+        "title": "SC.SplitDividerView",
+      
+      
+      "url": "SC.SplitDividerView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/split_divider.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.StackedView", 
+      "name": "SC.StackedView", 
+      
+        "title": "SC.StackedView",
+      
+      
+      "url": "SC.StackedView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.CollectionContent.isCollectionContent SC.CollectionViewDelegate.isCollectionViewDelegate SC.CollectionViewDelegate.ghostActsLikeCursor SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.CollectionView#reorderDataType SC.CollectionView#calculatedWidth SC.CollectionView#action SC.CollectionView#contentValueKey SC.CollectionView#contentExampleViewKey SC.CollectionView#isEditable SC.CollectionView#allContentIndexes SC.CollectionView#calculatedHeight SC.CollectionView#content SC.CollectionView#useToggleSelection SC.CollectionView#selection SC.CollectionView#proposedInsertionIndex SC.CollectionView#isEnabled SC.CollectionView#canEditContent SC.CollectionView#dragDataTypes SC.CollectionView#acceptsFirstResponder SC.CollectionView#delegate SC.CollectionView#actOnSelect SC.CollectionView#groupExampleView SC.CollectionView#canReorderContent SC.CollectionView#selectionDelegate SC.CollectionView#exampleView SC.CollectionView#selectOnMouseDown SC.CollectionView#useFastPath SC.CollectionView#target SC.CollectionView#nowShowing SC.CollectionView#contentGroupExampleViewKey SC.CollectionView#isDropTarget SC.CollectionView#length SC.CollectionView#isActive SC.CollectionView#contentDelegate SC.CollectionView#dragContent SC.CollectionView#canDeleteContent SC.CollectionView#isSelectable SC.CollectionView#proposedDropOperation",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/stacked.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.StaticContentView", 
+      "name": "SC.StaticContentView", 
+      
+        "title": "SC.StaticContentView",
+      
+      
+      "url": "SC.StaticContentView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.StaticContentView#content",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/static_content.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.StaticLayout", 
+      "name": "SC.StaticLayout", 
+      
+        "title": "SC.StaticLayout",
+      
+      
+      "url": "SC.StaticLayout.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.StaticLayout.hasStaticLayout",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/static_layout.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Store", 
+      "name": "SC.Store", 
+      
+        "title": "SC.Store",
+      
+      
+      "url": "SC.Store.html",
+      
+        "group": "frameworks/datastore/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Store#nestedStores SC.Store#isNested SC.Store#dataSource SC.Store#editables SC.Store#commitRecordsAutomatically SC.Store#name SC.Store#recordArraysWithQuery SC.Store#changelog SC.Store#queryErrors SC.Store#recordErrors",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/datastore/system/store.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.String", 
+      "name": "SC.String", 
+      
+        "title": "SC.String",
+      
+      
+      "url": "SC.String.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/string.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.TabView", 
+      "name": "SC.TabView", 
+      
+        "title": "SC.TabView",
+      
+      
+      "url": "SC.TabView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.TabView#nowShowing SC.TabView#userDefaultKey SC.TabView#containerView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/tab.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.TextFieldView", 
+      "name": "SC.TextFieldView", 
+      
+        "title": "SC.TextFieldView",
+      
+      
+      "url": "SC.TextFieldView.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#nextKeyView SC.FieldView#fieldValue SC.TextFieldView#spellCheckEnabled SC.TextFieldView#selection SC.TextFieldView#hint SC.TextFieldView#isContextMenuEnabled SC.TextFieldView#rightAccessoryView SC.TextFieldView#isPassword SC.TextFieldView#leftAccessoryView SC.TextFieldView#isEditing SC.TextFieldView#_forceRenderFirstTime SC.TextFieldView#defaultTabbingEnabled SC.TextFieldView#_topOffsetForFirefoxCursorFix SC.TextFieldView#isTextArea",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/text_field.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.TextSelection", 
+      "name": "SC.TextSelection", 
+      
+        "title": "SC.TextSelection",
+      
+      
+      "url": "SC.TextSelection.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Freezable.isFreezable SC.Freezable.isFrozen SC.Copyable.isCopyable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.TextSelection#length SC.TextSelection#start SC.TextSelection#end",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/text_selection.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ThumbView", 
+      "name": "SC.ThumbView", 
+      
+        "title": "SC.ThumbView",
+      
+      
+      "url": "SC.ThumbView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ThumbView#isEnabled",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/thumb.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Timer", 
+      "name": "SC.Timer", 
+      
+        "title": "SC.Timer",
+      
+      
+      "url": "SC.Timer.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Timer.transitionDuration SC.Timer#isPaused SC.Timer#lastFireTime SC.Timer#isValid SC.Timer.action SC.Timer.icon SC.Timer.anchorElement SC.Timer.isModal SC.Timer.description SC.Timer.buttonOne SC.Timer.buttonThreeWrapper SC.Timer#isPooled SC.Timer#isScheduled SC.Timer#target SC.Timer.contentView SC.Timer.caption SC.Timer.bundle SC.Timer#repeats SC.Timer.buttonThree SC.Timer.buttonTwo SC.Timer.format SC.Timer.extraRightOffset SC.Timer.delegate SC.Timer#startTime SC.Timer.target SC.Timer#interval SC.Timer#action SC.Timer#until SC.Timer.pointerOffset SC.Timer#fireTime SC.Timer.message SC.Timer.preferMatrix SC.Timer.modalPane SC.Timer.preferType",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/timer.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.ToolbarView", 
+      "name": "SC.ToolbarView", 
+      
+        "title": "SC.ToolbarView",
+      
+      
+      "url": "SC.ToolbarView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ToolbarView#anchorLocation",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/toolbar.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Touch", 
+      "name": "SC.Touch", 
+      
+        "title": "SC.Touch",
+      
+      
+      "url": "SC.Touch.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Touch#mouseLocation SC.Touch#updateMode SC.Touch#maxRequests SC.Touch#location SC.Touch#inflight SC.Touch#needsContent SC.Touch#isRunning SC.Touch#length SC.Touch#offset SC.Touch#interval SC.Touch#orientation SC.Touch#isOffline SC.Touch#minimumIdleDuration SC.Touch#pending SC.Touch#runWhenIdle SC.Touch#SELF_CLOSING SC.Touch#supportsOnHashChange SC.Touch#strings SC.Touch#runLimit",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/root_responder.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.TreeController", 
+      "name": "SC.TreeController", 
+      
+        "title": "SC.TreeController",
+      
+      
+      "url": "SC.TreeController.html",
+      
+        "group": "frameworks/foundation/controllers",
+      
+      "symbols": "SC.SelectionSupport.allowsSelection SC.SelectionSupport.hasSelection SC.SelectionSupport.allowsMultipleSelection SC.SelectionSupport.allowsEmptySelection SC.SelectionSupport.selection SC.SelectionSupport.hasSelectionSupport SC.ObjectController#allowsMultipleContent SC.ObjectController#hasContent SC.ObjectController#observableContent SC.ObjectController#unknownProperty SC.ObjectController#content SC.ObjectController#isEditable SC.TreeController#arrangedObjects SC.TreeController#treeItemChildrenKey SC.TreeController#treeItemIsGrouped SC.TreeController#treeItemIsExpandedKey",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/controllers/tree.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.TreeItemContent", 
+      "name": "SC.TreeItemContent", 
+      
+        "title": "SC.TreeItemContent",
+      
+      
+      "url": "SC.TreeItemContent.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.TreeItemContent.treeItemIsGrouped SC.TreeItemContent.treeItemChildren SC.TreeItemContent.treeItemIsExpanded SC.TreeItemContent.isTreeItemContent",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/tree_item_content.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.UndoManager", 
+      "name": "SC.UndoManager", 
+      
+        "title": "SC.UndoManager",
+      
+      
+      "url": "SC.UndoManager.html",
+      
+        "group": "frameworks/desktop/system",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.UndoManager#isUndoing SC.UndoManager#isRedoing",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/system/undo_manager.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.UserDefaults", 
+      "name": "SC.UserDefaults", 
+      
+        "title": "SC.UserDefaults",
+      
+      
+      "url": "SC.UserDefaults.html",
+      
+        "group": "frameworks/foundation/system",
+      
+      "symbols": "SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.UserDefaults#appDomain SC.UserDefaults#userDomain",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/system/user_defaults.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validatable", 
+      "name": "SC.Validatable", 
+      
+        "title": "SC.Validatable",
+      
+      
+      "url": "SC.Validatable.html",
+      
+        "group": "frameworks/foundation/mixins",
+      
+      "symbols": "SC.Validatable.errorLabel SC.Validatable.validateSubmit SC.Validatable.isValid SC.Validatable.ownerForm SC.Validatable.validator SC.Validatable.validatorObject",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/mixins/validatable.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator", 
+      "name": "SC.Validator", 
+      
+        "title": "SC.Validator",
+      
+      
+      "url": "SC.Validator.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/validator.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.CreditCard", 
+      "name": "SC.Validator.CreditCard", 
+      
+        "title": "SC.Validator.CreditCard",
+      
+      
+      "url": "SC.Validator.CreditCard.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/credit_card.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.Date", 
+      "name": "SC.Validator.Date", 
+      
+        "title": "SC.Validator.Date",
+      
+      
+      "url": "SC.Validator.Date.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK SC.Validator.Date#format",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/date.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.DateTime", 
+      "name": "SC.Validator.DateTime", 
+      
+        "title": "SC.Validator.DateTime",
+      
+      
+      "url": "SC.Validator.DateTime.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/date_time.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.Email", 
+      "name": "SC.Validator.Email", 
+      
+        "title": "SC.Validator.Email",
+      
+      
+      "url": "SC.Validator.Email.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/email.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.EmailOrEmpty", 
+      "name": "SC.Validator.EmailOrEmpty", 
+      
+        "title": "SC.Validator.EmailOrEmpty",
+      
+      
+      "url": "SC.Validator.EmailOrEmpty.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/email.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.NotEmpty", 
+      "name": "SC.Validator.NotEmpty", 
+      
+        "title": "SC.Validator.NotEmpty",
+      
+      
+      "url": "SC.Validator.NotEmpty.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/not_empty.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.Number", 
+      "name": "SC.Validator.Number", 
+      
+        "title": "SC.Validator.Number",
+      
+      
+      "url": "SC.Validator.Number.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK SC.Validator.Number#places",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/number.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.Password", 
+      "name": "SC.Validator.Password", 
+      
+        "title": "SC.Validator.Password",
+      
+      
+      "url": "SC.Validator.Password.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Validator.NO_CHANGE SC.Validator.OK",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/password.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.Validator.PositiveInteger", 
+      "name": "SC.Validator.PositiveInteger", 
+      
+        "title": "SC.Validator.PositiveInteger",
+      
+      
+      "url": "SC.Validator.PositiveInteger.html",
+      
+        "group": "frameworks/foundation/validators",
+      
+      "symbols": "SC.Observable.isObservable SC.Object#concatenatedProperties SC.Object.isClass SC.Object#isObject SC.Object#isDestroyed SC.Object.subclasses SC.Validator.NO_CHANGE SC.Validator.OK SC.Validator.PositiveInteger#defaultValue",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/validators/positive_integer.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.View", 
+      "name": "SC.View", 
+      
+        "title": "SC.View",
+      
+      
+      "url": "SC.View.html",
+      
+        "group": "frameworks/foundation/views",
+      
+      "symbols": "SC.View#classNames SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#tagName SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#layout SC.View#nextKeyView",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/foundation/views/view.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.WebView", 
+      "name": "SC.WebView", 
+      
+        "title": "SC.WebView",
+      
+      
+      "url": "SC.WebView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.Control.isActive SC.Control.contentValueKey SC.Control.value SC.Control.controlSize SC.Control.fieldLabel SC.Control.content SC.Control.errorLabel SC.Control.isSelected SC.Control.fieldKey SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.WebView#NOT_EDITABLE SC.WebView#CHAIN_CONFLICT_ERROR SC.WebView#shouldAutoResize SC.WebView#NO_PARENT_STORE_ERROR SC.WebView#NESTED_STORE_RETRIEVE_DIRTY_ERROR SC.WebView#LOCKED SC.WebView#INHERITED SC.WebView#NESTED_STORE_UNSUPPORTED_ERROR SC.WebView#generateStoreKey SC.WebView#EDITABLE",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/web.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "SC.WellView", 
+      "name": "SC.WellView", 
+      
+        "title": "SC.WellView",
+      
+      
+      "url": "SC.WellView.html",
+      
+        "group": "frameworks/desktop/views",
+      
+      "symbols": "SC.View#updateLayerLocationIfNeeded SC.View#touchBoundary SC.View#shouldInheritCursor SC.View#layerNeedsUpdate SC.View#pane SC.View#nextResponder SC.View#splitView SC.View#childViews SC.View#previousValidKeyView SC.View#page SC.View#nextValidKeyView SC.View#parentView SC.View#layoutStyle SC.View#isEnabled SC.View#isTextSelectable SC.View#contentClippingFrame SC.View#displayProperties SC.View#isView SC.View#previousKeyView SC.View#isVisible SC.View#frame SC.View#layerId SC.View#clippingFrame SC.View#isEnabledInPane SC.View#layer SC.View#isKeyResponder SC.View#containerLayer SC.View#recomputeIsVisibleInWindow SC.View#cursor SC.View#wantsAcceleratedLayer SC.View#layerLocationNeedsUpdate SC.View#childViewsNeedLayout SC.View#isVisibleInWindow SC.View#useStaticLayout SC.View#toolTip SC.View#backgroundColor SC.View#isDescendantOf SC.View#acceptsFirstResponder SC.View#nextKeyView SC.ContainerView#contentView SC.ContainerView#nowShowing SC.WellView#contentLayout",
+      "path": "/home/bruz/Languages/JavaScript/SproutCore/bruz-sproutcore-abbot/frameworks/sproutcore/frameworks/desktop/views/well.js"
+    },
+  
+    { "type": "Doc", 
+      "guid": "String", 
+      "name": "String", 
+      
+        "title": "String",
+      
+      
+      "url": "String.html",
+      
+        "group": "undefined",
+      
+      "symbols": "",
+      "path": ""
+    },
+  
+]

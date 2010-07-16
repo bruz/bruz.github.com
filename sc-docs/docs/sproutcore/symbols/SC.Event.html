@@ -1,0 +1,1758 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - SC.Event</title>
+
+		<style type="text/css">
+			
+/* @group Core */
+
+body.sc-doc {
+  background-color: white  ;
+  padding: 20px;
+}
+
+.sc-doc {
+	font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1;
+}
+
+/* Set standard size on some things. */
+.sc-doc p, 
+.sc-doc dd, 
+.sc-doc dt, 
+.sc-doc li, 
+.sc-doc table {
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+hr
+{
+  color: #888;
+}
+
+.sc-doc h1 {
+  font-size: 3em;
+  margin: 0 0 1em 0;
+  text-transform: capitalize;
+}
+
+.sc-doc h2 {
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px #aaa solid;
+  text-transform: capitalize;
+  margin: 2em 0 0.5em;
+  font-size: 2.2em;
+}
+
+.sc-doc h3 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 1em 0 0 0;  
+}
+
+.sc-doc h4 {
+  font-weight: normal ;
+  font-size: 1.4em;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+.sc-doc h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 1.3em 0 0.5em 0;
+}
+
+.sc-doc p { margin: 1.5em 0; }
+ 
+.sc-doc a {
+  text-decoration: none ;
+}
+
+.sc-doc label {
+  font-weight: bold ;
+}
+
+.sc-doc .sc-theme .ghost {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  opacity: 0.45;
+  -moz-opacity: .45 ;
+}
+
+.sc-doc dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+.sc-doc dd {
+ margin: 0 1em 1em 1em;
+}
+
+/* @end */
+
+/* @group Summary Table */
+
+.sc-doc table.summary {
+  min-width: 600px;
+  border: 1px #999 solid;
+  border-bottom: none ;
+  border-spacing: 0;
+  margin-bottom: 2em;
+}
+
+.sc-doc table.summary td {
+  border-bottom: 1px #999 solid;
+  border-collapse: collapse;
+  padding: 0.5em;
+  text-align: left ;
+}
+
+.sc-doc table.summary .even td {
+  background-color: #eef;
+}
+
+.sc-doc table.summary td.label {
+  font-weight: bold ;
+  width: 100px;
+  text-align: right ;
+  padding-right: 4px;
+}
+
+.sc-doc table.summary td.value {
+  min-width: 300px;
+  width: 300px;
+}
+
+/* @end */
+
+/* @group Field & Method Summary */
+
+.sc-doc .summary li {
+  list-style-type: none ;
+  position: relative;
+}
+
+.sc-doc .summary li code {
+  font-size: 1em;
+}
+
+.sc-doc .summary li .description {
+  display: none ;
+}
+
+.sc-doc .summary li:hover .description {
+  display: block ;
+  font-size: 1em;
+  position: absolute ;
+  left: 80px;
+  bottom: 2em;
+  padding: 0.3em 1em ;
+  background-color: #fff898;
+  border: 1px solid #bbae2f;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+  color: #4b4000;
+  z-index: 100;
+}
+
+/* @end */
+
+/* @group Detail */
+
+.sc-doc .detail p.signature {
+  padding: 0;
+  margin: 1em 0;
+  font-family: Courier, mono;
+}
+
+.sc-doc .detail p.signature .type, .sc-doc .detail p.parameter .type {
+  font-style: italic;
+}
+
+.sc-doc .detail p.signature .name, .sc-doc .detail p.parameter .name {
+  font-weight: bold ;
+  padding-left: 5px;
+}
+
+.sc-doc .detail p.parameter .desc, .sc-doc .detail p.signature .params  {
+  font-style: italic ;
+  color: #555;
+  padding-left: 5px;
+}
+
+/* @end */
+
+.sc-doc .jsdoc_ctime {
+  border-top: 1px #ccc solid ;
+  padding: 4px 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.0em;
+  text-align: center ;
+  color: #888 ;
+}
+
+/* @group Description */
+
+.sc-doc .description blockquote,
+.sc-doc .description blockquote,
+.sc-doc .description p.code {
+  padding:  10px ;
+  margin: 10px 20px;
+  background-color: #f5f5f5 ;
+  border: 1px #ccc solid ;
+}
+
+/* @end */
+
+span.sc-label  
+{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+  width: 50px;
+}
+
+/* @group Index */
+
+#index {
+	padding-bottom: 2em;
+}
+
+#index > div {
+	clear: both;
+	position:  relative;
+	font-size: 12px;
+	padding: 10px;
+	padding-left: 220px;
+	min-height: 14px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#index hr {
+	display: none;
+}
+
+#index h2 {
+	font-size: 14px;
+	border: none;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	height: 14px;
+	margin: 0;
+	margin-top: -7px;
+	width: 200px;
+	text-align: right;
+}
+
+#index h2 a {
+	padding: 2px;
+}
+
+#index h2 a:hover {
+	background-color: blue;
+	color: white;
+}
+
+/* @end */
+
+
+		</style>
+	</head>
+
+	<body class="sc-doc">
+		
+		<div id="content">
+
+		  <h1>
+		    
+		    Class SC.Event
+		  </h1>
+
+		  <table class="summary">
+		  
+
+		  
+
+		  
+
+		  
+		    <tr class="even">
+		      <td class="label">Defined in:</td>
+		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_event.js.html">frameworks/sproutcore/frameworks/foundation/system/event.js</a></td>
+		    </tr>
+		  
+
+		  
+		    <tr class="odd">
+		      <td class="label">Availability:</td>
+		      <td class="value">
+		        since SproutCore 1.0
+		      </td>
+		    </tr>
+		  
+
+		  
+		
+		  
+
+		  
+
+		  </table>
+
+		  
+		
+<!-- ============================== properties summary ===================== -->
+			
+			    
+				
+			    
+				
+				
+
+					    
+					      <div class="field-summary summary">
+					        <h2>Property Summary</h2>
+					        <ul>
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#.fire"><code>+&nbsp;(Object) fire [R/W]</code></a>
+					              
+					                <div class="description">Alias for trigger() method.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#hasCustomEventHandling"><code>-&nbsp;(Object) hasCustomEventHandling [R/W]</code></a>
+					              
+					                <div class="description">Set to YES if you have called either preventDefault() or stopPropagation().</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#normalized"><code>-&nbsp;(Object) normalized [R/W]</code></a>
+					              
+					                <div class="description">Always YES to indicate the event was normalized.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#.observe"><code>+&nbsp;(Object) observe [R/W]</code></a>
+					              
+					                <div class="description">Alias for add() method.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#.special"><code>+&nbsp;(Object) special [R/W]</code></a>
+					              
+					                <div class="description">This hash contains handlers for special or custom events.</div>
+					              
+					            </li>
+					          
+					        
+					          
+					            <li>
+					              <a href="../symbols/SC.Event.html#.stopObserving"><code>+&nbsp;(Object) stopObserving [R/W]</code></a>
+					              
+					                <div class="description">Alias for remove() method.</div>
+					              
+					            </li>
+					          
+					        
+					        </ul>
+					      </div>
+					    
+
+						
+
+
+			  
+
+			
+
+		  
+		    
+
+				    
+				      <div class="method-summary summary">
+				        <h2>Method Summary</h2>
+				        <ul>
+				          
+				            <li>
+				              <a href="#SC.Event.add">
+		<code class="type">+&nbsp;(Object)  add(elem, eventType, target, method, context)</code>
+				              </a>
+				              
+				                <div class="description">Bind an event to an element.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#allowDefault">
+		<code class="type">-&nbsp;(SC.Event)  allowDefault()</code>
+				              </a>
+				              
+				                <div class="description">Indicates that you want to allow the normal default behavior.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#averagedTouchesForView">
+		<code class="type">-&nbsp;(void)  averagedTouchesForView(view)</code>
+				              </a>
+				              
+				                <div class="description">Returns average data--x, y, and d (distance)--for the touches owned by the supplied view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#commandCodes">
+		<code class="type">-&nbsp;(Array)  commandCodes()</code>
+				              </a>
+				              
+				                <div class="description">Returns character codes for the event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.create">
+		<code class="type">+&nbsp;(void)  create(e)</code>
+				              </a>
+				              
+				                <div class="description">Standard method to create a new event.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#getCharString">
+		<code class="type">-&nbsp;(void)  getCharString()</code>
+				              </a>
+				              
+				                <div class="description">Returns the pressed character (found in this.which) as a string.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.handle">
+		<code class="type">+&nbsp;(Boolean)  handle(event)</code>
+				              </a>
+				              
+				                <div class="description">This method will handle the passed event, finding any registered listeners
+    and executing them.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#preventDefault">
+		<code class="type">-&nbsp;(SC.Event)  preventDefault()</code>
+				              </a>
+				              
+				                <div class="description">Implements W3C standard.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.remove">
+		<code class="type">+&nbsp;(Object)  remove(elem, eventType, target, method)</code>
+				              </a>
+				              
+				                <div class="description">Removes a specific handler or all handlers for an event or event+type.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.simulateEvent">
+		<code class="type">+&nbsp;(Hash)  simulateEvent(elem, eventType, attrs)</code>
+				              </a>
+				              
+				                <div class="description">Generates a simulated event object.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#stop">
+		<code class="type">-&nbsp;(SC.Event)  stop()</code>
+				              </a>
+				              
+				                <div class="description">Stops both the default action and further propogation.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#stopPropagation">
+		<code class="type">-&nbsp;(SC.Event)  stopPropagation()</code>
+				              </a>
+				              
+				                <div class="description">Implements W3C standard.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event#touchesForView">
+		<code class="type">-&nbsp;(void)  touchesForView(view)</code>
+				              </a>
+				              
+				                <div class="description">Returns the touches owned by the supplied view.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.trigger">
+		<code class="type">+&nbsp;(Boolean)  trigger(elem, eventType, args, donative)</code>
+				              </a>
+				              
+				                <div class="description">Trigger an event execution immediately.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Event.unload">
+		<code class="type">+&nbsp;(void)  unload()</code>
+				              </a>
+				              
+				                <div class="description">This method is called just before the window unloads to unhook all 
+    registered events.</div>
+				              
+				            </li>
+				          
+				        </ul>
+				      </div>
+				    
+
+					
+			
+
+		    
+		  
+		
+		<!-- ============================== field details ========================== -->    
+		  
+		    <div class="field-detail detail">
+		      <a name="field_detail"><h2>Property Details</h2></a> 
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".fire"></a> 
+			          <div class="field">
+			            <a name=".fire"></a> 
+			            <h3>fire
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Alias for trigger() method.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">fire</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="hasCustomEventHandling"></a> 
+			          <div class="field">
+			            <a name="hasCustomEventHandling"></a> 
+			            <h3>hasCustomEventHandling
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Set to YES if you have called either preventDefault() or stopPropagation().</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">hasCustomEventHandling</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This allows a generic event handler to notice if you want to provide detailed control over how the browser handles the real event.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name="normalized"></a> 
+			          <div class="field">
+			            <a name="normalized"></a> 
+			            <h3>normalized
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Always YES to indicate the event was normalized.</p>
+
+		            
+
+		            <p class="signature">
+		              
+		              -
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">normalized</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".observe"></a> 
+			          <div class="field">
+			            <a name=".observe"></a> 
+			            <h3>observe
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Alias for add() method.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">observe</span>
+		            </p>
+
+			          
+
+			          
+
+					<h5>Discussion</h5><div class="description"><p>This provides a Prototype-like API.</p></div>
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".special"></a> 
+			          <div class="field">
+			            <a name=".special"></a> 
+			            <h3>special
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">This hash contains handlers for special or custom events.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">special</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		        
+		          <!-- One single method detail entry -->
+		          <div class="field">
+		            <a name=".stopObserving"></a> 
+			          <div class="field">
+			            <a name=".stopObserving"></a> 
+			            <h3>stopObserving
+
+							
+						
+							[R/W]
+							
+
+					</h3>
+		            <p class="summary">Alias for remove() method.</p>
+
+		            
+
+		            <p class="signature">
+		              +
+		              
+		              &nbsp;
+		              <span class="type">
+		                
+		                Object
+		              </span>
+		              <span class="name">stopObserving</span>
+		            </p>
+
+			          
+
+			          
+
+					
+
+
+		            
+		          </div>
+					<hr/>
+		        
+		      
+		    </div>
+		  
+		
+<!-- ============================== method details ========================= -->		
+			
+				<h2>
+					Method Detail
+				</h2>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.add"></a> 
+			          <h3>add()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Bind an event to an element.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">add</span> <span class="params">(elem, eventType, target, method, context)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Element)</span><span class="name">elem</span>
+			              
+			              <span class="desc">a DOM element, window, or document object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">eventType</span>
+			              
+			              <span class="desc">the event type you want to respond to</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+			              <span class="desc">The target object for a method call or a function.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">method</span>
+			              
+			              <span class="desc">optional method or method name if target passed</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">context</span>
+			              
+			              <span class="desc">optional context to pass to the handler as event.data</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>This method will cause the passed handler to be executed whenever a relevant event occurs on the named element.  This method supports a variety of handler types, depending on the kind of support you need.</p>
+
+<h2> Simple Function Handlers</h2>
+
+<p>SC.Event.add(anElement, "click", myClickHandler) ;</p>
+
+<p>The most basic type of handler you can pass is a function.  This function will be executed everytime an event of the type you specify occurs on the named element.  You can optionally pass an additional context object which will be included on the event in the event.data property.</p>
+
+<p>When your handler function is called the, the function's "this" property will point to the element the event occurred on.</p>
+
+<p>The click handler for this method must have a method signature like:</p>
+
+<p>function(event) { return YES|NO; }</p>
+
+<h2> Method Invocations</h2>
+
+<p>SC.Event.add(anElement, "click", myObject, myObject.aMethod) ;</p>
+
+<p>Optionally you can specify a target object and a method on the object to be invoked when the event occurs.  This will invoke the method function with the target object you pass as "this".  The method should have a signature like:</p>
+
+<p>function(event, targetElement) { return YES|NO; }</p>
+
+<p>Like function handlers, you can pass an additional context data paramater that will be included on the event in the event.data property.</p>
+
+<h2> Handler Return Values</h2>
+
+<p>Both handler functions should return YES if you want the event to continue to propagate and NO if you want it to stop.  Returning NO will both stop bubbling of the event and will prevent any default action taken by the browser.  You can also control these two behaviors separately by calling the stopPropagation() or preventDefault() methods on the event itself, returning YES from your method.</p>
+
+<h2> Limitations</h2>
+
+<p>Although SproutCore's event implementation is based on jQuery, it is much simpler in design.  Notably, it does not support namespaced events and you can only pass a single type at a time.</p>
+
+<p>If you need more advanced event handling, consider the SC.ClassicResponder functionality provided by SproutCore or use your favorite DOM library.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#allowDefault"></a> 
+			          <h3>allowDefault()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Indicates that you want to allow the normal default behavior.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Event)
+			              </span>
+			              <span class="name">allowDefault</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Event)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Sets the hasCustomEventHandling property to YES but does not cancel the event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#averagedTouchesForView"></a> 
+			          <h3>averagedTouchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns average data--x, y, and d (distance)--for the touches owned by the supplied view.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">averagedTouchesForView</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#commandCodes"></a> 
+			          <h3>commandCodes()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns character codes for the event.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Array)
+			              </span>
+			              <span class="name">commandCodes</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Array)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>The first value is the normalized code string, with any shift or ctrl characters added to the begining.  The second value is the char string by itself.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.create"></a> 
+			          <h3>create()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Standard method to create a new event.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">create</span> <span class="params">(e)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Pass the native browser event you wish to wrap if needed.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#getCharString"></a> 
+			          <h3>getCharString()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the pressed character (found in this.which) as a string.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">getCharString</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.handle"></a> 
+			          <h3>handle()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This method will handle the passed event, finding any registered listeners
+    and executing them.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">handle</span> <span class="params">(event)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">event</span>
+			              
+			              <span class="desc">{Event} the event to handle</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc"></span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>If you have an event you want handled, you can manually invoke this method.  This function expects it's "this" value to be the element the event occurred on, so you should always call this method like:</p>
+
+<p>SC.Event.handle.call(element, event) ;</p>
+
+<p>Note that like other parts of this library, the handle function does not support namespaces.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#preventDefault"></a> 
+			          <h3>preventDefault()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Implements W3C standard.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Event)
+			              </span>
+			              <span class="name">preventDefault</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Event)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Will prevent the browser from performing its default action on this event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.remove"></a> 
+			          <h3>remove()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Removes a specific handler or all handlers for an event or event+type.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Object)
+			              </span>
+			              <span class="name">remove</span> <span class="params">(elem, eventType, target, method)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Element)</span><span class="name">elem</span>
+			              
+			              <span class="desc">a DOM element, window, or document object</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">eventType</span>
+			              
+			              <span class="desc">the event type to remove</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">target</span>
+			              
+			              <span class="desc">The target object for a method call.  Or a function.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Object)</span><span class="name">method</span>
+			              
+			              <span class="desc">optional name of method</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Object)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description">
+
+<p>To remove a specific handler, you must pass in the same function or the same target and method as you passed into SC.Event.add().  See that method for full documentation on the parameters you can pass in.</p>
+
+<p>If you omit a specific handler but provide both an element and eventType, then all handlers for that element will be removed.  If you provide only and element, then all handlers for all events on that element will be removed.</p>
+
+<h2> Limitations</h2>
+
+<p>Although SproutCore's event implementation is based on jQuery, it is much simpler in design.  Notably, it does not support namespaced events and you can only pass a single type at a time.</p>
+
+<p>If you need more advanced event handling, consider the SC.ClassicResponder functionality provided by SproutCore or use your favorite DOM library.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.simulateEvent"></a> 
+			          <h3>simulateEvent()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Generates a simulated event object.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Hash)
+			              </span>
+			              <span class="name">simulateEvent</span> <span class="params">(elem, eventType, attrs)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Element)</span><span class="name">elem</span>
+			              
+			              <span class="desc">the element the event targets</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(String)</span><span class="name">eventType</span>
+			              
+			              <span class="desc">event type.  mousedown, mouseup, etc</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="type">(Hash)</span><span class="name">attrs</span>
+			              
+			              <span class="desc">optional additonal attributes to apply to event.</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Hash)</span>
+			                <span class="desc">simulated event object</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is mostly useful for unit testing.  You can pass the return value of this property into the trigger() method to actually send the event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#stop"></a> 
+			          <h3>stop()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Stops both the default action and further propogation.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Event)
+			              </span>
+			              <span class="name">stop</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Event)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>This is more convenient than calling both.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#stopPropagation"></a> 
+			          <h3>stopPropagation()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Implements W3C standard.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (SC.Event)
+			              </span>
+			              <span class="name">stopPropagation</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(SC.Event)</span>
+			                <span class="desc">receiver</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>Prevents further bubbling of the event.</p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event#touchesForView"></a> 
+			          <h3>touchesForView()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Returns the touches owned by the supplied view.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">touchesForView</span> <span class="params">(view)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.trigger"></a> 
+			          <h3>trigger()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Trigger an event execution immediately.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (Boolean)
+			              </span>
+			              <span class="name">trigger</span> <span class="params">(elem, eventType, args, donative)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			          
+			            <h5>Parameters</h5>
+			            
+			            
+			              <p class="parameter">
+								<span class="name">elem</span>
+			              
+			              <span class="desc">{Element} the target element</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">eventType</span>
+			              
+			              <span class="desc">{String} the event type</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">args</span>
+			              
+			              <span class="desc">{Array} optional argument or arguments to pass to handler.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">donative</span>
+			              
+			              <span class="desc">??</span>
+			              
+						</p>
+			            
+			            
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+			            <h5>Returns</h5>
+			            
+			              <p class="parameter">
+			                <span class="type">(Boolean)</span>
+			                <span class="desc">Return value of trigger or undefined if not fired</span> 
+			              </p>
+			            
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					<h5>Discussion</h5><div class="description"><p>You can use this method to simulate arbitrary events on arbitary elements.</p>
+
+<h2> Limitations</h2>
+
+<p>Note that although this is based on the jQuery implementation, it is much simpler.  Notably namespaced events are not supported and you cannot trigger events globally.</p>
+
+<p>If you need more advanced event handling, consider the SC.Responder functionality provided by SproutCore or use your favorite DOM library.</p>
+
+<h2> Example</h2>
+
+
+<p class="code"><code>SC.Event.trigger(view.get('layer'), 'mousedown');</code></p></div>
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
+			          <a name="SC.Event.unload"></a> 
+			          <h3>unload()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">This method is called just before the window unloads to unhook all 
+    registered events.</p>
+
+			          
+
+			            <p class="signature">
+			              +
+			              
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">unload</span> <span class="params">()</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			
+		</div>
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:53 GMT-0700 (PDT)
+		</div>
+	</body>
+</html>

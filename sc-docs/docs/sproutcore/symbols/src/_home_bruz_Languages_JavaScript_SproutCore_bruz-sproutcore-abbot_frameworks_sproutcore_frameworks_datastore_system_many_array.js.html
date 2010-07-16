@@ -1,0 +1,422 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/**
+<span class='line'>  9</span>   @class
+<span class='line'> 10</span> 
+<span class='line'> 11</span>   A ManyArray is used to map an array of record ids back to their 
+<span class='line'> 12</span>   record objects which will be materialized from the owner store on demand.
+<span class='line'> 13</span>   
+<span class='line'> 14</span>   Whenever you create a toMany() relationship, the value returned from the 
+<span class='line'> 15</span>   property will be an instance of ManyArray.  You can generally customize the
+<span class='line'> 16</span>   behavior of ManyArray by passing settings to the toMany() helper.
+<span class='line'> 17</span>   
+<span class='line'> 18</span>   @extends SC.Enumerable
+<span class='line'> 19</span>   @extends SC.Array
+<span class='line'> 20</span>   @since SproutCore 1.0
+<span class='line'> 21</span> */</span><span class="WHIT">
+<span class='line'> 22</span> 
+<span class='line'> 23</span> </span><span class="NAME">SC.ManyArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend</span><span class="PUNC">(</span><span class="NAME">SC.Enumerable</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.Array</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 24</span>   </span><span class="COMM">/** @scope SC.ManyArray.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 25</span> 
+<span class='line'> 26</span>   </span><span class="COMM">/**
+<span class='line'> 27</span>     recordType will tell what type to transform the record to when
+<span class='line'> 28</span>     materializing the record.
+<span class='line'> 29</span> 
+<span class='line'> 30</span>     @property {String}
+<span class='line'> 31</span>   */</span><span class="WHIT">
+<span class='line'> 32</span>   </span><span class="NAME">recordType</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 33</span>   
+<span class='line'> 34</span>   </span><span class="COMM">/**
+<span class='line'> 35</span>     If set, the record will be notified whenever the array changes so that 
+<span class='line'> 36</span>     it can change its own state
+<span class='line'> 37</span>     
+<span class='line'> 38</span>     @property {SC.Record}
+<span class='line'> 39</span>   */</span><span class="WHIT">
+<span class='line'> 40</span>   </span><span class="NAME">record</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 41</span>   
+<span class='line'> 42</span>   </span><span class="COMM">/**
+<span class='line'> 43</span>     If set will be used by the many array to get an editable version of the
+<span class='line'> 44</span>     storeIds from the owner.
+<span class='line'> 45</span>     
+<span class='line'> 46</span>     @property {String}
+<span class='line'> 47</span>   */</span><span class="WHIT">
+<span class='line'> 48</span>   </span><span class="NAME">propertyName</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 49</span>   
+<span class='line'> 50</span>   
+<span class='line'> 51</span>   </span><span class="COMM">/**
+<span class='line'> 52</span>     The ManyAttribute that created this array.
+<span class='line'> 53</span>   
+<span class='line'> 54</span>     @property {SC.ManyAttribute}
+<span class='line'> 55</span>   */</span><span class="WHIT">
+<span class='line'> 56</span>   </span><span class="NAME">manyAttribute</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 57</span>   
+<span class='line'> 58</span>   </span><span class="COMM">/**
+<span class='line'> 59</span>     The store that owns this record array.  All record arrays must have a 
+<span class='line'> 60</span>     store to function properly.
+<span class='line'> 61</span> 
+<span class='line'> 62</span>     @property {SC.Store}
+<span class='line'> 63</span>   */</span><span class="WHIT">
+<span class='line'> 64</span>   </span><span class="NAME">store</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 65</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">get</span><span class="PUNC">(</span><span class="STRN">'store'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 66</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 67</span>   
+<span class='line'> 68</span>   </span><span class="COMM">/**
+<span class='line'> 69</span>     The storeKey for the parent record of this many array.  Editing this 
+<span class='line'> 70</span>     array will place the parent record into a READY_DIRTY state.
+<span class='line'> 71</span> 
+<span class='line'> 72</span>     @property {Number}
+<span class='line'> 73</span>   */</span><span class="WHIT">
+<span class='line'> 74</span>   </span><span class="NAME">storeKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 75</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">get</span><span class="PUNC">(</span><span class="STRN">'storeKey'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 76</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 77</span> 
+<span class='line'> 78</span> 
+<span class='line'> 79</span>   </span><span class="COMM">/**
+<span class='line'> 80</span>     Returns the storeIds in read only mode.  Avoids modifying the record 
+<span class='line'> 81</span>     unnecessarily.
+<span class='line'> 82</span>     
+<span class='line'> 83</span>     @property {SC.Array}
+<span class='line'> 84</span>   */</span><span class="WHIT">
+<span class='line'> 85</span>   </span><span class="NAME">readOnlyStoreIds</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 86</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">readAttribute</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 87</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 88</span>   
+<span class='line'> 89</span>   
+<span class='line'> 90</span>   </span><span class="COMM">/**
+<span class='line'> 91</span>     Returns an editable array of storeIds.  Marks the owner records as 
+<span class='line'> 92</span>     modified. 
+<span class='line'> 93</span>     
+<span class='line'> 94</span>     @property {SC.Array}
+<span class='line'> 95</span>   */</span><span class="WHIT">
+<span class='line'> 96</span>   </span><span class="NAME">editableStoreIds</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 97</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">store</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'store'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 98</span>         </span><span class="NAME">storeKey</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'storeKey'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 99</span>         </span><span class="NAME">pname</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>100</span>         </span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hash</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>101</span>         
+<span class='line'>102</span>     </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">store.readEditableProperty</span><span class="PUNC">(</span><span class="NAME">storeKey</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pname</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">    
+<span class='line'>103</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">ret</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>104</span>       </span><span class="NAME">hash</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">store.readEditableDataHash</span><span class="PUNC">(</span><span class="NAME">storeKey</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>105</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">hash</span><span class="PUNC">[</span><span class="NAME">pname</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">      
+<span class='line'>106</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>107</span>     
+<span class='line'>108</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">this._prevStoreIds</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.recordPropertyDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>109</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>110</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>111</span>   
+<span class='line'>112</span>   
+<span class='line'>113</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>114</span>   </span><span class="COMM">// COMPUTED FROM OWNER</span><span class="WHIT">
+<span class='line'>115</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>116</span>   
+<span class='line'>117</span>   </span><span class="COMM">/**
+<span class='line'>118</span>     Computed from owner many attribute
+<span class='line'>119</span>     
+<span class='line'>120</span>     @property {Boolean}
+<span class='line'>121</span>   */</span><span class="WHIT">
+<span class='line'>122</span>   </span><span class="NAME">isEditable</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>123</span>     </span><span class="COMM">// NOTE: can't use get() b/c manyAttribute looks like a computed prop</span><span class="WHIT">
+<span class='line'>124</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.manyAttribute</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">attr.get</span><span class="PUNC">(</span><span class="STRN">'isEditable'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'manyAttribute'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>127</span>   
+<span class='line'>128</span>   </span><span class="COMM">/**
+<span class='line'>129</span>     Computed from owner many attribute
+<span class='line'>130</span>     
+<span class='line'>131</span>     @property {String}
+<span class='line'>132</span>   */</span><span class="WHIT">
+<span class='line'>133</span>   </span><span class="NAME">inverse</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>134</span>     </span><span class="COMM">// NOTE: can't use get() b/c manyAttribute looks like a computed prop</span><span class="WHIT">
+<span class='line'>135</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.manyAttribute</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>136</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">attr.get</span><span class="PUNC">(</span><span class="STRN">'inverse'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>137</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'manyAttribute'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>138</span>   
+<span class='line'>139</span>   </span><span class="COMM">/**
+<span class='line'>140</span>     Computed from owner many attribute
+<span class='line'>141</span>     
+<span class='line'>142</span>     @property {Boolean}
+<span class='line'>143</span>   */</span><span class="WHIT">
+<span class='line'>144</span>   </span><span class="NAME">isMaster</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>145</span>     </span><span class="COMM">// NOTE: can't use get() b/c manyAttribute looks like a computed prop</span><span class="WHIT">
+<span class='line'>146</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.manyAttribute</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>147</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">attr.get</span><span class="PUNC">(</span><span class="STRN">'isMaster'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>148</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">"manyAttribute"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>149</span> 
+<span class='line'>150</span>   </span><span class="COMM">/**
+<span class='line'>151</span>     Computed from owner many attribute
+<span class='line'>152</span>     
+<span class='line'>153</span>     @property {Array}
+<span class='line'>154</span>   */</span><span class="WHIT">
+<span class='line'>155</span>   </span><span class="NAME">orderBy</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>156</span>     </span><span class="COMM">// NOTE: can't use get() b/c manyAttribute looks like a computed prop</span><span class="WHIT">
+<span class='line'>157</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.manyAttribute</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>158</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">attr.get</span><span class="PUNC">(</span><span class="STRN">'orderBy'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>159</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">"manyAttribute"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>160</span>   
+<span class='line'>161</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>162</span>   </span><span class="COMM">// ARRAY PRIMITIVES</span><span class="WHIT">
+<span class='line'>163</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>164</span> 
+<span class='line'>165</span>   </span><span class="COMM">/** @private
+<span class='line'>166</span>     Returned length is a pass-through to the storeIds array.
+<span class='line'>167</span>     
+<span class='line'>168</span>     @property {Number}
+<span class='line'>169</span>   */</span><span class="WHIT">
+<span class='line'>170</span>   </span><span class="NAME">length</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>171</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'readOnlyStoreIds'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>172</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">storeIds.get</span><span class="PUNC">(</span><span class="STRN">'length'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>173</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'readOnlyStoreIds'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>174</span> 
+<span class='line'>175</span>   </span><span class="COMM">/** @private
+<span class='line'>176</span>     Looks up the store id in the store ids array and materializes a
+<span class='line'>177</span>     records.
+<span class='line'>178</span>   */</span><span class="WHIT">
+<span class='line'>179</span>   </span><span class="NAME">objectAt</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>180</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">recs</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._records</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>181</span>         </span><span class="NAME">storeIds</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'readOnlyStoreIds'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>182</span>         </span><span class="NAME">store</span><span class="WHIT">     </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'store'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>183</span>         </span><span class="NAME">recordType</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'recordType'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>184</span>         </span><span class="NAME">storeKey</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">storeId</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>185</span>         
+<span class='line'>186</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">store</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do</span><span class="WHIT">
+<span class='line'>187</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">recs</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">=</span><span class="NAME">recs</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// cached</span><span class="WHIT">
+<span class='line'>188</span> 
+<span class='line'>189</span>     </span><span class="COMM">// not in cache, materialize</span><span class="WHIT">
+<span class='line'>190</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">recs</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this._records</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">recs</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// create cache</span><span class="WHIT">
+<span class='line'>191</span>     </span><span class="NAME">storeId</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">storeIds.objectAt</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>192</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">storeId</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>193</span> 
+<span class='line'>194</span>       </span><span class="COMM">// if record is not loaded already, then ask the data source to </span><span class="WHIT">
+<span class='line'>195</span>       </span><span class="COMM">// retrieve it</span><span class="WHIT">
+<span class='line'>196</span>       </span><span class="NAME">storeKey</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">store.storeKeyFor</span><span class="PUNC">(</span><span class="NAME">recordType</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">storeId</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>197</span>       
+<span class='line'>198</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">store.readStatus</span><span class="PUNC">(</span><span class="NAME">storeKey</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.Record.EMPTY</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>199</span>         </span><span class="NAME">store.retrieveRecord</span><span class="PUNC">(</span><span class="NAME">recordType</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">storeKey</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>200</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>201</span>       
+<span class='line'>202</span>       </span><span class="NAME">recs</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">store.materializeRecord</span><span class="PUNC">(</span><span class="NAME">storeKey</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>203</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>204</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>205</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>206</span> 
+<span class='line'>207</span>   </span><span class="COMM">/** @private
+<span class='line'>208</span>     Pass through to the underlying array.  The passed in objects must be
+<span class='line'>209</span>     records, which can be converted to storeIds.
+<span class='line'>210</span>   */</span><span class="WHIT">
+<span class='line'>211</span>   </span><span class="NAME">replace</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">amt</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">recs</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>212</span>     
+<span class='line'>213</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isEditable'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>214</span>       </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"%@.%@[] is not editable"</span><span class="PUNC">.</span><span class="NAME">fmt</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>215</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>216</span>     
+<span class='line'>217</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'editableStoreIds'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>218</span>         </span><span class="NAME">len</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">recs</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">recs.get</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">recs.get</span><span class="PUNC">(</span><span class="STRN">'length'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">recs.length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>219</span>         </span><span class="NAME">record</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>220</span>         </span><span class="NAME">pname</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>221</span>         </span><span class="NAME">i</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">keys</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ids</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">toRemove</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">inverse</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">inverseRecord</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>222</span> 
+<span class='line'>223</span>     </span><span class="COMM">// map to store keys</span><span class="WHIT">
+<span class='line'>224</span>     </span><span class="NAME">ids</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>225</span>     </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ids</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">recs.objectAt</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">get</span><span class="PUNC">(</span><span class="STRN">'id'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>226</span> 
+<span class='line'>227</span>     </span><span class="COMM">// if we have an inverse - collect the list of records we are about to </span><span class="WHIT">
+<span class='line'>228</span>     </span><span class="COMM">// remove</span><span class="WHIT">
+<span class='line'>229</span>     </span><span class="NAME">inverse</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'inverse'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>230</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">inverse</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">amt</span><span class="PUNC">></span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>231</span>       </span><span class="NAME">toRemove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ManyArray._toRemove</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>232</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">toRemove</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.ManyArray._toRemove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// reuse if possible</span><span class="WHIT">
+<span class='line'>233</span>       </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">toRemove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>234</span>       
+<span class='line'>235</span>       </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">amt</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">toRemove</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.objectAt</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>236</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>237</span>     
+<span class='line'>238</span>     </span><span class="COMM">// pass along - if allowed, this should trigger the content observer </span><span class="WHIT">
+<span class='line'>239</span>     </span><span class="NAME">storeIds.replace</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">amt</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ids</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>240</span> 
+<span class='line'>241</span>     </span><span class="COMM">// ok, notify records that were removed then added; this way reordered</span><span class="WHIT">
+<span class='line'>242</span>     </span><span class="COMM">// objects are added and removed</span><span class="WHIT">
+<span class='line'>243</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">inverse</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>244</span>       
+<span class='line'>245</span>       </span><span class="COMM">// notive removals</span><span class="WHIT">
+<span class='line'>246</span>       </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">amt</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>247</span>         </span><span class="NAME">inverseRecord</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">toRemove</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>248</span>         </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">inverseRecord</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">inverseRecord</span><span class="PUNC">[</span><span class="NAME">inverse</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>249</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">attr.inverseDidRemoveRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>250</span>           </span><span class="NAME">attr.inverseDidRemoveRecord</span><span class="PUNC">(</span><span class="NAME">inverseRecord</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">inverse</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">record</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pname</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>251</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>252</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>253</span> 
+<span class='line'>254</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">toRemove</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>255</span>         </span><span class="NAME">toRemove.length</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// cleanup</span><span class="WHIT">
+<span class='line'>256</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">SC.ManyArray._toRemove</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.ManyArray._toRemove</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">toRemove</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>257</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>258</span> 
+<span class='line'>259</span>       </span><span class="COMM">// notify additions</span><span class="WHIT">
+<span class='line'>260</span>       </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="NAME">i</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>261</span>         </span><span class="NAME">inverseRecord</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">recs.objectAt</span><span class="PUNC">(</span><span class="NAME">i</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>262</span>         </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">inverseRecord</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">inverseRecord</span><span class="PUNC">[</span><span class="NAME">inverse</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>263</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">attr.inverseDidAddRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>264</span>           </span><span class="NAME">attr.inverseDidAddRecord</span><span class="PUNC">(</span><span class="NAME">inverseRecord</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">inverse</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">record</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pname</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>265</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>266</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>267</span>       
+<span class='line'>268</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>269</span> 
+<span class='line'>270</span>     </span><span class="COMM">// only mark record dirty if there is no inverse or we are master</span><span class="WHIT">
+<span class='line'>271</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">record</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">inverse</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isMaster'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>272</span>       </span><span class="NAME">record.recordDidChange</span><span class="PUNC">(</span><span class="NAME">pname</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>273</span>     </span><span class="PUNC">}</span><span class="WHIT"> 
+<span class='line'>274</span>     
+<span class='line'>275</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>276</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>277</span>   
+<span class='line'>278</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>279</span>   </span><span class="COMM">// INVERSE SUPPORT</span><span class="WHIT">
+<span class='line'>280</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>281</span>   
+<span class='line'>282</span>   </span><span class="COMM">/**
+<span class='line'>283</span>     Called by the ManyAttribute whenever a record is removed on the inverse
+<span class='line'>284</span>     of the relationship.
+<span class='line'>285</span>     
+<span class='line'>286</span>     @param {SC.Record} inverseRecord the record that was removed
+<span class='line'>287</span>     @returns {SC.ManyArray} receiver
+<span class='line'>288</span>   */</span><span class="WHIT">
+<span class='line'>289</span>   </span><span class="NAME">removeInverseRecord</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">inverseRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>290</span>     
+<span class='line'>291</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">inverseRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do</span><span class="WHIT">
+<span class='line'>292</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">id</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">inverseRecord.get</span><span class="PUNC">(</span><span class="STRN">'id'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>293</span>         </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'editableStoreIds'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>294</span>         </span><span class="NAME">idx</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">storeIds.indexOf</span><span class="PUNC">(</span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>295</span>         </span><span class="NAME">record</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>296</span>     
+<span class='line'>297</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>298</span>       </span><span class="NAME">storeIds.removeAt</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>299</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isMaster'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">record</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>300</span>         </span><span class="NAME">record.recordDidChange</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>301</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>302</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>303</span>     
+<span class='line'>304</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>305</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>306</span> 
+<span class='line'>307</span>   </span><span class="COMM">/**
+<span class='line'>308</span>     Called by the ManyAttribute whenever a record is added on the inverse
+<span class='line'>309</span>     of the relationship.
+<span class='line'>310</span>     
+<span class='line'>311</span>     @param {SC.Record} record the record this array is a part of
+<span class='line'>312</span>     @param {String} key the key this array represents
+<span class='line'>313</span>     @param {SC.Record} inverseRecord the record that was removed
+<span class='line'>314</span>     @param {String} inverseKey the name of inverse that was changed
+<span class='line'>315</span>     @returns {SC.ManyArray} receiver
+<span class='line'>316</span>   */</span><span class="WHIT">
+<span class='line'>317</span>   </span><span class="NAME">addInverseRecord</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">inverseRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>318</span>     
+<span class='line'>319</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">inverseRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>320</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">id</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">inverseRecord.get</span><span class="PUNC">(</span><span class="STRN">'id'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>321</span>         </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'editableStoreIds'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>322</span>         </span><span class="NAME">orderBy</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'orderBy'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>323</span>         </span><span class="NAME">len</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">storeIds.get</span><span class="PUNC">(</span><span class="STRN">'length'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>324</span>         </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">record</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>325</span>         
+<span class='line'>326</span>     </span><span class="COMM">// find idx to insert at.</span><span class="WHIT">
+<span class='line'>327</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>328</span>       </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._findInsertionLocation</span><span class="PUNC">(</span><span class="NAME">inverseRecord</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>329</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>330</span>     
+<span class='line'>331</span>     </span><span class="NAME">storeIds.insertAt</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">inverseRecord.get</span><span class="PUNC">(</span><span class="STRN">'id'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>332</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isMaster'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">record</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'record'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>333</span>       </span><span class="NAME">record.recordDidChange</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>334</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>335</span>     
+<span class='line'>336</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>337</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>338</span>   
+<span class='line'>339</span>   </span><span class="COMM">// binary search to find insertion location</span><span class="WHIT">
+<span class='line'>340</span>   </span><span class="NAME">_findInsertionLocation</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">rec</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">min</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">max</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>341</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">min</span><span class="PUNC">+</span><span class="NAME">Math.floor</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">max</span><span class="PUNC">-</span><span class="NAME">min</span><span class="PUNC">)</span><span class="PUNC">/</span><span class="NUMB">2</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>342</span>         </span><span class="NAME">cur</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.objectAt</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>343</span>         </span><span class="NAME">order</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._compare</span><span class="PUNC">(</span><span class="NAME">rec</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">cur</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>344</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">order</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>345</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">===</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>346</span>       </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._findInsertionLocation</span><span class="PUNC">(</span><span class="NAME">rec</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>347</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">order</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>348</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NAME">max</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>349</span>       </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._findInsertionLocation</span><span class="PUNC">(</span><span class="NAME">rec</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">max</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>350</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>351</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>352</span> 
+<span class='line'>353</span>   </span><span class="NAME">_compare</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">b</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>354</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">t</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">orderBy</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>355</span>         </span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>356</span>         
+<span class='line'>357</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">t</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_FUNCTION</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">orderBy</span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>358</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">t</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.compare</span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">,</span><span class="NAME">b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>359</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>360</span>       </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">orderBy.get</span><span class="PUNC">(</span><span class="STRN">'length'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>361</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>362</span>       </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">===</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.compare</span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">,</span><span class="NAME">b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>363</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>364</span> 
+<span class='line'>365</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>366</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>367</span>   
+<span class='line'>368</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>369</span>   </span><span class="COMM">// INTERNAL SUPPORT</span><span class="WHIT">
+<span class='line'>370</span>   </span><span class="COMM">//  </span><span class="WHIT">
+<span class='line'>371</span> 
+<span class='line'>372</span>   </span><span class="COMM">/** @private 
+<span class='line'>373</span>     Invoked whenever the storeIds array changes.  Observes changes.
+<span class='line'>374</span>   */</span><span class="WHIT">
+<span class='line'>375</span>   </span><span class="NAME">recordPropertyDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">keys</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>376</span>     
+<span class='line'>377</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">keys</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">keys.contains</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'propertyName'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>378</span>     
+<span class='line'>379</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'readOnlyStoreIds'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>380</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">prev</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._prevStoreIds</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">f</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._storeIdsContentDidChange</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>381</span> 
+<span class='line'>382</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">storeIds</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">prev</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do</span><span class="WHIT">
+<span class='line'>383</span> 
+<span class='line'>384</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">prev</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">prev.removeObserver</span><span class="PUNC">(</span><span class="STRN">'[]'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">f</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>385</span>     </span><span class="NAME">this._prevStoreIds</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>386</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">storeIds</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">storeIds.addObserver</span><span class="PUNC">(</span><span class="STRN">'[]'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">f</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>387</span> 
+<span class='line'>388</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">rev</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">storeIds</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">storeIds.propertyRevision</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>389</span>     </span><span class="NAME">this._storeIdsContentDidChange</span><span class="PUNC">(</span><span class="NAME">storeIds</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'[]'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">storeIds</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rev</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>390</span>     
+<span class='line'>391</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>392</span> 
+<span class='line'>393</span>   </span><span class="COMM">/** @private
+<span class='line'>394</span>     Invoked whenever the content of the storeIds array changes.  This will
+<span class='line'>395</span>     dump any cached record lookup and then notify that the enumerable content
+<span class='line'>396</span>     has changed.
+<span class='line'>397</span>   */</span><span class="WHIT">
+<span class='line'>398</span>   </span><span class="NAME">_storeIdsContentDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">rev</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>399</span>     </span><span class="NAME">this._records</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// clear cache</span><span class="WHIT">
+<span class='line'>400</span>     </span><span class="NAME">this.enumerableContentDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>401</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>402</span>   
+<span class='line'>403</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>404</span>   </span><span class="NAME">unknownProperty</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>405</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.reducedProperty</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">value</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>406</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>407</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>408</span> 
+<span class='line'>409</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>410</span>   </span><span class="NAME">init</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>411</span>     </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>412</span>     </span><span class="NAME">this.recordPropertyDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>413</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>414</span>   
+<span class='line'>415</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span></pre></body></html>

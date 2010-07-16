@@ -1,0 +1,418 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'panes/panel'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'views/button'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="COMM">/** 
+<span class='line'> 11</span>   button1 : 1st button from the right. default:OK
+<span class='line'> 12</span>   button2 : 2nd button from the right. Optional. Could be Cancel or 2nd action.
+<span class='line'> 13</span>   button3 : 1st button from the left. Optional. Could be Cancel or alternative option.
+<span class='line'> 14</span> */</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="COMM">/** 
+<span class='line'> 16</span>   Passed to delegate when alert pane is dismissed by pressing button 1
+<span class='line'> 17</span> */</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">SC.BUTTON1_STATUS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'button1'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 19</span> 
+<span class='line'> 20</span> </span><span class="COMM">/** 
+<span class='line'> 21</span>   Passed to delegate when alert pane is dismissed by pressing button 2
+<span class='line'> 22</span> */</span><span class="WHIT">
+<span class='line'> 23</span> </span><span class="NAME">SC.BUTTON2_STATUS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'button2'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span> 
+<span class='line'> 25</span> </span><span class="COMM">/** 
+<span class='line'> 26</span>   Passed to delegate when alert pane is dismissed by pressing button 3
+<span class='line'> 27</span> */</span><span class="WHIT">
+<span class='line'> 28</span> </span><span class="NAME">SC.BUTTON3_STATUS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'button3'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 29</span> 
+<span class='line'> 30</span> </span><span class="COMM">/** @class
+<span class='line'> 31</span>   Displays a preformatted modal alert pane.
+<span class='line'> 32</span>   
+<span class='line'> 33</span>   Alert panes are a simple way to provide modal messaging that otherwise 
+<span class='line'> 34</span>   blocks the user's interaction with your application.  Alert panes are 
+<span class='line'> 35</span>   useful for showing important error messages and confirmation dialogs.  They
+<span class='line'> 36</span>   provide a better user experience than using the OS-level alert dialogs.
+<span class='line'> 37</span>   
+<span class='line'> 38</span>   h1. Displaying an Alert Pane
+<span class='line'> 39</span>   
+<span class='line'> 40</span>   The easiest way to display an alert pane is to use one of the various 
+<span class='line'> 41</span>   class methods defined on SC.AlertPane, passing the message and an optional
+<span class='line'> 42</span>   detailed description and caption.  
+<span class='line'> 43</span>   
+<span class='line'> 44</span>   There are four variations of this method can you can invoke:  
+<span class='line'> 45</span>   
+<span class='line'> 46</span>   - *warn()* - displays an alert pane with a warning icon to the left.
+<span class='line'> 47</span>   - *error()* - displays an alert with an error icon to the left
+<span class='line'> 48</span>   - *info()* - displays an alert with an info icon to the left
+<span class='line'> 49</span>   - *plain()* - displays an alert w/o any icon
+<span class='line'> 50</span>   - *show()* - displays an alert with a customizable icon to the left
+<span class='line'> 51</span>   
+<span class='line'> 52</span>   In addition to passing a message, description and caption, you can also customize
+<span class='line'> 53</span>   the title of the button 1 (OK) and add an optional button 2 and 3 (Cancel or Extra).  Just
+<span class='line'> 54</span>   pass these titles of these buttons to enable them or null to disable then.
+<span class='line'> 55</span>   
+<span class='line'> 56</span>   Additionally, you can pass a delegate object as the last parameter.  This
+<span class='line'> 57</span>   delegate's 'alertPaneDidDismiss()' method will be called when the pane
+<span class='line'> 58</span>   is dismissed, passing the pane instance and a key indicating which 
+<span class='line'> 59</span>   button was pressed.
+<span class='line'> 60</span>   
+<span class='line'> 61</span>   h1. Examples
+<span class='line'> 62</span>   
+<span class='line'> 63</span>   Show a simple AlertPane with an OK button:
+<span class='line'> 64</span>   
+<span class='line'> 65</span>   {{{
+<span class='line'> 66</span>     SC.AlertPane.warn("Could not load calendar", "Your internet connection may be unavailable or our servers may be down.  Try again in a few minutes.");
+<span class='line'> 67</span>   }}}
+<span class='line'> 68</span>   
+<span class='line'> 69</span>   Show an AlertPane with a customized OK title (title will be 'Try Again'):
+<span class='line'> 70</span>   
+<span class='line'> 71</span>   {{{
+<span class='line'> 72</span>     SC.AlertPane.warn("Could not load calendar", "Your internet connection may be unavailable or our servers may be down.  Try again in a few minutes.", "Try Again");
+<span class='line'> 73</span>   }}}
+<span class='line'> 74</span>   
+<span class='line'> 75</span>   Show an AlertPane with a custom OK, a Cancel button and an Extra button, 
+<span class='line'> 76</span>   each with custom titles.  Also, pass a delegate that will be invoked when
+<span class='line'> 77</span>   the user's dismisses the dialog.
+<span class='line'> 78</span>   
+<span class='line'> 79</span>   {{{
+<span class='line'> 80</span> 
+<span class='line'> 81</span>     MyApp.calendarController = SC.Object.create({
+<span class='line'> 82</span>       alertPaneDidDismiss: function(pane, status) {
+<span class='line'> 83</span>         switch(status) {
+<span class='line'> 84</span>           case SC.BUTTON1_STATUS:
+<span class='line'> 85</span>             this.tryAgain();
+<span class='line'> 86</span>             break;
+<span class='line'> 87</span>             
+<span class='line'> 88</span>           case SC.BUTTON2_STATUS:
+<span class='line'> 89</span>             // do nothing
+<span class='line'> 90</span>             break;
+<span class='line'> 91</span>             
+<span class='line'> 92</span>           case SC.BUTTON3_STATUS:
+<span class='line'> 93</span>             this.showMoreInfo();
+<span class='line'> 94</span>             break;
+<span class='line'> 95</span>         }
+<span class='line'> 96</span>       },
+<span class='line'> 97</span>       
+<span class='line'> 98</span>       ...
+<span class='line'> 99</span>     });
+<span class='line'>100</span>     
+<span class='line'>101</span>     SC.AlertPane.warn("Could not load calendar", "Your internet connection may be unavailable or our servers may be down.  Try again in a few minutes.", "Try Again", "Cancel", "More Info...", MyApp.calendarController);
+<span class='line'>102</span>   }}}
+<span class='line'>103</span>   
+<span class='line'>104</span>   @extends SC.PanelPane
+<span class='line'>105</span>   @since SproutCore 1.0
+<span class='line'>106</span> */</span><span class="WHIT">
+<span class='line'>107</span> </span><span class="NAME">SC.AlertPane</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.PanelPane.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>108</span>   
+<span class='line'>109</span>   </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'sc-alert'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>110</span>   
+<span class='line'>111</span>   </span><span class="COMM">/**
+<span class='line'>112</span>     The delegate to notify when the pane is dismissed.  If you set a 
+<span class='line'>113</span>     delegate, it should respond to the method:
+<span class='line'>114</span>     
+<span class='line'>115</span>     {{{
+<span class='line'>116</span>       alertPaneDidDismiss: function(pane, status)
+<span class='line'>117</span>     }}}
+<span class='line'>118</span>     
+<span class='line'>119</span>     The status will be on of SC.BUTTON1_STATUS, SC.BUTTON2_STATUS or SC.BUTTON3_STATUS
+<span class='line'>120</span>     depending on which button was clicked.
+<span class='line'>121</span>     
+<span class='line'>122</span>     @property {Object}
+<span class='line'>123</span>   */</span><span class="WHIT">
+<span class='line'>124</span>   </span><span class="NAME">delegate</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>125</span> 
+<span class='line'>126</span>   </span><span class="COMM">/**
+<span class='line'>127</span>     The icon URL or class name.  If you do not set this, an alert icon will
+<span class='line'>128</span>     be shown instead.
+<span class='line'>129</span>     
+<span class='line'>130</span>     @property {String}
+<span class='line'>131</span>   */</span><span class="WHIT">
+<span class='line'>132</span>   </span><span class="NAME">icon</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'sc-icon-alert-48'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>133</span> 
+<span class='line'>134</span>   </span><span class="COMM">/**
+<span class='line'>135</span>     The primary message to display.  This message will appear in large bold
+<span class='line'>136</span>     type at the top of the alert.
+<span class='line'>137</span>     
+<span class='line'>138</span>     @property {String}
+<span class='line'>139</span>   */</span><span class="WHIT">
+<span class='line'>140</span>   </span><span class="NAME">message</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>141</span> 
+<span class='line'>142</span>   </span><span class="COMM">/**
+<span class='line'>143</span>     An optional detailed decription.  Use this string to provide further 
+<span class='line'>144</span>     explanation of the condition and, optionally, ways the user can resolve
+<span class='line'>145</span>     the problem.
+<span class='line'>146</span>     
+<span class='line'>147</span>     @property {String}
+<span class='line'>148</span>   */</span><span class="WHIT">
+<span class='line'>149</span>   </span><span class="NAME">description</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>150</span>   
+<span class='line'>151</span>   </span><span class="NAME">displayDescription</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>152</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">desc</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'description'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>153</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">desc</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">desc.length</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">desc</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>154</span>     
+<span class='line'>155</span>     </span><span class="NAME">desc</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.RenderContext.escapeHTML</span><span class="PUNC">(</span><span class="NAME">desc</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// remove HTML</span><span class="WHIT">
+<span class='line'>156</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'&lt;p class="description">'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">desc.split</span><span class="PUNC">(</span><span class="STRN">'\n'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">'&lt;/p>&lt;p class="description">'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'&lt;/p>'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>157</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'description'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>158</span> 
+<span class='line'>159</span>   </span><span class="COMM">/**
+<span class='line'>160</span>     An optional detailed caption.  Use this string to provide further 
+<span class='line'>161</span>     fine print explanation of the condition and, optionally, ways the user can resolve
+<span class='line'>162</span>     the problem.
+<span class='line'>163</span>     
+<span class='line'>164</span>     @property {String}
+<span class='line'>165</span>   */</span><span class="WHIT">
+<span class='line'>166</span>   </span><span class="NAME">caption</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>167</span>   
+<span class='line'>168</span>   </span><span class="NAME">displayCaption</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>169</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'caption'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>170</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">caption</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">caption.length</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>171</span>     
+<span class='line'>172</span>     </span><span class="NAME">caption</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.RenderContext.escapeHTML</span><span class="PUNC">(</span><span class="NAME">caption</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// remove HTML</span><span class="WHIT">
+<span class='line'>173</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'&lt;p class="caption">'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">caption.split</span><span class="PUNC">(</span><span class="STRN">'\n'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">'&lt;/p>&lt;p class="caption">'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'&lt;/p>'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>174</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'caption'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>175</span>   
+<span class='line'>176</span>   </span><span class="COMM">/**
+<span class='line'>177</span>     The button view for the button 1 (OK).
+<span class='line'>178</span>     
+<span class='line'>179</span>     @property {SC.ButtonView}
+<span class='line'>180</span>   */</span><span class="WHIT">
+<span class='line'>181</span>   </span><span class="NAME">buttonOne</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.outlet</span><span class="PUNC">(</span><span class="STRN">'contentView.childViews.1.childViews.1'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>182</span> 
+<span class='line'>183</span>   </span><span class="COMM">/**
+<span class='line'>184</span>     The button view for the button 2 (Cancel).
+<span class='line'>185</span>     
+<span class='line'>186</span>     @property {SC.ButtonView}
+<span class='line'>187</span>   */</span><span class="WHIT">
+<span class='line'>188</span>   </span><span class="NAME">buttonTwo</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.outlet</span><span class="PUNC">(</span><span class="STRN">'contentView.childViews.1.childViews.0'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>189</span> 
+<span class='line'>190</span>   </span><span class="COMM">/**
+<span class='line'>191</span>     The button view for the button 3 (Extra).
+<span class='line'>192</span>     
+<span class='line'>193</span>     @property {SC.ButtonView}
+<span class='line'>194</span>   */</span><span class="WHIT">
+<span class='line'>195</span>   </span><span class="NAME">buttonThree</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.outlet</span><span class="PUNC">(</span><span class="STRN">'contentView.childViews.2.childViews.0'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>196</span> 
+<span class='line'>197</span>   </span><span class="COMM">/**
+<span class='line'>198</span>     The view for the button 3 (Extra) wrapper.
+<span class='line'>199</span>     
+<span class='line'>200</span>     @property {SC.View}
+<span class='line'>201</span>   */</span><span class="WHIT">
+<span class='line'>202</span>   </span><span class="NAME">buttonThreeWrapper</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.outlet</span><span class="PUNC">(</span><span class="STRN">'contentView.childViews.2'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>203</span>   
+<span class='line'>204</span>   </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">top</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.3</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">centerX</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">500</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>205</span> 
+<span class='line'>206</span>   </span><span class="COMM">/** @private - internal view that is actually displayed */</span><span class="WHIT">
+<span class='line'>207</span>   </span><span class="NAME">contentView</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>208</span>     
+<span class='line'>209</span>     </span><span class="NAME">useStaticLayout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>210</span>     
+<span class='line'>211</span>     </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">top</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"auto"</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>212</span> 		
+<span class='line'>213</span>     </span><span class="NAME">childViews</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="WHIT">
+<span class='line'>214</span>       </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="NAME">SC.StaticLayout</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>215</span>         </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'info'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>216</span> 
+<span class='line'>217</span>         </span><span class="NAME">render</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>218</span>           </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">pane</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'pane'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>219</span>           </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">blank</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.BLANK_IMAGE_URL</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>220</span>           </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'icon'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="STRN">'blank'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">context.addClass</span><span class="PUNC">(</span><span class="STRN">'plain'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>221</span>           </span><span class="NAME">context.push</span><span class="PUNC">(</span><span class="STRN">'&lt;img src="'</span><span class="PUNC">+</span><span class="NAME">blank</span><span class="PUNC">+</span><span class="STRN">'" class="icon '</span><span class="PUNC">+</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'icon'</span><span class="PUNC">)</span><span class="PUNC">+</span><span class="STRN">'" />'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>222</span>           </span><span class="NAME">context.begin</span><span class="PUNC">(</span><span class="STRN">'h1'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">attr</span><span class="PUNC">(</span><span class="STRN">'class'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'header'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">text</span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'message'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>223</span>           </span><span class="NAME">context.push</span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'displayDescription'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>224</span>           </span><span class="NAME">context.push</span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'displayCaption'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>225</span>           </span><span class="NAME">context.push</span><span class="PUNC">(</span><span class="STRN">'&lt;div class="separator">&lt;/div>'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>226</span>         </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>227</span>       </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>228</span> 
+<span class='line'>229</span>       </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>230</span>         </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">13</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">24</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">18</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">466</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>231</span>         </span><span class="NAME">childViews</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'cancelButton'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'okButton'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>232</span>         </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'text-align-right'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>233</span>         </span><span class="NAME">cancelButton</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.ButtonView.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>234</span>             </span><span class="NAME">useStaticLayout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>235</span>             </span><span class="NAME">actionKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BUTTON2_STATUS</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>236</span>             </span><span class="NAME">localize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>237</span>             </span><span class="NAME">titleMinWidth</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">64</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>238</span>             </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">5</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>239</span>             </span><span class="NAME">theme</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'capsule'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>240</span>             </span><span class="NAME">title</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"Cancel"</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>241</span>             </span><span class="NAME">isCancel</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>242</span>             </span><span class="NAME">action</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"dismiss"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>243</span>             </span><span class="NAME">isVisible</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT">
+<span class='line'>244</span>           </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>245</span> 
+<span class='line'>246</span>         </span><span class="NAME">okButton</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.ButtonView.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>247</span>             </span><span class="NAME">useStaticLayout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>248</span>             </span><span class="NAME">actionKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BUTTON1_STATUS</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>249</span>             </span><span class="NAME">localize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>250</span>             </span><span class="NAME">titleMinWidth</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">64</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>251</span>             </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>252</span>             </span><span class="NAME">theme</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'capsule'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>253</span>             </span><span class="NAME">title</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"OK"</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>254</span>             </span><span class="NAME">isDefault</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>255</span>             </span><span class="NAME">action</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"dismiss"</span><span class="WHIT">
+<span class='line'>256</span>           </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>257</span>       </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>258</span>       
+<span class='line'>259</span>       </span><span class="NAME">SC.View.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>260</span>         </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">13</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">24</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">18</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">150</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>261</span>         </span><span class="NAME">isVisible</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>262</span>         </span><span class="NAME">childViews</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="WHIT">
+<span class='line'>263</span>           </span><span class="NAME">SC.ButtonView.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>264</span>             </span><span class="NAME">useStaticLayout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>265</span>             </span><span class="NAME">actionKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BUTTON3_STATUS</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>266</span>             </span><span class="NAME">localize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>267</span>             </span><span class="NAME">titleMinWidth</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">64</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>268</span>             </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'auto'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>269</span>             </span><span class="NAME">theme</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'capsule'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>270</span>             </span><span class="NAME">title</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"Extra"</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>271</span>             </span><span class="NAME">action</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"dismiss"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>272</span>             </span><span class="NAME">isVisible</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT">
+<span class='line'>273</span>           </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">]</span><span class="WHIT">
+<span class='line'>274</span>       </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">]</span><span class="WHIT">
+<span class='line'>275</span>   </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>276</span> 
+<span class='line'>277</span>   </span><span class="COMM">/**
+<span class='line'>278</span>     Action triggered whenever any button is pressed.  Notifies any delegate
+<span class='line'>279</span>     and then hides the alert pane.
+<span class='line'>280</span>   */</span><span class="WHIT">
+<span class='line'>281</span>   </span><span class="NAME">dismiss</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">sender</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>282</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">del</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.delegate</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>283</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">del</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">del.alertPaneDidDismiss</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>284</span>       </span><span class="NAME">del.alertPaneDidDismiss</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">sender.get</span><span class="PUNC">(</span><span class="STRN">'actionKey'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>285</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>286</span>     </span><span class="NAME">this.remove</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// hide alert</span><span class="WHIT">
+<span class='line'>287</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>288</span>   
+<span class='line'>289</span>   </span><span class="COMM">/** @private 
+<span class='line'>290</span>     Executes whenever one of the icon, message, description or caption is changed.
+<span class='line'>291</span>     This simply causes the UI to refresh.
+<span class='line'>292</span>   */</span><span class="WHIT">
+<span class='line'>293</span>   </span><span class="NAME">alertInfoDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>294</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">v</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.getPath</span><span class="PUNC">(</span><span class="STRN">'contentView.childViews.0'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>295</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">v</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">v.displayDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// re-render message</span><span class="WHIT">
+<span class='line'>296</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'icon'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'message'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'displayDescription'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'displayCaption'</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>297</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>298</span> 
+<span class='line'>299</span> </span><span class="COMM">/** @private
+<span class='line'>300</span>   internal method normalizes arguments for processing by helper methods.
+<span class='line'>301</span> */</span><span class="WHIT">
+<span class='line'>302</span> </span><span class="NAME">SC.AlertPane._normalizeArguments</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">args</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>303</span>   </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.A</span><span class="PUNC">(</span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// convert to real array</span><span class="WHIT">
+<span class='line'>304</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args.length</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NAME">len</span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>305</span>   </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>306</span>     </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NAME">len</span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>307</span>   </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>308</span>   </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">7</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>309</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>310</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>311</span> 
+<span class='line'>312</span> </span><span class="COMM">/**
+<span class='line'>313</span>   Displays a new alert pane according to the passed parameters.  Every 
+<span class='line'>314</span>   parameter except for the message is optional.  You can always pass the 
+<span class='line'>315</span>   delegate as the last parameter and it will be used, even if you omit items
+<span class='line'>316</span>   in between.
+<span class='line'>317</span>   
+<span class='line'>318</span>   If you need to pass other parameters but you want to omit some others 
+<span class='line'>319</span>   in between, pass null and the related UI item will be hidden
+<span class='line'>320</span>   
+<span class='line'>321</span>   Note that if you pass an icon, it should be 48 x 48 in size.
+<span class='line'>322</span>   
+<span class='line'>323</span>   @param {String} message the primary message
+<span class='line'>324</span>   @param {String} description an optional detailed description
+<span class='line'>325</span>   @param {String} caption an optional detailed fine print caption
+<span class='line'>326</span>   @param {String} button1Title optional unlocalized title for button 1 (OK)
+<span class='line'>327</span>   @param {String} button2Title optional unlocalized title for button 2 (Cancel)
+<span class='line'>328</span>   @param {String} button3Title optional unlocalized title for button 3 (extra)
+<span class='line'>329</span>   @param {String} iconUrl optional URL or class name for icon.
+<span class='line'>330</span>   @param {Object} delegate optional delegate to notify when pane is dismissed
+<span class='line'>331</span>   @returns {SC.AlertPane} new alert pane
+<span class='line'>332</span> */</span><span class="WHIT">
+<span class='line'>333</span> </span><span class="NAME">SC.AlertPane.show</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">description</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button1Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button2Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button3Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">iconUrl</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>334</span>   
+<span class='line'>335</span>   </span><span class="COMM">// get the delegate and normalize the rest of the params</span><span class="WHIT">
+<span class='line'>336</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._normalizeArguments</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>337</span>   
+<span class='line'>338</span>   </span><span class="COMM">// create basic AlertPane</span><span class="WHIT">
+<span class='line'>339</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.create</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>340</span>     </span><span class="NAME">message</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">''</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>341</span>     </span><span class="NAME">description</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>342</span>     </span><span class="NAME">caption</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">2</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>343</span>     </span><span class="NAME">icon</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">6</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">'sc-icon-alert-48'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>344</span>     </span><span class="NAME">delegate</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">7</span><span class="PUNC">]</span><span class="WHIT">
+<span class='line'>345</span>   </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>346</span>   
+<span class='line'>347</span>   </span><span class="COMM">// customize buttons as needed</span><span class="WHIT">
+<span class='line'>348</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">buttonKeys</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'buttonOne buttonTwo buttonThree'</span><span class="PUNC">.</span><span class="NAME">w</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">title</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>349</span>   </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NUMB">3</span><span class="PUNC">;</span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>350</span>     </span><span class="NAME">button</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret.get</span><span class="PUNC">(</span><span class="NAME">buttonKeys</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>351</span>     </span><span class="NAME">title</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>352</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">title</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>353</span>       </span><span class="NAME">button.set</span><span class="PUNC">(</span><span class="STRN">'title'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">title</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">set</span><span class="PUNC">(</span><span class="STRN">'isVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>354</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">title</span><span class="PUNC">==</span><span class="STRN">'?'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">button.set</span><span class="PUNC">(</span><span class="STRN">'titleMinWidth'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>355</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">==</span><span class="NUMB">2</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>356</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">button_wrapper</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret.get</span><span class="PUNC">(</span><span class="STRN">'buttonThreeWrapper'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>357</span>         </span><span class="NAME">button_wrapper.set</span><span class="PUNC">(</span><span class="STRN">'isVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>358</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>359</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>360</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>361</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">show</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ret.append</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// make visible.</span><span class="WHIT">
+<span class='line'>362</span>   </span><span class="NAME">ret.adjust</span><span class="PUNC">(</span><span class="STRN">'height'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ret.childViews</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">$</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">height</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>363</span>   </span><span class="NAME">ret.updateLayout</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>364</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">show</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>365</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>366</span> 
+<span class='line'>367</span> </span><span class="COMM">/**
+<span class='line'>368</span>   Displays a warning alert pane.  See SC.AlertPane.show() for complete details. 
+<span class='line'>369</span>   
+<span class='line'>370</span>   @returns {SC.AlertPane} the pane
+<span class='line'>371</span> */</span><span class="WHIT">
+<span class='line'>372</span> </span><span class="NAME">SC.AlertPane.warn</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">description</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button1Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button2Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button3Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>373</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._normalizeArguments</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>374</span>   </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">6</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-icon-alert-48'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>375</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.show.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>376</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>377</span> 
+<span class='line'>378</span> 
+<span class='line'>379</span> </span><span class="COMM">/**
+<span class='line'>380</span>   Displays a info alert pane.  See SC.AlertPane.show() for complete details. 
+<span class='line'>381</span>   
+<span class='line'>382</span>   @returns {SC.AlertPane} the pane
+<span class='line'>383</span> */</span><span class="WHIT">
+<span class='line'>384</span> </span><span class="NAME">SC.AlertPane.info</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">description</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button1Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button2Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button3Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>385</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._normalizeArguments</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>386</span>   </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">6</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-icon-info-48'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>387</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.show.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>388</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>389</span> 
+<span class='line'>390</span> </span><span class="COMM">/**
+<span class='line'>391</span>   Displays a error allert pane.  See SC.AlertPane.show() for complete details. 
+<span class='line'>392</span>   
+<span class='line'>393</span>   @returns {SC.AlertPane} the pane
+<span class='line'>394</span> */</span><span class="WHIT">
+<span class='line'>395</span> </span><span class="NAME">SC.AlertPane.error</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">description</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button1Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button2Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button3Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>396</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._normalizeArguments</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>397</span>   </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">6</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-icon-error-48'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>398</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.show.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>399</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>400</span> 
+<span class='line'>401</span> </span><span class="COMM">/**
+<span class='line'>402</span>   Displays a plain all-text allert pane w/o icon.  See SC.AlertPane.show() for complete details. 
+<span class='line'>403</span>   
+<span class='line'>404</span>   @returns {SC.AlertPane} the pane
+<span class='line'>405</span> */</span><span class="WHIT">
+<span class='line'>406</span> </span><span class="NAME">SC.AlertPane.plain</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">description</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">caption</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button1Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button2Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">button3Title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>407</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._normalizeArguments</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>408</span>   </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">6</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'blank'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>409</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.show.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>410</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>411</span> </span></pre></body></html>
