@@ -1,1 +1,0 @@
-SC.CoreQuery.fn.eq, CoreQuery, FUNCTION, SC.CoreQuery.fn, Static

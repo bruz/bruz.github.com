@@ -1,1 +1,0 @@
-SC.K, Object, FUNCTION, SC, Static

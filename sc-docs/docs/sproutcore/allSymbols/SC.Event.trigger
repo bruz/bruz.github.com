@@ -1,1 +1,0 @@
-SC.Event.trigger, Boolean, FUNCTION, SC.Event, Static
