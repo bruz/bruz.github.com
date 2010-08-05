@@ -1,0 +1,118 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore Costello - Property Observing Library</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/**
+<span class='line'>  9</span>   @namespace
+<span class='line'> 10</span>   
+<span class='line'> 11</span>   Support methods for the Delegate design pattern.
+<span class='line'> 12</span>   
+<span class='line'> 13</span>   The Delegate design pattern makes it easy to delegate a portion of your 
+<span class='line'> 14</span>   application logic to another object.  This is most often used in views to 
+<span class='line'> 15</span>   delegate various application-logic decisions to controllers in order to 
+<span class='line'> 16</span>   avoid having to bake application-logic directly into the view itself.
+<span class='line'> 17</span>   
+<span class='line'> 18</span>   The methods provided by this mixin make it easier to implement this pattern
+<span class='line'> 19</span>   but they are not required to support delegates.
+<span class='line'> 20</span>   
+<span class='line'> 21</span>   h2. The Pattern
+<span class='line'> 22</span>   
+<span class='line'> 23</span>   The delegate design pattern typically means that you provide a property,
+<span class='line'> 24</span>   usually ending in "delegate", that can be set to another object in the 
+<span class='line'> 25</span>   system.  
+<span class='line'> 26</span>   
+<span class='line'> 27</span>   When events occur or logic decisions need to be made that you would prefer
+<span class='line'> 28</span>   to delegate, you can call methods on the delegate if it is set.  If the 
+<span class='line'> 29</span>   delegate is not set, you should provide some default functionality instead.
+<span class='line'> 30</span>   
+<span class='line'> 31</span>   Note that typically delegates are not observable, hence it is not necessary
+<span class='line'> 32</span>   to use get() to retrieve the value of the delegate.
+<span class='line'> 33</span>   
+<span class='line'> 34</span>   @since SproutCore 1.0
+<span class='line'> 35</span>   
+<span class='line'> 36</span> */</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="NAME">SC.DelegateSupport</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">  
+<span class='line'> 38</span>   
+<span class='line'> 39</span>   </span><span class="COMM">/**
+<span class='line'> 40</span>     Selects the delegate that implements the specified method name.  Pass one
+<span class='line'> 41</span>     or more delegates.  The receiver is automatically included as a default.
+<span class='line'> 42</span>     
+<span class='line'> 43</span>     This can be more efficient than using invokeDelegateMethod() which has
+<span class='line'> 44</span>     to marshall arguments into a delegate call.
+<span class='line'> 45</span>     
+<span class='line'> 46</span>     @param {String} methodName
+<span class='line'> 47</span>     @param {Object...} delegate one or more delegate arguments
+<span class='line'> 48</span>     @returns {Object} delegate or null
+<span class='line'> 49</span>   */</span><span class="WHIT">
+<span class='line'> 50</span>   </span><span class="NAME">delegateFor</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">methodName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 51</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 52</span>         </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">arguments.length</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 53</span>         </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 54</span>         
+<span class='line'> 55</span>     </span><span class="KEYW">while</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 56</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 57</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">[</span><span class="NAME">methodName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 58</span>       </span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">;</span><span class="WHIT">      
+<span class='line'> 59</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 60</span>     
+<span class='line'> 61</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">methodName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 62</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 63</span>   
+<span class='line'> 64</span>   </span><span class="COMM">/**
+<span class='line'> 65</span>     Invokes the named method on the delegate that you pass.  If no delegate
+<span class='line'> 66</span>     is defined or if the delegate does not implement the method, then a 
+<span class='line'> 67</span>     method of the same name on the receiver will be called instead.  
+<span class='line'> 68</span>     
+<span class='line'> 69</span>     You can pass any arguments you want to pass onto the delegate after the
+<span class='line'> 70</span>     delegate and methodName.
+<span class='line'> 71</span>     
+<span class='line'> 72</span>     @param {Object} delegate a delegate object.  May be null.
+<span class='line'> 73</span>     @param {String} methodName a method name
+<span class='line'> 74</span>     @param {Object...} args (OPTIONAL) any additional arguments
+<span class='line'> 75</span>     
+<span class='line'> 76</span>     @returns {Object} value returned by delegate
+<span class='line'> 77</span>   */</span><span class="WHIT">
+<span class='line'> 78</span>   </span><span class="NAME">invokeDelegateMethod</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">delegate</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">methodName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 79</span>     </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.A</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args.slice</span><span class="PUNC">(</span><span class="NUMB">2</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args.length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 80</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">delegate</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">delegate</span><span class="PUNC">[</span><span class="NAME">methodName</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 81</span>     
+<span class='line'> 82</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">[</span><span class="NAME">methodName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 83</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">method.apply</span><span class="PUNC">(</span><span class="NAME">delegate</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 84</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 85</span>   
+<span class='line'> 86</span>   </span><span class="COMM">/**
+<span class='line'> 87</span>     Search the named delegates for the passed property.  If one is found, 
+<span class='line'> 88</span>     gets the property value and returns it.  If none of the passed delegates 
+<span class='line'> 89</span>     implement the property, search the receiver for the property as well.
+<span class='line'> 90</span>     
+<span class='line'> 91</span>     @param {String} key the property to get.
+<span class='line'> 92</span>     @param {Object} delegate one or more delegate
+<span class='line'> 93</span>     @returns {Object} property value or undefined
+<span class='line'> 94</span>   */</span><span class="WHIT">
+<span class='line'> 95</span>   </span><span class="NAME">getDelegateProperty</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delegate</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 96</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 97</span>         </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">arguments.length</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 98</span>         </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span>         
+<span class='line'>100</span>     </span><span class="KEYW">while</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>101</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>102</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>103</span>         </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret.get</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">ret.get</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>105</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>106</span>     
+<span class='line'>107</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>108</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>109</span>   
+<span class='line'>110</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>111</span> </span></pre></body></html>

@@ -1,0 +1,113 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// SC.ChildRecord</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>  4</span> 
+<span class='line'>  5</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'core'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'models/record'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'system/query'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// FIXME: [EG] some wonky build order crap here...</span><span class="WHIT">
+<span class='line'>  8</span> 
+<span class='line'>  9</span> </span><span class="COMM">/**
+<span class='line'> 10</span>  * An extension of SC.Record. We use this as the superclass for child record types 
+<span class='line'> 11</span>  *
+<span class='line'> 12</span>  * @extends SC.Record
+<span class='line'> 13</span>  * @author Evin Grano
+<span class='line'> 14</span>  * @author Sean Eidemiller
+<span class='line'> 15</span>  *
+<span class='line'> 16</span>  * @version Sproutcore 1.0
+<span class='line'> 17</span>  * @since Sproutcore 1.0
+<span class='line'> 18</span>  */</span><span class="WHIT">
+<span class='line'> 19</span>  
+<span class='line'> 20</span> </span><span class="NAME">SC.ChildRecord</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Record.extend</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 21</span>   </span><span class="COMM">/** @scope SC.ChildRecord.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 22</span>   
+<span class='line'> 23</span>   </span><span class="COMM">/**
+<span class='line'> 24</span>    * This is a check to see if this is a ChildRecord
+<span class='line'> 25</span>    */</span><span class="WHIT">
+<span class='line'> 26</span>   </span><span class="NAME">isChildRecord</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 27</span>   
+<span class='line'> 28</span>   </span><span class="COMM">/**
+<span class='line'> 29</span>    * The type of the child record.
+<span class='line'> 30</span>    *
+<span class='line'> 31</span>    * This will be set by subclasses that require a type attribute.
+<span class='line'> 32</span>    */</span><span class="WHIT">
+<span class='line'> 33</span>   </span><span class="NAME">type</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 34</span>   
+<span class='line'> 35</span>   </span><span class="COMM">/**
+<span class='line'> 36</span>    *
+<span class='line'> 37</span>    */</span><span class="WHIT">
+<span class='line'> 38</span>   </span><span class="NAME">primaryKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'childRecordKey'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 39</span>   
+<span class='line'> 40</span>   </span><span class="COMM">/**
+<span class='line'> 41</span>    * The immediate parent of the child record.
+<span class='line'> 42</span>    */</span><span class="WHIT">
+<span class='line'> 43</span>   </span><span class="NAME">_parentRecord</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 44</span>   
+<span class='line'> 45</span>   </span><span class="COMM">/**
+<span class='line'> 46</span>     All child records will have a life cycle that mirrors as they are created or 
+<span class='line'> 47</span>     loaded into memory, modified, committed and finally destroyed.  This life 
+<span class='line'> 48</span>     cycle is managed by the status property on your record. 
+<span class='line'> 49</span> 
+<span class='line'> 50</span>     The status of a record is modelled as a finite state machine.  Based on the 
+<span class='line'> 51</span>     current state of the record, you can determine which operations are 
+<span class='line'> 52</span>     currently allowed on the record and which are not.
+<span class='line'> 53</span>     
+<span class='line'> 54</span>     In general, a record can be in one of five primary states; SC.Record.EMPTY,
+<span class='line'> 55</span>     SC.Record.BUSY, SC.Record.READY, SC.Record.DESTROYED, SC.Record.ERROR. 
+<span class='line'> 56</span>     These are all described in more detail in the class mixin (in record.js) where 
+<span class='line'> 57</span>     they are defined.
+<span class='line'> 58</span>     
+<span class='line'> 59</span>     @property {Number}
+<span class='line'> 60</span>   */</span><span class="WHIT">
+<span class='line'> 61</span>   </span><span class="NAME">status</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 62</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">pStatus</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Record.EMPTY</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._parentRecord</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 64</span>       </span><span class="NAME">pStatus</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._parentRecord.get</span><span class="PUNC">(</span><span class="STRN">'status'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 65</span>       </span><span class="NAME">this.store.writeStatus</span><span class="PUNC">(</span><span class="NAME">this.storeKey</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pStatus</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 66</span>       </span><span class="NAME">this.store.dataHashDidChange</span><span class="PUNC">(</span><span class="NAME">this.storeKey</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 67</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 68</span>       </span><span class="NAME">pStatus</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.store.readStatus</span><span class="PUNC">(</span><span class="NAME">this.storeKey</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 69</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 70</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">pStatus</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 71</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'storeKey'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 72</span>   
+<span class='line'> 73</span>   
+<span class='line'> 74</span>   </span><span class="COMM">/**
+<span class='line'> 75</span>    * Marks the record as dirty.
+<span class='line'> 76</span>    *
+<span class='line'> 77</span>    * Invokes the parent's recordDidChange() function until it gets to an SC.Record instance, at
+<span class='line'> 78</span>    * which point the record is marked as dirty in the store.
+<span class='line'> 79</span>    */</span><span class="WHIT">
+<span class='line'> 80</span>   </span><span class="NAME">recordDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 81</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._parentRecord</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this._parentRecord.recordDidChange</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 82</span>       </span><span class="NAME">this._parentRecord.recordDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 83</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 84</span>     </span><span class="KEYW">else</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 85</span>       </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 86</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 87</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 88</span>   
+<span class='line'> 89</span>   </span><span class="COMM">/**
+<span class='line'> 90</span>    * Creates a new child record using the parent of *this* child record.
+<span class='line'> 91</span>    * all the way up to the base parent record.  This is to give access to 
+<span class='line'> 92</span>    * all the children in a root parent tree  
+<span class='line'> 93</span>    */</span><span class="WHIT">
+<span class='line'> 94</span>   </span><span class="NAME">createChildRecord</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">recordType</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hash</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 95</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">myParent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._parentRecord</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 96</span>   
+<span class='line'> 97</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">myParent</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 98</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">myParent.createChildRecord</span><span class="PUNC">(</span><span class="NAME">recordType</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hash</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>100</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>102</span>   
+<span class='line'>103</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span>   </span><span class="PUNC">}</span><span class="WHIT">  
+<span class='line'>105</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>106</span> </span></pre></body></html>

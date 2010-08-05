@@ -1,0 +1,595 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'views/scroll'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> 
+<span class='line'> 10</span> </span><span class="COMM">/** @class
+<span class='line'> 11</span> 
+<span class='line'> 12</span>   Implements a complete scroller view for menus.  This class implements the
+<span class='line'> 13</span>   arrows displayed in a menu to scroll.
+<span class='line'> 14</span>   
+<span class='line'> 15</span>   The main difference with SC.ScrollerView is that there is only vertical 
+<span class='line'> 16</span>   scrollers. Value Syncing between SC.MenuScrollView and SC.MenuScrollerView
+<span class='line'> 17</span>   is done using valueBinding.
+<span class='line'> 18</span>   
+<span class='line'> 19</span>   @extends SC.ScrollerView
+<span class='line'> 20</span>   @since SproutCore 1.0
+<span class='line'> 21</span> */</span><span class="WHIT">
+<span class='line'> 22</span> 
+<span class='line'> 23</span> </span><span class="NAME">SC.MenuScrollerView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ScrollerView.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 24</span>   </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'sc-menu-scroller-view'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 25</span>   
+<span class='line'> 26</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'> 27</span>   </span><span class="COMM">// PROPERTIES</span><span class="WHIT">
+<span class='line'> 28</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'> 29</span>   
+<span class='line'> 30</span>   </span><span class="COMM">/**
+<span class='line'> 31</span>    Used to set the scrolling direction of the scroller.
+<span class='line'> 32</span>   */</span><span class="WHIT">
+<span class='line'> 33</span>   </span><span class="NAME">scrollDown</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 34</span>   
+<span class='line'> 35</span>   </span><span class="COMM">/** 
+<span class='line'> 36</span>     The scroller offset value.  This value will adjust between the minimum
+<span class='line'> 37</span>     and maximum values that you set. Default is 0.
+<span class='line'> 38</span>     
+<span class='line'> 39</span>     @property
+<span class='line'> 40</span>   */</span><span class="WHIT">
+<span class='line'> 41</span>   </span><span class="NAME">value</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">val</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 42</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">val</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span>       </span><span class="COMM">// Don't enforce the maximum now, because the scroll view could change</span><span class="WHIT">
+<span class='line'> 44</span>       </span><span class="COMM">// height and we want our content to stay put when it does.</span><span class="WHIT">
+<span class='line'> 45</span>       </span><span class="NAME">this._value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">val</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 46</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 47</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._value</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// default value is at top/left</span><span class="WHIT">
+<span class='line'> 48</span>       </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">Math.min</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'maximum'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 49</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 50</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'maximum'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 51</span>   
+<span class='line'> 52</span>   </span><span class="COMM">/**
+<span class='line'> 53</span>     The maximum offset value for the scroller.  This will be used to calculate
+<span class='line'> 54</span>     the internal height/width of the scroller itself. It is not necessarily
+<span class='line'> 55</span>     the same as the height of a scroll view's content view.
+<span class='line'> 56</span>     
+<span class='line'> 57</span>     When set less than the height of the scroller, the scroller is disabled.
+<span class='line'> 58</span>     
+<span class='line'> 59</span>     @property {Number}
+<span class='line'> 60</span>   */</span><span class="WHIT">
+<span class='line'> 61</span>   </span><span class="NAME">maximum</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 62</span>   
+<span class='line'> 63</span>   </span><span class="COMM">/**
+<span class='line'> 64</span>     YES if enable scrollbar, NO to disable it.  Scrollbars will automatically 
+<span class='line'> 65</span>     disable if the maximum scroll width does not exceed their capacity.
+<span class='line'> 66</span>     
+<span class='line'> 67</span>     @property
+<span class='line'> 68</span>   */</span><span class="WHIT">
+<span class='line'> 69</span>   </span><span class="NAME">isEnabled</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 70</span>   
+<span class='line'> 71</span>   </span><span class="COMM">/**
+<span class='line'> 72</span>     Determine the layout direction.  Determines whether the scrollbar should 
+<span class='line'> 73</span>     appear horizontal or vertical.  This must be set when the view is created.
+<span class='line'> 74</span>     Changing this once the view has been created will have no effect.
+<span class='line'> 75</span>     
+<span class='line'> 76</span>     @property
+<span class='line'> 77</span>   */</span><span class="WHIT">
+<span class='line'> 78</span>   </span><span class="NAME">layoutDirection</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.LAYOUT_VERTICAL</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 79</span>   
+<span class='line'> 80</span>   </span><span class="COMM">/** 
+<span class='line'> 81</span>      Amount to scroll one vertical line.
+<span class='line'> 82</span>      Defaults to 20px.
+<span class='line'> 83</span>   */</span><span class="WHIT">
+<span class='line'> 84</span>   </span><span class="NAME">verticalLineScroll</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">20</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 85</span> 
+<span class='line'> 86</span>   </span><span class="COMM">/**
+<span class='line'> 87</span>     This function overrides the default function in SC.Scroller as 
+<span class='line'> 88</span>     menus only have vertical scrolling.
+<span class='line'> 89</span>     
+<span class='line'> 90</span>     @property {String}
+<span class='line'> 91</span>   */</span><span class="WHIT">
+<span class='line'> 92</span>   </span><span class="NAME">ownerScrollValueKey</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'verticalScrollOffset'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">  
+<span class='line'> 94</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="STRN">'layoutDirection'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">cacheable</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 95</span> 
+<span class='line'> 96</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'> 97</span>   </span><span class="COMM">// INTERNAL SUPPORT</span><span class="WHIT">
+<span class='line'> 98</span>   </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'> 99</span> 
+<span class='line'>100</span>   </span><span class="NAME">init</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="COMM">// Set the scrollerThickness based on controlSize</span><span class="WHIT">
+<span class='line'>102</span>     </span><span class="KEYW">switch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'controlSize'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>103</span>       </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="NAME">SC.TINY_CONTROL_SIZE</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>104</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView.TINY_SCROLLER_THICKNESS</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>105</span>         </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>106</span>       </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="NAME">SC.SMALL_CONTROL_SIZE</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>107</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView.SMALL_SCROLLER_THICKNESS</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>108</span>         </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>109</span>       </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="NAME">SC.REGULAR_CONTROL_SIZE</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>110</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView.REGULAR_SCROLLER_THICKNESS</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>111</span>         </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>112</span>       </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="NAME">SC.LARGE_CONTROL_SIZE</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>113</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView.LARGE_SCROLLER_THICKNESS</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>114</span>         </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>115</span>       </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="NAME">SC.HUGE_CONTROL_SIZE</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>116</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView.HUGE_SCROLLER_THICKNESS</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>117</span>         </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>118</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>119</span> 
+<span class='line'>120</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>121</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>122</span>   
+<span class='line'>123</span>   </span><span class="NAME">render</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>124</span>     </span><span class="NAME">context.addClass</span><span class="PUNC">(</span><span class="STRN">'sc-vertical'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>     </span><span class="NAME">context.addClass</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'controlSize'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>127</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">direction</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'scrollDown'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="STRN">'arrowDown'</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'arrowUp'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>128</span>       </span><span class="NAME">context.push</span><span class="PUNC">(</span><span class="STRN">'&lt;span class="scrollArrow '</span><span class="PUNC">+</span><span class="NAME">direction</span><span class="PUNC">+</span><span class="STRN">'">&nbsp;&lt;/span>'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>129</span>     </span><span class="PUNC">}</span><span class="WHIT"> 
+<span class='line'>130</span>     </span><span class="NAME">context.setClass</span><span class="PUNC">(</span><span class="STRN">'disabled'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isEnabled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>132</span>   
+<span class='line'>133</span>   </span><span class="NAME">didCreateLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>134</span>     </span><span class="COMM">// var callback, amt, layer;</span><span class="WHIT">
+<span class='line'>135</span>     </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>136</span>     </span><span class="COMM">// callback = this._sc_scroller_scrollDidChange ;</span><span class="WHIT">
+<span class='line'>137</span>     </span><span class="COMM">// SC.Event.add(this.$(), 'scroll', this, callback) ;</span><span class="WHIT">
+<span class='line'>138</span>     </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>139</span>     </span><span class="COMM">// // set scrollOffset first time</span><span class="WHIT">
+<span class='line'>140</span>     </span><span class="COMM">// amt = this.get('value') ;</span><span class="WHIT">
+<span class='line'>141</span>     </span><span class="COMM">// layer = this.get('layer') ;</span><span class="WHIT">
+<span class='line'>142</span>     </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>143</span>     </span><span class="COMM">// layer.scrollTop = amt ;</span><span class="WHIT">
+<span class='line'>144</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>145</span>   
+<span class='line'>146</span>   </span><span class="NAME">willDestroyLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>147</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">callback</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._sc_scroller_scrollDidChange</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>148</span>     </span><span class="NAME">SC.Event.remove</span><span class="PUNC">(</span><span class="NAME">this.$</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'scroll'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">callback</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>149</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>150</span>   
+<span class='line'>151</span>   </span><span class="NAME">mouseEntered</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>152</span>     </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isMouseOver'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>153</span>     </span><span class="NAME">this._invokeScrollOnMouseOver</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>154</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>155</span>   
+<span class='line'>156</span>   </span><span class="NAME">mouseExited</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>157</span>     </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isMouseOver'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>158</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>159</span>   
+<span class='line'>160</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>161</span>   
+<span class='line'>162</span>   </span><span class="COMM">/**
+<span class='line'>163</span>     This function overrides the default function in SC.Scroller. 
+<span class='line'>164</span>     SC.MenuScroller and SC.MenuScroll use valueBinding so this function is
+<span class='line'>165</span>     not neccesary.
+<span class='line'>166</span>   */</span><span class="WHIT">
+<span class='line'>167</span>   </span><span class="NAME">_sc_scroller_valueDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>168</span>     
+<span class='line'>169</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>170</span>   
+<span class='line'>171</span> 
+<span class='line'>172</span>   </span><span class="COMM">// after 50msec, fire event again</span><span class="WHIT">
+<span class='line'>173</span>   </span><span class="NAME">_sc_scroller_armScrollTimer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>174</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._sc_scrollTimer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>175</span>       </span><span class="NAME">SC.RunLoop.begin</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>176</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">method</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._sc_scroller_scrollDidChange</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>177</span>       </span><span class="NAME">this._sc_scrollTimer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.invokeLater</span><span class="PUNC">(</span><span class="NAME">method</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">50</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>178</span>       </span><span class="NAME">SC.RunLoop.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>179</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>180</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>181</span>   
+<span class='line'>182</span>   </span><span class="NAME">_sc_scroller_scrollDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>183</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">now</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Date.now</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>184</span>         </span><span class="NAME">last</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._sc_lastScroll</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>185</span>         </span><span class="NAME">layer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'layer'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>186</span>         </span><span class="NAME">scroll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>187</span>     
+<span class='line'>188</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">last</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">now</span><span class="PUNC">-</span><span class="NAME">last</span><span class="PUNC">)</span><span class="PUNC">&lt;</span><span class="NUMB">50</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._sc_scroller_armScrollTimer</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>189</span>     </span><span class="NAME">this._sc_scrollTimer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>190</span>     </span><span class="NAME">this._sc_lastScroll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">now</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>191</span>     
+<span class='line'>192</span>     </span><span class="NAME">SC.RunLoop.begin</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>193</span>     
+<span class='line'>194</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isEnabled'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do.</span><span class="WHIT">
+<span class='line'>195</span>     
+<span class='line'>196</span>     </span><span class="NAME">this._sc_scrollValue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">scroll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">layer.scrollTop</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>197</span>     </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">scroll</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// will now enforce minimum and maximum</span><span class="WHIT">
+<span class='line'>198</span>     
+<span class='line'>199</span>     </span><span class="NAME">SC.RunLoop.end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>200</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>201</span>   
+<span class='line'>202</span>   
+<span class='line'>203</span>   </span><span class="COMM">/**
+<span class='line'>204</span>     Scroll the menu if it is is an up or down arrow. This is called by
+<span class='line'>205</span>     the function that simulates mouseOver.
+<span class='line'>206</span>   */</span><span class="WHIT">
+<span class='line'>207</span>   </span><span class="NAME">_scrollMenu</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>208</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">val</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">newval</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>209</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'scrollDown'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>210</span>       </span><span class="NAME">newval</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">val</span><span class="PUNC">+</span><span class="NAME">this.verticalLineScroll</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>211</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">newval</span><span class="PUNC">&lt;=</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'maximum'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>212</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">newval</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>213</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>214</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>215</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>216</span>       </span><span class="NAME">newval</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">val</span><span class="PUNC">-</span><span class="NAME">this.verticalLineScroll</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>217</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">newval</span><span class="PUNC">>=</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>218</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">newval</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>219</span>       </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">val</span><span class="PUNC">&lt;=</span><span class="NAME">this.verticalLineScroll</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">val</span><span class="PUNC">></span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>220</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'value'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>221</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>222</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>223</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>224</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>225</span>   
+<span class='line'>226</span>   </span><span class="COMM">/**
+<span class='line'>227</span>     We use this function to simulate mouseOver. It checks for the flag 
+<span class='line'>228</span>     isMouseOver which is turned on when mouseEntered is called and turned off
+<span class='line'>229</span>     when mouseExited is called. 
+<span class='line'>230</span>   */</span><span class="WHIT">
+<span class='line'>231</span>   </span><span class="NAME">_invokeScrollOnMouseOver</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>232</span>     </span><span class="NAME">this._scrollMenu</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>233</span>     </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isMouseOver'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>234</span>       </span><span class="NAME">this.invokeLater</span><span class="PUNC">(</span><span class="NAME">this._invokeScrollOnMouseOver</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">100</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>235</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>236</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>237</span>   
+<span class='line'>238</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>239</span> 
+<span class='line'>240</span> </span><span class="COMM">/**
+<span class='line'>241</span>   Default metrics for scroller size.
+<span class='line'>242</span> */</span><span class="WHIT">
+<span class='line'>243</span> </span><span class="NAME">SC.MenuScrollerView.REGULAR_SCROLLER_THICKNESS</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">18</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>244</span> </span><span class="NAME">SC.MenuScrollerView.TINY_SCROLLER_THICKNESS</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">10</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>245</span> </span><span class="NAME">SC.MenuScrollerView.SMALL_SCROLLER_THICKNESS</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">14</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>246</span> </span><span class="NAME">SC.MenuScrollerView.LARGE_SCROLLER_THICKNESS</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">23</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>247</span> </span><span class="NAME">SC.MenuScrollerView.HUGE_SCROLLER_THICKNESS</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">26</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>248</span> 
+<span class='line'>249</span> 
+<span class='line'>250</span> </span><span class="COMM">/** @class
+<span class='line'>251</span> 
+<span class='line'>252</span>   Implements a scroll view for menus.  This class extends SC.ScrollView for 
+<span class='line'>253</span>   menus. 
+<span class='line'>254</span>   
+<span class='line'>255</span>   The main difference with SC.ScrollView is that there is only vertical 
+<span class='line'>256</span>   scrolling. Value Syncing between SC.MenuScrollView and SC.MenuScrollerView
+<span class='line'>257</span>   is done using valueBinding.
+<span class='line'>258</span>   
+<span class='line'>259</span>   @extends SC.ScrollView
+<span class='line'>260</span>   @since SproutCore 1.0
+<span class='line'>261</span> */</span><span class="WHIT">
+<span class='line'>262</span> </span><span class="NAME">SC.MenuScrollView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ScrollView.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>263</span> 
+<span class='line'>264</span>   </span><span class="NAME">classNames</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'sc-menu-scroll-view'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>265</span>   
+<span class='line'>266</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>267</span>   </span><span class="COMM">// PROPERTIES</span><span class="WHIT">
+<span class='line'>268</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>269</span>   
+<span class='line'>270</span>   
+<span class='line'>271</span>   </span><span class="COMM">/**
+<span class='line'>272</span>     The maximum horizontal scroll offset allowed given the current contentView 
+<span class='line'>273</span>     size and the size of the scroll view.  If horizontal scrolling is 
+<span class='line'>274</span>     disabled, this will always return 0.
+<span class='line'>275</span>     
+<span class='line'>276</span>     @property {Number}
+<span class='line'>277</span>   */</span><span class="WHIT">
+<span class='line'>278</span>   </span><span class="NAME">maximumHorizontalScrollOffset</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>279</span>     
+<span class='line'>280</span>        
+<span class='line'>281</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>282</span>   </span><span class="COMM">// SCROLLERS</span><span class="WHIT">
+<span class='line'>283</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>284</span>   
+<span class='line'>285</span>   </span><span class="COMM">/** 
+<span class='line'>286</span>     YES if the view should maintain a horizontal scroller.   This property 
+<span class='line'>287</span>     must be set when the view is created.
+<span class='line'>288</span>     
+<span class='line'>289</span>     @property {Boolean}
+<span class='line'>290</span>   */</span><span class="WHIT">
+<span class='line'>291</span>   </span><span class="NAME">hasHorizontalScroller</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>292</span>   
+<span class='line'>293</span>   </span><span class="COMM">/**
+<span class='line'>294</span>     The horizontal scroller view class. This will be replaced with a view 
+<span class='line'>295</span>     instance when the ScrollView is created unless hasHorizontalScroller is 
+<span class='line'>296</span>     NO.
+<span class='line'>297</span>     
+<span class='line'>298</span>     @property {SC.View}
+<span class='line'>299</span>   */</span><span class="WHIT">
+<span class='line'>300</span>   </span><span class="NAME">horizontalScrollerView</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>301</span>   
+<span class='line'>302</span>   </span><span class="COMM">/**
+<span class='line'>303</span>     YES if the horizontal scroller should be visible.  You can change this 
+<span class='line'>304</span>     property value anytime to show or hide the horizontal scroller.  If you 
+<span class='line'>305</span>     do not want to use a horizontal scroller at all, you should instead set 
+<span class='line'>306</span>     hasHorizontalScroller to NO to avoid creating a scroller view in the 
+<span class='line'>307</span>     first place.
+<span class='line'>308</span>     
+<span class='line'>309</span>     @property {Boolean}
+<span class='line'>310</span>   */</span><span class="WHIT">
+<span class='line'>311</span>   </span><span class="NAME">isHorizontalScrollerVisible</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>312</span> 
+<span class='line'>313</span>   </span><span class="COMM">/**
+<span class='line'>314</span>     Returns YES if the view both has a horizontal scroller, the scroller is
+<span class='line'>315</span>     visible.
+<span class='line'>316</span>     
+<span class='line'>317</span>     @property {Boolean}
+<span class='line'>318</span>   */</span><span class="WHIT">
+<span class='line'>319</span>   </span><span class="NAME">canScrollHorizontal</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>320</span>    
+<span class='line'>321</span>   </span><span class="COMM">/**
+<span class='line'>322</span>     If YES, the horizontal scroller will autohide if the contentView is
+<span class='line'>323</span>     smaller than the visible area.  You must set hasHorizontalScroller to YES 
+<span class='line'>324</span>     for this property to have any effect.  
+<span class='line'>325</span>   */</span><span class="WHIT">
+<span class='line'>326</span>   </span><span class="NAME">autohidesHorizontalScroller</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>327</span>   
+<span class='line'>328</span>   </span><span class="COMM">/** 
+<span class='line'>329</span>     YES if the view shuld maintain a vertical scroller.   This property must 
+<span class='line'>330</span>     be set when the view is created.
+<span class='line'>331</span>     
+<span class='line'>332</span>     @property {Boolean}
+<span class='line'>333</span>   */</span><span class="WHIT">
+<span class='line'>334</span>   </span><span class="NAME">hasVerticalScroller</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>335</span>   
+<span class='line'>336</span>   </span><span class="COMM">/**
+<span class='line'>337</span>     The vertical scroller view class. This will be replaced with a view 
+<span class='line'>338</span>     instance when the ScrollView is created unless hasVerticalScroller is NO.
+<span class='line'>339</span>     
+<span class='line'>340</span>     @property {SC.View}
+<span class='line'>341</span>   */</span><span class="WHIT">
+<span class='line'>342</span>   </span><span class="NAME">verticalScrollerView</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>343</span>   </span><span class="NAME">verticalScrollerView2</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.MenuScrollerView</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>344</span>   
+<span class='line'>345</span>   </span><span class="COMM">/**
+<span class='line'>346</span>     YES if the vertical scroller should be visible.  For SC.MenuScroll the
+<span class='line'>347</span>     vertical scroller is always there we just hide the arrows to scroll.
+<span class='line'>348</span>     
+<span class='line'>349</span>     @property {Boolean}
+<span class='line'>350</span>   */</span><span class="WHIT">
+<span class='line'>351</span>   </span><span class="NAME">isVerticalScrollerVisible</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>352</span> 
+<span class='line'>353</span>   
+<span class='line'>354</span>   </span><span class="NAME">canScrollVertical</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>355</span> 
+<span class='line'>356</span>   </span><span class="COMM">/**
+<span class='line'>357</span>     If YES, the vertical scroller will autohide if the contentView is
+<span class='line'>358</span>     smaller than the visible area.  You must set hasVerticalScroller to YES 
+<span class='line'>359</span>     for this property to have any effect.  
+<span class='line'>360</span>   */</span><span class="WHIT">
+<span class='line'>361</span>   </span><span class="NAME">autohidesVerticalScroller</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>362</span>   
+<span class='line'>363</span>   </span><span class="COMM">/**
+<span class='line'>364</span>     Use this property to set the 'bottom' offset of your vertical scroller, 
+<span class='line'>365</span>     to make room for a thumb view or other accessory view. Default is 0.
+<span class='line'>366</span>     
+<span class='line'>367</span>     @property {Number}
+<span class='line'>368</span>   */</span><span class="WHIT">
+<span class='line'>369</span>   </span><span class="NAME">verticalScrollerBottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>370</span>   
+<span class='line'>371</span>   
+<span class='line'>372</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>373</span>   </span><span class="COMM">// CUSTOM VIEWS</span><span class="WHIT">
+<span class='line'>374</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>375</span> 
+<span class='line'>376</span>   </span><span class="COMM">/**
+<span class='line'>377</span>     Control Size for Menu content: change verticalLineScroll
+<span class='line'>378</span>   */</span><span class="WHIT">
+<span class='line'>379</span>   </span><span class="NAME">controlSize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.REGULAR_CONTROL_SIZE</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>380</span>   
+<span class='line'>381</span>   </span><span class="COMM">/**
+<span class='line'>382</span>     The container view that will contain your main content view.  You can 
+<span class='line'>383</span>     replace this property with your own custom subclass if you prefer.
+<span class='line'>384</span>     
+<span class='line'>385</span>     @type {SC.ContainerView}
+<span class='line'>386</span>   */</span><span class="WHIT">
+<span class='line'>387</span>   </span><span class="NAME">containerView</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.ContainerView</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>388</span>   
+<span class='line'>389</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>390</span>   </span><span class="COMM">// METHODS</span><span class="WHIT">
+<span class='line'>391</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>392</span> 
+<span class='line'>393</span>   
+<span class='line'>394</span>   </span><span class="COMM">/**
+<span class='line'>395</span>     Adjusts the layout for the various internal views.  This method is called
+<span class='line'>396</span>     once when the scroll view is first configured and then anytime a scroller
+<span class='line'>397</span>     is shown or hidden.  You can call this method yourself as well to retile.
+<span class='line'>398</span>     
+<span class='line'>399</span>     You may also want to override this method to handle layout for any
+<span class='line'>400</span>     additional controls you have added to the view.
+<span class='line'>401</span>   */</span><span class="WHIT">
+<span class='line'>402</span>   </span><span class="NAME">tile</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>403</span>     </span><span class="COMM">// get vertical scroller/determine if we should have a scroller</span><span class="WHIT">
+<span class='line'>404</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">hasScroller</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">vscroll</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">vscroll2</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hasVertical</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">clip</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">clipLayout</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">viewportHeight</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>405</span>     </span><span class="NAME">hasScroller</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'hasVerticalScroller'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>406</span>     </span><span class="NAME">vscroll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">hasScroller</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollerView'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>407</span>     </span><span class="NAME">vscroll2</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">hasScroller</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollerView2'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>408</span>     </span><span class="NAME">hasVertical</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">vscroll</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isVerticalScrollerVisible'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>409</span>     
+<span class='line'>410</span>     </span><span class="COMM">// get the containerView</span><span class="WHIT">
+<span class='line'>411</span>     </span><span class="NAME">clip</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'containerView'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>412</span>     </span><span class="NAME">clipLayout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">top</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>413</span>     
+<span class='line'>414</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">hasVertical</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>415</span>       </span><span class="NAME">viewportHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>416</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">vscroll.get</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">vscroll2.get</span><span class="PUNC">(</span><span class="STRN">'scrollerThickness'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>417</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">view</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'contentView'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">view2</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>418</span>             </span><span class="NAME">f</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">view.get</span><span class="PUNC">(</span><span class="STRN">'frame'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>419</span>             </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">f</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">f.height</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>420</span>             </span><span class="NAME">elem</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.containerView.$</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>421</span>             </span><span class="NAME">verticalOffset</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollOffset'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>422</span>             </span><span class="NAME">topArrowInvisible</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">top</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>423</span>             </span><span class="NAME">topArrowVisible</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">top</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>424</span>             </span><span class="NAME">bottomArrowVisible</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>425</span>             </span><span class="NAME">bottomArrowInvisible</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>426</span>       
+<span class='line'>427</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">elem</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">viewportHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">elem.offsetHeight</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>428</span>       
+<span class='line'>429</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">verticalOffset</span><span class="PUNC">===</span><span class="NUMB">0</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>430</span>         </span><span class="NAME">clipLayout.top</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>431</span>         </span><span class="NAME">clipLayout.bottom</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>432</span>         </span><span class="NAME">vscroll.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">topArrowInvisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>433</span>         </span><span class="NAME">vscroll2.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottomArrowVisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>434</span>       </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">verticalOffset</span><span class="PUNC">>=</span><span class="PUNC">(</span><span class="NAME">height</span><span class="PUNC">-</span><span class="NAME">viewportHeight</span><span class="PUNC">-</span><span class="NAME">scrollerThickness</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>435</span>         </span><span class="NAME">clipLayout.top</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>436</span>         </span><span class="NAME">clipLayout.bottom</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>437</span>         </span><span class="NAME">vscroll.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">topArrowVisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>438</span>         </span><span class="NAME">vscroll2.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottomArrowInvisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>439</span>       </span><span class="PUNC">}</span><span class="KEYW">else</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>440</span>         </span><span class="NAME">clipLayout.top</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>441</span>         </span><span class="NAME">clipLayout.bottom</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">scrollerThickness</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>442</span>         </span><span class="NAME">vscroll.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">topArrowVisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>443</span>         </span><span class="NAME">vscroll2.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">bottomArrowVisible</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>444</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>445</span>     </span><span class="PUNC">}</span><span class="WHIT"> 
+<span class='line'>446</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">vscroll</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>447</span>      </span><span class="NAME">vscroll.set</span><span class="PUNC">(</span><span class="STRN">'isVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hasVertical</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>448</span>      </span><span class="NAME">vscroll2.set</span><span class="PUNC">(</span><span class="STRN">'isVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">hasVertical</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>449</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>450</span>     </span><span class="NAME">clip.set</span><span class="PUNC">(</span><span class="STRN">'layout'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">clipLayout</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>451</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>452</span>   
+<span class='line'>453</span>   </span><span class="COMM">/** @private
+<span class='line'>454</span>     Called whenever a scroller visibility changes.  Calls the tile() method.
+<span class='line'>455</span>   */</span><span class="WHIT">
+<span class='line'>456</span>   </span><span class="NAME">scrollerVisibilityDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>457</span>     </span><span class="NAME">this.tile</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>458</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'isVerticalScrollerVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'isHorizontalScrollerVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'verticalScrollOffset'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>459</span>     
+<span class='line'>460</span>   
+<span class='line'>461</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'>462</span>   </span><span class="COMM">// INTERNAL SUPPORT</span><span class="WHIT">
+<span class='line'>463</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'>464</span>   
+<span class='line'>465</span>   </span><span class="COMM">/** @private
+<span class='line'>466</span>     Instantiate scrollers & container views as needed.  Replace their classes
+<span class='line'>467</span>     in the regular properties.
+<span class='line'>468</span>   */</span><span class="WHIT">
+<span class='line'>469</span>   </span><span class="NAME">createChildViews</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>470</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">childViews</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">view</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">view2</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">controlSize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'controlSize'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>471</span>     
+<span class='line'>472</span>     </span><span class="COMM">// create the containerView.  We must always have a container view. </span><span class="WHIT">
+<span class='line'>473</span>     </span><span class="COMM">// also, setup the contentView as the child of the containerView...</span><span class="WHIT">
+<span class='line'>474</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.none</span><span class="PUNC">(</span><span class="NAME">view</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.containerView</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">view</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.ContainerView</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>475</span>     
+<span class='line'>476</span>     </span><span class="NAME">childViews.push</span><span class="PUNC">(</span><span class="NAME">this.containerView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.createChildView</span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>477</span>       </span><span class="NAME">contentView</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.contentView</span><span class="WHIT">
+<span class='line'>478</span>     </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>479</span>     
+<span class='line'>480</span>     </span><span class="COMM">// and replace our own contentView...</span><span class="WHIT">
+<span class='line'>481</span>     </span><span class="NAME">this.contentView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.containerView.get</span><span class="PUNC">(</span><span class="STRN">'contentView'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>482</span>     
+<span class='line'>483</span>     </span><span class="COMM">// create a vertical scroller </span><span class="WHIT">
+<span class='line'>484</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">=</span><span class="NAME">this.verticalScrollerView</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">view2</span><span class="PUNC">=</span><span class="NAME">this.verticalScrollerView2</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>485</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'hasVerticalScroller'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>486</span>         </span><span class="NAME">view</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.verticalScrollerView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.createChildView</span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>487</span>           </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">top</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>488</span>           </span><span class="NAME">controlSize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">controlSize</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>489</span>           </span><span class="NAME">valueBinding</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'*owner.verticalScrollOffset'</span><span class="WHIT">
+<span class='line'>490</span>         </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>491</span>         </span><span class="NAME">childViews.push</span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>492</span>         </span><span class="NAME">view2</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.verticalScrollerView2</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.createChildView</span><span class="PUNC">(</span><span class="NAME">view2</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>493</span>           </span><span class="NAME">scrollDown</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>494</span>           </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">bottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">left</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">right</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>495</span>           </span><span class="NAME">controlSize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">controlSize</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>496</span>           </span><span class="NAME">valueBinding</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'*owner.verticalScrollOffset'</span><span class="WHIT">
+<span class='line'>497</span>         </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>498</span>         </span><span class="NAME">childViews.push</span><span class="PUNC">(</span><span class="NAME">view2</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>499</span>       </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>500</span>         </span><span class="NAME">this.verticalScrollerView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>501</span>         </span><span class="NAME">this.verticalScrollerView2</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>502</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>503</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>504</span>     
+<span class='line'>505</span>     </span><span class="COMM">// set childViews array.</span><span class="WHIT">
+<span class='line'>506</span>     </span><span class="NAME">this.childViews</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">childViews</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>507</span>     
+<span class='line'>508</span>     </span><span class="NAME">this.contentViewFrameDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// setup initial display...</span><span class="WHIT">
+<span class='line'>509</span>     </span><span class="NAME">this.tile</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// set up initial tiling</span><span class="WHIT">
+<span class='line'>510</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>511</span>   
+<span class='line'>512</span>   </span><span class="NAME">init</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>513</span>     </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>514</span>     
+<span class='line'>515</span>     </span><span class="COMM">// start observing initial content view.  The content view's frame has</span><span class="WHIT">
+<span class='line'>516</span>     </span><span class="COMM">// already been setup in prepareDisplay so we don't need to call </span><span class="WHIT">
+<span class='line'>517</span>     </span><span class="COMM">// viewFrameDidChange...</span><span class="WHIT">
+<span class='line'>518</span>     </span><span class="NAME">this._scroll_contentView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'contentView'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>519</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">contentView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._scroll_contentView</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>520</span> 
+<span class='line'>521</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">contentView</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>522</span>       </span><span class="NAME">contentView.addObserver</span><span class="PUNC">(</span><span class="STRN">'frame'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.contentViewFrameDidChange</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>523</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>524</span> 
+<span class='line'>525</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isVisibleInWindow'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this._scsv_registerAutoscroll</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>526</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>527</span>   
+<span class='line'>528</span>   </span><span class="COMM">/** @private Registers/deregisters view with SC.Drag for autoscrolling */</span><span class="WHIT">
+<span class='line'>529</span>   </span><span class="NAME">_scsv_registerAutoscroll</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>530</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'isVisibleInWindow'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.Drag.addScrollableView</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>531</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">SC.Drag.removeScrollableView</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>532</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'isVisibleInWindow'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>533</span>   
+<span class='line'>534</span>   </span><span class="COMM">/** @private
+<span class='line'>535</span>     Invoked whenever the contentView's frame changes.  This will update the 
+<span class='line'>536</span>     scroller maxmimum and optionally update the scroller visibility if the
+<span class='line'>537</span>     size of the contentView changes.  We don't care about the origin since
+<span class='line'>538</span>     that is tracked separately from the offset values.
+<span class='line'>539</span>   */</span><span class="WHIT">
+<span class='line'>540</span>   </span><span class="NAME">contentViewFrameDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>541</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">view</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'contentView'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">view2</span><span class="PUNC">,</span><span class="WHIT"> 
+<span class='line'>542</span>         </span><span class="NAME">f</span><span class="WHIT">      </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">view</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">view.get</span><span class="PUNC">(</span><span class="STRN">'frame'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>543</span>         </span><span class="NAME">width</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">f</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">f.width</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>544</span>         </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">f</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">f.height</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>545</span>         </span><span class="NAME">dim</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'frame'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>546</span>         </span><span class="NAME">viewportHeight</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">elem</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>547</span>         
+<span class='line'>548</span>     </span><span class="COMM">// cache out scroll settings...</span><span class="WHIT">
+<span class='line'>549</span>     </span><span class="COMM">//if ((width === this._scroll_contentWidth) && (height === this._scroll_contentHeight)) return ;</span><span class="WHIT">
+<span class='line'>550</span>     </span><span class="NAME">this._scroll_contentWidth</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">width</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>551</span>     </span><span class="NAME">this._scroll_contentHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>552</span>     
+<span class='line'>553</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'hasVerticalScroller'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">view</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollerView'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">view2</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollerView2'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>554</span>       </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// accurately account for our layout</span><span class="WHIT">
+<span class='line'>555</span>       </span><span class="COMM">// decide if it should be visible or not</span><span class="WHIT">
+<span class='line'>556</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'autohidesVerticalScroller'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>557</span>         </span><span class="NAME">this.set</span><span class="PUNC">(</span><span class="STRN">'isVerticalScrollerVisible'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">dim.height</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>558</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>559</span>       </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollerBottom'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>560</span>       </span><span class="NAME">viewportHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>561</span>       </span><span class="NAME">elem</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.containerView.$</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>562</span>       </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">elem</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">viewportHeight</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">elem.offsetHeight</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>563</span>       </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">height</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="WHIT"> </span><span class="NAME">viewportHeight</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>564</span>       </span><span class="NAME">view.setIfChanged</span><span class="PUNC">(</span><span class="STRN">'maximum'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>565</span>       </span><span class="NAME">view2.setIfChanged</span><span class="PUNC">(</span><span class="STRN">'maximum'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">height</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>566</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>567</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>568</span>   
+<span class='line'>569</span>   </span><span class="COMM">/** @private
+<span class='line'>570</span>     Whenever the horizontal scroll offset changes, update the scrollers and 
+<span class='line'>571</span>     edit the location of the contentView.
+<span class='line'>572</span>   */</span><span class="WHIT">
+<span class='line'>573</span>   </span><span class="NAME">_scroll_horizontalScrollOffsetDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>574</span>    
+<span class='line'>575</span>   </span><span class="COMM">/** @private
+<span class='line'>576</span>     Whenever the vertical scroll offset changes, update the scrollers and 
+<span class='line'>577</span>     edit the location of the contentView.
+<span class='line'>578</span>   */</span><span class="WHIT">
+<span class='line'>579</span>   </span><span class="NAME">_scroll_verticalScrollOffsetDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>580</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">offset</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'verticalScrollOffset'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>581</span>     
+<span class='line'>582</span>     </span><span class="COMM">// update the offset for the contentView...</span><span class="WHIT">
+<span class='line'>583</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">contentView</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'contentView'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>584</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">contentView</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">contentView.adjust</span><span class="PUNC">(</span><span class="STRN">'top'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">-</span><span class="NAME">offset</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>585</span>     
+<span class='line'>586</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">observes</span><span class="PUNC">(</span><span class="STRN">'verticalScrollOffset'</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>587</span> 
+<span class='line'>588</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span></pre></body></html>

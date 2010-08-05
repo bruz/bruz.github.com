@@ -291,7 +291,7 @@ span.sc-label
 		  
 		    <tr class="even">
 		      <td class="label">Defined in:</td>
-		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_runtime_core.js.html">frameworks/sproutcore/frameworks/runtime/core.js</a></td>
+		      <td class="value"><a href="../symbols/src/_frameworks_runtime_core.js.html">frameworks/sproutcore/frameworks/runtime/core.js</a></td>
 		    </tr>
 		  
 
@@ -1292,7 +1292,7 @@ span.sc-label
 				          
 				            <li>
 				              <a href="#SC.heightForString">
-		<code class="type">+&nbsp;(Number)  heightForString(str, width, style, classNames)</code>
+		<code class="type">+&nbsp;(Number)  heightForString(str, width, style, classNames, ignoreEscape)</code>
 				              </a>
 				              
 				                <div class="description">Given a string and a fixed width, calculates the height of that
@@ -1449,7 +1449,7 @@ span.sc-label
 				          
 				            <li>
 				              <a href="#SC.measureString">
-		<code class="type">+&nbsp;(void)  measureString(string)</code>
+		<code class="type">+&nbsp;(void)  measureString(string, ignoreEscape)</code>
 				              </a>
 				              
 				                <div class="description">Measures a string in the prepared environment.</div>
@@ -1467,11 +1467,11 @@ span.sc-label
 				          
 				            <li>
 				              <a href="#SC.metricsForString">
-		<code class="type">+&nbsp;(void)  metricsForString(string, exampleElement, classNames)</code>
+		<code class="type">+&nbsp;(void)  metricsForString(string, exampleElement, classNames, ignoreEscape)</code>
 				              </a>
 				              
 				                <div class="description">Given a string and an example element or style string, and an optional
-  set of class names, calculates the width and height of that block of text.</div>
+    set of class names, calculates the width and height of that block of text.</div>
 				              
 				            </li>
 				          
@@ -6125,7 +6125,7 @@ span.sc-label
 
 					<h5>Discussion</h5><div class="description">
 
-<p>Use this method when you want to cause a file to be downloaded to a users desktop instead of having it display in the web browser.  Note that your server must return a header indicating that the file is intended for download also.</p></div>
+<p>Use this method when you want to cause a file to be downloaded to a users desktop instead of having it display in the web browser.  Note that your server must return a header indicating that the file  is intended for download also.</p></div>
 
 			          
 			        </div>
@@ -6450,7 +6450,7 @@ span.sc-label
 			                
 			                (Number)
 			              </span>
-			              <span class="name">heightForString</span> <span class="params">(str, width, style, classNames)</span>
+			              <span class="name">heightForString</span> <span class="params">(str, width, style, classNames, ignoreEscape)</span>
 			            </p>
 
 
@@ -6490,6 +6490,15 @@ span.sc-label
 								<span class="name">classNames</span>
 			              
 			              <span class="desc">{Array} An array of class names that may affect the style</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">ignoreEscape</span>
+			              
+			              <span class="desc">{Boolean} To NOT html escape the string.</span>
 			              
 						</p>
 			            
@@ -7457,7 +7466,7 @@ span.sc-label
 			                
 			                (void)
 			              </span>
-			              <span class="name">measureString</span> <span class="params">(string)</span>
+			              <span class="name">measureString</span> <span class="params">(string, ignoreEscape)</span>
 			            </p>
 
 
@@ -7470,6 +7479,15 @@ span.sc-label
 								<span class="name">string</span>
 			              
 			              <span class="desc">{String} The string to measure.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">ignoreEscape</span>
+			              
+			              <span class="desc">{Boolean} To NOT html escape the string.</span>
 			              
 						</p>
 			            
@@ -7564,7 +7582,7 @@ span.sc-label
 				
 				</h3>
 			          <p class="summary">Given a string and an example element or style string, and an optional
-  set of class names, calculates the width and height of that block of text.</p>
+    set of class names, calculates the width and height of that block of text.</p>
 
 			          
 
@@ -7576,7 +7594,7 @@ span.sc-label
 			                
 			                (void)
 			              </span>
-			              <span class="name">metricsForString</span> <span class="params">(string, exampleElement, classNames)</span>
+			              <span class="name">metricsForString</span> <span class="params">(string, exampleElement, classNames, ignoreEscape)</span>
 			            </p>
 
 
@@ -7607,6 +7625,15 @@ span.sc-label
 								<span class="name">classNames</span>
 			              
 			              <span class="desc">{String} (Optional) Class names to add to the test element.</span>
+			              
+						</p>
+			            
+			            
+			            
+			              <p class="parameter">
+								<span class="name">ignoreEscape</span>
+			              
+			              <span class="desc">{Boolean} To NOT html escape the string.</span>
 			              
 						</p>
 			            
@@ -8297,7 +8324,8 @@ span.sc-label
 			              <p class="parameter">
 								<span class="name">exampleElement</span>
 			              
-			              <span class="desc">The example element to grab styles from, or the style string to use.</span>
+			              <span class="desc">The example element to grab styles from, or the style 
+                          string to use.</span>
 			              
 						</p>
 			            
@@ -9491,7 +9519,7 @@ span.sc-label
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:49 GMT-0700 (PDT)
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Thu Aug 05 2010 06:41:24 GMT-0700 (PDT)
 		</div>
 	</body>
 </html>

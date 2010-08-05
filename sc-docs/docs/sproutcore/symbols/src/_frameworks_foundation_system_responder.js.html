@@ -1,0 +1,132 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/** @class
+<span class='line'>  9</span> 
+<span class='line'> 10</span>   Provides common methods for sending events down a responder chain.
+<span class='line'> 11</span>   Responder chains are used most often to deliver events to user interface
+<span class='line'> 12</span>   elements in your application, but you can also use them to deliver generic
+<span class='line'> 13</span>   events to any part of your application, including controllers.
+<span class='line'> 14</span> 
+<span class='line'> 15</span>   @extends SC.Object
+<span class='line'> 16</span>   @since SproutCore 1.0
+<span class='line'> 17</span> */</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">SC.Responder</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="COMM">/** SC.Responder.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 19</span> 
+<span class='line'> 20</span>   </span><span class="NAME">isResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 21</span>   
+<span class='line'> 22</span>   </span><span class="COMM">/** @property
+<span class='line'> 23</span>     The pane this responder belongs to.  This is used to determine where you 
+<span class='line'> 24</span>     belong to in the responder chain.  Normally you should leave this property
+<span class='line'> 25</span>     set to null.
+<span class='line'> 26</span>   */</span><span class="WHIT">
+<span class='line'> 27</span>   </span><span class="NAME">pane</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 28</span>   
+<span class='line'> 29</span>   </span><span class="COMM">/** @property
+<span class='line'> 30</span>     The app this responder belongs to.  For non-user-interface responder 
+<span class='line'> 31</span>     chains, this is used to determine the context.  Usually this
+<span class='line'> 32</span>     is the property you will want to work with.
+<span class='line'> 33</span>   */</span><span class="WHIT">
+<span class='line'> 34</span>   </span><span class="NAME">responderContext</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 35</span>   
+<span class='line'> 36</span>   </span><span class="COMM">/** @property
+<span class='line'> 37</span>     This is the nextResponder in the responder chain.  If the receiver does 
+<span class='line'> 38</span>     not implement a particular event handler, it will bubble to the next 
+<span class='line'> 39</span>     responder.
+<span class='line'> 40</span>     
+<span class='line'> 41</span>     This can point to an object directly or it can be a string, in which case
+<span class='line'> 42</span>     the path will be resolved from the responderContext root.
+<span class='line'> 43</span>   */</span><span class="WHIT">
+<span class='line'> 44</span>   </span><span class="NAME">nextResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 45</span>   
+<span class='line'> 46</span>   </span><span class="COMM">/** @property 
+<span class='line'> 47</span>     YES if the view is currently first responder.  This property is always 
+<span class='line'> 48</span>     edited by the pane during its makeFirstResponder() method.
+<span class='line'> 49</span>   */</span><span class="WHIT">
+<span class='line'> 50</span>   </span><span class="NAME">isFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 51</span>   
+<span class='line'> 52</span>   </span><span class="COMM">/** @property
+<span class='line'> 53</span>   
+<span class='line'> 54</span>     YES the responder is somewhere in the responder chain.  This currently
+<span class='line'> 55</span>     only works when used with a ResponderContext.
+<span class='line'> 56</span>     
+<span class='line'> 57</span>     @type {Boolean}
+<span class='line'> 58</span>   */</span><span class="WHIT">
+<span class='line'> 59</span>   </span><span class="NAME">hasFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">    
+<span class='line'> 60</span>   
+<span class='line'> 61</span>   </span><span class="COMM">/** @property
+<span class='line'> 62</span>     Set to YES if your view is willing to accept first responder status.  This is used when calculcating key responder loop.
+<span class='line'> 63</span>   */</span><span class="WHIT">
+<span class='line'> 64</span>   </span><span class="NAME">acceptsFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 65</span>   
+<span class='line'> 66</span>   </span><span class="NAME">becomingFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 67</span>   
+<span class='line'> 68</span>   </span><span class="COMM">/** 
+<span class='line'> 69</span>     Call this method on your view or responder to make it become first 
+<span class='line'> 70</span>     responder.
+<span class='line'> 71</span>     
+<span class='line'> 72</span>     @returns {SC.Responder} receiver
+<span class='line'> 73</span>   */</span><span class="WHIT">
+<span class='line'> 74</span>   </span><span class="NAME">becomeFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">  
+<span class='line'> 75</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">pane</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'pane'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'responderContext'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT">
+<span class='line'> 76</span>               </span><span class="NAME">this.pane</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 77</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pane</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'acceptsFirstResponder'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 78</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'firstResponder'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">pane.makeFirstResponder</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 79</span>     </span><span class="PUNC">}</span><span class="WHIT"> 
+<span class='line'> 80</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 81</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 82</span>   
+<span class='line'> 83</span>   </span><span class="COMM">/**
+<span class='line'> 84</span>     Call this method on your view or responder to resign your first responder 
+<span class='line'> 85</span>     status. Normally this is not necessary since you will lose first responder 
+<span class='line'> 86</span>     status automatically when another view becomes first responder.
+<span class='line'> 87</span>     
+<span class='line'> 88</span>     @param {Event} the original event that caused this method to be called
+<span class='line'> 89</span>     @returns {SC.Responder} receiver
+<span class='line'> 90</span>   */</span><span class="WHIT">
+<span class='line'> 91</span>   </span><span class="NAME">resignFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">evt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 92</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">pane</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'pane'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'responderContext'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pane</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pane.get</span><span class="PUNC">(</span><span class="STRN">'firstResponder'</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 94</span>       </span><span class="NAME">pane.makeFirstResponder</span><span class="PUNC">(</span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">evt</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 95</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 96</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT">  
+<span class='line'> 97</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 98</span> 
+<span class='line'> 99</span>   </span><span class="COMM">/**
+<span class='line'>100</span>     Called just before the responder or any of its subresponder's are about to
+<span class='line'>101</span>     lose their first responder status.  The passed responder is the responder
+<span class='line'>102</span>     that is about to lose its status. 
+<span class='line'>103</span>     
+<span class='line'>104</span>     Override this method to provide any standard teardown when the first 
+<span class='line'>105</span>     responder changes.
+<span class='line'>106</span>     
+<span class='line'>107</span>     @param {SC.Responder} responder the responder that is about to change
+<span class='line'>108</span>     @returns {void}
+<span class='line'>109</span>   */</span><span class="WHIT">
+<span class='line'>110</span>   </span><span class="NAME">willLoseFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">responder</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>111</span>   
+<span class='line'>112</span>   </span><span class="COMM">/**
+<span class='line'>113</span>     Called just after the responder or any of its subresponder's becomes a 
+<span class='line'>114</span>     first responder.  
+<span class='line'>115</span>     
+<span class='line'>116</span>     Override this method to provide any standard setup when the first 
+<span class='line'>117</span>     responder changes.
+<span class='line'>118</span>     
+<span class='line'>119</span>     @param {SC.Responder} responder the responder that changed
+<span class='line'>120</span>     @returns {void}
+<span class='line'>121</span>   */</span><span class="WHIT">
+<span class='line'>122</span>   </span><span class="NAME">didBecomeFirstResponder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">responder</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>123</span> 
+<span class='line'>124</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span> </span></pre></body></html>

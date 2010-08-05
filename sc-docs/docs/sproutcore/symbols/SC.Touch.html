@@ -291,7 +291,7 @@ span.sc-label
 		  
 		    <tr class="even">
 		      <td class="label">Defined in:</td>
-		      <td class="value"><a href="../symbols/src/_home_bruz_Languages_JavaScript_SproutCore_bruz-sproutcore-abbot_frameworks_sproutcore_frameworks_foundation_system_root_responder.js.html">frameworks/sproutcore/frameworks/foundation/system/root_responder.js</a></td>
+		      <td class="value"><a href="../symbols/src/_frameworks_foundation_system_root_responder.js.html">frameworks/sproutcore/frameworks/foundation/system/root_responder.js</a></td>
 		    </tr>
 		  
 
@@ -483,15 +483,6 @@ span.sc-label
 					              <a href="../symbols/SC.Touch.html#strings"><code>-&nbsp;(Array) strings [R/W]</code></a>
 					              
 					                <div class="description">The current working array of strings.</div>
-					              
-					            </li>
-					          
-					        
-					          
-					            <li>
-					              <a href="../symbols/SC.Touch.html#supportsOnHashChange"><code>-&nbsp;(Boolean) supportsOnHashChange [R/W]</code></a>
-					              
-					                <div class="description">Whether the browser supports HTML5 history management.</div>
 					              
 					            </li>
 					          
@@ -747,7 +738,7 @@ span.sc-label
 				          
 				            <li>
 				              <a href="#SC.Touch#makeTouchResponder">
-		<code class="type">-&nbsp;(void)  makeTouchResponder(responder, shouldStack)</code>
+		<code class="type">-&nbsp;(void)  makeTouchResponder(responder, shouldStack, upViewChain)</code>
 				              </a>
 				              
 				                <div class="description">Changes the touch responder for the touch.</div>
@@ -927,6 +918,15 @@ span.sc-label
 				              
 				                <div class="description">Pushes the passed string onto the array, but first escapes the string
     to ensure that no user-entered HTML is processed as HTML.</div>
+				              
+				            </li>
+				          
+				            <li>
+				              <a href="#SC.Touch#touchesForResponder">
+		<code class="type">-&nbsp;(void)  touchesForResponder(responder)</code>
+				              </a>
+				              
+				                <div class="description">Same as touchesForView, but sounds better for responders.</div>
 				              
 				            </li>
 				          
@@ -1715,51 +1715,6 @@ span.sc-label
 			          
 
 					
-
-
-		            
-		          </div>
-					<hr/>
-		        
-		      
-		        
-		          <!-- One single method detail entry -->
-		          <div class="field">
-		            <a name="supportsOnHashChange"></a> 
-			          <div class="field">
-			            <a name="supportsOnHashChange"></a> 
-			            <h3>supportsOnHashChange
-
-							
-						
-							[R/W]
-							
-
-					</h3>
-		            <p class="summary">Whether the browser supports HTML5 history management.</p>
-
-		            
-
-		            <p class="signature">
-		              
-		              -
-		              &nbsp;
-		              <span class="type">
-		                
-		                Boolean
-		              </span>
-		              <span class="name">supportsOnHashChange</span>
-		            </p>
-
-			          
-
-			          
-
-					<h5>Discussion</h5><div class="description">
-
-<p>Code copied from Google's closure library which is under the Apache 2 license.</p>
-
-<p>{@link http://closure-library.googlecode.com/svn/trunk/closure/goog/history/history.js} {@link http://www.w3.org/TR/html5/history.html}</p></div>
 
 
 		            
@@ -3176,7 +3131,7 @@ span.sc-label
 			                
 			                (void)
 			              </span>
-			              <span class="name">makeTouchResponder</span> <span class="params">(responder, shouldStack)</span>
+			              <span class="name">makeTouchResponder</span> <span class="params">(responder, shouldStack, upViewChain)</span>
 			            </p>
 
 
@@ -4268,6 +4223,48 @@ span.sc-label
 					<hr/>
 				
 			        <div class="method detail">
+			          <a name="SC.Touch#touchesForResponder"></a> 
+			          <h3>touchesForResponder()
+				
+				
+							
+				
+				</h3>
+			          <p class="summary">Same as touchesForView, but sounds better for responders.</p>
+
+			          
+
+			            <p class="signature">
+			              
+			              -
+			              &nbsp;
+			              <span class="type">
+			                
+			                (void)
+			              </span>
+			              <span class="name">touchesForResponder</span> <span class="params">(responder)</span>
+			            </p>
+
+
+			          <!-- METHOD PARAMETERS START -->
+			           
+			          <!-- METHOD PARAMETERS END -->
+
+			          <!-- ADDITIONAL ATTRIBUTES START -->
+			          
+
+			          
+
+			          
+			          <!-- ADDITIONAL ATTRIBUTES  END -->
+
+					
+
+			          
+			        </div>
+					<hr/>
+				
+			        <div class="method detail">
 			          <a name="SC.Touch#touchesForView"></a> 
 			          <h3>touchesForView()
 				
@@ -4455,7 +4452,7 @@ span.sc-label
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Fri Jul 16 2010 07:04:58 GMT-0700 (PDT)
+			Documentation generated by <a href="http://www.jsdoctoolkit.org/" target="_blank">JsDoc Toolkit</a> 2.0.2 on Thu Aug 05 2010 06:41:32 GMT-0700 (PDT)
 		</div>
 	</body>
 </html>

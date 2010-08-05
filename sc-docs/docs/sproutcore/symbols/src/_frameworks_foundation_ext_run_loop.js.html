@@ -1,0 +1,170 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">// Create anonymous subclass of SC.RunLoop to add support for processing </span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="COMM">// view queues and Timers.</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="NAME">SC.RunLoop</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.RunLoop.extend</span><span class="PUNC">(</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="COMM">/** @scope SC.RunLoop.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 12</span> 
+<span class='line'> 13</span>   </span><span class="COMM">/**
+<span class='line'> 14</span>     The time the current run loop began executing.
+<span class='line'> 15</span>     
+<span class='line'> 16</span>     All timers scheduled during this run loop will begin executing as if 
+<span class='line'> 17</span>     they were scheduled at this time.
+<span class='line'> 18</span>   
+<span class='line'> 19</span>     @property {Number}
+<span class='line'> 20</span>   */</span><span class="WHIT">
+<span class='line'> 21</span>   </span><span class="NAME">startTime</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 22</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._start</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this._start</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Date.now</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 23</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._start</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">  
+<span class='line'> 24</span>   </span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">property</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 25</span>   
+<span class='line'> 26</span>   </span><span class="COMM">/* 
+<span class='line'> 27</span>   
+<span class='line'> 28</span>     Override to fire and reschedule timers once per run loop.
+<span class='line'> 29</span>     
+<span class='line'> 30</span>     Note that timers should fire only once per run loop to avoid the 
+<span class='line'> 31</span>     situation where a timer might cause an infinite loop by constantly 
+<span class='line'> 32</span>     rescheduling itself everytime it is fired.
+<span class='line'> 33</span>   */</span><span class="WHIT">
+<span class='line'> 34</span>   </span><span class="NAME">endRunLoop</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 35</span>     </span><span class="NAME">this.fireExpiredTimers</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// fire them timers!</span><span class="WHIT">
+<span class='line'> 36</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">sc_super</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// do everything else</span><span class="WHIT">
+<span class='line'> 37</span>     </span><span class="NAME">this.scheduleNextTimeout</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// schedule a timout if timers remain</span><span class="WHIT">
+<span class='line'> 38</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'> 39</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 40</span>   
+<span class='line'> 41</span>   </span><span class="COMM">// ..........................................................</span><span class="WHIT">
+<span class='line'> 42</span>   </span><span class="COMM">// TIMER SUPPORT</span><span class="WHIT">
+<span class='line'> 43</span>   </span><span class="COMM">// </span><span class="WHIT">
+<span class='line'> 44</span>   
+<span class='line'> 45</span>   </span><span class="COMM">/**
+<span class='line'> 46</span>     Schedules a timer to execute at the specified runTime.  You will not 
+<span class='line'> 47</span>     usually call this method directly.  Instead you should work with SC.Timer,
+<span class='line'> 48</span>     which will manage both creating the timer and scheduling it.
+<span class='line'> 49</span>     
+<span class='line'> 50</span>     Calling this method on a timer that is already scheduled will remove it 
+<span class='line'> 51</span>     from the existing schedule and reschedule it.
+<span class='line'> 52</span>     
+<span class='line'> 53</span>     @param {SC.Timer} timer the timer to schedule
+<span class='line'> 54</span>     @param {Time} runTime the time offset when you want this to run
+<span class='line'> 55</span>     @returns {SC.RunLoop} receiver
+<span class='line'> 56</span>   */</span><span class="WHIT">
+<span class='line'> 57</span>   </span><span class="NAME">scheduleTimer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">timer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">runTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 58</span>     </span><span class="COMM">// if the timer is already in the schedule, remove it.</span><span class="WHIT">
+<span class='line'> 59</span>     </span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timer.removeFromTimerQueue</span><span class="PUNC">(</span><span class="NAME">this._timerQueue</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 60</span>     
+<span class='line'> 61</span>     </span><span class="COMM">// now, add the timer ot the timeout queue.  This will walk down the </span><span class="WHIT">
+<span class='line'> 62</span>     </span><span class="COMM">// chain of timers to find the right place to insert it.</span><span class="WHIT">
+<span class='line'> 63</span>     </span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timer.scheduleInTimerQueue</span><span class="PUNC">(</span><span class="NAME">this._timerQueue</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">runTime</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 65</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 66</span>   
+<span class='line'> 67</span>   </span><span class="COMM">/**
+<span class='line'> 68</span>     Removes the named timer from the timeout queue.  If the timer is not 
+<span class='line'> 69</span>     currently scheduled, this method will have no effect.
+<span class='line'> 70</span>     
+<span class='line'> 71</span>     @param {SC.Timer} timer the timer to schedule
+<span class='line'> 72</span>     @returns {SC.RunLoop} receiver
+<span class='line'> 73</span>   */</span><span class="WHIT">
+<span class='line'> 74</span>   </span><span class="NAME">cancelTimer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">timer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 75</span>     </span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timer.removeFromTimerQueue</span><span class="PUNC">(</span><span class="NAME">this._timerQueue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 76</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 77</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 78</span> 
+<span class='line'> 79</span>   </span><span class="COMM">/** @private - shared array used by fireExpiredTimers to avoid memory */</span><span class="WHIT">
+<span class='line'> 80</span>   </span><span class="NAME">TIMER_ARRAY</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 81</span>   
+<span class='line'> 82</span>   </span><span class="COMM">/**
+<span class='line'> 83</span>     Invokes any timers that have expired since this method was last called.
+<span class='line'> 84</span>     Usually you will not call this method directly, but it will be invoked 
+<span class='line'> 85</span>     automatically at the end of the run loop.
+<span class='line'> 86</span>     
+<span class='line'> 87</span>     @returns {Boolean} YES if timers were fired, NO otherwise
+<span class='line'> 88</span>   */</span><span class="WHIT">
+<span class='line'> 89</span>   </span><span class="NAME">fireExpiredTimers</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 90</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this._firing</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// nothing to do</span><span class="WHIT">
+<span class='line'> 91</span> 
+<span class='line'> 92</span>     </span><span class="COMM">// max time we are allowed to run timers</span><span class="WHIT">
+<span class='line'> 93</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">now</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'startTime'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 94</span>         </span><span class="NAME">timers</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.TIMER_ARRAY</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 95</span>         </span><span class="NAME">idx</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">len</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">didFire</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 96</span>     
+<span class='line'> 97</span>     </span><span class="COMM">// avoid recursive calls</span><span class="WHIT">
+<span class='line'> 98</span>     </span><span class="NAME">this._firing</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span>     
+<span class='line'>100</span>     </span><span class="COMM">// collect timers to fire.  we do this one time up front to avoid infinite </span><span class="WHIT">
+<span class='line'>101</span>     </span><span class="COMM">// loops where firing a timer causes it to schedule itself again, causing </span><span class="WHIT">
+<span class='line'>102</span>     </span><span class="COMM">// it to fire again, etc.</span><span class="WHIT">
+<span class='line'>103</span>     </span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._timerQueue.collectExpiredTimers</span><span class="PUNC">(</span><span class="NAME">timers</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">now</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span> 
+<span class='line'>105</span>     </span><span class="COMM">// now step through timers and fire them.</span><span class="WHIT">
+<span class='line'>106</span>     </span><span class="NAME">len</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timers.length</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>107</span>     </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">idx</span><span class="PUNC">=</span><span class="NUMB">0</span><span class="PUNC">;</span><span class="NAME">idx</span><span class="PUNC">&lt;</span><span class="NAME">len</span><span class="PUNC">;</span><span class="NAME">idx</span><span class="PUNC">++</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">timers</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">fire</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>108</span>     
+<span class='line'>109</span>     </span><span class="COMM">// cleanup</span><span class="WHIT">
+<span class='line'>110</span>     </span><span class="NAME">didFire</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timers.length</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>111</span>     </span><span class="NAME">timers.length</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// reset for later use...</span><span class="WHIT">
+<span class='line'>112</span>     </span><span class="NAME">this._firing</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>113</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">didFire</span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'>114</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>115</span>   
+<span class='line'>116</span>   </span><span class="COMM">/** @private
+<span class='line'>117</span>     Invoked at the end of a runloop, if there are pending timers, a timeout
+<span class='line'>118</span>     will be scheduled to fire when the next timer expires.  You will not 
+<span class='line'>119</span>     usually call this method yourself.  It is invoked automatically at the
+<span class='line'>120</span>     end of a run loop.
+<span class='line'>121</span>     
+<span class='line'>122</span>     @returns {Boolean} YES if a timeout was scheduled
+<span class='line'>123</span>   */</span><span class="WHIT">
+<span class='line'>124</span>   </span><span class="NAME">scheduleNextTimeout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>125</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">timer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._timerQueue</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span>     
+<span class='line'>127</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>128</span>     </span><span class="COMM">// if no timer, and there is an existing timeout, cancel it</span><span class="WHIT">
+<span class='line'>129</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">timer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>130</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._timeout</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">clearTimeout</span><span class="PUNC">(</span><span class="NAME">this._timeout</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span>       
+<span class='line'>132</span>     </span><span class="COMM">// otherwise, determine if the timeout needs to be rescheduled.</span><span class="WHIT">
+<span class='line'>133</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>134</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nextTimeoutAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">timer._timerQueueRunTime</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>135</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._timeoutAt</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">nextTimeoutAt</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// need to reschedule</span><span class="WHIT">
+<span class='line'>136</span>         </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._timeout</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">clearTimeout</span><span class="PUNC">(</span><span class="NAME">this._timeout</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// clear existing...</span><span class="WHIT">
+<span class='line'>137</span>         </span><span class="COMM">// reschedule</span><span class="WHIT">
+<span class='line'>138</span>         </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">delay</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Math.max</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">nextTimeoutAt</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="WHIT"> </span><span class="NAME">Date.now</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>139</span>         </span><span class="NAME">this._timeout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">setTimeout</span><span class="PUNC">(</span><span class="NAME">this._timeoutDidFire</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">delay</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>140</span>         </span><span class="NAME">this._timeoutAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">nextTimeoutAt</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>141</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>142</span>       </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>143</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>144</span>     
+<span class='line'>145</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>146</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>147</span> 
+<span class='line'>148</span>   </span><span class="COMM">/** @private
+<span class='line'>149</span>     Invoked when a timeout actually fires.  Simply cleanup, then begin and end 
+<span class='line'>150</span>     a runloop. This will fire any expired timers and reschedule.  Note that
+<span class='line'>151</span>     this function will be called with 'this' set to the global context, 
+<span class='line'>152</span>     hence the need to lookup the current run loop.
+<span class='line'>153</span>   */</span><span class="WHIT">
+<span class='line'>154</span>   </span><span class="NAME">_timeoutDidFire</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>155</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">rl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.RunLoop.currentRunLoop</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>156</span>     </span><span class="NAME">rl._timeout</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rl._timeoutAt</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// cleanup</span><span class="WHIT">
+<span class='line'>157</span>     </span><span class="NAME">SC.RunLoop.begin</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">end</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">  </span><span class="COMM">// begin/end runloop to trigger timers.</span><span class="WHIT">
+<span class='line'>158</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>159</span>   
+<span class='line'>160</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>161</span> 
+<span class='line'>162</span> </span><span class="NAME">SC.RunLoop.currentRunLoop</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.RunLoop.create</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>163</span> </span></pre></body></html>

@@ -1,0 +1,145 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// SproutCore -- JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright ©2006-2008, Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">// Portions copyright ©2008 Apple Inc.  All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// ========================================================================</span><span class="WHIT">
+<span class='line'>  6</span> 
+<span class='line'>  7</span> </span><span class="NAME">SC.BORDER_BEZEL</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-bezel-border'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="NAME">SC.BORDER_BLACK</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-black-border'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">SC.BORDER_GRAY</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-gray-border'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="NAME">SC.BORDER_TOP</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-top-border'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="NAME">SC.BORDER_BOTTOM</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'sc-bottom-border'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="NAME">SC.BORDER_NONE</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 13</span> 
+<span class='line'> 14</span> </span><span class="COMM">/**
+<span class='line'> 15</span>   @namespace
+<span class='line'> 16</span> 
+<span class='line'> 17</span>   The Border mixin can be applied to any view to give it a visual border.
+<span class='line'> 18</span>   In addition to specifying the mixin itself, you should specify the border
+<span class='line'> 19</span>   style with the borderStyle property on your view.
+<span class='line'> 20</span> 
+<span class='line'> 21</span>   Border style can be any predefined CSS class name or a border color.
+<span class='line'> 22</span> 
+<span class='line'> 23</span>   If you specify a CSS class name, it must end in "-border". Additionally,
+<span class='line'> 24</span>   you should set the borderTop, borderRight, borderBottom, and borderLeft
+<span class='line'> 25</span>   properties so SproutCore can accurately account for the size of your view.
+<span class='line'> 26</span> 
+<span class='line'> 27</span>   SproutCore pre-defines several useful border styles including:
+<span class='line'> 28</span> 
+<span class='line'> 29</span> - SC.BORDER_BEZEL  - displays an inlaid bezel
+<span class='line'> 30</span> - SC.BORDER_BLACK  - displays a black border
+<span class='line'> 31</span> - SC.BORDER_GRAY   - displays a gray border
+<span class='line'> 32</span> - SC.BORDER_TOP    - displays a border on the top only
+<span class='line'> 33</span> - SC.BORDER_BOTTOM - displays a border on the bottom only
+<span class='line'> 34</span> - SC.BORDER_NONE   - disables the border
+<span class='line'> 35</span> 
+<span class='line'> 36</span>   @since SproutCore 1.0
+<span class='line'> 37</span> */</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="NAME">SC.Border</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 39</span>   </span><span class="COMM">/**
+<span class='line'> 40</span>     The thickness of the top border.
+<span class='line'> 41</span> 
+<span class='line'> 42</span>     @property {Number}
+<span class='line'> 43</span>     @commonTask Border Dimensions
+<span class='line'> 44</span>   */</span><span class="WHIT">
+<span class='line'> 45</span>   </span><span class="NAME">borderTop</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 46</span> 
+<span class='line'> 47</span>   </span><span class="COMM">/**
+<span class='line'> 48</span>     The thickness of the right border.
+<span class='line'> 49</span> 
+<span class='line'> 50</span>     @property {Number}
+<span class='line'> 51</span>     @commonTask Border Dimensions
+<span class='line'> 52</span>   */</span><span class="WHIT">
+<span class='line'> 53</span>   </span><span class="NAME">borderRight</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 54</span> 
+<span class='line'> 55</span>   </span><span class="COMM">/**
+<span class='line'> 56</span>     The thickness of the bottom border.
+<span class='line'> 57</span> 
+<span class='line'> 58</span>     @property {Number}
+<span class='line'> 59</span>     @commonTask Border Dimensions
+<span class='line'> 60</span>   */</span><span class="WHIT">
+<span class='line'> 61</span>   </span><span class="NAME">borderBottom</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 62</span> 
+<span class='line'> 63</span>   </span><span class="COMM">/**
+<span class='line'> 64</span>     The thickness of the left border.
+<span class='line'> 65</span> 
+<span class='line'> 66</span>     @property {Number}
+<span class='line'> 67</span>     @commonTask Border Dimensions
+<span class='line'> 68</span>   */</span><span class="WHIT">
+<span class='line'> 69</span>   </span><span class="NAME">borderLeft</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 70</span> 
+<span class='line'> 71</span>   </span><span class="COMM">/**
+<span class='line'> 72</span>     The style of the border. You may specify a color string (like 'red' or
+<span class='line'> 73</span>     '#fff'), a CSS class name, or one of:
+<span class='line'> 74</span> - SC.BORDER_BEZEL
+<span class='line'> 75</span> - SC.BORDER_BLACK
+<span class='line'> 76</span> - SC.BORDER_GRAY
+<span class='line'> 77</span> - SC.BORDER_TOP
+<span class='line'> 78</span> - SC.BORDER_BOTTOM
+<span class='line'> 79</span> - SC.BORDER_NONE
+<span class='line'> 80</span> 
+<span class='line'> 81</span>     If you specify a CSS class name, it must end in "-border".
+<span class='line'> 82</span>   */</span><span class="WHIT">
+<span class='line'> 83</span>   </span><span class="NAME">borderStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.BORDER_GRAY</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 84</span> 
+<span class='line'> 85</span>   </span><span class="COMM">/**
+<span class='line'> 86</span>     Walk like a duck
+<span class='line'> 87</span> 
+<span class='line'> 88</span>     @private
+<span class='line'> 89</span>   */</span><span class="WHIT">
+<span class='line'> 90</span>   </span><span class="NAME">hasBorder</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 91</span> 
+<span class='line'> 92</span>   </span><span class="COMM">/**
+<span class='line'> 93</span>     Make sure we re-render if the borderStyle property changes.
+<span class='line'> 94</span>     @private
+<span class='line'> 95</span>   */</span><span class="WHIT">
+<span class='line'> 96</span>   </span><span class="NAME">displayProperties</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'borderStyle'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 97</span> 
+<span class='line'> 98</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'> 99</span>   </span><span class="NAME">_BORDER_REGEXP</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="REGX">/-border$/</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>100</span> 
+<span class='line'>101</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>102</span>   </span><span class="NAME">initMixin</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>103</span>     </span><span class="NAME">this._sc_border_borderStyleDidChange</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>104</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>105</span> 
+<span class='line'>106</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>107</span>   </span><span class="NAME">renderMixin</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">context</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">firstTime</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>108</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">style</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'borderStyle'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>109</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">style</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>110</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">this._BORDER_REGEXP.exec</span><span class="PUNC">(</span><span class="NAME">style</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>111</span>         </span><span class="NAME">context.addClass</span><span class="PUNC">(</span><span class="NAME">style</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>112</span>       </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">context.addStyle</span><span class="PUNC">(</span><span class="STRN">'border'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'1px '</span><span class="PUNC">+</span><span class="NAME">style</span><span class="PUNC">+</span><span class="STRN">' solid'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>113</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>114</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>115</span> 
+<span class='line'>116</span>   </span><span class="COMM">/** @private */</span><span class="WHIT">
+<span class='line'>117</span>   </span><span class="NAME">_sc_border_borderStyleDidChange</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>118</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">borderStyle</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.get</span><span class="PUNC">(</span><span class="STRN">'borderStyle'</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>119</span>         </span><span class="NAME">borderSize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Border.dimensions</span><span class="PUNC">[</span><span class="NAME">borderStyle</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>120</span> 
+<span class='line'>121</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">borderSize</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>122</span>       </span><span class="NAME">this.borderTop</span><span class="WHIT">    </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">borderSize</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>123</span>       </span><span class="NAME">this.borderRight</span><span class="WHIT">  </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">borderSize</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>124</span>       </span><span class="NAME">this.borderBottom</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">borderSize</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>       </span><span class="NAME">this.borderLeft</span><span class="WHIT">   </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">borderSize</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>127</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>128</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>129</span> 
+<span class='line'>130</span> </span><span class="NAME">SC.mixin</span><span class="PUNC">(</span><span class="NAME">SC.Border</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>131</span>   </span><span class="NAME">dimensions</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>132</span>     </span><span class="STRN">'sc-bezel-border'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>133</span>     </span><span class="STRN">'sc-black-border'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>134</span>     </span><span class="STRN">'sc-gray-border'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>135</span>     </span><span class="STRN">'sc-top-border'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>136</span>     </span><span class="STRN">'sc-bottom-border'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="WHIT">
+<span class='line'>137</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>138</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span></pre></body></html>

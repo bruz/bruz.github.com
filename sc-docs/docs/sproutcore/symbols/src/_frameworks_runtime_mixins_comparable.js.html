@@ -1,0 +1,53 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore Costello - Property Observing Library</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/**
+<span class='line'>  9</span>   @namespace
+<span class='line'> 10</span>   
+<span class='line'> 11</span>   Implements some standard methods for comparing objects. Add this mixin to
+<span class='line'> 12</span>   any class you create that can compare its instances.
+<span class='line'> 13</span>   
+<span class='line'> 14</span>   You should implement the compare() method.
+<span class='line'> 15</span>   
+<span class='line'> 16</span>   @since SproutCore 1.0
+<span class='line'> 17</span> */</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">SC.Comparable</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 19</span>   
+<span class='line'> 20</span>   </span><span class="COMM">/**
+<span class='line'> 21</span>     walk like a duck. Indicates that the object can be compared.
+<span class='line'> 22</span>     
+<span class='line'> 23</span>     @type Boolean
+<span class='line'> 24</span>   */</span><span class="WHIT">
+<span class='line'> 25</span>   </span><span class="NAME">isComparable</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 26</span>   
+<span class='line'> 27</span>   </span><span class="COMM">/**
+<span class='line'> 28</span>     Override to return the result of the comparison of the two parameters. The
+<span class='line'> 29</span>     compare method should return
+<span class='line'> 30</span>       -1 if a &lt; b
+<span class='line'> 31</span>        0 if a == b
+<span class='line'> 32</span>        1 if a > b
+<span class='line'> 33</span>     
+<span class='line'> 34</span>     Default implementation raises
+<span class='line'> 35</span>     an exception.
+<span class='line'> 36</span>     
+<span class='line'> 37</span>     @param a {Object} the first object to compare
+<span class='line'> 38</span>     @param b {Object} the second object to compare
+<span class='line'> 39</span>     @returns {Integer} the result of the comparison
+<span class='line'> 40</span>   */</span><span class="WHIT">
+<span class='line'> 41</span>   </span><span class="NAME">compare</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 42</span>     </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="STRN">"%@.compare() is not implemented"</span><span class="PUNC">.</span><span class="NAME">fmt</span><span class="PUNC">(</span><span class="NAME">this.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 43</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 44</span>   
+<span class='line'> 45</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 46</span> </span></pre></body></html>

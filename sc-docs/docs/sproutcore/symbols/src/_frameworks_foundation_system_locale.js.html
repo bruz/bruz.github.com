@@ -1,0 +1,301 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="COMM">/**
+<span class='line'>  9</span>   The Locale defined information about a specific locale, including date and
+<span class='line'> 10</span>   number formatting conventions, and localization strings.  You can define
+<span class='line'> 11</span>   various locales by adding them to the SC.locales hash, keyed by language
+<span class='line'> 12</span>   and/or country code.
+<span class='line'> 13</span>   
+<span class='line'> 14</span>   On page load, the default locale will be chosen based on the current 
+<span class='line'> 15</span>   languages and saved at SC.Locale.current.  This locale is used for 
+<span class='line'> 16</span>   localization, etc.
+<span class='line'> 17</span>   
+<span class='line'> 18</span>   h2. Creating a new locale
+<span class='line'> 19</span>   
+<span class='line'> 20</span>   You can create a locale by simply extending the SC.Locale class and adding
+<span class='line'> 21</span>   it to the locales hash:
+<span class='line'> 22</span>   
+<span class='line'> 23</span>   {{{
+<span class='line'> 24</span>     SC.Locale.locales['en'] = SC.Locale.extend({ .. config .. }) ;
+<span class='line'> 25</span>   }}}
+<span class='line'> 26</span>   
+<span class='line'> 27</span>   Alternatively, you could choose to base your locale on another locale by
+<span class='line'> 28</span>   extending that locale:
+<span class='line'> 29</span>   
+<span class='line'> 30</span>   {{{
+<span class='line'> 31</span>     SC.Locale.locales['en-US'] = SC.Locale.locales['en'].extend({ ... }) ;
+<span class='line'> 32</span>   }}}
+<span class='line'> 33</span>   
+<span class='line'> 34</span>   Note that if you do not define your own strings property, then your locale
+<span class='line'> 35</span>   will inherit any strings added to the parent locale.  Otherwise you must
+<span class='line'> 36</span>   implement your own strings instead.
+<span class='line'> 37</span>   
+<span class='line'> 38</span>   @extends SC.Object
+<span class='line'> 39</span>   @since SproutCore 1.0
+<span class='line'> 40</span> */</span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="NAME">SC.Locale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 42</span>   
+<span class='line'> 43</span>   </span><span class="NAME">init</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 44</span>     </span><span class="COMM">// make sure we know the name of our own locale.</span><span class="WHIT">
+<span class='line'> 45</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.language</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.Locale._assignLocales</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 46</span>     
+<span class='line'> 47</span>     </span><span class="COMM">// Make sure we have strings that were set using the new API.  To do this</span><span class="WHIT">
+<span class='line'> 48</span>     </span><span class="COMM">// we check to a bool that is set by one of the string helpers.  This </span><span class="WHIT">
+<span class='line'> 49</span>     </span><span class="COMM">// indicates that the new API was used. If the new API was not used, we</span><span class="WHIT">
+<span class='line'> 50</span>     </span><span class="COMM">// check to see if the old API was used (which places strings on the </span><span class="WHIT">
+<span class='line'> 51</span>     </span><span class="COMM">// String class). </span><span class="WHIT">
+<span class='line'> 52</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.hasStrings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 53</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">langs</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._deprecatedLanguageCodes</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 54</span>       </span><span class="NAME">langs.push</span><span class="PUNC">(</span><span class="NAME">this.language</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 55</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">langs.length</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 56</span>       </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 57</span>       </span><span class="KEYW">while</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">--</span><span class="NAME">idx</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 58</span>         </span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String</span><span class="PUNC">[</span><span class="NAME">langs</span><span class="PUNC">[</span><span class="NAME">idx</span><span class="PUNC">]</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 59</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 60</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">strings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 61</span>         </span><span class="NAME">this.hasStrings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'> 62</span>         </span><span class="NAME">this.strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 64</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 65</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 66</span>   
+<span class='line'> 67</span>   </span><span class="COMM">/** Set to YES when strings have been added to this locale. */</span><span class="WHIT">
+<span class='line'> 68</span>   </span><span class="NAME">hasStrings</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 69</span>   
+<span class='line'> 70</span>   </span><span class="COMM">/** The strings hash for this locale. */</span><span class="WHIT">
+<span class='line'> 71</span>   </span><span class="NAME">strings</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 72</span>   
+<span class='line'> 73</span>   </span><span class="NAME">toString</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 74</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.language</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.Locale._assignLocales</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 75</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">"SC.Locale["</span><span class="PUNC">+</span><span class="NAME">this.language</span><span class="PUNC">+</span><span class="STRN">"]"</span><span class="PUNC">+</span><span class="NAME">SC.guidFor</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 76</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 77</span>   
+<span class='line'> 78</span>   </span><span class="COMM">/** 
+<span class='line'> 79</span>     Returns the localized version of the string or the string if no match
+<span class='line'> 80</span>     was found.
+<span class='line'> 81</span>     
+<span class='line'> 82</span>     @param {String} string
+<span class='line'> 83</span>     @param {String} optional default string to return instead
+<span class='line'> 84</span>     @returns {String}
+<span class='line'> 85</span>   */</span><span class="WHIT">
+<span class='line'> 86</span>   </span><span class="NAME">locWithDefault</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">string</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">def</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 87</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.strings</span><span class="PUNC">[</span><span class="NAME">string</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 88</span>     
+<span class='line'> 89</span>     </span><span class="COMM">// strings may be blank, so test with typeOf.</span><span class="WHIT">
+<span class='line'> 90</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">ret</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 91</span>     </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">def</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">def</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 92</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">string</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 93</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 94</span>   
+<span class='line'> 95</span>   
+<span class='line'> 96</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 97</span> 
+<span class='line'> 98</span> </span><span class="NAME">SC.Locale.mixin</span><span class="PUNC">(</span><span class="COMM">/** @scope SC.Locale */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 99</span> 
+<span class='line'>100</span>   </span><span class="COMM">/**
+<span class='line'>101</span>     If YES, localization will favor the detected language instead of the
+<span class='line'>102</span>     preferred one.
+<span class='line'>103</span>   */</span><span class="WHIT">
+<span class='line'>104</span>   </span><span class="NAME">useAutodetectedLanguage</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">NO</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>105</span>   
+<span class='line'>106</span>   </span><span class="COMM">/**
+<span class='line'>107</span>     This property is set by the build tools to the current build language.
+<span class='line'>108</span>   */</span><span class="WHIT">
+<span class='line'>109</span>   </span><span class="NAME">preferredLanguage</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>110</span>   
+<span class='line'>111</span>   </span><span class="COMM">/** 
+<span class='line'>112</span>     Invoked at the start of SproutCore's document onready handler to setup 
+<span class='line'>113</span>     the currentLocale.  This will use the language properties you have set on
+<span class='line'>114</span>     the locale to make a decision.
+<span class='line'>115</span>   */</span><span class="WHIT">
+<span class='line'>116</span>   </span><span class="NAME">createCurrentLocale</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>117</span> 
+<span class='line'>118</span>     </span><span class="COMM">// get values from String if defined for compatibility with &lt; 1.0 build </span><span class="WHIT">
+<span class='line'>119</span>     </span><span class="COMM">// tools.</span><span class="WHIT">
+<span class='line'>120</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">autodetect</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">String.useAutodetectedLanguage</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">String.useAutodetectedLanguage</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.useAutodetectedLanguage</span><span class="PUNC">;</span><span class="WHIT"> 
+<span class='line'>121</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">preferred</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">String.preferredLanguage</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">String.preferredLanguage</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.preferredLanguage</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>122</span> 
+<span class='line'>123</span>     </span><span class="COMM">// determine the language</span><span class="WHIT">
+<span class='line'>124</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">lang</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">autodetect</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">SC.browser.language</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">preferred</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">SC.browser.language</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="STRN">'en'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span>     </span><span class="NAME">lang</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.normalizeLanguage</span><span class="PUNC">(</span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span> 
+<span class='line'>127</span>     </span><span class="COMM">// get the locale class.  If a class cannot be found, fall back to generic</span><span class="WHIT">
+<span class='line'>128</span>     </span><span class="COMM">// language then to english.</span><span class="WHIT">
+<span class='line'>129</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.localeClassFor</span><span class="PUNC">(</span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>130</span> 
+<span class='line'>131</span>     </span><span class="COMM">// if the detected language does not match the current language (or there</span><span class="WHIT">
+<span class='line'>132</span>     </span><span class="COMM">// is none) then set it up.</span><span class="WHIT">
+<span class='line'>133</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">lang</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">this.currentLanguage</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>134</span>       </span><span class="NAME">this.currentLanguage</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lang</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// save language</span><span class="WHIT">
+<span class='line'>135</span>       </span><span class="NAME">this.currentLocale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">klass.create</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// setup locale</span><span class="WHIT">
+<span class='line'>136</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>137</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.currentLocale</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>138</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>139</span> 
+<span class='line'>140</span>   </span><span class="COMM">/**
+<span class='line'>141</span>     Finds the locale class for the names language code or creates on based on
+<span class='line'>142</span>     its most likely parent.
+<span class='line'>143</span>   */</span><span class="WHIT">
+<span class='line'>144</span>   </span><span class="NAME">localeClassFor</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>145</span>     </span><span class="NAME">lang</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.normalizeLanguage</span><span class="PUNC">(</span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>146</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">parent</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">[</span><span class="NAME">lang</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>147</span>     
+<span class='line'>148</span>     </span><span class="COMM">// if locale class was not found and there is a broader-based locale</span><span class="WHIT">
+<span class='line'>149</span>     </span><span class="COMM">// present, create a new locale based on that.</span><span class="WHIT">
+<span class='line'>150</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">parent</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">lang.split</span><span class="PUNC">(</span><span class="STRN">'-'</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">[</span><span class="NAME">parent</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>151</span>       </span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">[</span><span class="NAME">lang</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">klass.extend</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">      
+<span class='line'>152</span>     </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>153</span>     
+<span class='line'>154</span>     </span><span class="COMM">// otherwise, try to create a new locale based on english.</span><span class="WHIT">
+<span class='line'>155</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">klass</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">klass</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">[</span><span class="NAME">lang</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.locales.en.extend</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>156</span>     
+<span class='line'>157</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">klass</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>158</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>159</span> 
+<span class='line'>160</span>   </span><span class="COMM">/** 
+<span class='line'>161</span>     Shorthand method to define the settings for a particular locale.
+<span class='line'>162</span>     The settings you pass here will be applied directly to the locale you
+<span class='line'>163</span>     designate.  
+<span class='line'>164</span> 
+<span class='line'>165</span>     If you are already holding a reference to a locale definition, you can
+<span class='line'>166</span>     also use this method to operate on the receiver.
+<span class='line'>167</span>     
+<span class='line'>168</span>     If the locale you name does not exist yet, this method will create the 
+<span class='line'>169</span>     locale for you, based on the most closely related locale or english.  For 
+<span class='line'>170</span>     example, if you name the locale 'fr-CA', you will be creating a locale for
+<span class='line'>171</span>     French as it is used in Canada.  This will be based on the general French
+<span class='line'>172</span>     locale (fr), since that is more generic.  On the other hand, if you create
+<span class='line'>173</span>     a locale for manadarin (cn), it will be based on generic english (en) 
+<span class='line'>174</span>     since there is no broader language code to match against.
+<span class='line'>175</span> 
+<span class='line'>176</span>     @param {String} localeName
+<span class='line'>177</span>     @param {Hash} options
+<span class='line'>178</span>     @returns {SC.Locale} the defined locale
+<span class='line'>179</span>   */</span><span class="WHIT">
+<span class='line'>180</span>   </span><span class="NAME">define</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">localeName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>181</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">locale</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>182</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">===</span><span class="NAME">undefined</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">SC.typeOf</span><span class="PUNC">(</span><span class="NAME">localeName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="NAME">SC.T_STRING</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>183</span>       </span><span class="NAME">locale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">localeName</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>184</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">locale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.localeClassFor</span><span class="PUNC">(</span><span class="NAME">localeName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>185</span>     </span><span class="NAME">SC.mixin</span><span class="PUNC">(</span><span class="NAME">locale.prototype</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>186</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">locale</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>187</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>188</span>   
+<span class='line'>189</span>   </span><span class="COMM">/**
+<span class='line'>190</span>     Gets the current options for the receiver locale.  This is useful for 
+<span class='line'>191</span>     inspecting registered locales that have not been instantiated.
+<span class='line'>192</span>     
+<span class='line'>193</span>     @returns {Hash} options + instance methods
+<span class='line'>194</span>   */</span><span class="WHIT">
+<span class='line'>195</span>   </span><span class="NAME">options</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this.prototype</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>196</span>   
+<span class='line'>197</span>   </span><span class="COMM">/**
+<span class='line'>198</span>     Adds the passed hash of strings to the locale's strings table.  Note that
+<span class='line'>199</span>     if the receiver locale inherits its strings from its parent, then the 
+<span class='line'>200</span>     strings table will be cloned first.
+<span class='line'>201</span>     
+<span class='line'>202</span>     @returns {Object} receiver
+<span class='line'>203</span>   */</span><span class="WHIT">
+<span class='line'>204</span>   </span><span class="NAME">addStrings</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">stringsHash</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>205</span>     </span><span class="COMM">// make sure the target strings hash exists and belongs to the locale</span><span class="WHIT">
+<span class='line'>206</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.prototype.strings</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>207</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">strings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>208</span>       </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.prototype.hasOwnProperty</span><span class="PUNC">(</span><span class="STRN">'strings'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>209</span>         </span><span class="NAME">this.prototype.strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.clone</span><span class="PUNC">(</span><span class="NAME">strings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>210</span>       </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>211</span>     </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="NAME">strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.prototype.strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>212</span>     
+<span class='line'>213</span>     </span><span class="COMM">// add strings hash</span><span class="WHIT">
+<span class='line'>214</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">stringsHash</span><span class="PUNC">)</span><span class="WHIT">  </span><span class="NAME">this.prototype.strings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.mixin</span><span class="PUNC">(</span><span class="NAME">strings</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">stringsHash</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>215</span>     </span><span class="NAME">this.prototype.hasStrings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">YES</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>216</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>217</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>218</span>   
+<span class='line'>219</span>   </span><span class="NAME">_map</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">english</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'en'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">french</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'fr'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">german</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'de'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">japanese</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'ja'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">jp</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'ja'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">spanish</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'es'</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>220</span>   
+<span class='line'>221</span>   </span><span class="COMM">/**
+<span class='line'>222</span>     Normalizes the passed language into a two-character language code.
+<span class='line'>223</span>     This method allows you to specify common languages in their full english
+<span class='line'>224</span>     name (i.e. English, French, etc). and it will be treated like their two
+<span class='line'>225</span>     letter code equivalent.
+<span class='line'>226</span>     
+<span class='line'>227</span>     @param {String} languageCode
+<span class='line'>228</span>     @returns {String} normalized code
+<span class='line'>229</span>   */</span><span class="WHIT">
+<span class='line'>230</span>   </span><span class="NAME">normalizeLanguage</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">languageCode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>231</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">languageCode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">'en'</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>232</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">SC.Locale._map</span><span class="PUNC">[</span><span class="NAME">languageCode.toLowerCase</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">languageCode</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>233</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>234</span>   
+<span class='line'>235</span>   </span><span class="COMM">// this method is called once during init to walk the installed locales </span><span class="WHIT">
+<span class='line'>236</span>   </span><span class="COMM">// and make sure they know their own names.</span><span class="WHIT">
+<span class='line'>237</span>   </span><span class="NAME">_assignLocales</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>238</span>     </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">key</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">this.locales</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">prototype.language</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">key</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>239</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>240</span>   
+<span class='line'>241</span>   </span><span class="NAME">toString</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>242</span>     </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this.prototype.language</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="NAME">SC.Locale._assignLocales</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>243</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="STRN">"SC.Locale["</span><span class="PUNC">+</span><span class="NAME">this.prototype.language</span><span class="PUNC">+</span><span class="STRN">"]"</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>244</span>   </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>245</span>   
+<span class='line'>246</span>   </span><span class="COMM">// make sure important properties are copied to new class. </span><span class="WHIT">
+<span class='line'>247</span>   </span><span class="NAME">extend</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>248</span>     </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Object.extend.apply</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>249</span>     </span><span class="NAME">ret.addStrings</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.addStrings</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>250</span>     </span><span class="NAME">ret.define</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.define</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>251</span>     </span><span class="NAME">ret.options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.options</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>252</span>     </span><span class="NAME">ret.toString</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.toString</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>253</span>     </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ret</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>254</span>   </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>255</span>     
+<span class='line'>256</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>257</span> 
+<span class='line'>258</span> </span><span class="COMM">/** 
+<span class='line'>259</span>   This locales hash contains all of the locales defined by SproutCore and
+<span class='line'>260</span>   by your own application.  See the SC.Locale class definition for the
+<span class='line'>261</span>   various properties you can set on your own locales.
+<span class='line'>262</span>   
+<span class='line'>263</span>   @property {Hash}
+<span class='line'>264</span> */</span><span class="WHIT">
+<span class='line'>265</span> </span><span class="NAME">SC.Locale.locales</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>266</span>   </span><span class="NAME">en</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Locale.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">_deprecatedLanguageCodes</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'English'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>267</span>   </span><span class="NAME">fr</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Locale.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">_deprecatedLanguageCodes</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'French'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>268</span>   </span><span class="NAME">de</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Locale.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">_deprecatedLanguageCodes</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'German'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>269</span>   </span><span class="NAME">ja</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Locale.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">_deprecatedLanguageCodes</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'Japanese'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'jp'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>270</span>   </span><span class="NAME">es</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">SC.Locale.extend</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">_deprecatedLanguageCodes</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="STRN">'Spanish'</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>271</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>272</span> 
+<span class='line'>273</span> 
+<span class='line'>274</span> 
+<span class='line'>275</span> 
+<span class='line'>276</span> </span><span class="COMM">/**
+<span class='line'>277</span>   This special helper will store the strings you pass in the locale matching
+<span class='line'>278</span>   the language code.  If a locale is not defined from the language code you
+<span class='line'>279</span>   specify, then one will be created for you with the english locale as the 
+<span class='line'>280</span>   parent.
+<span class='line'>281</span>   
+<span class='line'>282</span>   @param {String} languageCode
+<span class='line'>283</span>   @param {Hash} strings
+<span class='line'>284</span>   @returns {Object} receiver 
+<span class='line'>285</span> */</span><span class="WHIT">
+<span class='line'>286</span> </span><span class="NAME">SC.stringsFor</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">languageCode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">strings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>287</span>   </span><span class="COMM">// get the locale, creating one if needed.</span><span class="WHIT">
+<span class='line'>288</span>   </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">locale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Locale.localeClassFor</span><span class="PUNC">(</span><span class="NAME">languageCode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>289</span>   </span><span class="NAME">locale.addStrings</span><span class="PUNC">(</span><span class="NAME">strings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>290</span>   </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>291</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>292</span> 
+<span class='line'>293</span> 
+<span class='line'>294</span> </span></pre></body></html>

@@ -1,0 +1,45 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// Project:   SproutCore - JavaScript Application Framework</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// Copyright: ©2006-2009 Sprout Systems, Inc. and contributors.</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">//            Portions ©2008-2009 Apple Inc. All rights reserved.</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// License:   Licensed under MIT license (see license.js)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// ==========================================================================</span><span class="WHIT">
+<span class='line'>  7</span> 
+<span class='line'>  8</span> </span><span class="NAME">sc_require</span><span class="PUNC">(</span><span class="STRN">'mixins/responder_context'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> 
+<span class='line'> 10</span> </span><span class="COMM">/** @class
+<span class='line'> 11</span> 
+<span class='line'> 12</span>   The root object for a SproutCore application.  Usually you will create a 
+<span class='line'> 13</span>   single SC.Application instance as your root namespace.  SC.Application is
+<span class='line'> 14</span>   required if you intend to use SC.Responder to route events.
+<span class='line'> 15</span>   
+<span class='line'> 16</span>   h2. Example
+<span class='line'> 17</span>   
+<span class='line'> 18</span>   {{{
+<span class='line'> 19</span>     Contacts = SC.Application.create({
+<span class='line'> 20</span>       store: SC.Store.create(SC.Record.fixtures),
+<span class='line'> 21</span>       
+<span class='line'> 22</span>       // add other useful properties here
+<span class='line'> 23</span>     });
+<span class='line'> 24</span>   }}}
+<span class='line'> 25</span> 
+<span class='line'> 26</span>   h2. Sending Events
+<span class='line'> 27</span>   
+<span class='line'> 28</span>   You can send actions and events down an application-level responder chain
+<span class='line'> 29</span>   by 
+<span class='line'> 30</span>   
+<span class='line'> 31</span>   @extends SC.ResponderContext
+<span class='line'> 32</span>   @since SproutCore 1.0
+<span class='line'> 33</span> */</span><span class="WHIT">
+<span class='line'> 34</span> </span><span class="NAME">SC.Application</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">SC.Responder.extend</span><span class="PUNC">(</span><span class="NAME">SC.ResponderContext</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="COMM">/** SC.Application.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 36</span> 
+<span class='line'> 37</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span> </span></pre></body></html>
